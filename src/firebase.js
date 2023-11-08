@@ -53,11 +53,10 @@ async function takeAllObjects(nameObject) {
     try {
         const snapshot = await get(child(dbRef, `${nameObject}`));
         if (snapshot.exists()) {
-            console.log(snapshot.val());
+            // console.log(snapshot.val());
             return snapshot.val(); // возвращает промис с объектами
         } else {
-            console.log("Такого коктеля нет");
-            return null; // Возвращаем null, если объект не существует
+            throw new Error("Запрашиваемого объекта нет");
         }
     } catch (error) {
         console.error(error);
@@ -66,7 +65,8 @@ async function takeAllObjects(nameObject) {
 }
 export { takeAllObjects };// возвращает промис с объектами takeAllObjects('cocktails');
 
-// takeAllObjects('cocktails');
+// console.log(takeAllObjects('cocktails'));
+
 // const objects = takeAllObjects('ingredients');
 // objects.then(function (value) {
 //     const ingridients = JSON.stringify(value);
