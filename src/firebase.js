@@ -22,6 +22,7 @@ const database = getDatabase(app);
 const dbRef = ref(database);
 // console.log(database);
 
+// -----------------------------------------------------------------------------------------------------------
 // Функция записи данных о коктеле
 function writeCocktailData(cocktailId, name, description, ingredients, cooking, imageUrl, alcohol) {
     set(ref(database, 'cocktails/' + cocktailId), {
@@ -35,6 +36,7 @@ function writeCocktailData(cocktailId, name, description, ingredients, cooking, 
 }
 export { writeCocktailData };
 
+// -----------------------------------------------------------------------------------------------------------
 // Функция записи данных об ингридиенте
 function writeIngredientData(ingredientId, name, cocktails) {
     set(ref(database, 'ingredients/' + ingredientId), {
@@ -46,7 +48,10 @@ export { writeIngredientData };
 // writeCocktailData('margarita', 'Маргарита', 'Описание коктеля', '[{"voda", "100 мл"},{"lemon", "2 дольки"}]', 'приготовление-рецепт', 'https://ru.inshaker.com/uploads/cocktail/hires/57/Bacardi_shooting_5_800.jpg', true);
 // writeIngredientData('voda', 'вода', ['margarita', 'limonchello'])
 
+// -----------------------------------------------------------------------------------------------------------
 // чтение данных для вывода на странице 
+
+// Функция, которая возвращает все коктели или все ингридиенты
 // nameObject: ingredients | cocktails
 async function takeAllObjects(nameObject) {
     // обращение к обьекту 
@@ -63,10 +68,11 @@ async function takeAllObjects(nameObject) {
         return null; // Возвращаем null в случае ошибки
     }
 }
-export { takeAllObjects };// возвращает промис с объектами takeAllObjects('cocktails');
-
+// возвращает промис с объектами 
+// takeAllObjects('cocktails')- коктели 
+// takeAllObjects('ingredients') - промис с ингридиентами
+export { takeAllObjects };
 // console.log(takeAllObjects('cocktails'));
-
 // const objects = takeAllObjects('ingredients');
 // objects.then(function (value) {
 //     const ingridients = JSON.stringify(value);
@@ -74,3 +80,6 @@ export { takeAllObjects };// возвращает промис с объекта
 //     console.log(`Из промиса получены данные: ${ingridients}`);
 // })
 // console.log('objects', objects);
+
+// -----------------------------------------------------------------------------------------------------------
+
