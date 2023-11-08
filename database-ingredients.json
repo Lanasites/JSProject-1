@@ -1,0 +1,305 @@
+[
+  {
+    "id-ingredient": "lime",
+    "name": "лимон",
+    "cocktails": [
+      "Mojito",
+      "Margarita",
+      "Gin and tonic"
+    ]
+  },
+  {
+    "id-ingredient": "white rom",
+    "name": "ром",
+    "cocktails": [
+      "Long Island",
+      "Mojito"
+    ]
+  },
+  {
+    "id-ingredient": "sugar syrup",
+    "name": "сахарный сироп",
+    "cocktails": [
+      "Mojito",
+      "Margarita",
+      "Long Island",
+      "Feijoa delight"
+    ]
+  },
+  {
+    "id-ingredient": "soda",
+    "name": "содовая",
+    "cocktails": [
+      "Mojito"
+    ]
+  },
+  {
+    "id-ingredient": "mint",
+    "name": "мята",
+    "cocktails": [
+      "Mojito"
+    ]
+  },
+  {
+    "id-ingredient": "ice",
+    "name": "лед",
+    "cocktails": [
+      "Mojito",
+      "Margarita",
+      "Gin and tonic",
+      "Sex on the beatch",
+      "Long Island",
+      "Feijoa delight",
+      "Bumblebee",
+      "Tequila Sunrise"
+    ]
+  },
+  {
+    "id-ingredient": "tequila",
+    "name": "текила",
+    "cocktails": [
+      "Margarita",
+      "Long Island",
+      "Tequila Sunrise"
+    ]
+  },
+  {
+    "id-ingredient": "citrus liqueur",
+    "name": "цитрусовый ликер",
+    "cocktails": [
+      "Margarita",
+      "B-52",
+      "Long Island"
+    ]
+  },
+  {
+    "id-ingredient": "lime juice",
+    "name": "лаймовый сок",
+    "cocktails": [
+      "Margarita",
+      "Feijoa delight"
+    ]
+  },
+  {
+    "id-ingredient": "salt",
+    "name": "соль",
+    "cocktails": [
+      "Margarita"
+    ]
+  },
+  {
+    "id-ingredient": "gin",
+    "name": "джин",
+    "cocktails": [
+      "Gin and tonic",
+      "Long Island"
+    ]
+  },
+  {
+    "id-ingredient": "tonic",
+    "name": "тоник",
+    "cocktails": [
+      "Gin and tonic"
+    ]
+  },
+  {
+    "id-ingredient": "milk",
+    "name": "молоко",
+    "cocktails": [
+      "Strawberry milkshake",
+      "Ctranberry Eggnog"
+    ]
+  },
+  {
+    "id-ingredient": "strawberry ice-cream",
+    "name": "клубничное мороженное",
+    "cocktails": [
+      "Strawberry milkshake"
+    ]
+  },
+  {
+    "id-ingredient": "strawberry",
+    "name": "клубника",
+    "cocktails": [
+      "Strawberry milkshake"
+    ]
+  },
+  {
+    "id-ingredient": "vodka",
+    "name": "водка",
+    "cocktails": [
+      "Sex on the beatch",
+      "Long Island"
+    ]
+  },
+  {
+    "id-ingredient": "peach liqueur",
+    "name": "персиковый ликер",
+    "cocktails": [
+      "Sex on the beatch"
+    ]
+  },
+  {
+    "id-ingredient": "cranberry juice",
+    "name": "клюквенный сок",
+    "cocktails": [
+      "Sex on the beatch"
+    ]
+  },
+  {
+    "id-ingredient": "pineapple juice",
+    "name": "ананасовый сок",
+    "cocktails": [
+      "Sex on the beatch"
+    ]
+  },
+  {
+    "id-ingredient": "pineapple",
+    "name": "ананас",
+    "cocktails": [
+      "Sex on the beatch"
+    ]
+  },
+  {
+    "id-ingredient": "cherry",
+    "name": "вишня",
+    "cocktails": [
+      "Sex on the beatch"
+    ]
+  },
+  {
+    "id-ingredient": "irish cream",
+    "name": "айриш крим",
+    "cocktails": [
+      "B-52"
+    ]
+  },
+  {
+    "id-ingredient": "coffee liqueur",
+    "name": "кофейный ликер",
+    "cocktails": [
+      "Long Island"
+    ]
+  },
+  {
+    "id-ingredient": "lemon juice",
+    "name": "лимонный сок",
+    "cocktails": [
+      "Long Island"
+    ]
+  },
+  {
+    "id-ingredient": "coca-cola",
+    "name": "кока-кола",
+    "cocktails": [
+      "Long Island"
+    ]
+  },
+  {
+    "id-ingredient": "lemon",
+    "name": "лимон",
+    "cocktails": [
+      "Long Island"
+    ]
+  },
+  {
+    "id-ingredient": "cream",
+    "name": "сливки",
+    "cocktails": [
+      "Ctranberry Eggnog"
+    ]
+  },
+  {
+    "id-ingredient": "yolk of egg",
+    "name": "яичный желток",
+    "cocktails": [
+      "Ctranberry Eggnog"
+    ]
+  },
+  {
+    "id-ingredient": "сranberry",
+    "name": "клюква",
+    "cocktails": [
+      "Ctranberry Eggnog"
+    ]
+  },
+  {
+    "id-ingredient": "honey",
+    "name": "мед",
+    "cocktails": [
+      "Ctranberry Eggnog"
+    ]
+  },
+  {
+    "id-ingredient": "sugar",
+    "name": "сахар",
+    "cocktails": [
+      "Ctranberry Eggnog"
+    ]
+  },
+  {
+    "id-ingredient": "cookie",
+    "name": "печенье",
+    "cocktails": [
+      "Ctranberry Eggnog"
+    ]
+  },
+  {
+    "id-ingredient": "vanilla syrup",
+    "name": "ванильный сироп",
+    "cocktails": [
+      "Feijoa delight"
+    ]
+  },
+  {
+    "id-ingredient": "apple juicee",
+    "name": "яблочный сок",
+    "cocktails": [
+      "Feijoa delight"
+    ]
+  },
+  {
+    "id-ingredient": "feijoa",
+    "name": "фейхоа",
+    "cocktails": [
+      "Feijoa delight"
+    ]
+  },
+  {
+    "id-ingredient": "caramel syrup",
+    "name": "карамельный сироп",
+    "cocktails": [
+      "Bumblebee"
+    ]
+  },
+  {
+    "id-ingredient": "espresso coffee",
+    "name": "кофе эспрессо",
+    "cocktails": [
+      "Bumblebee"
+    ]
+  },
+  {
+    "id-ingredient": "orange juice",
+    "name": "апельсиновый сок",
+    "cocktails": [
+      "Bumblebee",
+      "Tequila Sunrise"
+    ]
+  },
+  {
+    "id-ingredient": "orange",
+    "name": "апельсин",
+    "cocktails": [
+      "Bumblebee",
+      "Tequila Sunrise"
+    ]
+  },
+  {
+    "id-ingredient": "grenadine",
+    "name": "гренадин",
+    "cocktails": [
+      "Tequila Sunrise"
+    ]
+  }
+]
