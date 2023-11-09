@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="./styles/form_style.scss">
+</head>
+
+<body>
+    <main class="container">
+        <div class="form-wrapper">
+            <form name="form" class="form" novalidate>
+                <h2 class="form__title"><span class="sign-in-text">ВОЙТИ</span> / РЕГИСТРАЦИЯ</h2>
+
+                <div class="form__item">
+                    <input type="text" id="firstName" name="firstName" class="form__input _req" required minlength="2"
+                        maxlength="20" placeholder="Логин" />
+                    <span id="firstName-error" class="error-text"></span>
+                </div>
+
+                <div class="form__item">
+                    <input type="email" id="email" name="email" class="form__input _req" required
+                        placeholder="Электронный адрес" />
+                    <span id="email-error" class="error-text"></span>
+                </div>
+
+                <div class="form__item">
+                    <input type="text" id="password" name="password" class="form__input _req" required minlength="8"
+                        placeholder="Пароль"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
+                    <span id="password-error" class="error-text"></span>
+                </div>
+
+
+                <div class="form__item">
+                    <input type="text" id="passwordRepeat" name="passwordRepeat" class="form__input _req" required
+                        minlength="8" placeholder="Повторите пароль"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
+                    <span id="passwordRepeat-error" class="error-text"></span>
+                </div>
+
+
+                <div class="form__item">
+                    <input type="checkbox" id="checkbox" name="checkbox" class="form__checkbox _req" required checked />
+                    <label for="checkbox" class="form__checkbox-text">Запомнить меня</label>
+                    <br>
+                    <span id="checkbox-error" class="error-text"></span>
+                </div>
+
+                <div class="errorsInfo"></div>
+
+                <input name="secondButton" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" />
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>
