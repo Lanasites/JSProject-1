@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
-    <link rel="stylesheet" href="./styles/form_style.scss">
+    <link rel="stylesheet" href="./styles/form-style.scss">
 </head>
 
 <body>
     <main class="container">
         <div class="form-wrapper">
             <form name="form" class="form" novalidate>
-                <h2 class="form__title"><span class="sign-in-text">ВОЙТИ</span> / РЕГИСТРАЦИЯ</h2>
+                <h2 class="form__title"><span class="sign-in-text">ВОЙТИ / </span>РЕГИСТРАЦИЯ</h2>
 
                 <div class="form__item">
-                    <input type="text" id="firstName" name="firstName" class="form__input _req" required minlength="2"
+                    <input type="text" id="login" name="login" class="form__input _req" required minlength="2"
                         maxlength="20" placeholder="Логин" />
-                    <span id="firstName-error" class="error-text"></span>
+                    <span id="login-error" class="error-text"></span>
                 </div>
 
                 <div class="form__item">
@@ -50,9 +50,9 @@
                     <span id="checkbox-error" class="error-text"></span>
                 </div>
 
-                <div class="errorsInfo"></div>
+                <div class="errors-info"></div>
 
-                <input name="secondButton" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" />
+                <input name="submit-btn" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" />
             </form>
         </div>
     </main>

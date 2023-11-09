@@ -1,0 +1,117 @@
+%title {
+    font-family: Helvetica;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0em;
+}
+
+%text {
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 16px;
+    letter-spacing: 0em;
+}
+
+$black: #000;
+
+.sign-in-text {
+    @extend %title;
+    font-weight: 400;
+}
+
+.form {
+    max-width: 500px;
+    width: 100%;
+    height: 475px;
+    margin: 0 auto;
+    padding: 50px 46px;
+    border: 1px solid $black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__wrapper {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__title {
+        text-align: center;
+        @extend %title;
+        font-weight: 700;
+    }
+
+    &__item {
+        margin-bottom: 22px;
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__input {
+        padding: 10px 10px;
+        width: 400px;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid $black;
+        display: block;
+        outline: none;
+        text-align: center;
+        @extend %text;
+        color: $black;
+    }
+
+    &__input._error {
+        box-shadow: 0 0 10px red;
+        border-color: red;
+    }
+
+    &__checkbox {
+        margin-top: 17px;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+    }
+
+    &__checkbox-text {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        color: #A2A2A2;
+        cursor: pointer;
+    }
+
+    &__submit {
+        width: 193px;
+        height: 45px;
+        // padding: 5px 8px;
+        cursor: pointer;
+        margin-top: 30px;
+        border: 1px solid $black;
+        background: rgba(217, 217, 217, 0.00);
+
+        color: $black;
+        font-family: Helvetica;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 18px;
+    }
+
+    &__submit:hover {
+        background-color: $black;
+        color: white;
+    }
+
+}
+
+.error-text {
+    color: red;
+}
