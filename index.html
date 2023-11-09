@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project 1</title>
   <link rel="stylesheet" href="./styles/style.scss">
+  <link href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+" rel="stylesheet">
 
 </head>
 
@@ -13,10 +16,29 @@
 
 
   <!-- Структура главное страницы -->
+  <!--<div id="age-confirmation-popup">
+    <div class="content">
+        <h2>Подтверждение возраста</h2>
+        <p>Для продолжения, пожалуйста, введите ваш возраст:</p>
+        <input type="number" id="age-input" placeholder="Ваш возраст">
+        <button id="confirm-btn">Подтвердить</button>
+    </div>
+</div>-->
 
+<section class="splide" aria-label="Splide Basic HTML Example">
+  <div class="splide__track">
+		<ul class="splide__list">
+			<li class="splide__slide">Slide 01</li>
+			<li class="splide__slide">Slide 02</li>
+			<li class="splide__slide">Slide 03</li>
+		</ul>
+  </div>
+</section>
 
-  <h1>hello world</h1>
   <script type="module" src="./src/firebase.js"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
   <script type="module" src="./src/main.js"></script>
 </body>
 
