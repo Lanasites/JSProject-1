@@ -1,16 +1,32 @@
 [
   {
-    "id-cocktail": "Mojito",
+    "idcocktail": "Mojito",
     "name": "Мохито",
     "description": "Это освежающий сладкий лонг на основе рома с большим количеством мяты и лайма. Кстати, когда-то их добавляли для того, чтобы перебить вкус плохого рома и обезопасить себя от болезней, но сегодня этого можно не бояться. Традиционно в коктейль добавляют газированную воду, но можно заменить её на спрайт, если вы предпочитаете более сладкий вкус.",
     "ingredients": [
       {
-        "lime": "80 г.",
-        "white rom": "50 мл.",
-        "sugar syrup": "15 мл.",
-        "soda": "100 мл.",
-        "mint": "3 г.",
-        "ice": "200 г."
+        "Idingredient": "lime",
+        "quantity": "80 г."
+      },
+      {
+        "Idingredient": "white rom",
+        "quantity": "50 мл."
+      },
+      {
+        "'Idingredient": "sugar syrup",
+        "quantity": "15 мл."
+      },
+      {
+        "Idingredient": "soda",
+        "quantity": "100 мл."
+      },
+      {
+        "Idingredient": "mint",
+        "quantity": "3 г."
+      },
+      {
+        "Idingredient": "ice",
+        "quantity": "200 г."
       }
     ],
     "cooking": "Положи в хайбол лайм 3 дольки и подави мадлером. Возьми мяту 10 листиков в одну руку и хлопни по ним другой рукой. Положи мяту в хайбол. Наполни бокал дробленым льдом доверху. Добавь сахарный сироп 15 мл и белый ром 50 мл. Долей содовую доверху и аккуратно размешай коктейльной ложкой. Досыпь немного дробленого льда. Укрась веточкой мяты и долькой лайма",
@@ -18,18 +34,37 @@
     "alcohol": true
   },
   {
-    "id-cocktail": "Margarita",
+    "idcocktail": "Margarita",
     "name": "Маргарита",
     "description": "Это солоноватый кислый коктейль на текиле с лаймовым соком. Бармены во всем мире очень любят создавать твисты на этот классический коктейль, но окаёмка из соли практически всегда остаётся неизменным украшением коктейля.",
     "ingredients": [
       {
-        "lime": "10 г.",
-        "tequila": "50 мл.",
-        "sugar syrup": "10 мл.",
-        "citrus liqueur": "25 мл.",
-        "lime juice": "30 мл.",
-        "salt": "2 г.",
-        "ice": "200 г."
+        "Idingredient": "lime",
+        "quantity": "10 г."
+      },
+      {
+        "Idingredient": "tequila",
+        "quantity": "50 мл."
+      },
+      {
+        "Idingredient": "sugar syrup",
+        "quantity": "10 мл."
+      },
+      {
+        "Idingredient": "citrus liqueur",
+        "quantity": "25 мл."
+      },
+      {
+        "Idingredient": "lime juice",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "salt",
+        "quantity": "2 г."
+      },
+      {
+        "Idingredient": "ice",
+        "quantity": "200 г."
       }
     ],
     "cooking": "Сделай на бокале для маргариты соленую окаемку. Налей в шейкер лаймовый сок 30 мл, сахарный сироп 10 мл, ликер трипл сек 25 мл и серебряную текилу 50 мл. Наполни шейкер кубиками льда и взбей. Перелей через стрейнер в охлажденный бокал для маргариты. Укрась кружком лайма",
@@ -37,15 +72,25 @@
     "alcohol": true
   },
   {
-    "id-cocktail": "Gin and tonic",
+    "idcocktail": "Gin and tonic",
     "name": "Джин тоник",
     "description": "Это бессмертный микс джина и тоника, который подается, наверное, в каждом баре Земли. Травяной и немного горький коктейль прекрасно освежает и тонизирует. Украсить его можно лаймом или огурцом в зависимости от того, преобладание чего вам больше нравится - свежести или кислинки.",
     "ingredients": [
       {
-        "lime": "20 г.",
-        "gin": "50 мл.",
-        "tonic": "150 мл.",
-        "ice": "180 г."
+        "Idingredient": "lime",
+        "quantity": "20 г."
+      },
+      {
+        "Idingredient": "gin",
+        "quantity": "50 мл."
+      },
+      {
+        "Idingredient": "tonic",
+        "quantity": "150 мл."
+      },
+      {
+        "Idingredient": "ice",
+        "quantity": "180 г."
       }
     ],
     "cooking": "Наполни хайбол кубиками льда доверху. Налей джин 50 мл. Долей тоник доверху и аккуратно размешай коктейльной ложкой. Укрась кружками лайма",
@@ -53,14 +98,21 @@
     "alcohol": true
   },
   {
-    "id-cocktail": "Strawberry milkshake",
+    "idcocktail": "Strawberry milkshake",
     "name": "Клубничный милкшейк",
     "description": "Вам нравится милкшейк? Тогда попробуйте Клубничный милкшейк. Это ягодный, сливочный и сладкий коктейль на основе молока, безалкогольный. ",
     "ingredients": [
       {
-        "milk": "80 мл.",
-        "strawberry ice-cream": "200 г.",
-        "strawberry": "140 г."
+        "Idingredient": "milk",
+        "quantity": "80 мл."
+      },
+      {
+        "Idingredient": "strawberry ice-cream",
+        "quantity": "200 г."
+      },
+      {
+        "Idingredient": "strawberry",
+        "quantity": "140 г."
       }
     ],
     "cooking": "Положи в миксер клубнику 6 ягод и клубничное мороженое 200 г. Налей молоко 80 мл. Взбей без добавления льда и перелей в коктейльную креманку. Укрась половинками клубники",
@@ -68,18 +120,37 @@
     "alcohol": false
   },
   {
-    "id-cocktail": "Sex on the beatch",
+    "idcocktail": "Sex on the beatch",
     "name": "Секс нампляже",
     "description": "Это сладкий фруктовый лонг на водке с добавлением персикового ликёра. Коктейль прекрасно освежает и очень легко пьётся благодаря ананасовому соку, также входящему в его состав. Этот коктейль очень любили пить герои Санта-Барбары, но сейчас он ассоциируется скорее с летом и шезлонгом.",
     "ingredients": [
       {
-        "vodka": "50 мл.",
-        "peach liqueur": "25 мл.",
-        "cranberry juice": "40 мл.",
-        "pineapple juice": "40 мл.",
-        "pineapple": "150 г.",
-        "cherry": "5 г.",
-        "ice": "350 г."
+        "Idingredient": "vodka",
+        "quantity": "50 мл."
+      },
+      {
+        "Idingredient": "peach liqueur",
+        "quantity": "25 мл."
+      },
+      {
+        "Idingredient": "cranberry juice",
+        "quantity": "40 мл."
+      },
+      {
+        "Idingredient": "pineapple juice",
+        "quantity": "40 мл."
+      },
+      {
+        "Idingredient": "pineapple",
+        "quantity": "150 г."
+      },
+      {
+        "Idingredient": "cherry",
+        "quantity": "5 г."
+      },
+      {
+        "Idingredient": "ice",
+        "quantity": "350 г."
       }
     ],
     "cooking": "Наполни слинг кубиками льда доверху. Налей в шейкер клюквенный сок 40 мл, ананасовый сок 40 мл, персиковый ликер 25 мл и водку 50 мл. Наполни шейкер кубиками льда и взбей. Перелей через стрейнер в слинг. Укрась кусочком ананаса и коктейльной вишней на шпажке",
@@ -87,14 +158,21 @@
     "alcohol": true
   },
   {
-    "id-cocktail": "B-52",
+    "idcocktail": "B-52",
     "name": "B-52",
     "description": "Это крепкий сладкий шот на кофейном ликёре с добавлением айриш крима и трипл сека. На вкус он сладкий и сливочно-кофейный. Верхний слой шота поджигается, и коктейль нужно быстро выпить через трубочку: не только вкусно, но и зрелищно.",
     "ingredients": [
       {
-        "irish cream": "15 мл.",
-        "coffee liqueur": "15 мл.",
-        "citrus liqueur": "15 мл."
+        "Idingredient": "irish cream",
+        "quantity": "15 мл."
+      },
+      {
+        "Idingredient": "coffee liqueur",
+        "quantity": "15 мл."
+      },
+      {
+        "Idingredient": "citrus liqueur",
+        "quantity": "15 мл."
       }
     ],
     "cooking": "Налей в стопку кофейный ликер 15 мл. Используя коктейльную ложку, уложи слой айриш крим 15 мл и слой ликера трипл сек 15 мл. Поджигай, вооружайся трубочками и угощай!",
@@ -102,21 +180,49 @@
     "alcohol": true
   },
   {
-    "id-cocktail": "Long Island",
+    "idcocktail": "Long Island",
     "name": "Лонг айленд",
     "description": "Это очень крепкий лонг на пяти видах алкоголя. Кроме водки, джина, рома, текилы и цитрусового ликёра, туда добавляют колу и лимонный сок, так что на вкус он получается сладковато-кислым. Коктейль придумали во времена сухого закона в Америке, маскируя его под чай, поэтому иногда его до сих пор подают в чайниках или френч-прессах.",
     "ingredients": [
       {
-        "vodka": "30 мл.",
-        "white rom": "30 мл.",
-        "tequila": "30 мл.",
-        "gin": "30 мл.",
-        "citrus liqueur": "30 мл.",
-        "sugar syrup": "30 мл.",
-        "lemon juice": "30 мл.",
-        "coca-cola": "100 мл.",
-        "lemon": "40 г.",
-        "ice": "300 г."
+        "Idingredient": "vodka",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "white rom",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "tequila",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "gin",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "citrus liqueur",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "sugar syrup",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "lemon juice",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "coca-cola",
+        "quantity": "100 мл."
+      },
+      {
+        "Idingredient": "lemon",
+        "quantity": "40 г."
+      },
+      {
+        "Idingredient": "ice",
+        "quantity": "300 г."
       }
     ],
     "cooking": "Наполни хайбол кубиками льда доверху. Налей лимонный сок 30 мл, сахарный сироп 30 мл и ликер трипл сек 30 мл. Добавь водку 30 мл, джин 30 мл, белый ром 30 мл и серебряную текилу 30 мл. Долей колу доверху и аккуратно размешай коктейльной ложкой. Укрась долькой лимона",
@@ -124,18 +230,37 @@
     "alcohol": true
   },
   {
-    "id-cocktail": "Ctranberry Eggnog",
+    "idcocktail": "Ctranberry Eggnog",
     "name": "Клюквенный гоголь-моголь",
     "description": "Вам нравится гоголь-моголь? Тогда попробуйте Клюквенный гоголь-моголь. Это ягодный, сливочный и сладкий коктейль на основе молока, безалкогольный. ",
     "ingredients": [
       {
-        "milk": "150 мл.",
-        "cream": "50 мл.",
-        "yolk of egg": "5 шт.",
-        "сranberry": "25 г.",
-        "honey": "20 мл.",
-        "sugar": "25 г.",
-        "cookie": "10 г."
+        "Idingredient": "milk",
+        "quantity": "150 мл."
+      },
+      {
+        "Idingredient": "cream",
+        "quantity": "50 мл."
+      },
+      {
+        "Idingredient": "yolk of egg",
+        "quantity": "5 шт."
+      },
+      {
+        "Idingredient": "сranberry",
+        "quantity": "25 г."
+      },
+      {
+        "Idingredient": "honey",
+        "quantity": "20 мл."
+      },
+      {
+        "Idingredient": "sugar",
+        "quantity": "25 г."
+      },
+      {
+        "Idingredient": "cookie",
+        "quantity": "10 г."
       }
     ],
     "cooking": "Положи в питчер клюкву 5 к. ложек, сахарный песок 5 к. ложек и подави мадлером. Добавь желтки перепелиных яиц 5 шт., мед 20 мл, нежирные сливки 50 мл и молоко 150 мл. Помешивая, нагрей коктейль паром от кофемашины, не доводя до кипения. Перелей в бокал для ирландского кофе. Укрась печеньем",
@@ -143,17 +268,33 @@
     "alcohol": false
   },
   {
-    "id-cocktail": "Feijoa delight",
+    "idcocktail": "Feijoa delight",
     "name": "Фейхо наслаждение",
     "description": "Вам нравятся лонги и моктейли? Тогда попробуйте этот фруктовый, пряный и сладкий коктейль на основе сока, безалкогольный. ",
     "ingredients": [
       {
-        "sugar syrup": "30 мл.",
-        "vanilla syrup": "10 мл.",
-        "apple juice": "100 мл.",
-        "lime juice": "10 мл.",
-        "feijoa": "80 г.",
-        "ice": "300 г."
+        "Idingredient": "sugar syrup",
+        "quantity": "30 мл."
+      },
+      {
+        "Idingredient": "vanilla syrup",
+        "quantity": "10 мл."
+      },
+      {
+        "Idingredient": "apple juice",
+        "quantity": "100 мл."
+      },
+      {
+        "Idingredient": "lime juice",
+        "quantity": "10 мл."
+      },
+      {
+        "Idingredient": "feijoa",
+        "quantity": "80 г."
+      },
+      {
+        "Idingredient": "ice",
+        "quantity": "300 г."
       }
     ],
     "cooking": "Наполни слинг дробленым льдом доверху. Положи в шейкер нарезанную фейхоа 1 шт. и подави мадлером. Налей лаймовый сок 10 мл, яблочный сок 100 мл, ванильный сироп 10 мл и сахарный сироп 30 мл. Наполни шейкер кубиками льда и взбей. Перелей через стрейнер и ситечко в слинг. Досыпь немного дробленого льда. Укрась ломтиком фейхоа",
@@ -161,16 +302,29 @@
     "alcohol": false
   },
   {
-    "id-cocktail": "Bumblebee",
+    "idcocktail": "Bumblebee",
     "name": "Шмель",
     "description": "Вам нравятся лонги? Тогда попробуйте этот кофейный, цитрусовый и сладкий коктейль на основе сока, безалкогольный. ",
     "ingredients": [
       {
-        "caramel syrup": "15 мл.",
-        "espresso coffee": "50 мл.",
-        "orange juice": "100 мл.",
-        "orange": "40 г.",
-        "ice": "180 г."
+        "Idingredient": "caramel syrup",
+        "quantity": "15 мл."
+      },
+      {
+        "Idingredient": "espresso coffee",
+        "quantity": "50 мл."
+      },
+      {
+        "Idingredient": "orange juice",
+        "quantity": "100 мл."
+      },
+      {
+        "Idingredient": "orange",
+        "quantity": "40 г."
+      },
+      {
+        "Idingredient": "ice",
+        "quantity": "180 г."
       }
     ],
     "cooking": "Наполни слинг дробленым льдом доверху. Положи в шейкер нарезанную фейхоа 1 шт. и подави мадлером. Налей лаймовый сок 10 мл, яблочный сок 100 мл, ванильный сироп 10 мл и сахарный сироп 30 мл. Наполни шейкер кубиками льда и взбей. Перелей через стрейнер и ситечко в слинг. Досыпь немного дробленого льда. Укрась ломтиком фейхоа",
@@ -178,16 +332,29 @@
     "alcohol": false
   },
   {
-    "id-cocktail": "Tequila Sunrise",
+    "idcocktail": "Tequila Sunrise",
     "name": "Текила санрайз",
     "description": "Это слабоалкогольный цитрусовый лонг на основе текилы с добавлением гренадина и апельсинового сока. Простой, но очень вкусный и красивый: переходящий в оранжевый цвет красный гренадин действительно напоминает восходящее солнце. ",
     "ingredients": [
       {
-        "tequila": "50 мл.",
-        "grenadine": "10 мл.",
-        "orange juice": "150 мл.",
-        "orange": "30 г.",
-        "ice": "180 г."
+        "Idingredient": "tequila",
+        "quantity": "50 мл."
+      },
+      {
+        "Idingredient": "grenadine",
+        "quantity": "10 мл."
+      },
+      {
+        "Idingredient": "orange juice",
+        "quantity": "150 мл."
+      },
+      {
+        "Idingredient": "orange",
+        "quantity": "30 г."
+      },
+      {
+        "Idingredient": "ice",
+        "quantity": "180 г."
       }
     ],
     "cooking": "Наполни хайбол кубиками льда доверху. Налей гренадин 10 мл и серебряную текилу 50 мл. Долей апельсиновый сок доверху и аккуратно размешай коктейльной ложкой. Укрась кружком апельсина",

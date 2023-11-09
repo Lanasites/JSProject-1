@@ -33,6 +33,7 @@ function writeCocktailData(cocktailId, name, description, ingredients, cooking, 
         imageUrl: imageUrl,
         alcohol: alcohol
     });
+    console.log('данные о коктелях добаылены в БД');
 }
 export { writeCocktailData };
 
@@ -40,13 +41,18 @@ export { writeCocktailData };
 // Функция записи данных об ингридиенте
 function writeIngredientData(ingredientId, name, cocktails) {
     set(ref(database, 'ingredients/' + ingredientId), {
-        username: name,
+        name: name,
         cocktails: cocktails
     });
+    console.log('данные об ингредиентах добаылены в БД');
 }
 export { writeIngredientData };
 // writeCocktailData('margarita', 'Маргарита', 'Описание коктеля', '[{"voda", "100 мл"},{"lemon", "2 дольки"}]', 'приготовление-рецепт', 'https://ru.inshaker.com/uploads/cocktail/hires/57/Bacardi_shooting_5_800.jpg', true);
 // writeIngredientData('voda', 'вода', ['margarita', 'limonchello'])
+
+// -----------------------------------------------------------------------------------------------------------
+// удаление коктейлей 
+
 
 // -----------------------------------------------------------------------------------------------------------
 // чтение данных для вывода на странице 

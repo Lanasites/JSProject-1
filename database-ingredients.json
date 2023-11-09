@@ -1,6 +1,6 @@
 [
   {
-    "id-ingredient": "lime",
+    "idingredient": "lime",
     "name": "лимон",
     "cocktails": [
       "Mojito",
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "id-ingredient": "white rom",
+    "idingredient": "white rom",
     "name": "ром",
     "cocktails": [
       "Long Island",
@@ -17,7 +17,7 @@
     ]
   },
   {
-    "id-ingredient": "sugar syrup",
+    "idingredient": "sugar syrup",
     "name": "сахарный сироп",
     "cocktails": [
       "Mojito",
@@ -27,21 +27,21 @@
     ]
   },
   {
-    "id-ingredient": "soda",
+    "idingredient": "soda",
     "name": "содовая",
     "cocktails": [
       "Mojito"
     ]
   },
   {
-    "id-ingredient": "mint",
+    "idingredient": "mint",
     "name": "мята",
     "cocktails": [
       "Mojito"
     ]
   },
   {
-    "id-ingredient": "ice",
+    "idingredient": "ice",
     "name": "лед",
     "cocktails": [
       "Mojito",
@@ -55,7 +55,7 @@
     ]
   },
   {
-    "id-ingredient": "tequila",
+    "idingredient": "tequila",
     "name": "текила",
     "cocktails": [
       "Margarita",
@@ -64,7 +64,7 @@
     ]
   },
   {
-    "id-ingredient": "citrus liqueur",
+    "idingredient": "citrus liqueur",
     "name": "цитрусовый ликер",
     "cocktails": [
       "Margarita",
@@ -73,7 +73,7 @@
     ]
   },
   {
-    "id-ingredient": "lime juice",
+    "idingredient": "lime juice",
     "name": "лаймовый сок",
     "cocktails": [
       "Margarita",
@@ -81,14 +81,14 @@
     ]
   },
   {
-    "id-ingredient": "salt",
+    "idingredient": "salt",
     "name": "соль",
     "cocktails": [
       "Margarita"
     ]
   },
   {
-    "id-ingredient": "gin",
+    "idingredient": "gin",
     "name": "джин",
     "cocktails": [
       "Gin and tonic",
@@ -96,14 +96,14 @@
     ]
   },
   {
-    "id-ingredient": "tonic",
+    "idingredient": "tonic",
     "name": "тоник",
     "cocktails": [
       "Gin and tonic"
     ]
   },
   {
-    "id-ingredient": "milk",
+    "idingredient": "milk",
     "name": "молоко",
     "cocktails": [
       "Strawberry milkshake",
@@ -111,21 +111,21 @@
     ]
   },
   {
-    "id-ingredient": "strawberry ice-cream",
+    "idingredient": "strawberry ice-cream",
     "name": "клубничное мороженное",
     "cocktails": [
       "Strawberry milkshake"
     ]
   },
   {
-    "id-ingredient": "strawberry",
+    "idingredient": "strawberry",
     "name": "клубника",
     "cocktails": [
       "Strawberry milkshake"
     ]
   },
   {
-    "id-ingredient": "vodka",
+    "idingredient": "vodka",
     "name": "водка",
     "cocktails": [
       "Sex on the beatch",
@@ -133,154 +133,154 @@
     ]
   },
   {
-    "id-ingredient": "peach liqueur",
+    "idingredient": "peach liqueur",
     "name": "персиковый ликер",
     "cocktails": [
       "Sex on the beatch"
     ]
   },
   {
-    "id-ingredient": "cranberry juice",
+    "idingredient": "cranberry juice",
     "name": "клюквенный сок",
     "cocktails": [
       "Sex on the beatch"
     ]
   },
   {
-    "id-ingredient": "pineapple juice",
+    "idingredient": "pineapple juice",
     "name": "ананасовый сок",
     "cocktails": [
       "Sex on the beatch"
     ]
   },
   {
-    "id-ingredient": "pineapple",
+    "idingredient": "pineapple",
     "name": "ананас",
     "cocktails": [
       "Sex on the beatch"
     ]
   },
   {
-    "id-ingredient": "cherry",
+    "idingredient": "cherry",
     "name": "вишня",
     "cocktails": [
       "Sex on the beatch"
     ]
   },
   {
-    "id-ingredient": "irish cream",
+    "idingredient": "irish cream",
     "name": "айриш крим",
     "cocktails": [
       "B-52"
     ]
   },
   {
-    "id-ingredient": "coffee liqueur",
+    "idingredient": "coffee liqueur",
     "name": "кофейный ликер",
     "cocktails": [
       "Long Island"
     ]
   },
   {
-    "id-ingredient": "lemon juice",
+    "idingredient": "lemon juice",
     "name": "лимонный сок",
     "cocktails": [
       "Long Island"
     ]
   },
   {
-    "id-ingredient": "coca-cola",
+    "idingredient": "coca-cola",
     "name": "кока-кола",
     "cocktails": [
       "Long Island"
     ]
   },
   {
-    "id-ingredient": "lemon",
+    "idingredient": "lemon",
     "name": "лимон",
     "cocktails": [
       "Long Island"
     ]
   },
   {
-    "id-ingredient": "cream",
+    "idingredient": "cream",
     "name": "сливки",
     "cocktails": [
       "Ctranberry Eggnog"
     ]
   },
   {
-    "id-ingredient": "yolk of egg",
+    "idingredient": "yolk of egg",
     "name": "яичный желток",
     "cocktails": [
       "Ctranberry Eggnog"
     ]
   },
   {
-    "id-ingredient": "сranberry",
+    "idingredient": "сranberry",
     "name": "клюква",
     "cocktails": [
       "Ctranberry Eggnog"
     ]
   },
   {
-    "id-ingredient": "honey",
+    "idingredient": "honey",
     "name": "мед",
     "cocktails": [
       "Ctranberry Eggnog"
     ]
   },
   {
-    "id-ingredient": "sugar",
+    "idingredient": "sugar",
     "name": "сахар",
     "cocktails": [
       "Ctranberry Eggnog"
     ]
   },
   {
-    "id-ingredient": "cookie",
+    "idingredient": "cookie",
     "name": "печенье",
     "cocktails": [
       "Ctranberry Eggnog"
     ]
   },
   {
-    "id-ingredient": "vanilla syrup",
+    "idingredient": "vanilla syrup",
     "name": "ванильный сироп",
     "cocktails": [
       "Feijoa delight"
     ]
   },
   {
-    "id-ingredient": "apple juicee",
+    "idingredient": "apple juicee",
     "name": "яблочный сок",
     "cocktails": [
       "Feijoa delight"
     ]
   },
   {
-    "id-ingredient": "feijoa",
+    "idingredient": "feijoa",
     "name": "фейхоа",
     "cocktails": [
       "Feijoa delight"
     ]
   },
   {
-    "id-ingredient": "caramel syrup",
+    "idingredient": "caramel syrup",
     "name": "карамельный сироп",
     "cocktails": [
       "Bumblebee"
     ]
   },
   {
-    "id-ingredient": "espresso coffee",
+    "idingredient": "espresso coffee",
     "name": "кофе эспрессо",
     "cocktails": [
       "Bumblebee"
     ]
   },
   {
-    "id-ingredient": "orange juice",
+    "idingredient": "orange juice",
     "name": "апельсиновый сок",
     "cocktails": [
       "Bumblebee",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "id-ingredient": "orange",
+    "idingredient": "orange",
     "name": "апельсин",
     "cocktails": [
       "Bumblebee",
@@ -296,7 +296,7 @@
     ]
   },
   {
-    "id-ingredient": "grenadine",
+    "idingredient": "grenadine",
     "name": "гренадин",
     "cocktails": [
       "Tequila Sunrise"
