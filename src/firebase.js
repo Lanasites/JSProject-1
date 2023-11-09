@@ -69,7 +69,7 @@ async function takeAllObjects(nameObject) {
     }
 }
 // возвращает промис с объектами 
-// takeAllObjects('cocktails')- коктели 
+// takeAllObjects('cocktails') //- коктели
 // takeAllObjects('ingredients') - промис с ингридиентами
 export { takeAllObjects };
 // console.log(takeAllObjects('cocktails'));
