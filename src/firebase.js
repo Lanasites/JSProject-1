@@ -110,10 +110,10 @@ async function takeOneIngredient(idIngredient) {
     try {
         const snapshot = await get(child(dbRef, `ingredients/${idIngredient}`));
         if (snapshot.exists()) {
-            console.log(snapshot.val());
+            // console.log(snapshot.val());
             return snapshot.val(); // возвращает промис с объектами
         } else {
-            throw new Error("Запрашиваемого коктеля нет");
+            throw new Error("Запрашиваемого иннредиента нет");
         }
     } catch (error) {
         console.error(error);
