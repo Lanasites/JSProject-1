@@ -46,7 +46,18 @@ import { takeOneCocktail } from './firebase.js'
 // takeOneIngredient('lemon');
 import { takeOneIngredient } from './firebase.js'
 
-// Функция, которая возвращает промис с коктелями по типу алкогольные или нет
+// Функция, которая возвращает промис объектами-коктелями по типу алкогольные или нет
+// Использование функции takeAlkoCocktail
+// takeAlkoCocktail(false) //true
+//     .then(arr => {
+//         // Обрабатываем результат - массив найденных коктейлей
+//         console.log(arr);
+//     })
+//     .catch(error => {
+//         // Обрабатываем ошибку, если она возникла
+//         console.error(error);
+//     });
 import { takeAlkoCocktail } from './firebase.js'
-takeAlkoCocktail('true');
+
+
 // ------------------------------------------------------------------------------------------

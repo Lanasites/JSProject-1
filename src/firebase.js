@@ -137,24 +137,26 @@ export { takeWordCocktail };
 
 // -----------------------------------------------------------------------------------------------------------
 
-// Функция, которая возвращает промис с коктелями по типу алкогольные или нет
+// Функция, которая возвращает массив с коктелями по типу алкогольные или нет
 function takeAlkoCocktail(alcohol) {
-    // выбираем все коктейли
-    const allOfCocktails = takeAllObjects('cocktails');//возвращает промис со всеми коктейлями
-    allOfCocktails
+    return new Promise((resolve, reject) => {
+        takeAllObjects('cocktails')
+            .then(data => {
+                let arr = [];
+                for (let cocktail in data) {
+                    let obj = data[cocktail];
 
-        .then(data => {
-            console.log(data);
-            for (let cocktail of data) {
-                console.log(cocktail);
-            }
-
-        })
-    //     .catch{
-
-    //     console.error(er);
-    // }
-
-
+                    if (obj.alcohol === alcohol) {
+                        arr.push(obj);
+                    }
+                }
+                // console.log(arr);
+                resolve(arr);
+            })
+            .catch(error => {
+                reject(error);
+            });
+    });
 }
+
 export { takeAlkoCocktail };
