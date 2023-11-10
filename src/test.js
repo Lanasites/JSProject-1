@@ -14,7 +14,7 @@ function testGetData() {
             for (let key in data) {
                 // obj - коктель со всеми свойствами
                 let obj = data[key];
-                // console.log(obj);
+                // console.log(key.trim);
                 print(key, obj.username, obj.description, obj.cooking, obj.imageUrl);
                 // так как ингредиенты в массиве хранятся, то их отдельно считываем, чтобы сделать список
                 let ingrArr = obj.ingredients;
@@ -27,7 +27,7 @@ function testGetData() {
                     // console.log(ingr);
                 }
                 else {
-                    throw new Error('Эметента в БД не найдено');
+                    throw new Error('Элемента в БД не найдено');
                 }
 
 
@@ -62,7 +62,7 @@ function printSostav(ingrArr) {
     for (let i = 0; i < ingrArr.length; i++) {
         // console.log(ingrArr[i]);
         let kolvo = ingrArr[i].quantity;
-        let name = ingrArr[i].Idingredient;
+        let name = ingrArr[i].name;
 
         item += `<li> ${name}: ${kolvo}</li>`;
 
