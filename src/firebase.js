@@ -133,3 +133,28 @@ async function takeWordCocktail(word) {
     // takeAllObjects(cocktails);
 }
 export { takeWordCocktail };
+
+
+// -----------------------------------------------------------------------------------------------------------
+
+// Функция, которая возвращает промис с коктелями по типу алкогольные или нет
+function takeAlkoCocktail(alcohol) {
+    // выбираем все коктейли
+    const allOfCocktails = takeAllObjects('cocktails');//возвращает промис со всеми коктейлями
+    allOfCocktails
+
+        .then(data => {
+            console.log(data);
+            for (let cocktail of data) {
+                console.log(cocktail);
+            }
+
+        })
+    //     .catch{
+
+    //     console.error(er);
+    // }
+
+
+}
+export { takeAlkoCocktail };
