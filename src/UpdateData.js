@@ -16,6 +16,7 @@ async function loadJSONFile(url) {
     }
 }
 export { loadJSONFile };
+
 // Функция добавления коктелей из файла database-cocktail.json
 async function addCockteils() {
     // получение массива данных из файла json

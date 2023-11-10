@@ -9,6 +9,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
 // запускается только, когда были изменения в файле с данными, один раз в начале проекта
 // далее при необходимости
 import { addCockteils } from './UpdateData.js'
+// addCockteils();
 
 // Функция добавления ингредиентолв из файла database-ingredients.json
 // запускается только, когда были изменения в файле с данными, один раз в начале проекта
@@ -30,6 +31,7 @@ import { writeIngredientData } from './firebase.js'
 
 // Функция, которая возвращает промис со всеми коктелями или всеми ингридиентами
 // takeAllObjects(nameObject)
+// примеры
 // takeAllObjects('cocktails') //- коктели
 // takeAllObjects('ingredients') //- промис с ингридиентами
 // nameObject: ingredients | cocktails
@@ -46,3 +48,6 @@ import { takeOneCocktail } from './firebase.js'
 import { takeOneIngredient } from './firebase.js'
 
 // ------------------------------------------------------------------------------------------
+
+import { loadJSONFile } from './UpdateData.js'
+
