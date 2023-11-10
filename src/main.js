@@ -9,7 +9,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
 // запускается только, когда были изменения в файле с данными, один раз в начале проекта
 // далее при необходимости
 import { addCockteils } from './UpdateData.js'
-// addCockteils()
+addCockteils()
 
 // Функция добавления ингредиентолв из файла database-ingredients.json
 // запускается только, когда были изменения в файле с данными, один раз в начале проекта

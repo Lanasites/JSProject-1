@@ -26,7 +26,7 @@ const dbRef = ref(database);
 // Функция записи данных о коктеле
 function writeCocktailData(cocktailId, name, description, ingredients, cooking, imageUrl, alcohol) {
     set(ref(database, 'cocktails/' + cocktailId), {
-        username: name,
+        name: name,
         description: description,
         ingredients: ingredients,
         cooking: cooking,
@@ -87,6 +87,8 @@ export { takeAllObjects };
 // })
 // console.log('objects', objects);
 
+
+// -----------------------------------------------------------------------------------------------------------
 // Функция, которая возвращает промис с определенным коктелем по ID 
 async function takeOneCocktail(idCocktail) {
     // обращение к обьекту 
@@ -103,6 +105,8 @@ async function takeOneCocktail(idCocktail) {
         return null; // Возвращаем null в случае ошибки
     }
 } export { takeOneCocktail };
+
+// -----------------------------------------------------------------------------------------------------------
 
 // Функция, которая возвращает промис с определенным ингредиентом по ID 
 async function takeOneIngredient(idIngredient) {
@@ -123,3 +127,9 @@ async function takeOneIngredient(idIngredient) {
 
 // -----------------------------------------------------------------------------------------------------------
 
+// Функция, которая возвращает промис с коктелями на определенную букву 
+async function takeWordCocktail(word) {
+    // выбираем все коктели
+    // takeAllObjects(cocktails);
+}
+export { takeWordCocktail };
