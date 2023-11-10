@@ -5,32 +5,32 @@
     "description": "Это освежающий сладкий лонг на основе рома с большим количеством мяты и лайма. Кстати, когда-то их добавляли для того, чтобы перебить вкус плохого рома и обезопасить себя от болезней, но сегодня этого можно не бояться. Традиционно в коктейль добавляют газированную воду, но можно заменить её на спрайт, если вы предпочитаете более сладкий вкус.",
     "ingredients": [
       {
-        "Idingredient": "lime",
+        "name": "Лайм",
         "quantity": "80 г."
       },
       {
-        "Idingredient": "white rom",
+        "name": "Ром",
         "quantity": "50 мл."
       },
       {
-        "'Idingredient": "sugar syrup",
+        "'name": "Сахарный сироп",
         "quantity": "15 мл."
       },
       {
-        "Idingredient": "soda",
+        "name": "Содовая",
         "quantity": "100 мл."
       },
       {
-        "Idingredient": "mint",
+        "name": "Мята",
         "quantity": "3 г."
       },
       {
-        "Idingredient": "ice",
+        "name": "Лёд",
         "quantity": "200 г."
       }
     ],
     "cooking": "Положи в хайбол лайм 3 дольки и подави мадлером. Возьми мяту 10 листиков в одну руку и хлопни по ним другой рукой. Положи мяту в хайбол. Наполни бокал дробленым льдом доверху. Добавь сахарный сироп 15 мл и белый ром 50 мл. Долей содовую доверху и аккуратно размешай коктейльной ложкой. Досыпь немного дробленого льда. Укрась веточкой мяты и долькой лайма",
-    "image": "https://pm1.narvii.com/7318/3e94143caf3ab2319553d0c2d15e5f1872fe7771r1-800-557v2_hq.jpg",
+    "image": "https://ru.inshaker.com/uploads/cocktail/hires/57/Bacardi_shooting_5_800.jpg",
     "alcohol": true
   },
   {
@@ -39,31 +39,31 @@
     "description": "Это солоноватый кислый коктейль на текиле с лаймовым соком. Бармены во всем мире очень любят создавать твисты на этот классический коктейль, но окаёмка из соли практически всегда остаётся неизменным украшением коктейля.",
     "ingredients": [
       {
-        "Idingredient": "lime",
+        "name": "Лайм",
         "quantity": "10 г."
       },
       {
-        "Idingredient": "tequila",
+        "name": "Текила",
         "quantity": "50 мл."
       },
       {
-        "Idingredient": "sugar syrup",
+        "name": "Сахарный сироп",
         "quantity": "10 мл."
       },
       {
-        "Idingredient": "citrus liqueur",
+        "name": "Цитрусовый ликер",
         "quantity": "25 мл."
       },
       {
-        "Idingredient": "lime juice",
+        "name": "Сок лайма",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "salt",
+        "name": "Соль",
         "quantity": "2 г."
       },
       {
-        "Idingredient": "ice",
+        "name": "Лёд",
         "quantity": "200 г."
       }
     ],
@@ -72,24 +72,24 @@
     "alcohol": true
   },
   {
-    "idcocktail": "Gin and tonic",
+    "idcocktail": "Джин и Тоник",
     "name": "Джин тоник",
     "description": "Это бессмертный микс джина и тоника, который подается, наверное, в каждом баре Земли. Травяной и немного горький коктейль прекрасно освежает и тонизирует. Украсить его можно лаймом или огурцом в зависимости от того, преобладание чего вам больше нравится - свежести или кислинки.",
     "ingredients": [
       {
-        "Idingredient": "lime",
+        "name": "Лайм",
         "quantity": "20 г."
       },
       {
-        "Idingredient": "gin",
+        "name": "Джин",
         "quantity": "50 мл."
       },
       {
-        "Idingredient": "tonic",
+        "name": "Тоник",
         "quantity": "150 мл."
       },
       {
-        "Idingredient": "ice",
+        "name": "Лёд",
         "quantity": "180 г."
       }
     ],
@@ -103,15 +103,15 @@
     "description": "Вам нравится милкшейк? Тогда попробуйте Клубничный милкшейк. Это ягодный, сливочный и сладкий коктейль на основе молока, безалкогольный. ",
     "ingredients": [
       {
-        "Idingredient": "milk",
+        "name": "Молоко",
         "quantity": "80 мл."
       },
       {
-        "Idingredient": "strawberry ice-cream",
+        "name": "Клубничное мороженное",
         "quantity": "200 г."
       },
       {
-        "Idingredient": "strawberry",
+        "name": "Клубника",
         "quantity": "140 г."
       }
     ],
@@ -125,31 +125,31 @@
     "description": "Это сладкий фруктовый лонг на водке с добавлением персикового ликёра. Коктейль прекрасно освежает и очень легко пьётся благодаря ананасовому соку, также входящему в его состав. Этот коктейль очень любили пить герои Санта-Барбары, но сейчас он ассоциируется скорее с летом и шезлонгом.",
     "ingredients": [
       {
-        "Idingredient": "vodka",
+        "name": "Водка",
         "quantity": "50 мл."
       },
       {
-        "Idingredient": "peach liqueur",
+        "name": "Персиковый ликер",
         "quantity": "25 мл."
       },
       {
-        "Idingredient": "cranberry juice",
+        "name": "Клюквенный сок",
         "quantity": "40 мл."
       },
       {
-        "Idingredient": "pineapple juice",
+        "name": "Ананасовый сок",
         "quantity": "40 мл."
       },
       {
-        "Idingredient": "pineapple",
+        "name": "Ананас",
         "quantity": "150 г."
       },
       {
-        "Idingredient": "cherry",
+        "name": "Вишня",
         "quantity": "5 г."
       },
       {
-        "Idingredient": "ice",
+        "name": "Лёд",
         "quantity": "350 г."
       }
     ],
@@ -163,15 +163,15 @@
     "description": "Это крепкий сладкий шот на кофейном ликёре с добавлением айриш крима и трипл сека. На вкус он сладкий и сливочно-кофейный. Верхний слой шота поджигается, и коктейль нужно быстро выпить через трубочку: не только вкусно, но и зрелищно.",
     "ingredients": [
       {
-        "Idingredient": "irish cream",
+        "name": "Айриш крим",
         "quantity": "15 мл."
       },
       {
-        "Idingredient": "coffee liqueur",
+        "name": "Кофейный ликер",
         "quantity": "15 мл."
       },
       {
-        "Idingredient": "citrus liqueur",
+        "name": "Цитрусовый ликер",
         "quantity": "15 мл."
       }
     ],
@@ -185,43 +185,43 @@
     "description": "Это очень крепкий лонг на пяти видах алкоголя. Кроме водки, джина, рома, текилы и цитрусового ликёра, туда добавляют колу и лимонный сок, так что на вкус он получается сладковато-кислым. Коктейль придумали во времена сухого закона в Америке, маскируя его под чай, поэтому иногда его до сих пор подают в чайниках или френч-прессах.",
     "ingredients": [
       {
-        "Idingredient": "vodka",
+        "name": "Водка",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "white rom",
+        "name": "Ром",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "tequila",
+        "name": "Текила",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "gin",
+        "name": "Джин",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "citrus liqueur",
+        "name": "Цитрусовый ликер",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "sugar syrup",
+        "name": "Сахарный сироп",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "lemon juice",
+        "name": "Сок лимона",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "coca-cola",
+        "name": "Coca-cola",
         "quantity": "100 мл."
       },
       {
-        "Idingredient": "lemon",
+        "name": "Лимон",
         "quantity": "40 г."
       },
       {
-        "Idingredient": "ice",
+        "name": "Лёд",
         "quantity": "300 г."
       }
     ],
@@ -235,31 +235,31 @@
     "description": "Вам нравится гоголь-моголь? Тогда попробуйте Клюквенный гоголь-моголь. Это ягодный, сливочный и сладкий коктейль на основе молока, безалкогольный. ",
     "ingredients": [
       {
-        "Idingredient": "milk",
+        "name": "Молоко",
         "quantity": "150 мл."
       },
       {
-        "Idingredient": "cream",
+        "name": "Сливки",
         "quantity": "50 мл."
       },
       {
-        "Idingredient": "yolk of egg",
+        "name": "Яичный желток",
         "quantity": "5 шт."
       },
       {
-        "Idingredient": "сranberry",
+        "name": "Клюква",
         "quantity": "25 г."
       },
       {
-        "Idingredient": "honey",
+        "name": "Мёд",
         "quantity": "20 мл."
       },
       {
-        "Idingredient": "sugar",
+        "name": "Сахар",
         "quantity": "25 г."
       },
       {
-        "Idingredient": "cookie",
+        "name": "cookie",
         "quantity": "10 г."
       }
     ],
@@ -273,27 +273,27 @@
     "description": "Вам нравятся лонги и моктейли? Тогда попробуйте этот фруктовый, пряный и сладкий коктейль на основе сока, безалкогольный. ",
     "ingredients": [
       {
-        "Idingredient": "sugar syrup",
+        "name": "Сахарный сироп",
         "quantity": "30 мл."
       },
       {
-        "Idingredient": "vanilla syrup",
+        "name": "Ванильный сироп",
         "quantity": "10 мл."
       },
       {
-        "Idingredient": "apple juice",
+        "name": "Яблочный сироп",
         "quantity": "100 мл."
       },
       {
-        "Idingredient": "lime juice",
+        "name": "Сок лайма",
         "quantity": "10 мл."
       },
       {
-        "Idingredient": "feijoa",
+        "name": "Фейхоа",
         "quantity": "80 г."
       },
       {
-        "Idingredient": "ice",
+        "name": "Лёд",
         "quantity": "300 г."
       }
     ],
@@ -307,23 +307,23 @@
     "description": "Вам нравятся лонги? Тогда попробуйте этот кофейный, цитрусовый и сладкий коктейль на основе сока, безалкогольный. ",
     "ingredients": [
       {
-        "Idingredient": "caramel syrup",
+        "name": "Карамельный сироп",
         "quantity": "15 мл."
       },
       {
-        "Idingredient": "espresso coffee",
+        "name": "Кофе",
         "quantity": "50 мл."
       },
       {
-        "Idingredient": "orange juice",
+        "name": "Апельсиновый сок",
         "quantity": "100 мл."
       },
       {
-        "Idingredient": "orange",
+        "name": "Апельсин",
         "quantity": "40 г."
       },
       {
-        "Idingredient": "ice",
+        "name": "Лёд",
         "quantity": "180 г."
       }
     ],
@@ -337,23 +337,23 @@
     "description": "Это слабоалкогольный цитрусовый лонг на основе текилы с добавлением гренадина и апельсинового сока. Простой, но очень вкусный и красивый: переходящий в оранжевый цвет красный гренадин действительно напоминает восходящее солнце. ",
     "ingredients": [
       {
-        "Idingredient": "tequila",
+        "name": "Текила",
         "quantity": "50 мл."
       },
       {
-        "Idingredient": "grenadine",
+        "name": "Гренадин",
         "quantity": "10 мл."
       },
       {
-        "Idingredient": "orange juice",
+        "name": "Апельсиновый сок",
         "quantity": "150 мл."
       },
       {
-        "Idingredient": "orange",
+        "name": "Апельсин",
         "quantity": "30 г."
       },
       {
-        "Idingredient": "ice",
+        "name": "Лёд",
         "quantity": "180 г."
       }
     ],
