@@ -63,23 +63,9 @@ function printSostav(ingrArr) {
         // console.log(ingrArr[i]);
         let kolvo = ingrArr[i].quantity;
         let name = ingrArr[i].Idingredient;
-        // const a = await takeOneIngredient(ingrArr[i].Idingredient);
-        // let name = a.name;
-        // console.log(name, kolvo);
+
         item += `<li> ${name}: ${kolvo}</li>`;
-        // console.log(item);
-        // console.log('a',a.name);
-        // .then(data => {
-        //     name = data.name;
-        //     // console.log(name, kolvo);
-        //     item = `<li>${name}: ${kolvo}</li>`;
-        //     return item;
-        //     // throw new Error('ошибка в запросе имени эелента');
-        // })
-        // .catch(error => {
-        //     // обрабатываем ошибку, если она возникла
-        //     console.error(error);
-        // });
+
     }
     // console.log('item', item);
     return item;
