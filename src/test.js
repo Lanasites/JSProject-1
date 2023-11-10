@@ -15,7 +15,7 @@ function testGetData() {
                 // obj - коктель со всеми свойствами
                 let obj = data[key];
                 // console.log(key.trim);
-                print(key, obj.username, obj.description, obj.cooking, obj.imageUrl);
+                print(key, obj.name, obj.description, obj.cooking, obj.imageUrl);
                 // так как ингредиенты в массиве хранятся, то их отдельно считываем, чтобы сделать список
                 let ingrArr = obj.ingredients;
                 // console.log(ingrArr);
