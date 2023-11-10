@@ -1,6 +1,7 @@
 import { writeCocktailData } from './firebase'
 import { writeIngredientData } from './firebase'
 
+// получение данных из файла json
 async function loadJSONFile(url) {
     try {
         const response = await fetch(url);
@@ -14,7 +15,7 @@ async function loadJSONFile(url) {
         return null;
     }
 }
-
+// Функция добавления коктелей из файла database-cocktail.json
 async function addCockteils() {
     // получение массива данных из файла json
     const cocktailArr = await loadJSONFile('./database-cocktail.json')
@@ -23,8 +24,9 @@ async function addCockteils() {
         // console.log(element);
     });
 }
-// addCockteils();
+export { addCockteils };
 
+// Функция добавления ингредиентолв из файла database-ingredients.json
 async function addIngridiens() {
     const ingridientArr = await loadJSONFile('./database-ingredients.json')
     ingridientArr.forEach(element => {
@@ -32,5 +34,4 @@ async function addIngridiens() {
         // console.log(element);
     });
 }
-
-// addIngridiens();
+export { addIngridiens };
