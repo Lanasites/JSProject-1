@@ -57,7 +57,7 @@ export { writeIngredientData };
 // -----------------------------------------------------------------------------------------------------------
 // чтение данных для вывода на странице 
 
-// Функция, которая возвращает все коктели или все ингридиенты
+// Функция, которая возвращает промис со всеми коктелями или всеми ингредиентами
 // nameObject: ingredients | cocktails
 async function takeAllObjects(nameObject) {
     // обращение к обьекту 
@@ -86,6 +86,40 @@ export { takeAllObjects };
 //     console.log(`Из промиса получены данные: ${ingridients}`);
 // })
 // console.log('objects', objects);
+
+// Функция, которая возвращает промис с определенным коктелем по ID 
+async function takeOneCocktail(idCocktail) {
+    // обращение к обьекту 
+    try {
+        const snapshot = await get(child(dbRef, `cocktails/${idCocktail}`));
+        if (snapshot.exists()) {
+            // console.log(snapshot.val());
+            return snapshot.val(); // возвращает промис с объектами
+        } else {
+            throw new Error("Запрашиваемого коктеля нет");
+        }
+    } catch (error) {
+        console.error(error);
+        return null; // Возвращаем null в случае ошибки
+    }
+} export { takeOneCocktail };
+
+// Функция, которая возвращает промис с определенным ингредиентом по ID 
+async function takeOneIngredient(idIngredient) {
+    // обращение к обьекту 
+    try {
+        const snapshot = await get(child(dbRef, `ingredients/${idIngredient}`));
+        if (snapshot.exists()) {
+            console.log(snapshot.val());
+            return snapshot.val(); // возвращает промис с объектами
+        } else {
+            throw new Error("Запрашиваемого коктеля нет");
+        }
+    } catch (error) {
+        console.error(error);
+        return null; // Возвращаем null в случае ошибки
+    }
+} export { takeOneIngredient };
 
 // -----------------------------------------------------------------------------------------------------------
 

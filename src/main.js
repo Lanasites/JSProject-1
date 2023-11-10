@@ -1,8 +1,21 @@
-// ФУНКЦИИ ДЛЯ РАБОТЫ С БД
-
+// --------------------------ФУНКЦИИ ДЛЯ РАБОТЫ С БД----------------------------
+// 
 //Для подключения БД
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 
+// --------------------------админские----------------------------
+
+// Функция добавления коктелей из файла database-cocktail.json
+// запускается только, когда были изменения в файле с данными, один раз в начале проекта
+// далее при необходимости
+import { addCockteils } from './UpdateData.js'
+
+// Функция добавления ингредиентолв из файла database-ingredients.json
+// запускается только, когда были изменения в файле с данными, один раз в начале проекта
+// далее при необходимости
+import { addIngridiens } from './UpdateData.js'
+
+// --------------------------для отображения контента на сайте----------------------------
 // Функция записи данных о коктеле
 // writeCocktailData(cocktailId, name, description, ingredients, cooking, imageUrl, alcohol)
 // пример
@@ -22,14 +35,14 @@ import { writeIngredientData } from './firebase.js'
 // nameObject: ingredients | cocktails
 import { takeAllObjects } from './firebase.js'
 
+// Функция, которая возвращает промис с определенным коктелем по ID 
+// пример
+// takeOneCocktail('Bumblebee');
+import { takeOneCocktail } from './firebase.js'
 
-// Функция добавления коктелей из файла database-cocktail.json
-// запускается только, когда были изменения в файле с данными, один раз в начале проекта
-// далее при необходимости
-import { addCockteils } from './UpdateData.js'
+// Функция, которая возвращает промис с определенным ингредиентом по ID 
+// пример
+// takeOneIngredient('lemon');
+import { takeOneIngredient } from './firebase.js'
 
-// Функция добавления ингредиентолв из файла database-ingredients.json
-// запускается только, когда были изменения в файле с данными, один раз в начале проекта
-// далее при необходимости
-import { addIngridiens } from './UpdateData.js'
 // ------------------------------------------------------------------------------------------
