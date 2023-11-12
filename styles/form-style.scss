@@ -16,6 +16,9 @@
 
 $black: #000;
 
+$mobile: "screen and (max-width: 599px)";
+$tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
+
 .sign-in-text {
     @extend %title;
     font-weight: 400;
@@ -39,6 +42,18 @@ $black: #000;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media #{$tablet} {
+        max-width: 31.25rem;
+        min-height: 15.75rem;
+    }
+
+    @media #{$mobile} {
+        max-width: 21.5625rem;
+        min-height: 15.25rem;
+        padding: 2.5rem 1.8rem;
+        // margin: 0 0.94rem;
+    }
 
     &__title {
         text-align: center;
@@ -67,6 +82,10 @@ $black: #000;
         text-align: center;
         @extend %text-input;
         color: $black;
+
+        @media #{$mobile} {
+            width: 17.8125rem;
+        }
     }
 
     &__input._error {

@@ -120,7 +120,7 @@ function formRemoveError(input) {
 function checkPasswords() {
     if (inputPassword2.value !== inputPassword.value) {
         formAddError(inputPassword2);
-        document.getElementById(`passwordRepeat-error`).innerHTML = 'Пароли не совпадают';
-        errors.push('Пароли не совпадают');
+        document.getElementById(`passwordRepeat-error`).innerHTML = 'Пароли не совпадают.';
+        errors.push('Пароли не совпадают.');
     }
 }
