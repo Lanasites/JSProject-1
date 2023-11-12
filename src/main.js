@@ -9,6 +9,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
 // запускается только, когда были изменения в файле с данными, один раз в начале проекта
 // далее при необходимости
 import { addCockteils } from './UpdateData.js'
+// addCockteils()
 
 // Функция добавления ингредиентолв из файла database-ingredients.json
 // запускается только, когда были изменения в файле с данными, один раз в начале проекта
@@ -44,5 +45,19 @@ import { takeOneCocktail } from './firebase.js'
 // пример
 // takeOneIngredient('lemon');
 import { takeOneIngredient } from './firebase.js'
+
+// Функция, которая возвращает промис объектами-коктелями по типу алкогольные или нет
+// Использование функции takeAlkoCocktail
+// takeAlkoCocktail(false) //true
+//     .then(arr => {
+//         // Обрабатываем результат - массив найденных коктейлей
+//         console.log(arr);
+//     })
+//     .catch(error => {
+//         // Обрабатываем ошибку, если она возникла
+//         console.error(error);
+//     });
+import { takeAlkoCocktail } from './firebase.js'
+
 
 // ------------------------------------------------------------------------------------------
