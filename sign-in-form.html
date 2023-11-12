@@ -12,7 +12,7 @@
 <body>
     <main class="container">
         <div class="form-wrapper">
-            <form name="form" class="form" novalidate>
+            <form name="formSignIn" class="form" novalidate>
                 <h2 class="form__title">ВОЙТИ / <span class="sign-in-text">РЕГИСТРАЦИЯ</span></h2>
 
                 <div class="form__item">
@@ -27,9 +27,6 @@
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
                     <span id="password-error" class="error-text"></span>
                 </div>
-
-
-                <div class="errors-info"></div>
 
                 <input name="submit-btn" type="submit" value="ВОЙТИ" class="form__submit" />
             </form>
