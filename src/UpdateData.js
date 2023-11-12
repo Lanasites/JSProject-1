@@ -1,6 +1,7 @@
 import { writeCocktailData } from './firebase'
 import { writeIngredientData } from './firebase'
 
+
 // получение данных из файла json
 async function loadJSONFile(url) {
     try {
