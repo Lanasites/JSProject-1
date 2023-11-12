@@ -1,27 +1,5 @@
 import { takeAllObjects } from './firebase.js'
-import { takeOneIngredient } from './firebase.js'
-
-/*
-async function show() {
-  try {
-    const response = await fetch('./database-ingredients.json');
-    console.log(response);
-    if (!response.ok) {
-      throw new Error(`Ошибка загрузки JSON файла: ${response.status}`);
-    }
-    const elem = await response.json();
-    console.log(elem);
-    print();
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
-
-window.onload = show();
-show();
-
-*/
+//import { takeOneIngredient } from './firebase.js'
 
 function testGetData() {
   console.log('Функция загрузки данных вызвана');
@@ -50,47 +28,15 @@ function testGetData() {
 function print(id, name, cocktails, img) {
   const printElement = document.getElementById('container');
   const template = `
-    <img src="${img}" alt="">
-    <div>${name}</div>
-    <div>Содержится в коктейлях: ${cocktails}</div>
-    <ul id = ${id}></ul>
+  <div class="container_item">
+    <img class="container_item__image" src="${img}" alt="">
+    <div class="container_item__ingredient">${name}</div>
+    <div class="container_item__coctails"><span>Содержится в коктейлях:</span><br> ${cocktails}</div>
+    </div>
     `
   const newElement = document.createElement('div');
   newElement.innerHTML = template;
   printElement.appendChild(newElement);
 }
-
-
-/*
-function printSostav(ingrArr) {
-  // console.log(ingrArr);
-  // захотим в массив из ингредиентов для коктеля, чтобы взять свойства
-  let item = '';
-  for (let i = 0; i < ingrArr.length; i++) {
-    // console.log(ingrArr[i]);
-    let kolvo = ingrArr[i].quantity;
-    let name = ingrArr[i].Idingredient;
-    // const a = await takeOneIngredient(ingrArr[i].Idingredient);
-    // let name = a.name;
-    // console.log(name, kolvo);
-    item += `<li> ${name}: ${kolvo}</li>`;
-    // console.log(item);
-    // console.log('a',a.name);
-    // .then(data => {
-    //     name = data.name;
-    //     // console.log(name, kolvo);
-    //     item = `<li>${name}: ${kolvo}</li>`;
-    //     return item;
-    //     // throw new Error('ошибка в запросе имени эелента');
-    // })
-    // .catch(error => {
-    //     // обрабатываем ошибку, если она возникла
-    //     console.error(error);
-    // });
-  }
-  // console.log('item', item);
-  return item;
-}
-*/
 
 testGetData()

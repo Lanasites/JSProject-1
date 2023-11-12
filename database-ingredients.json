@@ -1,13 +1,13 @@
 [
   {
     "idingredient": "lime",
-    "name": "лимон",
+    "name": "лайм",
     "cocktails": [
       "Mojito",
       "Margarita",
       "Gin and tonic"
     ],
-    "img": "./assets/img/lime"
+    "img": "./assets/img/Lime juice.png"
   },
   {
     "idingredient": "white rom",
