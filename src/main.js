@@ -59,8 +59,7 @@ import { takeOneIngredient } from './firebase.js'
 //     });
 import { takeAlkoCocktail } from './firebase.js'
 
-
-// ------------------------------------------------------------------------------------------import Splide from '@splidejs/splide';
+import Splide from '@splidejs/splide';
 /*document.addEventListener("DOMContentLoaded", function () {
   const agePopup = document.getElementById("age-confirmation-popup");
   const ageInput = document.getElementById("age-input");
@@ -77,10 +76,30 @@ import { takeAlkoCocktail } from './firebase.js'
   });
 });*/
 
+//Добавление коктейля на страницу
+import cocktail from '../database-cocktail.json';
+cocktail.forEach((item) => {
+  const splideList = document.querySelector('.splide__list');
+  const splideItem = document.createElement('li');
+  splideItem.classList.add('splide__slide')
+  const template = `
+  <div class = 'splide__image'>
+  <img src = ${item.image} alt = "${item.name}">
+  </div>
+  <div class = "splide__info">
+  <p class = "splide__name">${item.name}</p>
+  <p class = "splide__text">${item.description}</p>
+  <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
+  </div>
+  `
+  splideItem.innerHTML = template;
+  splideList.append(splideItem);
+})
 
 const mySlider = new Splide('.splide');
 mySlider.mount();
 new Splide( '.splide', {
   type   : 'loop',
-  perPage: 3,
+  wheel : true,
+  speed : 0,
 } );
