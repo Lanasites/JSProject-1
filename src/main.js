@@ -18,3 +18,7 @@ import Splide from '@splidejs/splide';
 
 const mySlider = new Splide('.splide');
 mySlider.mount();
+new Splide( '.splide', {
+  type   : 'loop',
+  perPage: 3,
+} );
