@@ -1,0 +1,28 @@
+.container {
+    .container-wrapper {
+        &__pic {
+            &-img {}
+        }
+
+        &__text {
+            &-recipe {
+                &-heading-h3 {}
+
+                &-about {}
+
+                &-heading-h2 {}
+
+                &-ingredients {}
+
+                &-heading-h2 {}
+
+                &-text-cook-up {}
+
+            }
+
+            &-favourite {
+                &-button {}
+            }
+        }
+    }
+}
