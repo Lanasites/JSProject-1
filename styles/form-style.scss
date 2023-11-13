@@ -1,0 +1,147 @@
+%title {
+    font-family: Helvetica;
+    font-size: 1.25rem;
+    font-style: normal;
+    line-height: 1.25rem;
+}
+
+%text-input {
+    font-family: Helvetica;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1rem;
+    letter-spacing: 0em;
+}
+
+$black: #000;
+
+$mobile: "screen and (max-width: 599px)";
+$tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
+
+.sign-in-text {
+    @extend %title;
+    font-weight: 400;
+}
+
+.form-wrapper {
+    max-width: 90rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    max-width: 33.25rem;
+    // min-height: 18.125rem;
+    width: 100%;
+    // margin: 0 0.9375rem;
+    padding: 3.13rem 2.88rem;
+    border: 0.0625rem solid $black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media #{$tablet} {
+        max-width: 31.25rem;
+        min-height: 15.75rem;
+    }
+
+    @media #{$mobile} {
+        max-width: 21.5625rem;
+        min-height: 15.25rem;
+        padding: 2.5rem 1.8rem;
+        // margin: 0 0.94rem;
+    }
+
+    &__title {
+        text-align: center;
+        @extend %title;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    &__item {
+        margin-bottom: 1.375rem;
+    }
+
+    &__label {
+        display: block;
+    }
+
+    &__input {
+        padding: 0.625rem;
+        width: 25rem;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 0.0625rem solid $black;
+        display: block;
+        outline: none;
+        text-align: center;
+        @extend %text-input;
+        color: $black;
+
+        @media #{$mobile} {
+            max-width: 17.8125rem;
+        }
+    }
+
+    &__input._error {
+        border-color: red;
+    }
+
+    &__submit {
+        width: 12.0625rem;
+        height: 2.8125rem;
+        cursor: pointer;
+        margin-top: 0.375rem;
+        border: 0.0625rem solid $black;
+        background: rgba(217, 217, 217, 0.00);
+
+        color: $black;
+        font-family: Helvetica;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.125rem;
+    }
+
+    &__submit:hover {
+        background-color: $black;
+        color: white;
+    }
+}
+
+.checkbox-wrap {
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    margin-top: 1.0625rem;
+    column-gap: 0.81rem;
+}
+
+.checkbox {
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    &__label {
+        color: #A2A2A2;
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1rem;
+        cursor: pointer;
+    }
+}
+
+.checkbox:checked {
+    accent-color: #CCC4C4;
+}
+
+.error-text {
+    color: red;
+}
