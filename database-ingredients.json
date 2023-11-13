@@ -1,47 +1,52 @@
 [
   {
-    "id-ingredient": "lime",
-    "name": "лимон",
+    "idingredient": "lime",
+    "name": "лайм",
     "cocktails": [
       "Mojito",
       "Margarita",
       "Gin and tonic"
-    ]
+    ],
+    "img": "./assets/img/Lime juice.png"
   },
   {
-    "id-ingredient": "white rom",
+    "idingredient": "white rom",
     "name": "ром",
     "cocktails": [
       "Long Island",
       "Mojito"
-    ]
+    ],
+    "img": "./assets/img/white-rum.jpg"
   },
   {
-    "id-ingredient": "sugar syrup",
+    "idingredient": "sugar syrup",
     "name": "сахарный сироп",
     "cocktails": [
       "Mojito",
       "Margarita",
       "Long Island",
       "Feijoa delight"
-    ]
+    ],
+    "img": "./assets/img/1562833766-Simple_syrup_-_icon.jpg"
   },
   {
-    "id-ingredient": "soda",
+    "idingredient": "soda",
     "name": "содовая",
     "cocktails": [
       "Mojito"
-    ]
+    ],
+    "img": "./assets/img/soda.jpg"
   },
   {
-    "id-ingredient": "mint",
+    "idingredient": "mint",
     "name": "мята",
     "cocktails": [
       "Mojito"
-    ]
+    ],
+    "img": "./assets/img/mint.jpg"
   },
   {
-    "id-ingredient": "ice",
+    "idingredient": "ice",
     "name": "лед",
     "cocktails": [
       "Mojito",
@@ -52,254 +57,289 @@
       "Feijoa delight",
       "Bumblebee",
       "Tequila Sunrise"
-    ]
+    ],
+    "img": "./assets/img/ice.jpg"
   },
   {
-    "id-ingredient": "tequila",
+    "idingredient": "tequila",
     "name": "текила",
     "cocktails": [
       "Margarita",
       "Long Island",
       "Tequila Sunrise"
-    ]
+    ],
+    "img": "./assets/img/tequila.jpg"
   },
   {
-    "id-ingredient": "citrus liqueur",
+    "idingredient": "citrus liqueur",
     "name": "цитрусовый ликер",
     "cocktails": [
       "Margarita",
       "B-52",
       "Long Island"
-    ]
+    ],
+    "img": "./assets/img/ликер_трипл_сек.jpg"
   },
   {
-    "id-ingredient": "lime juice",
+    "idingredient": "lime juice",
     "name": "лаймовый сок",
     "cocktails": [
       "Margarita",
       "Feijoa delight"
-    ]
+    ],
+    "img": "./assets/img/lime-preview.jpg"
   },
   {
-    "id-ingredient": "salt",
+    "idingredient": "salt",
     "name": "соль",
     "cocktails": [
       "Margarita"
-    ]
+    ],
+    "img": "./assets/img/salt-preview.jpg"
   },
   {
-    "id-ingredient": "gin",
+    "idingredient": "gin",
     "name": "джин",
     "cocktails": [
       "Gin and tonic",
       "Long Island"
-    ]
+    ],
+    "img": "./assets/img/джин.jpg"
   },
   {
-    "id-ingredient": "tonic",
+    "idingredient": "tonic",
     "name": "тоник",
     "cocktails": [
       "Gin and tonic"
-    ]
+    ],
+    "img": "./assets/img/tonic.jpg"
   },
   {
-    "id-ingredient": "milk",
+    "idingredient": "milk",
     "name": "молоко",
     "cocktails": [
       "Strawberry milkshake",
       "Ctranberry Eggnog"
-    ]
+    ],
+    "img": "./assets/img/Milk.jpg"
   },
   {
-    "id-ingredient": "strawberry ice-cream",
+    "idingredient": "strawberry ice-cream",
     "name": "клубничное мороженное",
     "cocktails": [
       "Strawberry milkshake"
-    ]
+    ],
+    "img": "./assets/img/Ice-cream-Strawberry.jpg"
   },
   {
-    "id-ingredient": "strawberry",
+    "idingredient": "strawberry",
     "name": "клубника",
     "cocktails": [
       "Strawberry milkshake"
-    ]
+    ],
+    "img": "./assets/img/Strawberry.jpg"
   },
   {
-    "id-ingredient": "vodka",
+    "idingredient": "vodka",
     "name": "водка",
     "cocktails": [
       "Sex on the beatch",
       "Long Island"
-    ]
+    ],
+    "img": "./assets/img/водка.jpg"
   },
   {
-    "id-ingredient": "peach liqueur",
+    "idingredient": "peach liqueur",
     "name": "персиковый ликер",
     "cocktails": [
       "Sex on the beatch"
-    ]
+    ],
+    "img": "./assets/img/ликер_персик.jpg"
   },
   {
-    "id-ingredient": "cranberry juice",
+    "idingredient": "cranberry juice",
     "name": "клюквенный сок",
     "cocktails": [
       "Sex on the beatch"
-    ]
+    ],
+    "img": "./assets/img/Cranberry-juice.jpg"
   },
   {
-    "id-ingredient": "pineapple juice",
+    "idingredient": "pineapple juice",
     "name": "ананасовый сок",
     "cocktails": [
       "Sex on the beatch"
-    ]
+    ],
+    "img": "./assets/img/pineapple-juice.jpg"
   },
   {
-    "id-ingredient": "pineapple",
+    "idingredient": "pineapple",
     "name": "ананас",
     "cocktails": [
       "Sex on the beatch"
-    ]
+    ],
+    "img": "./assets/img/pineapple.jpg"
   },
   {
-    "id-ingredient": "cherry",
+    "idingredient": "cherry",
     "name": "вишня",
     "cocktails": [
       "Sex on the beatch"
-    ]
+    ],
+    "img": "./assets/img/cherry.jpg"
   },
   {
-    "id-ingredient": "irish cream",
+    "idingredient": "irish cream",
     "name": "айриш крим",
     "cocktails": [
       "B-52"
-    ]
+    ],
+    "img": "./assets/img/irish_cream.jpg"
   },
   {
-    "id-ingredient": "coffee liqueur",
+    "idingredient": "coffee liqueur",
     "name": "кофейный ликер",
     "cocktails": [
       "Long Island"
-    ]
+    ],
+    "img": "./assets/img/ликер_кофе.jpg"
   },
   {
-    "id-ingredient": "lemon juice",
+    "idingredient": "lemon juice",
     "name": "лимонный сок",
     "cocktails": [
       "Long Island"
-    ]
+    ],
+    "img": "./assets/img/Lemon_juice.jpg"
   },
   {
-    "id-ingredient": "coca-cola",
+    "idingredient": "coca-cola",
     "name": "кока-кола",
     "cocktails": [
       "Long Island"
-    ]
+    ],
+    "img": "./assets/img/Coca-Cola.jpg"
   },
   {
-    "id-ingredient": "lemon",
+    "idingredient": "lemon",
     "name": "лимон",
     "cocktails": [
       "Long Island"
-    ]
+    ],
+    "img": "./assets/img/lemon.jpg"
   },
   {
-    "id-ingredient": "cream",
+    "idingredient": "cream",
     "name": "сливки",
     "cocktails": [
       "Ctranberry Eggnog"
-    ]
+    ],
+    "img": "./assets/img/Low-fat-cream-anchor.jpg"
   },
   {
-    "id-ingredient": "yolk of egg",
+    "idingredient": "yolk of egg",
     "name": "яичный желток",
     "cocktails": [
       "Ctranberry Eggnog"
-    ]
+    ],
+    "img": "./assets/img/egg-yolk.jpg"
   },
   {
-    "id-ingredient": "сranberry",
+    "idingredient": "сranberry",
     "name": "клюква",
     "cocktails": [
       "Ctranberry Eggnog"
-    ]
+    ],
+    "img": "./assets/img/Cranberriy.jpg"
   },
   {
-    "id-ingredient": "honey",
+    "idingredient": "honey",
     "name": "мед",
     "cocktails": [
       "Ctranberry Eggnog"
-    ]
+    ],
+    "img": "./assets/img/Honey.jpg"
   },
   {
-    "id-ingredient": "sugar",
+    "idingredient": "sugar",
     "name": "сахар",
     "cocktails": [
       "Ctranberry Eggnog"
-    ]
+    ],
+    "img": "./assets/img/sugar.jpg"
   },
   {
-    "id-ingredient": "cookie",
+    "idingredient": "cookie",
     "name": "печенье",
     "cocktails": [
       "Ctranberry Eggnog"
-    ]
+    ],
+    "img": "./assets/img/Cookies.jpg"
   },
   {
-    "id-ingredient": "vanilla syrup",
+    "idingredient": "vanilla syrup",
     "name": "ванильный сироп",
     "cocktails": [
       "Feijoa delight"
-    ]
+    ],
+    "img": "./assets/img/Vanilla_syrup.jpg"
   },
   {
-    "id-ingredient": "apple juicee",
+    "idingredient": "apple juicee",
     "name": "яблочный сок",
     "cocktails": [
       "Feijoa delight"
-    ]
+    ],
+    "img": "./assets/img/Apple-juice.jpg"
   },
   {
-    "id-ingredient": "feijoa",
+    "idingredient": "feijoa",
     "name": "фейхоа",
     "cocktails": [
       "Feijoa delight"
-    ]
+    ],
+    "img": "./assets/img/Feijoa.jpg"
   },
   {
-    "id-ingredient": "caramel syrup",
+    "idingredient": "caramel syrup",
     "name": "карамельный сироп",
     "cocktails": [
       "Bumblebee"
-    ]
+    ],
+    "img": "./assets/img/Caramel_syrup.jpg"
   },
   {
-    "id-ingredient": "espresso coffee",
+    "idingredient": "espresso coffee",
     "name": "кофе эспрессо",
     "cocktails": [
       "Bumblebee"
-    ]
+    ],
+    "img": "./assets/img/Espresso.jpg"
   },
   {
-    "id-ingredient": "orange juice",
+    "idingredient": "orange juice",
     "name": "апельсиновый сок",
     "cocktails": [
       "Bumblebee",
       "Tequila Sunrise"
-    ]
+    ],
+    "img": "./assets/img/Orange-juice.jpg"
   },
   {
-    "id-ingredient": "orange",
+    "idingredient": "orange",
     "name": "апельсин",
     "cocktails": [
       "Bumblebee",
       "Tequila Sunrise"
-    ]
+    ],
+    "img": "./assets/img/orange-.jpg"
   },
   {
-    "id-ingredient": "grenadine",
+    "idingredient": "grenadine",
     "name": "гренадин",
     "cocktails": [
       "Tequila Sunrise"
-    ]
+    ],
+    "img": "./assets/img/Grenadine.jpg"
   }
 ]
