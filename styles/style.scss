@@ -394,7 +394,7 @@
         text-align: justify;
         margin-bottom: 1vw;
         @media (max-width: $s) {
-            width: 100vw;
+            width: 90vw;
         font-size: 2.5vw;
         padding: 1.5vw;
         margin: 1vw;
@@ -403,7 +403,7 @@
             width: 100vw;
             font-size: 4.5vw;
         padding: 2.5vw;
-        margin: 1vw;
+        margin: 1.5vw;
         }
     }
 
@@ -439,6 +439,7 @@
     }
 
     svg {
+        background-color: #fff;
         color: black;
         font-size: 2rem;
         opacity: 1;
