@@ -1,7 +1,7 @@
 import Splide from '@splidejs/splide';
 export const gallerySlider = new Splide('#gallerySlider', {
     wheel: true,
-    type: 'loop',
+    // type: 'loop',
     pagination: false,
     height: '48vh',
     width: '100vw',

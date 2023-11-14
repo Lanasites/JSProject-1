@@ -1,19 +1,52 @@
-import cocktails from '../database-cocktail.json';
+import { takeAllObjects } from './firebase.js';
+import { takeAlkoCocktail } from './firebase.js';
 
-// this block of code filters out first letters of cocktails contained in database to be printed out on page
-export const letters = cocktails
-    .map(function(item) {
-        // Return the first letter of every cocktail's name
-        return item.name.substring(0, 1);
-    })
-    .filter(function(value, index, self) {
-        return self.indexOf(value) === index; // filter out repeating letters
-    })
-    .sort(); // put letters in alphabetical order
+const filterLetter = document.getElementById('filterLetter'); // div where letters go
+
+export async function fetchAllFirstLetters() {
+    try {
+        filterLetter.innerHTML = '';
+        const data = await takeAllObjects('cocktails');
+        let letters = [];
+        for (let key in data) {
+            let obj = data[key];
+            let firstLetter = obj.name.substring(0, 1);
+            letters.push(firstLetter);
+        }
+        letters = letters
+            .filter(function(value, index, self) {
+                return self.indexOf(value) === index; // filter out repeating letters
+            })
+            .sort(); // put letters in alphabetical order
+        letters.forEach(item => printLetter(item));
+    } catch (error) {
+        console.error('Ошибка при получении данных:', error);
+    }
+}
+
+export async function fetchAlkoFirstLetters(alcohol) {
+    try {
+        filterLetter.innerHTML = '';
+        const data = await takeAlkoCocktail(alcohol);
+        let letters = [];
+        for (let key in data) {
+            let obj = data[key];
+            let firstLetter = obj.name.substring(0, 1);
+            letters.push(firstLetter);
+        }
+        letters = letters
+            .filter(function(value, index, self) {
+                return self.indexOf(value) === index; // filter out repeating letters
+            })
+            .sort(); // put letters in alphabetical order
+        letters.forEach(item => printLetter(item));
+    } catch (error) {
+        console.error('Ошибка при получении данных:', error);
+    }
+}
 
 //makes a div, fills it with a letter and puts the div into filterLetter div
-export const printLetter = item => {
-    const filterLetter = document.getElementById('filterLetter'); // div where letters go
+const printLetter = item => {
     const newLetter = document.createElement('div');
     newLetter.className = 'letter';
     newLetter.textContent = item;
