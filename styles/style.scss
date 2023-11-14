@@ -432,9 +432,26 @@
 }
 
 .splide__arrows {
-    background-color: black;
+    background: none;
+    margin: 0 3vw;
+    @media screen and (max-width: $s) {
+        margin: 0 1vw;
+    }
+
+    svg {
+        color: black;
+        font-size: 2rem;
+        opacity: 1;
+    }
 }
 
+.splide__arrow--prev {
+    left: 0;
+}
+
+.splide__arrow--next {
+    right: 0;
+}
 //FOOTER
 .footer-block{
     max-width: 83.9rem;
