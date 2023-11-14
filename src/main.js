@@ -74,22 +74,19 @@ import { takeOneIngredient } from './firebase.js'
 //     });
 import { takeAlkoCocktail } from './firebase.js'
 
-import Splide from '@splidejs/splide';
-/*document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const agePopup = document.getElementById("age-confirmation-popup");
   const ageInput = document.getElementById("age-input");
   const confirmBtn = document.getElementById("confirm-btn");
-
   confirmBtn.addEventListener("click", function () {
     const age = parseInt(ageInput.value);
-
     if (age >= 18) {
       agePopup.style.display = "none";
     } else {
       alert("Вы должны быть старше 18 лет!");
     }
   });
-});*/
+});
 
 //Добавление коктейля на страницу
 import cocktail from '../database-cocktail.json';
@@ -111,6 +108,7 @@ cocktail.forEach((item) => {
   splideList.append(splideItem);
 })
 
+import Splide from '@splidejs/splide';
 const mySlider = new Splide('.splide');
 mySlider.mount();
 new Splide( '.splide', {
