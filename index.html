@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project 1</title>
+  <title>ALCOSHAKE</title>
+  <link href="
+  https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+  " rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.scss">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap" rel="stylesheet">
 
@@ -33,6 +36,7 @@
 </head>
 
 <body>
+    <!-- Структура main главной страницы -->
 <!-- Структура Header главной страницы -->
   <header class="header-block">
     <div class="header-block  container">
@@ -82,9 +86,36 @@
       </div>
     </div>
   </header>
+    <!--Проверка возраста-->
+    <div id="age-confirmation-popup">
+      <div class="content">
+          <h2>Подтверждение возраста</h2>
+          <p>Для продолжения, пожалуйста, введите ваш возраст:</p>
+          <input type="number" id="age-input" placeholder="Ваш возраст">
+          <button id="confirm-btn">Подтвердить</button>
+      </div>
+  </div>
+  <!-- Структура сплайдера -->
+  <section class="splide" aria-label="Splide Basic HTML Example">
+    <div class="splide__arrows">
+      <button class="splide__arrow splide__arrow--prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32" fill="none">
+          <path d="M16.4143 15.9795C14.6108 14.3575 12.8633 12.7716 11.1047 11.1856C7.53134 7.96572 3.96921 4.74579 0.395873 1.52586C-0.0297907 1.14139 -0.0970013 0.672821 0.205444 0.288352C0.507889 -0.0961173 0.944754 -0.0961173 1.38162 0.288352C6.90405 5.26242 12.4265 10.2485 17.9489 15.2346C18.509 15.7392 18.509 16.2438 17.9601 16.7484C12.4153 21.7465 6.87044 26.7446 1.32561 31.7427C0.933553 32.1032 0.474284 32.0791 0.183041 31.7067C-0.119404 31.3222 -0.0409929 30.8416 0.373469 30.4692C5.61585 25.7354 10.8582 21.0136 16.1118 16.2799C16.2014 16.1837 16.291 16.0996 16.4143 15.9795Z" fill="currentColor" fill-opacity="0.7"/>
+        </svg>
+      </button>
+      <button class="splide__arrow splide__arrow--next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32" fill="none">
+          <path d="M16.4143 15.9795C14.6108 14.3575 12.8633 12.7716 11.1047 11.1856C7.53134 7.96572 3.96921 4.74579 0.395873 1.52586C-0.0297907 1.14139 -0.0970013 0.672821 0.205444 0.288352C0.507889 -0.0961173 0.944754 -0.0961173 1.38162 0.288352C6.90405 5.26242 12.4265 10.2485 17.9489 15.2346C18.509 15.7392 18.509 16.2438 17.9601 16.7484C12.4153 21.7465 6.87044 26.7446 1.32561 31.7427C0.933553 32.1032 0.474284 32.0791 0.183041 31.7067C-0.119404 31.3222 -0.0409929 30.8416 0.373469 30.4692C5.61585 25.7354 10.8582 21.0136 16.1118 16.2799C16.2014 16.1837 16.291 16.0996 16.4143 15.9795Z" fill="currentColor" fill-opacity="0.7"/>
+        </svg>
+      </button>
 
-  <!-- Структура main главной страницы -->
+    <div class="splide__track">
+      <ul class="splide__list">
+      </ul>
+    </div>
 
+  </section>
+  
   <!-- Структура Footer главной страницы -->
   <footer class="footer-block">
     <div class="footer-block__footer">
@@ -108,7 +139,6 @@
       <p>© ALCOSHAKE 2023</p>
     </div>
   </footer>
-
   <script type="module" src="./src/main.js"></script>
 </body>
 
