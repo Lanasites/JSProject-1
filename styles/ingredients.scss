@@ -122,3 +122,69 @@ span {
     text-align: center;
   }
 }
+
+//-----------modal----------//
+
+#modal {
+  max-width: 50vw;
+  border: 3px inset purple;
+}
+
+.btn {
+  padding: 1vw 1vw 0 0;
+  display: flex;
+  justify-content: end;
+
+  &_close {
+    width: 3.3vw;
+    font-size: 0.6vw;
+  }
+}
+
+.modal_item {
+  padding-top: 0.5vw;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border-bottom: 1px inset purple;
+
+  &-1 {}
+
+  &-2 {}
+}
+
+.modal_item-1 {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    height: 7vw;
+  }
+}
+
+.modal_item-2 {
+  &__name {
+    font-weight: bold;
+    font-size: 1vw;
+  }
+
+  &__description {
+    padding: 0 0.2vw;
+    font-size: 0.9vw;
+  }
+
+  &__cooking {
+    padding: 0 0.2vw;
+    font-size: 0.9vw;
+  }
+
+  &__id {
+    text-align: start;
+    font-size: 0.9vw;
+  }
+}
+
+span {
+  font-weight: 550;
+  font-size: 0.9vw;
+}
