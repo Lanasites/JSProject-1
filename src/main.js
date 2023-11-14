@@ -1,3 +1,18 @@
+
+//Добавление навигации бургер-меню
+let menuBtn = document.querySelector('.burger-menu__btn');
+let menu = document.querySelector('.header-block__bm-list');
+menuBtn.addEventListener('click', function(){
+    menuBtn.classList.toggle('active');
+    menu.classList.toggle('active');
+});
+//Переходы между страницами
+document.getElementById('profile').addEventListener("click", goToPersonalAccount);
+function goToPersonalAccount (){
+    window.location.href = "profile-and-favourites.html";
+}
+
+
 // --------------------------ФУНКЦИИ ДЛЯ РАБОТЫ С БД----------------------------
 // 
 //Для подключения БД
@@ -59,5 +74,45 @@ import { takeOneIngredient } from './firebase.js'
 //     });
 import { takeAlkoCocktail } from './firebase.js'
 
+document.addEventListener("DOMContentLoaded", function () {
+  const agePopup = document.getElementById("age-confirmation-popup");
+  const ageInput = document.getElementById("age-input");
+  const confirmBtn = document.getElementById("confirm-btn");
+  confirmBtn.addEventListener("click", function () {
+    const age = parseInt(ageInput.value);
+    if (age >= 18) {
+      agePopup.style.display = "none";
+    } else {
+      alert("Вы должны быть старше 18 лет!");
+    }
+  });
+});
 
-// ------------------------------------------------------------------------------------------
+//Добавление коктейля на страницу
+import cocktail from '../database-cocktail.json';
+cocktail.forEach((item) => {
+  const splideList = document.querySelector('.splide__list');
+  const splideItem = document.createElement('li');
+  splideItem.classList.add('splide__slide')
+  const template = `
+  <div class = 'splide__image'>
+  <img src = ${item.image} alt = "${item.name}">
+  </div>
+  <div class = "splide__info">
+  <p class = "splide__name">${item.name}</p>
+  <p class = "splide__text">${item.description}</p>
+  <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
+  </div>
+  `
+  splideItem.innerHTML = template;
+  splideList.append(splideItem);
+})
+
+import Splide from '@splidejs/splide';
+const mySlider = new Splide('.splide');
+mySlider.mount();
+new Splide( '.splide', {
+  type   : 'loop',
+  wheel : true,
+  speed : 0,
+} );
