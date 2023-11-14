@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="./styles/form-style.scss">
+</head>
+
+<body>
+    <main class="container">
+        <div class="form-wrapper">
+            <form name="formSignIn" class="form" novalidate>
+                <h2 class="form__title">ВОЙТИ / <span class="sign-in-text">РЕГИСТРАЦИЯ</span></h2>
+
+                <div class="form__item">
+                    <input type="email" id="email" name="email" class="form__input _req" required
+                        placeholder="Электронный адрес" />
+                    <span id="email-error" class="error-text"></span>
+                </div>
+
+                <div class="form__item">
+                    <input type="text" id="password" name="password" class="form__input _req" required minlength="8"
+                        placeholder="Пароль"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
+                    <span id="password-error" class="error-text"></span>
+                </div>
+
+                <input name="submit-btn" type="submit" value="ВОЙТИ" class="form__submit" />
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>
