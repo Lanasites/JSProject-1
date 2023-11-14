@@ -9,7 +9,7 @@ menuBtn.addEventListener('click', function(){
 //Переходы между страницами
 document.getElementById('profile').addEventListener("click", goToPersonalAccount);
 function goToPersonalAccount (){
-    window.location.href = "account-favourites.html";
+    window.location.href = "profile-and-favourites.html";
 }
 
 
