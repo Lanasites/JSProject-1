@@ -109,25 +109,6 @@ cocktail.forEach((item) => {
     splideList.append(splideItem);
 })
 
-//Добавление коктейля на страницу
-import cocktail from '../database-cocktail.json';
-cocktail.forEach((item) => {
-    const splideList = document.querySelector('.splide__list');
-    const splideItem = document.createElement('li');
-    splideItem.classList.add('splide__slide')
-    const template = `
-  <div class = 'splide__image'>
-  <img src = ${item.image} alt = "${item.name}">
-  </div>
-  <div class = "splide__info">
-  <p class = "splide__name">${item.name}</p>
-  <p class = "splide__text">${item.description}</p>
-  <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
-  </div>
-  `
-    splideItem.innerHTML = template;
-    splideList.append(splideItem);
-})
 
 document.addEventListener("DOMContentLoaded", function () {
     const agePopup = document.getElementById("age-confirmation-popup");
@@ -141,15 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("Вы должны быть старше 18 лет!");
         }
     });
-});
-
-import Splide from '@splidejs/splide';
-const mySlider = new Splide('.splide');
-mySlider.mount();
-new Splide('.splide', {
-    type: 'loop',
-    wheel: true,
-    speed: 0,
 });
 
 import Splide from '@splidejs/splide';
