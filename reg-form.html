@@ -7,10 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
     <link rel="stylesheet" href="./styles/form-style.scss">
+    <link rel="stylesheet" href="./styles/style.scss">
 </head>
 
 <body>
+    <!-- Структура Header главной страницы -->
+    <header class="header-block">
+        <div class="header-block  container">
+            <div class="header-block__burger-menu">
+                <div class="burger-menu__btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="header-block__logo" id="logotype">
+                <img class="logo__image" src="./assets/png/logo-01 1.png" alt="Logo">
+                <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
+            </div>
+            <nav class="header-block__headline">
+                <ul class="headline__nav-list">
+                    <li class="headline__nav-item"><a href="#" class="headline__nav-link" id="main-page">Главная</a>
+                    </li>
+                    <li class="headline__nav-item"><a href="#" class="headline__nav-link"
+                            id="ingredients-page">Ингредиенты</a>
+                    </li>
+                    <li class="headline__nav-item"><a href="#" class="headline__nav-link" id="recipes-page">Рецепты</a>
+                        <!-- <ul class="dropdown-menu" id="dropdown-recipes">
+                <li><a href="#" class="dropdown-menu__item" id="alcohol-page">Алкогольные</a></li>
+                <li><a href="#" class="dropdown-menu__item" id="nonalcohol-page">Безалкогольные</a></li>
+                </ul>   -->
+                    </li>
+                    <li class="headline__nav-item"><a href="#" class="headline__nav-link"
+                            id="random-cocktail-page">Рандомный
+                            коктейль</a></li>
+                </ul>
+            </nav>
+            <div class="header-block__search">
+                <input type="text" placeholder="" class="search__input" id="search-value">
+                <button type="submit" class="search__btn" id="search"></button>
+            </div>
+            <div class="header-block__user-profile">
+                <button type="button" class="user-profile__btn" id="profile"></button>
+            </div>
+            <div class="header-block__favourite">
+                <button type="button" class="favourite__star" id="star"></button>
+            </div>
+        </div>
+        <!-- <div class="menu"> -->
+        <div class="header-block__bm-list">
+            <ul class="bm-list__list">
+                <li><a href="#" class="list__item">Главная</a></li>
+                <li><a href="#" class="list__item">Ингредиенты</a></li>
+                <li><a href="#" class="list__item">Рецепты</a></li>
+                <li><a href="#" class="list__item">Рандомный коктейль</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+
     <main class="container">
+        <!-- Форма регистрации -->
         <div class="form-wrapper">
             <form name="formRegistration" class="form" novalidate>
                 <h2 class="form__title">
@@ -58,6 +115,32 @@
             </form>
         </div>
     </main>
+
+    <!-- Структура Footer главной страницы -->
+    <footer class="footer-block">
+        <div class="footer-block__footer">
+            <div class="footer__logo" id="footer-logotype">
+                <img class="logo__image" src="./assets/png/logo-01 1.png" alt="Logo">
+                <p class="logo__name">ALCOSHAKE</p>
+            </div>
+            <nav class="footer__nav">
+                <ul class="nav__nav-list">
+                    <li class="nav__nav-item"><a href="#" class="nav__nav-link" id="footer-main-page">Главная</a></li>
+                    <li class="nav__nav-item"><a href="#" class="nav__nav-link"
+                            id="footer-ingredients-page">Ингредиенты</a></li>
+                    <li class="nav__nav-item"><a href="#" class="nav__nav-link" id="footer-recipes-page">Рецепты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__team-logo" id="team-logotype">
+                <img class="team-logo__image" src="./assets/png/icon_github-01 1.png" alt="Logo">
+                <p class="team-logo__name">Название команды</p>
+            </div>
+        </div>
+        <div class="footer-block__authority">
+            <p>© ALCOSHAKE 2023</p>
+        </div>
+    </footer>
 
     <script src="./src/reg-form.js"></script>
 </body>
