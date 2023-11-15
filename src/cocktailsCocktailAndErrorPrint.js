@@ -25,7 +25,7 @@ export const printErrorPreview = item => {
     let errorDiv = document.createElement('div');
     errorDiv.className = 'message';
     const template = `<p>Удивительно, но мы не нашли такой коктейль!</p>
-    <p>Вы можете <a href="#">зарегистрироваться здесь</a> и добавить его</p>`;
+    <p>Чтобы добавить его, Вы можете зарегистрироваться или авторизоваться <a href="../reg-form.html">здесь</a> </p>`;
     errorDiv.innerHTML = `${template}`;
     newSlide.appendChild(errorDiv);
     splideList.appendChild(newSlide);
