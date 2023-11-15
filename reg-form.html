@@ -76,11 +76,11 @@
                     <a href="./reg-form.html" class="default-link link-active">РЕГИСТРАЦИЯ</a>
                 </h2>
 
-                <div class="form__item">
+                <!-- <div class="form__item">
                     <input type="text" id="login" name="login" class="form__input _req" required minlength="2"
                         maxlength="20" placeholder="Логин" />
                     <span id="login-error" class="error-text"></span>
-                </div>
+                </div> -->
 
                 <div class="form__item">
                     <input type="email" id="email" name="email" class="form__input _req" required
@@ -111,7 +111,7 @@
                     <br>
                 </div>
 
-                <input name="submit-btn" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" />
+                <input name="submit-btn" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" id='btnLogin' />
             </form>
         </div>
     </main>
@@ -142,7 +142,8 @@
         </div>
     </footer>
 
-    <script src="./src/reg-form.js"></script>
+    <script type='module' src="./src/reg-form.js"></script>
+
 </body>
 
 </html>

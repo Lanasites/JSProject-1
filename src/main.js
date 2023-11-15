@@ -74,6 +74,8 @@ import { takeOneIngredient } from './firebase.js'
 //     });
 import { takeAlkoCocktail } from './firebase.js'
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
   const agePopup = document.getElementById("age-confirmation-popup");
   const ageInput = document.getElementById("age-input");
