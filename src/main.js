@@ -135,18 +135,37 @@ new Splide('.splide', {
 
 
 // добавление инфы о коктейле на страницу самого коктейля
-cocktail.forEach((item) => {
+
+function showCoctail() {
     const
-    const template = `
-  <div class = 'splide__image'>
-  <img src = ${item.image} alt = "${item.name}">
-  </div>
-  <div class = "splide__info">
-  <p class = "splide__name">${item.name}</p>
-  <p class = "splide__text">${item.description}</p>
-  <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
-  </div>
-  `
-    splideItem.innerHTML = template;
-    splideList.append(splideItem);
-})
+        cocktail.forEach((item) => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            const template = `
+      <div class = 'splide__image'>
+      <img src = ${item.image} alt = "${item.name}">
+      </div>
+      <div class = "splide__info">
+      <p class = "splide__name">${item.name}</p>
+      <p class = "splide__text">${item.description}</p>
+      <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
+      </div>
+      `
+            splideItem.innerHTML = template;
+            splideList.append(splideItem);
+        })
+}
