@@ -3,7 +3,7 @@ import { takeAlkoCocktail } from './firebase.js';
 
 const allLetterDivs = document.querySelectorAll('.letter');
 
-export async function fetchAllFirstLetters() {
+export const fetchAllFirstLetters = async () => {
     try {
         const data = await takeAllObjects('cocktails');
         let letters = []; // array containing first letters of all received cocktails
@@ -19,9 +19,9 @@ export async function fetchAllFirstLetters() {
     } catch (error) {
         console.error('Ошибка при получении данных:', error);
     }
-}
+};
 
-export async function fetchAlkoFirstLetters(alcohol) {
+export const fetchAlkoFirstLetters = async alcohol => {
     try {
         const data = await takeAlkoCocktail(alcohol);
         let letters = [];
@@ -37,7 +37,7 @@ export async function fetchAlkoFirstLetters(alcohol) {
     } catch (error) {
         console.error('Ошибка при получении данных:', error);
     }
-}
+};
 
 const highlightLetter = (div, array) => {
     div.classList.remove('active');
