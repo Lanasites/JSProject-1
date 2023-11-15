@@ -62,6 +62,7 @@ $accent2: #79e0b3;
 .filter-letter {
     justify-content: space-between;
     height: 9vh;
+    margin: 0.5vh auto;
     color: rgba($text, 0.4);
     @media screen and (max-width: 768px) {
         font-size: 1rem;

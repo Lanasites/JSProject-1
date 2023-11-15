@@ -6,7 +6,6 @@ import { fetchAlcoCocktails } from './cocktailsFetch.js';
 import { fetchCocktailsByLetter } from './cocktailsFetch.js';
 import { fetchAllFirstLetters } from './cocktailsLetters';
 import { fetchAlkoFirstLetters } from './cocktailsLetters';
-import { allLetterDivs } from './cocktailsLetters';
 
 // const splideList = document.getElementById('splideList');
 
@@ -15,7 +14,7 @@ const nonalcoholic = document.getElementById('nonalcoholic');
 const any = document.getElementById('any');
 
 export const filterTitles = document.querySelectorAll('.filter-title');
-const filterLetters = document.querySelectorAll('.letter');
+export const allLetterDivs = document.querySelectorAll('.letter');
 
 document.addEventListener('DOMContentLoaded', event => {
     any.classList.add('selected');

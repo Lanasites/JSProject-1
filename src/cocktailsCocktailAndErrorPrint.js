@@ -19,7 +19,6 @@ export const printCocktailPreview = item => {
 
 // makes a li, puts div error text and link to register into it
 export const printErrorPreview = item => {
-    const gallerySlider = document.getElementById('galleryslider');
     let newSlide = document.createElement('li');
     newSlide.className = 'splide__slide';
     let errorDiv = document.createElement('div');
@@ -33,7 +32,6 @@ export const printErrorPreview = item => {
 
 // makes a li, puts div waiting text into it
 export const printWaitPreview = item => {
-    const gallerySlider = document.getElementById('galleryslider');
     let newSlide = document.createElement('li');
     newSlide.className = 'splide__slide';
     let errorDiv = document.createElement('div');

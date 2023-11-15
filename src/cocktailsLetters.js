@@ -1,7 +1,7 @@
 import { takeAllObjects } from './firebase.js';
 import { takeAlkoCocktail } from './firebase.js';
 
-export const allLetterDivs = document.querySelectorAll('.letter');
+const allLetterDivs = document.querySelectorAll('.letter');
 
 export async function fetchAllFirstLetters() {
     try {
