@@ -1,10 +1,12 @@
 'use strict';
 // import cocktails from '../database-cocktail.json';
-import { gallerySlider } from './gallerySlider';
-import { fetchAllCocktails } from './cocktailsPreview';
-import { fetchAlcoCocktails } from './cocktailsPreview.js';
+import { gallerySlider } from './cocktailsGallerySlider.js';
+import { fetchAllCocktails } from './cocktailsFetch.js';
+import { fetchAlcoCocktails } from './cocktailsFetch.js';
+import { fetchCocktailsByLetter } from './cocktailsFetch.js';
 import { fetchAllFirstLetters } from './cocktailsLetters';
 import { fetchAlkoFirstLetters } from './cocktailsLetters';
+import { allLetterDivs } from './cocktailsLetters';
 
 // const splideList = document.getElementById('splideList');
 
@@ -12,7 +14,7 @@ const alcoholic = document.getElementById('alcoholic');
 const nonalcoholic = document.getElementById('nonalcoholic');
 const any = document.getElementById('any');
 
-const filterTitles = document.querySelectorAll('.filter-title');
+export const filterTitles = document.querySelectorAll('.filter-title');
 const filterLetters = document.querySelectorAll('.letter');
 
 document.addEventListener('DOMContentLoaded', event => {
@@ -53,4 +55,12 @@ any.addEventListener('click', event => {
     gallerySlider.destroy(); // Destroy the existing slider
     fetchAllCocktails();
     fetchAllFirstLetters();
+});
+
+allLetterDivs.forEach(div => {
+    div.addEventListener('click', function() {
+        const clickedLetter = this.textContent; // Get text content of clicked div
+        gallerySlider.destroy(); // Destroy the existing slider
+        fetchCocktailsByLetter(clickedLetter); // Call the function with the clicked letter
+    });
 });

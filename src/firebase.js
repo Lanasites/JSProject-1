@@ -1,19 +1,19 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set, child, get } from "firebase/database";
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, set, child, get } from 'firebase/database';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyC9NxHk9mUmNACk8EFBrFi1_kuCyyWKCEU",
-    authDomain: "js-project-1-49be0.firebaseapp.com",
-    databaseURL: "https://js-project-1-49be0-default-rtdb.firebaseio.com",
-    projectId: "js-project-1-49be0",
-    storageBucket: "js-project-1-49be0.appspot.com",
-    messagingSenderId: "580525730958",
-    appId: "1:580525730958:web:47489777447b08c50b2ddf"
+    apiKey: 'AIzaSyC9NxHk9mUmNACk8EFBrFi1_kuCyyWKCEU',
+    authDomain: 'js-project-1-49be0.firebaseapp.com',
+    databaseURL: 'https://js-project-1-49be0-default-rtdb.firebaseio.com',
+    projectId: 'js-project-1-49be0',
+    storageBucket: 'js-project-1-49be0.appspot.com',
+    messagingSenderId: '580525730958',
+    appId: '1:580525730958:web:47489777447b08c50b2ddf'
 };
 
 // Initialize Firebase
@@ -51,30 +51,29 @@ export { writeIngredientData };
 // writeIngredientData('voda', 'вода', ['margarita', 'limonchello'])
 
 // -----------------------------------------------------------------------------------------------------------
-// удаление коктейлей 
-
+// удаление коктейлей
 
 // -----------------------------------------------------------------------------------------------------------
-// чтение данных для вывода на странице 
+// чтение данных для вывода на странице
 
 // Функция, которая возвращает промис со всеми коктелями или всеми ингредиентами
 // nameObject: ingredients | cocktails
 async function takeAllObjects(nameObject) {
-    // обращение к обьекту 
+    // обращение к обьекту
     try {
         const snapshot = await get(child(dbRef, `${nameObject}`));
         if (snapshot.exists()) {
             // console.log(snapshot.val());
             return snapshot.val(); // возвращает промис с объектами
         } else {
-            throw new Error("Запрашиваемого объекта нет");
+            throw new Error('Запрашиваемого объекта нет');
         }
     } catch (error) {
         console.error(error);
         return null; // Возвращаем null в случае ошибки
     }
 }
-// возвращает промис с объектами 
+// возвращает промис с объектами
 // takeAllObjects('cocktails') //- коктели
 // takeAllObjects('ingredients') - промис с ингридиентами
 export { takeAllObjects };
@@ -87,53 +86,69 @@ export { takeAllObjects };
 // })
 // console.log('objects', objects);
 
-
 // -----------------------------------------------------------------------------------------------------------
-// Функция, которая возвращает промис с определенным коктелем по ID 
+// Функция, которая возвращает промис с определенным коктелем по ID
 async function takeOneCocktail(idCocktail) {
-    // обращение к обьекту 
+    // обращение к обьекту
     try {
         const snapshot = await get(child(dbRef, `cocktails/${idCocktail}`));
         if (snapshot.exists()) {
             // console.log(snapshot.val());
             return snapshot.val(); // возвращает промис с объектами
         } else {
-            throw new Error("Запрашиваемого коктеля нет");
+            throw new Error('Запрашиваемого коктеля нет');
         }
     } catch (error) {
         console.error(error);
         return null; // Возвращаем null в случае ошибки
     }
-} export { takeOneCocktail };
+}
+export { takeOneCocktail };
 
 // -----------------------------------------------------------------------------------------------------------
 
-// Функция, которая возвращает промис с определенным ингредиентом по ID 
+// Функция, которая возвращает промис с определенным ингредиентом по ID
 async function takeOneIngredient(idIngredient) {
-    // обращение к обьекту 
+    // обращение к обьекту
     try {
         const snapshot = await get(child(dbRef, `ingredients/${idIngredient}`));
         if (snapshot.exists()) {
             console.log(snapshot.val());
             return snapshot.val(); // возвращает промис с объектами
         } else {
-            throw new Error("Запрашиваемого коктеля нет");
+            throw new Error('Запрашиваемого коктеля нет');
         }
     } catch (error) {
         console.error(error);
         return null; // Возвращаем null в случае ошибки
     }
-} export { takeOneIngredient };
+}
+export { takeOneIngredient };
 
 // -----------------------------------------------------------------------------------------------------------
 
-// Функция, которая возвращает промис с коктелями на определенную букву 
-async function takeWordCocktail(word) {
-    // выбираем все коктели
-    // takeAllObjects(cocktails);
+// Функция, которая возвращает промис с коктелями на определенную букву
+async function takeCocktailByLetter(letter) {
+    return new Promise((resolve, reject) => {
+        takeAllObjects('cocktails')
+            .then(data => {
+                let arr = [];
+                for (let cocktail in data) {
+                    let obj = data[cocktail];
+                    let firstLetter = obj.name.substring(0, 1);
+                    if (firstLetter === letter) {
+                        arr.push(obj);
+                    }
+                }
+                // console.log(arr);
+                resolve(arr);
+            })
+            .catch(error => {
+                reject(error);
+            });
+    });
 }
-export { takeWordCocktail };
-
+export { takeCocktailByLetter };
 
 // -----------------------------------------------------------------------------------------------------------
 

@@ -1,10 +1,11 @@
 @import url(./_vars.scss);
-@import url(./style.scss);
+// @import url(./style.scss);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
 }
 
 $bg: #ffffff;
@@ -17,14 +18,14 @@ $accent2: #79e0b3;
 // $accent1: #ffffff;
 // $accent2: #79e0b3;
 
-// .header {
-//     height: 18vh;
-//     background-color: $bg;
-//     color: $text;
-//     @media screen and (max-width: 576px) {
-//         height: 15vh;
-//     }
-// }
+.header {
+    height: 18vh;
+    background-color: $bg;
+    color: $text;
+    @media screen and (max-width: 576px) {
+        height: 15vh;
+    }
+}
 
 .footer {
     height: 16vh;
@@ -43,30 +44,38 @@ $accent2: #79e0b3;
     color: $text;
 }
 
-.filter-type {
-    justify-content: center;
-    height: 4vh;
-}
-
-.filter-letter {
-    justify-content: space-between;
-    height: 8vh;
-}
-
 .filter-type,
 .filter-letter {
     display: flex;
     width: 100%;
     padding: 0 8vw;
-    margin: 1vh auto;
+    margin: 0.5vh auto;
     flex-wrap: wrap;
     font-size: 1.25rem;
     align-items: center;
+    text-transform: uppercase;
     @media screen and (max-width: 768px) {
-        justify-content: space-around;
+        font-size: 1rem;
     }
+}
+
+.filter-letter {
+    justify-content: space-between;
+    height: 9vh;
+    color: rgba($text, 0.4);
+    @media screen and (max-width: 768px) {
+        font-size: 1rem;
+        justify-content: space-evenly;
+    }
+}
+
+.filter-type {
+    justify-content: center;
+    height: 4vh;
     @media screen and (max-width: 576px) {
-        height: 8vh;
+        font-size: 1rem;
+        height: 14vh;
+        flex-direction: column;
     }
 }
 
@@ -75,7 +84,7 @@ $accent2: #79e0b3;
     text-transform: uppercase;
     border-radius: 1.25rem;
     cursor: pointer;
-    padding: 1vh 2vw;
+    padding: 0.5vh 2vw;
     &:hover {
         background-color: $accent1;
         color: $bg;
@@ -85,10 +94,28 @@ $accent2: #79e0b3;
     &:active {
         background-color: $accent2;
     }
+
+    @media screen and (max-width: 576px) {
+        padding: 0.5vh 2vw;
+    }
 }
 
 .selected {
     border: 1px solid $accent1;
+}
+
+.active {
+    color: $text;
+}
+
+.message {
+    width: 60vw;
+    height: 45vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .catalogue {
@@ -97,11 +124,6 @@ $accent2: #79e0b3;
 
 .splide__arrow {
     background: none;
-    margin: 0 3vw;
-
-    @media screen and (max-width: 768px) {
-        margin: 0 1vw;
-    }
 
     svg {
         color: $accent1;
@@ -124,6 +146,9 @@ $accent2: #79e0b3;
 
 .splide__list {
     width: 100vw;
+    @media screen and (max-width: 768px) {
+        width: 90vw;
+    }
 }
 
 [role='group'] {

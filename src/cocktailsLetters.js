@@ -1,24 +1,21 @@
 import { takeAllObjects } from './firebase.js';
 import { takeAlkoCocktail } from './firebase.js';
 
-const filterLetter = document.getElementById('filterLetter'); // div where letters go
+export const allLetterDivs = document.querySelectorAll('.letter');
 
 export async function fetchAllFirstLetters() {
     try {
-        filterLetter.innerHTML = '';
         const data = await takeAllObjects('cocktails');
-        let letters = [];
+        let letters = []; // array containing first letters of all received cocktails
         for (let key in data) {
             let obj = data[key];
             let firstLetter = obj.name.substring(0, 1);
             letters.push(firstLetter);
         }
-        letters = letters
-            .filter(function(value, index, self) {
-                return self.indexOf(value) === index; // filter out repeating letters
-            })
-            .sort(); // put letters in alphabetical order
-        letters.forEach(item => printLetter(item));
+        letters = letters.filter(function(value, index, self) {
+            return self.indexOf(value) === index; // filter out repeating letters
+        });
+        allLetterDivs.forEach(div => highlightLetter(div, letters));
     } catch (error) {
         console.error('Ошибка при получении данных:', error);
     }
@@ -26,7 +23,6 @@ export async function fetchAllFirstLetters() {
 
 export async function fetchAlkoFirstLetters(alcohol) {
     try {
-        filterLetter.innerHTML = '';
         const data = await takeAlkoCocktail(alcohol);
         let letters = [];
         for (let key in data) {
@@ -34,21 +30,22 @@ export async function fetchAlkoFirstLetters(alcohol) {
             let firstLetter = obj.name.substring(0, 1);
             letters.push(firstLetter);
         }
-        letters = letters
-            .filter(function(value, index, self) {
-                return self.indexOf(value) === index; // filter out repeating letters
-            })
-            .sort(); // put letters in alphabetical order
-        letters.forEach(item => printLetter(item));
+        letters = letters.filter(function(value, index, self) {
+            return self.indexOf(value) === index; // filter out repeating letters
+        });
+        allLetterDivs.forEach(div => highlightLetter(div, letters));
     } catch (error) {
         console.error('Ошибка при получении данных:', error);
     }
 }
 
-//makes a div, fills it with a letter and puts the div into filterLetter div
-const printLetter = item => {
-    const newLetter = document.createElement('div');
-    newLetter.className = 'letter';
-    newLetter.textContent = item;
-    filterLetter.appendChild(newLetter);
+const highlightLetter = (div, array) => {
+    div.classList.remove('active');
+    // Get the text content of the current div
+    const letter = div.textContent.trim();
+    // Check if the letter is present in the 'letters array'
+    if (array.includes(letter)) {
+        // If the letter is in the array, add the 'active' class to the div
+        div.classList.add('active');
+    }
 };
