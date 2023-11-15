@@ -1,8 +1,10 @@
+@import url(./_vars.scss);
+@import url(./style.scss);
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
 }
 
 $bg: #ffffff;
@@ -15,14 +17,14 @@ $accent2: #79e0b3;
 // $accent1: #ffffff;
 // $accent2: #79e0b3;
 
-.header {
-    height: 18vh;
-    background-color: $bg;
-    color: $text;
-    @media screen and (max-width: 576px) {
-        height: 15vh;
-    }
-}
+// .header {
+//     height: 18vh;
+//     background-color: $bg;
+//     color: $text;
+//     @media screen and (max-width: 576px) {
+//         height: 15vh;
+//     }
+// }
 
 .footer {
     height: 16vh;
@@ -83,6 +85,10 @@ $accent2: #79e0b3;
     &:active {
         background-color: $accent2;
     }
+}
+
+.selected {
+    border: 1px solid $accent1;
 }
 
 .catalogue {

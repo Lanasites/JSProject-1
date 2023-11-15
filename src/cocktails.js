@@ -8,24 +8,48 @@ import { fetchAlkoFirstLetters } from './cocktailsLetters';
 
 // const splideList = document.getElementById('splideList');
 
+const alcoholic = document.getElementById('alcoholic');
+const nonalcoholic = document.getElementById('nonalcoholic');
+const any = document.getElementById('any');
+
+const filterTitles = document.querySelectorAll('.filter-title');
+const filterLetters = document.querySelectorAll('.letter');
+
 document.addEventListener('DOMContentLoaded', event => {
+    any.classList.add('selected');
     fetchAllCocktails();
     fetchAllFirstLetters();
 });
 
-document.getElementById('alcoholic').addEventListener('click', function() {
+alcoholic.addEventListener('click', event => {
+    // apply selected class on clicked element and remove from all other elements
+    filterTitles.forEach(title => {
+        title.classList.remove('selected');
+    });
+    event.target.classList.add('selected');
+
     gallerySlider.destroy(); // Destroy the existing slider
     fetchAlcoCocktails(true);
     fetchAlkoFirstLetters(true);
 });
 
-document.getElementById('nonalcoholic').addEventListener('click', function() {
+nonalcoholic.addEventListener('click', event => {
+    // apply selected class on clicked element and remove from all other elements
+    filterTitles.forEach(title => {
+        title.classList.remove('selected');
+    });
+    event.target.classList.add('selected');
     gallerySlider.destroy(); // Destroy the existing slider
     fetchAlcoCocktails(false);
     fetchAlkoFirstLetters(false);
 });
 
-document.getElementById('any').addEventListener('click', function() {
+any.addEventListener('click', event => {
+    // apply selected class on clicked element and remove from all other elements
+    filterTitles.forEach(title => {
+        title.classList.remove('selected');
+    });
+    event.target.classList.add('selected');
     gallerySlider.destroy(); // Destroy the existing slider
     fetchAllCocktails();
     fetchAllFirstLetters();
