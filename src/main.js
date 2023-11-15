@@ -132,3 +132,21 @@ new Splide('.splide', {
     wheel: true,
     speed: 0,
 });
+
+
+// добавление инфы о коктейле на страницу самого коктейля
+cocktail.forEach((item) => {
+    const
+    const template = `
+  <div class = 'splide__image'>
+  <img src = ${item.image} alt = "${item.name}">
+  </div>
+  <div class = "splide__info">
+  <p class = "splide__name">${item.name}</p>
+  <p class = "splide__text">${item.description}</p>
+  <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
+  </div>
+  `
+    splideItem.innerHTML = template;
+    splideList.append(splideItem);
+})

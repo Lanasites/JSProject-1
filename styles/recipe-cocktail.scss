@@ -1,5 +1,7 @@
+@import'./vars';
+
 .container {
-    width: 90%;
+    width: 95%;
 
     display       : flex;
     flex-direction: column;
@@ -12,135 +14,92 @@
         display        : flex;
         margin         : 6.75rem auto;
         justify-content: space-between;
+        column-gap     : 5.25rem;
 
         &__pic {
-            width  : 43.75rem;
-            height : 28.125rem;
+            width : 43.75rem;
+            height: 28.125rem;
+
             display: flex;
 
             &-img {
                 width: 100%;
             }
         }
+    }
 
-        &__text {
-            width : 28.5rem;
-            height: 28.125rem;
+    .container-wrapper__recipe {
+        width : 28.5rem;
+        height: 28.125rem;
 
-            display        : flex;
-            flex-direction : column;
-            padding        : 1rem;
-            justify-content: space-between;
+        display        : flex;
+        flex-direction : column;
+        justify-content: space-between;
+        padding        : 1rem;
 
-            border: 1px solid #000;
+        border: 1px solid $black;
 
-            &-recipe {
-                width         : 26.25rem;
-                height        : 23.125rem;
-                display       : flex;
-                flex-direction: column;
+        &-text {
+            .text-heading-p {
+                margin-bottom: 1.17rem;
 
-                &-heading-h3 {
-                    margin: 0 auto 1.19rem auto;
+                color: $black;
 
-                    color: #000;
+                text-align    : center;
+                font-family   : $font1;
+                font-size     : 1.25rem;
+                font-style    : normal;
+                font-weight   : 700;
+                line-height   : 1.25rem;
+                text-transform: uppercase;
+            }
 
-                    text-align    : center;
-                    font-family   : Helvetica;
-                    font-size     : 1.25rem;
-                    font-style    : normal;
-                    font-weight   : 700;
-                    line-height   : 1.25rem;
-                    /* 100% */
-                    text-transform: uppercase;
-                }
+            .text-p {
+                margin: 1rem 0;
 
-                &-cooking {
-                    display       : flex;
-                    flex-direction: column;
-                    margin-top    : 2.3rem;
+                color: $black;
 
+                font-family: $font1;
+                font-size  : 0.875rem;
+                font-style : normal;
+                font-weight: 300;
+                line-height: 0.875rem;
 
-                    &-about {
-                        color: #000;
+                list-style-position: inside;
 
-                        font-family: Helvetica;
-                        font-size  : 0.875rem;
-                        font-style : normal;
-                        font-weight: 300;
-                        line-height: 0.875rem;
-                    }
-
-                    &-heading-p {
-                        color: #000;
-
-                        font-family: Helvetica;
-                        font-size  : 0.875rem;
-                        font-style : normal;
-                        font-weight: 400;
-                        line-height: 0.875rem;
-                    }
-
-                    &-ingredients {
-                        color      : #000;
-                        font-family: Helvetica;
-                        font-size  : 0.875rem;
-                        font-style : normal;
-                        font-weight: 300;
-                        line-height: 0.875rem;
-                    }
-
-                    &-heading-p {
-                        color: #000;
-
-                        font-family: Helvetica;
-                        font-size  : 0.875rem;
-                        font-style : normal;
-                        font-weight: 400;
-                        line-height: 0.875rem;
-                    }
-
-                    &-text-cook-up {
-                        color      : #000;
-                        font-family: Helvetica;
-                        font-size  : 0.875rem;
-                        font-style : normal;
-                        font-weight: 300;
-                        line-height: 0.875rem;
-                    }
-
+                .text-p-li {
+                    padding-left: 0.5rem;
                 }
             }
 
-            &-favourite {
-                width : 15rem;
-                height: 1.0625rem;
+            .text-heading {
+                color: $black;
 
-                display        : flex;
-                justify-content: space-between;
-                align-self     : flex-start;
+                font-family: $font1;
+                font-size  : 0.875rem;
+                font-style : normal;
+                font-weight: 400;
+                line-height: 0.875rem;
+            }
+        }
 
-                img {
-                    width : 1rem;
-                    height: 0.9375rem;
-                }
+        &-favourite {
+            display    : flex;
+            column-gap : 0.45rem;
+            align-items: center;
+            margin-left: 0;
 
-                &-button {
-                    border          : none;
-                    background-color: transparent;
-                }
+            .button {}
 
-                &label {
+            .label {
+                color: $black;
 
-                    color: #000;
-
-                    font-family: Helvetica;
-                    font-size  : 0.75rem;
-                    font-style : normal;
-                    font-weight: 400;
-                    line-height: 0.75rem;
-                    /* 100% */
-                }
+                font-family: $font1;
+                font-size  : 0.75rem;
+                font-style : normal;
+                font-weight: 400;
+                line-height: 0.75rem;
+                /* 100% */
             }
         }
     }
