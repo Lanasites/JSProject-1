@@ -370,37 +370,49 @@
 }
 //Splider
 .splide__slide {
+    box-sizing: border-box;
+    margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 80vh;
     @media (max-width: $s) {
         flex-direction: column;
-        height: 100vh;
+        height: 120vh;
         width: 60vw;
+    }
+    @media (max-width: $xs) {
+        width: 30vw;
+        height: 100vh;
+        margin-top: -10vh;
     }
     .splide__image {
         display: flex;
         justify-content: center;
-        width: 50vw;
+        align-items: flex-start;
+        width: 60vw;
         margin: 0.5vw;
         @media (max-width: $s) {
-            width: 100vw;
+            width: 98vw;
+            height: 70vh;
         }
         @media (max-width: $xs) {
-            width: 100vw;
+            width: 95vw;
+            height: 30vh;
+            margin-bottom: -30vw;
         }
         img {
-            width: 25vw;
+            width: 60vw;
+            height: 80vh;
             object-fit: cover;
             @media (max-width: $s) {
-                width: 35vw;
-                height: 60vh;
+                width: 98vw;
+                height: 70vh;
                 object-fit: cover;
             }
             @media (max-width: $xs) {
-                width: 65vw;
-                height: 55vh;
+                width: 95vw;
+                height: 30vh;
                 object-fit: cover;
             }
         }
@@ -408,7 +420,7 @@
 }
 
 .splide__info {
-    width: 30vw;
+    width: 20vw;
     font-family: Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -416,10 +428,10 @@
     justify-content: space-between;
     @media (max-width: $s) {
         width: 100vw;
+        height: 40vh;
     }
     @media (max-width: $xs) {
         width: 100vw;
-        justify-content: space-between;
     }
 
     .splide__name {
@@ -428,11 +440,9 @@
         text-transform: uppercase;
         @media (max-width: $s) {
             font-size: 2.5vw;
-            margin: 1vw;
         }
         @media (max-width: $xs) {
             font-size: 4.5vw;
-            margin: 1vw;
         }
     }
 
@@ -444,14 +454,12 @@
         @media (max-width: $s) {
             width: 90vw;
         font-size: 2.5vw;
-        padding: 1.5vw;
-        margin: 1vw;
+        margin-top: -10vw;
         }
         @media (max-width: $xs) {
             width: 100vw;
-            font-size: 4.5vw;
-        padding: 2.5vw;
-        margin: 1.5vw;
+            font-size: 4vw;
+        padding: 3.5vw;
         }
     }
 
@@ -494,7 +502,6 @@
         background-color: #fff;
         color: black;
         font-size: 2rem;
-        opacity: 1;
     }
 }
 
