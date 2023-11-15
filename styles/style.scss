@@ -355,6 +355,7 @@
         padding: 0.5vw 1vw;
         border: 0.1vw solid black;
         cursor: pointer;
+        font-size: 1.5vw;
         font-family: Helvetica, sans-serif;
         margin: 1vw;
 
@@ -475,6 +476,10 @@
                 margin: 1vw;
             }
         }
+        button:hover {
+            background-color:black;
+            color: #fff;
+            transition: 0.5s;}
     }
 }
 
