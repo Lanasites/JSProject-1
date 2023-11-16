@@ -35,23 +35,35 @@ h1 {
 
     &__ingredient {
       font-weight: bold;
-      font-size: 1.7vw;
+      font-size: 1.25rem;
 
     }
 
-    &__coctails {
-      padding: 0 0.2vw;
-      text-align: center;
-      max-width: 19vw;
-      font-size: 1.2vw;
+    &__btn {
+      background-color: #fff;
+      width: 8vw;
+      height: 3vh;
+      font-size: 0.5vw;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      @media (max-width: 767px) {
+        width: 22vw;
+        height: 6vh;
+        font-size: 2vw;
+        margin: 1vw;
+      }
+
+      @media (max-width: 380px) {
+        width: 42vw;
+        height: 7vh;
+        font-size: 3.5vw;
+        margin: 1vw;
+      }
     }
   }
 }
 
-span {
-  font-weight: 550;
-  font-size: 1.5vw;
-}
 
 //-----------adaptive tablet----------//
 
@@ -128,6 +140,8 @@ span {
 #modal {
   max-width: 50vw;
   border: 3px inset purple;
+  display: none;
+  //position: absolute;
 }
 
 .btn {

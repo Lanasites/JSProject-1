@@ -160,3 +160,23 @@ function takeAlkoCocktail(alcohol) {
 }
 
 export { takeAlkoCocktail };
+
+// -----------------------------------------------------------------------------------------------------------
+// Функция, которая возвращает промис с определенным коктелем по ingredient 
+async function takeOneCocktailIng(ingredientCocktail) {
+    // обращение к обьекту 
+    try {
+        const snapshot = await get(child(dbRef, `cocktails/${ingredientCocktail.name}`));
+        if (snapshot.exists()) {
+            // console.log(snapshot.val());
+            return snapshot.val(); // возвращает промис с объектами
+        } else {
+            throw new Error("Запрашиваемого коктеля нет");
+        }
+    } catch (error) {
+        console.error(error);
+        return null; // Возвращаем null в случае ошибки
+    }
+} export { takeOneCocktailIng };
+
+// -----------------------------------------------------------------------------------------------------------

@@ -10,24 +10,27 @@ function testGetData() {
     // .then(response => response.json())
     .then(data => {
       // работаем с полученными данными - объект с объектами
-      console.log(data);
+      //console.log(data);
       for (let key in data) {
         // obj - ингредиент со всеми свойствами
         let obj = data[key];
-        console.log(obj);
+        //console.log(obj);
         print(key, obj.name, obj.cocktails, obj.img);
       }
-      let coctailsElement = document.getElementsByClassName("container_item");
-
+      let coctailsElement = document.getElementsByClassName("container_item__btn");
+      console.log(coctailsElement);
       // Добавление обработчика события клика к каждому ингредиенту
-      Array.from(coctailsElement).forEach(function (container_item) {
-        container_item.addEventListener('click', function () {
-          let name = this.querySelector('.container_item__ingredient').textContent;
-          let description = this.querySelector('.container_item__coctails').textContent;
+      Array.from(coctailsElement).forEach(function (container_item__btn) {
+        container_item__btn.addEventListener('click', showModal()
+          //{
+          //let name = this.querySelector('.container_item__ingredient').textContent;
+          //let description = this.querySelector('.container_item__coctails').textContent;
 
           //showModal(id, name, description, cooking, img);
-          showModal();
-        });
+          //showModal();
+          //}
+        );
+        console.log(container_item__btn.cocktails);
       });
     })
     .catch(error => {
@@ -43,7 +46,8 @@ function print(id, name, cocktails, img) {
   <div class="container_item">
     <img class="container_item__image" src="${img}" alt="">
     <div class="container_item__ingredient">${name}</div>
-    <div class="container_item__coctails"><span>Содержится в коктейлях:</span><br> ${cocktails}</div>
+    <div class="container_item__coctails"><br> ${cocktails}</div>
+    <button class="container_item__btn" id="${id}"><span>Содержится в коктейлях:</span></button>
   </div>
     `
   const newElement = document.createElement('div');
@@ -61,6 +65,8 @@ const modalElement = document.getElementById('modal');
 function showModal() {
   modalElement.style.display = 'block';
   testGetDataModal();
+  const coctailElememt = document.querySelectorAll
+
   // const newElement = document.createElement('div');
   // newElement.innerHTML = template;
   // modalElement.appendChild(newElement);
