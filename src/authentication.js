@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
-
+// ----------------------------------------------Регистрация новых пользователей---------------------------------------------------
 
 async function registrationEmailPassword() {
     const elemEmail = document.getElementById('email');
@@ -38,75 +38,62 @@ async function registrationEmailPassword() {
         const errorMessage = error.message;
         console.error('Подробнее об ошибке: ', errorCode, errorMessage);
         if (error.message.indexOf('email-already-in-use') > 0)
-            alert('Пользователь с таким email уже зарегистрирован. Перейдите на вкладку "Войти"');
+            alert('Пользователь с таким email уже зарегистрирован. Перейдите на вкладку ВОЙТИ');
     };
 
 }
 // btnLogin.addEventListener('click', loginEmailPassword);
 export { registrationEmailPassword };
 
-
+// ------------------------------------------------------Вход существующих пользователей---------------------------------------------------------
 async function loginEmailPassword() {
     console.log("Вызов функции входа в ЛК");
-    // const elemEmail = document.getElementById('email');
-    // const elemPassword = document.getElementById('password');
-    // // const btnLogin = document.getElementById('btnLogin');
 
-    // const txtEmail = elemEmail.value;
-    // const txtPassword = elemPassword.value;
+    const elemEmail = document.getElementById('email');
+    const elemPassword = document.getElementById('password');
 
-    // try {
-    //     const userCredential = await signInWithEmailAndPassword(auth, txtEmail, txtPassword);
-    //     console.log(userCredential);
-    //     // const user = userCredential.user;
-    //     // console.log('Создался пользователь', user);
-    // }
-    // catch (error) {
-    //     const errorCode = error.code;
-    //     const errorMessage = error.message;
-    //     console.error('Подробнее об ошибке: ', errorCode, errorMessage);
-    // };
+    const txtEmail = elemEmail.value;
+    const txtPassword = elemPassword.value;
+    console.log(txtEmail, txtPassword);
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, txtEmail, txtPassword);
+        console.log(userCredential);
+        const user = userCredential.user;
+        console.log('Пользователь авторизовался на сайте', user);
+    }
+    catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Подробнее об ошибке: ', errorCode, errorMessage);
+        if (error.message.indexOf('auth/invalid-email') > 0)
+            alert('Пользователя с таким email не существует. Если вы ранее не регистрироваоись, выберите вкладку РЕГИСТРАЦИЯ');
+        if (error.message.indexOf('auth/invalid-login-credentials') > 0)
+            alert('Пароль введет не верно!');
+    };
 
 }
 // btnLogin.addEventListener('click', loginEmailPassword);
 export { loginEmailPassword };
 
-// const auth = getAuth();
-// ----------------------------------------------Регистрация новых пользователей---------------------------------------------------
-// Когда пользователь заполняет форму, проверьте адрес электронной почты и пароль, предоставленные пользователем, 
-// а затем передайте их методу createUserWithEmailAndPassword
-// createUserWithEmailAndPassword(auth, txtEmail, txtPassword)
-//     .then((userCredential) => {
-//         // Signed up
-//         const user = userCredential.user;
-//         console.log('Создался пользователь', user);
-//         // ...
-//     })
-//     .catch((error) => {
-//         const errorCode = error.code;
-//         const errorMessage = error.message;
-//         console.error('!!!!!!!!!', errorCode, errorMessage);
-//         // ..
-//     });
-// console.log(userCredential.user);
-
-
-
-// ------------------------------------------------------Войти существующих пользователей---------------------------------------------------------
-// Когда пользователь заполнит форму, вызовите метод signInWithEmailAndPassword
-// signInWithEmailAndPassword(auth, email, password)
-//     .then((userCredential) => {
-//         // Signed in 
-//         const user = userCredential.user;
-//         console.log(user);
-//         // ...
-//     })
-//     .catch((error) => {
-//         const errorCode = error.code;
-//         const errorMessage = error.message;
-//     });
-
 // ----------------------------Установите наблюдателя состояния аутентификации и получите пользовательские данные--------------------------
+
+const monitorAuthState = async () => {
+    onAuthStateChanged(auth, user => {
+        if (user) {
+            const email = user.email;
+            const uid = user.uid;
+            console.log(email, uid);
+            // тут можно сделать так, чтобы при нажатии на человечка показывался email была возможность выйти
+            // сслыка при попытке добавить избранное не работает и выдвет сообщение о том, что эта функция работает только для зарегистрированных пользователей
+        } else {
+            // тут можно сделать так, чтобы при нажатии на человечка показывалось окно с выбором входа или регистрации
+            // ссылка при нажатии на звезду в меню работает
+            // ссылка при нажатии на звезду в коктеле тоже работает и выдает сообщение о том, что коктейль добавтлся в избранное
+        }
+    })
+}
+export { monitorAuthState };
+
 // Прикрепите наблюдателя с помощью метода onAuthStateChanged . Когда пользователь успешно входит в систему, вы можете получить информацию о пользователе в наблюдателе.
 
 // onAuthStateChanged(auth, (user) => {
