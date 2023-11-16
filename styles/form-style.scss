@@ -1,12 +1,14 @@
+@import './vars';
+
 %title {
-    font-family: Helvetica;
+    font-family: $font1;
     font-size: 1.25rem;
     font-style: normal;
     line-height: 1.25rem;
 }
 
 %text-input {
-    font-family: Helvetica;
+    font-family: $font1;
     font-size: 1rem;
     font-weight: 300;
     font-style: normal;
@@ -65,7 +67,6 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
         text-align: center;
         @extend %title;
         margin-bottom: 1rem;
-
         font-weight: 400;
     }
 
@@ -108,7 +109,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
         background: rgba(217, 217, 217, 0.00);
 
         color: $black;
-        font-family: Helvetica;
+        font-family: $font1;
         font-size: 1.125rem;
         font-style: normal;
         font-weight: 300;
