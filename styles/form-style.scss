@@ -19,9 +19,17 @@ $black: #000;
 $mobile: "screen and (max-width: 599px)";
 $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
 
-.sign-in-text {
-    @extend %title;
-    font-weight: 400;
+.default-link {
+    text-decoration: none;
+    color: $black;
+}
+
+.default-link:hover {
+    text-decoration: underline;
+}
+
+.link-active {
+    font-weight: 700;
 }
 
 .form-wrapper {
@@ -33,9 +41,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
 
 .form {
     max-width: 33.25rem;
-    // min-height: 18.125rem;
     width: 100%;
-    // margin: 0 0.9375rem;
     padding: 3.13rem 2.88rem;
     border: 0.0625rem solid $black;
 
@@ -58,8 +64,9 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
     &__title {
         text-align: center;
         @extend %title;
-        font-weight: 700;
         margin-bottom: 1rem;
+
+        font-weight: 400;
     }
 
     &__item {
