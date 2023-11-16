@@ -10,23 +10,23 @@ const splideList = document.getElementById('splideList');
 
 export const fetchCocktails = async (type, letter) => {
     try {
-        // console.log(`i started fetchCocktails func with ${letter} and ${type}`);
+        console.log(`i started fetchCocktails func with ${letter} and ${type}`);
         printWaitPreview();
         splideList.innerHTML = '';
         let data;
         // receiving necessary data from DB depending on type passed as argument
-        if (type === 'any') {
+        if (type === 'anyType') {
             data = await takeAllObjects('cocktails'); //get all cocktails
         } else if (type === 'alcoholic') {
             data = await takeAlkoCocktail(true); //get alco cocktails
         } else if (type === 'nonalcoholic') {
             data = await takeAlkoCocktail(false); //get nonalco cocktails
         }
-        // console.log(data);
+        console.log(data);
         // creating array with cocktails depending on letter passed
         let arrByLetter = [];
-        // if no letter is passed i used "0" just in case, then whole data arra
-        if (letter === '0') {
+        // if no letter is passed i used "anyLetter" just in case
+        if (letter === 'anyLetter') {
             for (let cocktail in data) {
                 let obj = data[cocktail];
                 arrByLetter.push(obj);
@@ -41,7 +41,7 @@ export const fetchCocktails = async (type, letter) => {
                 }
             }
         }
-        // console.log(arrByLetter);
+        console.log(arrByLetter);
         // if we have no cocktails on this letter, then we get an prompt to register and one
         if (arrByLetter.length === 0) {
             console.log(`No cocktails available starting with the letter ${letter}`);

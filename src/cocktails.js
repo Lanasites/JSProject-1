@@ -7,7 +7,7 @@ import { fetchAllFirstLetters } from './cocktailsLetters';
 
 const alcoholic = document.getElementById('alcoholic');
 const nonalcoholic = document.getElementById('nonalcoholic');
-const any = document.getElementById('any');
+const any = document.getElementById('anyType');
 
 export const filterTitles = document.querySelectorAll('.filter-title');
 export const allLetterDivs = document.querySelectorAll('.letter');
@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', event => {
 
     clearSelectedOnAllLetters();
 
-    fetchAllFirstLetters('any');
-    fetchCocktails('any', '0');
+    fetchAllFirstLetters('anyType');
+    fetchCocktails('anyType', 'anyLetter');
 });
 
 allLetterDivs.forEach(div => {
@@ -26,13 +26,18 @@ allLetterDivs.forEach(div => {
         clearSelectedOnAllLetters();
 
         event.currentTarget.classList.add('selected');
-        const clickedLetter = event.currentTarget.textContent; // Get text content of clicked div
+        let clickedLetter;
+        if (event.currentTarget.id === 'anyLetter') {
+            clickedLetter = 'anyLetter';
+        } else {
+            clickedLetter = event.currentTarget.textContent; // Get text content of clicked div
+        }
 
         //finding which filter title is selected
         filterTitles.forEach(div => {
             if (div.classList.contains('selected')) {
                 activeDivId = div.id;
-                console.log(activeDivId);
+                // console.log(activeDivId);
             }
         });
         gallerySlider.destroy(); // Destroy the existing slider
@@ -40,8 +45,8 @@ allLetterDivs.forEach(div => {
     });
 });
 
-let activeDivId = 'global div id';
-let clickedLetter = 'global letter';
+let activeDivId = 'anyType';
+let clickedLetter = 'anyLetter';
 
 filterTitles.forEach(div => {
     div.addEventListener('click', function(event) {
@@ -52,14 +57,19 @@ filterTitles.forEach(div => {
         fetchAllFirstLetters(activeDivId); // need to change
 
         let selectedLetter = false;
+        let clickedLetter;
         allLetterDivs.forEach(div => {
             if (div.classList.contains('selected')) {
-                clickedLetter = div.textContent; // Get the ID of the div with class 'selected'
+                if (div.id === 'anyLetter') {
+                    clickedLetter = 'anyLetter';
+                } else {
+                    clickedLetter = div.textContent; // Get text content of clicked div
+                }
                 selectedLetter = true;
             }
         });
         if (!selectedLetter) {
-            clickedLetter = '0';
+            clickedLetter = 'anyLetter';
         }
         gallerySlider.destroy(); // Destroy the existing slider
         fetchCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter

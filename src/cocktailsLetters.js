@@ -8,7 +8,7 @@ export const fetchAllFirstLetters = async type => {
     try {
         let data;
         // receiving necessary data from DB depending on type passed as argument
-        if (type === 'any') {
+        if (type === 'anyType') {
             data = await takeAllObjects('cocktails'); // all cocktails
         } else if (type === 'nonalcoholic') {
             data = await takeAlkoCocktail(false); //nonalco

@@ -1,11 +1,10 @@
-// @import url(./_vars.scss);
-// @import url(./style.scss);
+@import url(./_header.scss);
+@import url(./_footer.scss);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
 }
 
 $bg: #ffffff;
@@ -42,6 +41,8 @@ $accent2: #79e0b3;
     align-items: center;
     background-color: $bg;
     color: $text;
+    font-family: Helvetica, sans-serif;
+    margin-top: 2vh;
 }
 
 .filter-type,
@@ -97,6 +98,14 @@ $accent2: #79e0b3;
 
     @media screen and (max-width: 576px) {
         padding: 0.5vh 2vw;
+    }
+}
+
+#anyLetter {
+    color: $text;
+    &:hover {
+        background-color: $accent1;
+        color: $bg;
     }
 }
 
