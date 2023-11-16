@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -32,6 +32,7 @@ async function registrationEmailPassword() {
         const userCredential = await createUserWithEmailAndPassword(auth, txtEmail, txtPassword);
         const user = userCredential.user;
         console.log('Создался пользователь', user);
+        alert('Вы успешно зареристрировались! Для входа войдите по ссылке');
     }
     catch (error) {
         const errorCode = error.code;
@@ -93,18 +94,3 @@ const monitorAuthState = async () => {
     })
 }
 export { monitorAuthState };
-
-// Прикрепите наблюдателя с помощью метода onAuthStateChanged . Когда пользователь успешно входит в систему, вы можете получить информацию о пользователе в наблюдателе.
-
-// onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//         // User is signed in, see docs for a list of available properties
-//         // https://firebase.google.com/docs/reference/js/auth.user
-//         const uid = user.uid;
-//         console.log(uid);
-//         // ...
-//     } else {
-//         // User is signed out
-//         // ...
-//     }
-// });
