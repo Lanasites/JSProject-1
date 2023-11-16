@@ -8,72 +8,46 @@ import { printWaitPreview } from './cocktailsCocktailAndErrorPrint.js';
 
 const splideList = document.getElementById('splideList');
 
-export const fetchAllCocktails = async () => {
+export const fetchCocktails = async (type, letter) => {
     try {
+        // console.log(`i started fetchCocktails func with ${letter} and ${type}`);
         printWaitPreview();
         splideList.innerHTML = '';
-        const data = await takeAllObjects('cocktails');
-        if (data.length === 0) {
-            console.log(`No cocktails available starting with the letter ${letter}`);
-            printErrorPreview();
-        } else {
-            for (let key in data) {
-                let obj = data[key];
-                printCocktailPreview(obj);
-            }
-            gallerySlider.mount({ Grid });
-        }
-    } catch (error) {
-        console.error('Ошибка при получении данных:', error);
-    }
-};
-
-export const fetchAlcoCocktails = async alcohol => {
-    try {
-        printWaitPreview();
-        splideList.innerHTML = '';
-        const data = await takeAlkoCocktail(alcohol);
-        if (data.length === 0) {
-            console.log(`No cocktails available starting with the letter ${letter}`);
-            printErrorPreview();
-        } else {
-            for (let key in data) {
-                let obj = data[key];
-                printCocktailPreview(obj);
-            }
-            gallerySlider.mount({ Grid });
-        }
-    } catch (error) {
-        console.error('Ошибка при получении данных:', error);
-    }
-};
-
-export const fetchCocktailsByLetter = async (letter, type) => {
-    try {
-        console.log(`i started fetchCocktailsByLetter func with ${letter} and ${type}`);
-        printWaitPreview();
-        splideList.innerHTML = '';
-        let data = null;
+        let data;
+        // receiving necessary data from DB depending on type passed as argument
         if (type === 'any') {
-            data = await takeAllObjects('cocktails');
+            data = await takeAllObjects('cocktails'); //get all cocktails
         } else if (type === 'alcoholic') {
-            data = await takeAlkoCocktail(true);
+            data = await takeAlkoCocktail(true); //get alco cocktails
         } else if (type === 'nonalcoholic') {
-            data = await takeAlkoCocktail(false);
+            data = await takeAlkoCocktail(false); //get nonalco cocktails
         }
-        console.log(data);
+        // console.log(data);
+        // creating array with cocktails depending on letter passed
         let arrByLetter = [];
-        for (let cocktail in data) {
-            let obj = data[cocktail];
-            let firstLetter = obj.name.substring(0, 1);
-            if (firstLetter === letter) {
+        // if no letter is passed i used "0" just in case, then whole data arra
+        if (letter === '0') {
+            for (let cocktail in data) {
+                let obj = data[cocktail];
                 arrByLetter.push(obj);
             }
+        } else {
+            for (let cocktail in data) {
+                //actually filter out cocktails by letter
+                let obj = data[cocktail];
+                let firstLetter = obj.name.substring(0, 1);
+                if (firstLetter === letter) {
+                    arrByLetter.push(obj);
+                }
+            }
         }
+        // console.log(arrByLetter);
+        // if we have no cocktails on this letter, then we get an prompt to register and one
         if (arrByLetter.length === 0) {
             console.log(`No cocktails available starting with the letter ${letter}`);
             printErrorPreview();
         } else {
+            //finally if we received something we print it out into splider
             for (let key in arrByLetter) {
                 let obj = arrByLetter[key];
                 printCocktailPreview(obj);

@@ -1,4 +1,4 @@
-@import url(./_vars.scss);
+// @import url(./_vars.scss);
 // @import url(./style.scss);
 
 * {
@@ -54,27 +54,26 @@ $accent2: #79e0b3;
     font-size: 1.25rem;
     align-items: center;
     text-transform: uppercase;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 576px) {
         font-size: 1rem;
     }
 }
 
 .filter-letter {
     justify-content: space-between;
-    height: 9vh;
+    height: 10vh;
     margin: 0.5vh auto;
     color: rgba($text, 0.4);
-    @media screen and (max-width: 768px) {
-        font-size: 1rem;
+    @media screen and (max-width: 800px) {
         justify-content: space-evenly;
+        height: 15vh;
     }
 }
 
 .filter-type {
     justify-content: center;
-    height: 4vh;
+    height: 5vh;
     @media screen and (max-width: 576px) {
-        font-size: 1rem;
         height: 14vh;
         flex-direction: column;
     }
@@ -128,25 +127,25 @@ $accent2: #79e0b3;
 
     svg {
         color: $accent1;
-        font-size: 2rem;
+        font-size: 1.25rem;
         opacity: 1;
     }
 }
 
-.splide__arrow--next {
-    right: 0;
-}
+// .splide__arrow--next {
+//     right: 0;
+// }
 
-.splide__arrow--prev {
-    left: 0;
-}
+// .splide__arrow--prev {
+//     left: 0;
+// }
 
 // .splide__slide {
 //     border: 1px solid salmon;
 // }
 
 .splide__list {
-    width: 100vw;
+    width: 95vw;
     @media screen and (max-width: 768px) {
         width: 90vw;
     }

@@ -3,9 +3,18 @@ import { takeAlkoCocktail } from './firebase.js';
 
 const allLetterDivs = document.querySelectorAll('.letter');
 
-export const fetchAllFirstLetters = async () => {
+export const fetchAllFirstLetters = async type => {
+    // console.log(`i started fetch all first letters ${type}`);
     try {
-        const data = await takeAllObjects('cocktails');
+        let data;
+        // receiving necessary data from DB depending on type passed as argument
+        if (type === 'any') {
+            data = await takeAllObjects('cocktails'); // all cocktails
+        } else if (type === 'nonalcoholic') {
+            data = await takeAlkoCocktail(false); //nonalco
+        } else if (type === 'alcoholic') {
+            data = await takeAlkoCocktail(true); // alco
+        }
         let letters = []; // array containing first letters of all received cocktails
         for (let key in data) {
             let obj = data[key];
@@ -15,24 +24,7 @@ export const fetchAllFirstLetters = async () => {
         letters = letters.filter(function(value, index, self) {
             return self.indexOf(value) === index; // filter out repeating letters
         });
-        allLetterDivs.forEach(div => highlightLetter(div, letters));
-    } catch (error) {
-        console.error('Ошибка при получении данных:', error);
-    }
-};
-
-export const fetchAlkoFirstLetters = async alcohol => {
-    try {
-        const data = await takeAlkoCocktail(alcohol);
-        let letters = [];
-        for (let key in data) {
-            let obj = data[key];
-            let firstLetter = obj.name.substring(0, 1);
-            letters.push(firstLetter);
-        }
-        letters = letters.filter(function(value, index, self) {
-            return self.indexOf(value) === index; // filter out repeating letters
-        });
+        //making all letters present in array shine
         allLetterDivs.forEach(div => highlightLetter(div, letters));
     } catch (error) {
         console.error('Ошибка при получении данных:', error);

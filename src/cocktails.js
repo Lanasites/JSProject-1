@@ -1,13 +1,9 @@
 'use strict';
-// import cocktails from '../database-cocktail.json';
-import { gallerySlider } from './cocktailsGallerySlider.js';
-import { fetchAllCocktails } from './cocktailsFetch.js';
-import { fetchAlcoCocktails } from './cocktailsFetch.js';
-import { fetchCocktailsByLetter } from './cocktailsFetch.js';
-import { fetchAllFirstLetters } from './cocktailsLetters';
-import { fetchAlkoFirstLetters } from './cocktailsLetters';
 
-// const splideList = document.getElementById('splideList');
+import { gallerySlider } from './cocktailsGallerySlider.js';
+import { fetchCocktails } from './cocktailsFetch.js';
+import { fetchAllFirstLetters } from './cocktailsLetters';
+// import { fetchAlkoFirstLetters } from './cocktailsLetters';
 
 const alcoholic = document.getElementById('alcoholic');
 const nonalcoholic = document.getElementById('nonalcoholic');
@@ -21,64 +17,52 @@ document.addEventListener('DOMContentLoaded', event => {
 
     clearSelectedOnAllLetters();
 
-    fetchAllCocktails();
-    fetchAllFirstLetters();
-});
-
-alcoholic.addEventListener('click', event => {
-    // apply selected class on clicked element and remove from all other elements
-    clearSelectedOnAllTitles();
-    event.target.classList.add('selected');
-
-    clearSelectedOnAllLetters();
-
-    gallerySlider.destroy(); // Destroy the existing slider
-    fetchAlcoCocktails(true);
-    fetchAlkoFirstLetters(true);
-});
-
-nonalcoholic.addEventListener('click', event => {
-    clearSelectedOnAllTitles();
-
-    event.target.classList.add('selected');
-
-    clearSelectedOnAllLetters();
-
-    gallerySlider.destroy(); // Destroy the existing slider
-    fetchAlcoCocktails(false);
-    fetchAlkoFirstLetters(false);
-});
-
-any.addEventListener('click', event => {
-    clearSelectedOnAllTitles();
-
-    event.target.classList.add('selected');
-
-    clearSelectedOnAllLetters();
-
-    gallerySlider.destroy(); // Destroy the existing slider
-    fetchAllCocktails();
-    fetchAllFirstLetters();
+    fetchAllFirstLetters('any');
+    fetchCocktails('any', '0');
 });
 
 allLetterDivs.forEach(div => {
-    div.addEventListener('click', function() {
-        //ooh-la-la this is an loop over a loop!
+    div.addEventListener('click', function(event) {
         clearSelectedOnAllLetters();
-        event.target.classList.add('selected');
-        const clickedLetter = this.textContent; // Get text content of clicked div
+
+        event.currentTarget.classList.add('selected');
+        const clickedLetter = event.currentTarget.textContent; // Get text content of clicked div
 
         //finding which filter title is selected
-        let activeDivId = null;
-        // Loop through each div to find the one with class 'active'
         filterTitles.forEach(div => {
             if (div.classList.contains('selected')) {
-                activeDivId = div.id; // Get the ID of the div with class 'active'
+                activeDivId = div.id;
                 console.log(activeDivId);
             }
         });
         gallerySlider.destroy(); // Destroy the existing slider
-        fetchCocktailsByLetter(clickedLetter, activeDivId); // Call the function with the clicked letter
+        fetchCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter
+    });
+});
+
+let activeDivId = 'global div id';
+let clickedLetter = 'global letter';
+
+filterTitles.forEach(div => {
+    div.addEventListener('click', function(event) {
+        clearSelectedOnAllTitles();
+        event.currentTarget.classList.add('selected');
+        activeDivId = event.currentTarget.id;
+
+        fetchAllFirstLetters(activeDivId); // need to change
+
+        let selectedLetter = false;
+        allLetterDivs.forEach(div => {
+            if (div.classList.contains('selected')) {
+                clickedLetter = div.textContent; // Get the ID of the div with class 'selected'
+                selectedLetter = true;
+            }
+        });
+        if (!selectedLetter) {
+            clickedLetter = '0';
+        }
+        gallerySlider.destroy(); // Destroy the existing slider
+        fetchCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter
     });
 });
 
