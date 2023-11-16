@@ -9,7 +9,7 @@ const inputPassword2 = form.elements.passwordRepeat
 let errors = [];
 
 // функция регистрации пользователя в БД
-import { loginEmailPassword } from './authentication.js';
+import { registrationEmailPassword } from './authentication.js';
 
 
 form.addEventListener('submit', function (event) {
@@ -17,7 +17,7 @@ form.addEventListener('submit', function (event) {
     errors = [];
     // formValidate();
 });
-btnLogin.addEventListener('click', loginEmailPassword);
+btnLogin.addEventListener('click', registrationEmailPassword);
 
 
 function formValidate() {

@@ -20,7 +20,7 @@ const auth = getAuth(app);
 
 
 
-async function loginEmailPassword() {
+async function registrationEmailPassword() {
     const elemEmail = document.getElementById('email');
     const elemPassword = document.getElementById('password');
     // const btnLogin = document.getElementById('btnLogin');
@@ -36,7 +36,6 @@ async function loginEmailPassword() {
     catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(error);
         console.error('Подробнее об ошибке: ', errorCode, errorMessage);
         if (error.message.indexOf('email-already-in-use') > 0)
             alert('Пользователь с таким email уже зарегистрирован. Перейдите на вкладку "Войти"');
@@ -44,10 +43,33 @@ async function loginEmailPassword() {
 
 }
 // btnLogin.addEventListener('click', loginEmailPassword);
+export { registrationEmailPassword };
+
+
+async function loginEmailPassword() {
+    console.log("Вызов функции входа в ЛК");
+    // const elemEmail = document.getElementById('email');
+    // const elemPassword = document.getElementById('password');
+    // // const btnLogin = document.getElementById('btnLogin');
+
+    // const txtEmail = elemEmail.value;
+    // const txtPassword = elemPassword.value;
+
+    // try {
+    //     const userCredential = await signInWithEmailAndPassword(auth, txtEmail, txtPassword);
+    //     console.log(userCredential);
+    //     // const user = userCredential.user;
+    //     // console.log('Создался пользователь', user);
+    // }
+    // catch (error) {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     console.error('Подробнее об ошибке: ', errorCode, errorMessage);
+    // };
+
+}
+// btnLogin.addEventListener('click', loginEmailPassword);
 export { loginEmailPassword };
-
-
-
 
 // const auth = getAuth();
 // ----------------------------------------------Регистрация новых пользователей---------------------------------------------------
