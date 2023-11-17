@@ -9,9 +9,9 @@
   https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   " rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.scss">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap"
-    rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap" rel="stylesheet">
+
 
   <!-- Подключение БД -->
   <!-- <script type="module" src="./src/firebase.js"> 
@@ -73,14 +73,16 @@
         <button type="button" class="favourite__star" id="star"></button>
       </div>
     </div>
-    <div class="header-block__bm-list">
-      <ul class="bm-list__list">
-        <li><a href="index.html" class="list__item">Главная</a></li>
-        <li><a href="ingredients.html" class="list__item">Ингредиенты</a></li>
-        <li><a href="cocktails.html" class="list__item">Рецепты</a></li>
-        <li><a href="recipe-cocktail.html" class="list__item">Рандомный коктейль</a></li>
-      </ul>
-    </div>
+
+      <div class="header-block__bm-list"> 
+        <ul class="bm-list__list">
+          <li><a href="index.html" class="list__item">Главная</a></li>
+          <li><a href="ingredients.html" class="list__item">Ингредиенты</a></li>
+          <li><a href="cocktails.html" class="list__item">Рецепты</a></li>
+          <li><a href="random-coctail.html" class="list__item">Рандомный коктейль</a></li>
+        </ul>
+      </div>
+
     </div>
   </header>
   <main>
@@ -138,11 +140,24 @@
         <p class="team-logo__name">Название команды</p>
       </div>
     </div>
+
+    <nav  class="footer__nav">
+      <ul  class="nav__nav-list">
+        <li class="nav__nav-item"><a href="index.html" class="nav__nav-link" id="footer-main-page">Главная</a></li>
+        <li class="nav__nav-item"><a href="ingredients.html" class="nav__nav-link" id="footer-ingredients-page">Ингредиенты</a></li>
+        <li class="nav__nav-item"><a href="cocktails.html" class="nav__nav-link" id="footer-recipes-page">Рецепты</a></li>
+      </ul>
+    </nav>
+    <div class="footer__team-logo" id="team-logotype">
+      <img class="team-logo__image" src="./assets/svg/icon_github-01 1.svg" alt="Logo">
+      <p class="team-logo__name">Название команды</p>
+    </div>
+  </div>
+
     <div class="footer-block__authority">
       <p>© ALCOSHAKE 2023</p>
     </div>
   </footer>
-  <script type="module" src="./src/header.js"></script>
   <script type="module" src="./src/main.js"></script>
 </body>
 
