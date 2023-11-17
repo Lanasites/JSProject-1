@@ -15,7 +15,7 @@ import { registrationEmailPassword } from './authentication.js';
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     errors = [];
-    // formValidate();
+    formValidate();
 });
 btnLogin.addEventListener('click', registrationEmailPassword);
 
