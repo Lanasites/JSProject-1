@@ -1,3 +1,4 @@
+
 import { takeAllObjects } from './firebase.js'
 //import { takeOneIngredient } from './firebase.js'
 
@@ -48,21 +49,23 @@ function print(id, name, cocktails, img) {
     <div class="container_item__ingredient">${name}</div>
     <div class="container_item__coctails"><br> ${cocktails}</div>
     <button class="container_item__btn" id="${id}"><span>Содержится в коктейлях:</span></button>
-  </div>
+</div>
     `
   const newElement = document.createElement('div');
   newElement.innerHTML = template;
   printElement.appendChild(newElement);
+  document.getElementById(id).addEventListener('click', showModal(cocktails));
 }
 
 testGetData()
+
 
 // Функции для заполнения модального окна
 
 const modalElement = document.getElementById('modal');
 
 // Функция отображения модального окна
-function showModal() {
+function showModal(cocktails) {
   modalElement.style.display = 'block';
   testGetDataModal();
   const coctailElememt = document.querySelectorAll
@@ -112,7 +115,7 @@ function testGetDataModal() {
 function printModal(id, name, description, cooking, img) {
   //const printElement = document.getElementById('print');
   const template = `
-  <div class="modal_item">
+    < div class= "modal_item" >
   <div class="modal_item-1">
   <img class="modal_item-1__img" src="${img}" alt="">
   </div>
@@ -122,8 +125,8 @@ function printModal(id, name, description, cooking, img) {
   <div class="modal_item-2__cooking"><span>Рецепт:</span> ${cooking}</div>
   <ul class="modal_item-2__id" id = ${id}></ul>
   </div>
-  </div>
-  `
+  </ >
+    `
   const newElement = document.createElement('div');
   newElement.innerHTML = template;
   modalElement.appendChild(newElement);
@@ -138,7 +141,7 @@ function printSostav(ingrArr) {
     let kolvo = ingrArr[i].quantity;
     let name = ingrArr[i].name;
 
-    item += `<li> ${name}: ${kolvo}</li>`;
+    item += `< li > ${name}: ${kolvo}</ > `;
 
   }
   // console.log('item', item);
