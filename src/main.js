@@ -1,3 +1,4 @@
+
 import { burgerMenu } from './header.js'; 
 burgerMenu();
 
@@ -62,6 +63,11 @@ import { takeOneIngredient } from './firebase.js'
 //     });
 import { takeAlkoCocktail } from './firebase.js'
 
+
+// проверка идентификации пользователя, на все страницы надо добавить
+import { monitorAuthState } from './authentication.js'
+monitorAuthState();
+// -----------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const agePopup = document.getElementById("age-confirmation-popup");
   const ageInput = document.getElementById("age-input");
@@ -99,8 +105,8 @@ cocktail.forEach((item) => {
 import Splide from '@splidejs/splide';
 const mySlider = new Splide('.splide');
 mySlider.mount();
-new Splide( '.splide', {
-  type   : 'loop',
-  wheel : true,
-  speed : 0,
-} );
+new Splide('.splide', {
+  type: 'loop',
+  wheel: true,
+  speed: 0,
+});
