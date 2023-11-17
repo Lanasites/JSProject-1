@@ -4,14 +4,15 @@ export const printCocktailPreview = item => {
     newSlide.className = 'splide__slide';
     const newCocktail = document.createElement('a');
     newCocktail.className = 'preview';
-    newCocktail.id = item.name;
-    newCocktail.href = './index.html';
+    newCocktail.id = item.id;
+    newCocktail.href = './recipe-cocktail.html';
     const template = `<img src=${item.imageUrl} alt=${item.name} class="preview-img" />
     <div class="preview-title">${item.name}</div>`;
     newCocktail.innerHTML = `${template}`;
     newCocktail.addEventListener('click', function() {
-        document.cookie = `cocktailId=${item.name}; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        document.cookie = `cocktailId = ${item.name}`;
+        document.cookie = `cocktailId=${item.id}; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        document.cookie = `cocktailId = ${item.id}`;
+        console.log(item.id);
     });
     newSlide.appendChild(newCocktail);
     splideList.appendChild(newSlide);

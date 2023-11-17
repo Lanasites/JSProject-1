@@ -22,7 +22,7 @@ export const fetchCocktails = async (type, letter) => {
         } else if (type === 'nonalcoholic') {
             data = await takeAlkoCocktail(false); //get nonalco cocktails
         }
-        console.log(data);
+        // console.log(data);
         // creating array with cocktails depending on letter passed
         let arrByLetter = [];
         // if no letter is passed i used "anyLetter" just in case
@@ -41,7 +41,7 @@ export const fetchCocktails = async (type, letter) => {
                 }
             }
         }
-        console.log(arrByLetter);
+        // console.log(arrByLetter);
         // if we have no cocktails on this letter, then we get an prompt to register and one
         if (arrByLetter.length === 0) {
             console.log(`No cocktails available starting with the letter ${letter}`);
@@ -50,6 +50,7 @@ export const fetchCocktails = async (type, letter) => {
             //finally if we received something we print it out into splider
             for (let key in arrByLetter) {
                 let obj = arrByLetter[key];
+                // console.log(obj);
                 printCocktailPreview(obj);
             }
             gallerySlider.mount({ Grid });
