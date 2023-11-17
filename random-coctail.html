@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALCOSHAKE</title>
+    <link href="
+  https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+  " rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.scss">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/recipe-cocktail.scss">
+
+
+    <!-- Подключение БД -->
+    <script type="module" src="./src/firebase.js">
+  // // Import the functions you need from the SDKs you need
+  // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  // // TODO: Add SDKs for Firebase products that you want to use
+  // // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // // Your web app's Firebase configuration
+  // const firebaseConfig = {
+  // apiKey: "AIzaSyC9NxHk9mUmNACk8EFBrFi1_kuCyyWKCEU",
+  // authDomain: "js-project-1-49be0.firebaseapp.com",
+  // databaseURL: "https://js-project-1-49be0-default-rtdb.firebaseio.com",
+  // projectId: "js-project-1-49be0",
+  // storageBucket: "js-project-1-49be0.appspot.com",
+  // messagingSenderId: "580525730958",
+  // appId: "1:580525730958:web:47489777447b08c50b2ddf"
+  // };
+  // // // Initialize Firebase
+  // const app = initializeApp(firebaseConfig);
+
+    </script>
+
+</head>
+
+<body>
+    <!-- Структура main главной страницы -->
+    <!-- Структура Header главной страницы -->
+    <header class="header-block">
+        <div class="header-block  container-header">
+            <!--добавила -header в название, чтобы у меня не было конфликта пока что-->
+            <div class="header-block__burger-menu">
+                <div class="burger-menu__btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="header-block__logo" id="logotype">
+                <img class="logo__image" src="./assets/png/logo-01 1.png" alt="Logo">
+                <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
+            </div>
+            <nav class="header-block__headline">
+                <ul class="headline__nav-list">
+                    <li class="headline__nav-item"><a href="#" class="headline__nav-link" id="main-page">Главная</a>
+                    </li>
+                    <li class="headline__nav-item"><a href="#" class="headline__nav-link"
+                            id="ingredients-page">Ингредиенты</a>
+                    </li>
+                    <li class="headline__nav-item"><a href="#" class="headline__nav-link" id="recipes-page">Рецепты</a>
+                        <!-- <ul class="dropdown-menu" id="dropdown-recipes">
+            <li><a href="#" class="dropdown-menu__item" id="alcohol-page">Алкогольные</a></li>
+            <li><a href="#" class="dropdown-menu__item" id="nonalcohol-page">Безалкогольные</a></li>
+          </ul>   -->
+                    </li>
+                    <li class="headline__nav-item"><a href="#" class="headline__nav-link"
+                            id="random-cocktail-page">Рандомный
+                            коктейль</a></li>
+                </ul>
+            </nav>
+            <div class="header-block__search">
+                <input type="text" placeholder="" class="search__input" id="search-value">
+                <button type="submit" class="search__btn" id="search"></button>
+            </div>
+            <div class="header-block__user-profile">
+                <button type="button" class="user-profile__btn" id="profile"></button>
+            </div>
+            <div class="header-block__favourite">
+                <button type="button" class="favourite__star" id="star"></button>
+            </div>
+        </div>
+        <!-- <div class="menu"> -->
+        <div class="header-block__bm-list">
+            <ul class="bm-list__list">
+                <li><a href="#" class="list__item">Главная</a></li>
+                <li><a href="#" class="list__item">Ингредиенты</a></li>
+                <li><a href="#" class="list__item">Рецепты</a></li>
+                <li><a href="#" class="list__item">Рандомный коктейль</a></li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    <!-- Проверка возраста
+  <div id="age-confirmation-popup">
+    <div class="content">
+      <h2>Подтверждение возраста</h2>
+      <p>Для продолжения, пожалуйста, введите ваш возраст:</p>
+      <input type="number" id="age-input" placeholder="Ваш возраст">
+      <button id="confirm-btn">Подтвердить</button>
+    </div>
+  </div> -->
+
+    <!-- Страница с рецептом коктейля -->
+    <div class="container">
+        <div class="container-wrapper">
+            <div class="container-wrapper__pic">
+                <img src="" alt="" class="container-wrapper__pic-img">
+            </div>
+            <div class="container-wrapper__recipe">
+                <div class="container-wrapper__recipe-text">
+                    <div class="text-heading-p" id="name">
+                    </div>
+                    <div class="text-p" id="description">
+                    </div>
+                    <div class="text-heading">
+                        <p>Ингредиенты:</p>
+                    </div>
+                    <ul class="text-p" id="ingredients">
+                    </ul>
+                    <div class="text-heading">
+                        <p>Приготовление:</p>
+                    </div>
+                    <div class="text-p" id="cooking">
+                    </div>
+                </div>
+                <div class="container-wrapper__recipe-favourite">
+                    <label></label>
+                    <input type="checkbox" name="favourites" class="button" id="favourite" value="">
+                    <!-- <img src="./assets/img/icon_favourites-01.svg" alt="favourite-star"> -->
+                    <label for="favourites" class="label">ДОБАВИТЬ В ИЗБРАННОЕ</label>
+                    </input>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Структура Footer главной страницы -->
+    <footer class="footer-block">
+        <div class="footer-block__footer">
+            <div class="footer__logo" id="footer-logotype">
+                <img class="logo__image" src="./assets/png/logo-01 1.png" alt="Logo">
+                <p class="logo__name">ALCOSHAKE</p>
+            </div>
+            <nav class="footer__nav">
+                <ul class="nav__nav-list">
+                    <li class="nav__nav-item"><a href="#" class="nav__nav-link" id="footer-main-page">Главная</a></li>
+                    <li class="nav__nav-item"><a href="#" class="nav__nav-link"
+                            id="footer-ingredients-page">Ингредиенты</a></li>
+                    <li class="nav__nav-item"><a href="#" class="nav__nav-link" id="footer-recipes-page">Рецепты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__team-logo" id="team-logotype">
+                <img class="team-logo__image" src="./assets/png/icon_github-01 1.png" alt="Logo">
+                <p class="team-logo__name">Название команды</p>
+            </div>
+        </div>
+        <div class="footer-block__authority">
+            <p>© ALCOSHAKE 2023</p>
+        </div>
+    </footer>
+    <!-- <script type="module" src="./src/main.js"></script> -->
+    <script type="module" src="./src/random-coctail.js"></script>
+</body>
+
+</html>
