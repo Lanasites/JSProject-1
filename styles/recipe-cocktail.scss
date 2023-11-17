@@ -89,30 +89,30 @@
             align-items: center;
             margin-left: 0;
 
-            .button {
-                display: none;
-                /* Скрываем настоящий чекбокс */
-            }
+            // .button {
+            //     display: none;
+            //     /* Скрываем настоящий чекбокс */
+            // }
 
-            .label {
-                position    : relative;
-                padding-left: 30px;
-                /* Размер звездочки + отступ */
-                cursor      : pointer;
-            }
+            // .label {
+            //     position    : relative;
+            //     padding-left: 30px;
+            //     /* Размер звездочки + отступ */
+            //     cursor      : pointer;
+            // }
 
-            .label::before {
-                content  : '☆';
-                /* Пустая звездочка */
-                position : absolute;
-                left     : 0;
-                font-size: 24px;
-            }
+            // .label::before {
+            //     content  : '☆';
+            //     /* Пустая звездочка */
+            //     position : absolute;
+            //     left     : 0;
+            //     font-size: 24px;
+            // }
 
-            .button:checked+.label::before {
-                content: '★';
-                /* Заполненная звездочка при выборе чекбокса */
-            }
+            // .button:checked+.label::before {
+            //     content: '★';
+            //     /* Заполненная звездочка при выборе чекбокса */
+            // }
         }
 
         .label {
