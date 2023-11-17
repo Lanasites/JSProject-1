@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 
-import cocktail from '../database-cocktail.json';
+import cocktail from '../js-project-cocktails.json';
 
 import { writeCocktailData } from './firebase.js'
 
@@ -14,9 +14,11 @@ function showCocktail() {
     const cocktailCooking = document.getElementById('cooking');
 
     const specificCocktail = cocktail['Mojito'];
-    const itemImage = document.createElement('img');
-    itemImage.src = specificCocktail.imageUrl;
-    itemImage.alt = specificCocktail.idcocktail;
+    // const itemImage = document.createElement('img');
+    cocktailImage.src = specificCocktail.imageUrl; // itemImage заменила на cocktail.Image
+    cocktailImage.alt = specificCocktail.idcocktail; // то же самое картинка появилась
+    // itemImage.src = specificCocktail.imageUrl;
+    // itemImage.alt = specificCocktail.idcocktail;
 
     const itemName = document.createElement('p');
     itemName.textContent = specificCocktail.name;
@@ -34,7 +36,7 @@ function showCocktail() {
     const itemCooking = document.createElement('p');
     itemCooking.textContent = specificCocktail.cooking;
 
-    cocktailImage.appendChild(itemImage);
+
     cocktailName.appendChild(itemName);
     cocktailDescription.appendChild(itemDescription);
     cocktailIngredients.appendChild(itemIngredients);
@@ -42,6 +44,11 @@ function showCocktail() {
 };
 
 showCocktail();
+
+
+const specificCocktail = cocktail['Mojito'];
+    // const itemImage = document.createElement('img');
+
 
 
 // // рандомный коктейль
