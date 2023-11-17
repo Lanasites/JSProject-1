@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import Swal from 'sweetalert2';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 
 // Your web app's Firebase configuration
@@ -32,14 +33,14 @@ async function registrationEmailPassword() {
         const userCredential = await createUserWithEmailAndPassword(auth, txtEmail, txtPassword);
         const user = userCredential.user;
         console.log('Создался пользователь', user);
-        alert('Вы успешно зареристрировались! Для входа войдите по ссылке');
+        modal1('Поздравляем!', 'Вы успешно зарегистрировались на сайте', 'success', 'Ок');
     }
     catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error('Подробнее об ошибке: ', errorCode, errorMessage);
         if (error.message.indexOf('email-already-in-use') > 0)
-            alert('Пользователь с таким email уже зарегистрирован. Перейдите на вкладку ВОЙТИ');
+            modal1('Внимание!', 'Пользователь с таким email уже зарегистрирован. Перейдите на вкладку ВОЙТИ или нажмите на кнопку ниже', 'warning', `<a class = 'unline-w' href="sign-in-form.html">Войти</a> `);
     };
 
 }
@@ -61,15 +62,17 @@ async function loginEmailPassword() {
         console.log(userCredential);
         const user = userCredential.user;
         console.log('Пользователь авторизовался на сайте', user);
+        modalSuccess1();
     }
     catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error('Подробнее об ошибке: ', errorCode, errorMessage);
-        if (error.message.indexOf('auth/invalid-email') > 0)
-            alert('Пользователя с таким email не существует. Если вы ранее не регистрироваоись, выберите вкладку РЕГИСТРАЦИЯ');
+        if (error.message.indexOf('auth/invalid-email') > 0) {
+            modal1('Внимание!', 'Пользователя с таким email не существует. Если вы ранее не регистрироваоись, выберите вкладку РЕГИСТРАЦИЯ или нажмите на кнопку ниже', 'warning', `<a class = 'unline-w' href="reg-form.html">Зарегистрироваться</a> `);
+        }
         if (error.message.indexOf('auth/invalid-login-credentials') > 0)
-            alert('Пароль введет не верно!');
+            modalError2();
     };
 
 }
@@ -94,3 +97,90 @@ const monitorAuthState = async () => {
     })
 }
 export { monitorAuthState };
+
+// модальные окна
+function modal1(title, text, type, textButton) {
+    console.log('вызов функции modal1', title, text, type);
+    Swal.fire(
+        {
+            title: title,
+            text: text,
+            icon: type,
+            showCloseButton: true,
+            // отмена стандартных стилей кнопки
+            buttonsStyling: false,
+            customClass: {
+                confirmButton: 'my-custom-button-class'
+            },
+            confirmButtonText: textButton
+        });
+}
+function modalSuccess1() {
+    Swal.fire(
+        {
+            title: 'Вы успешно вошли на сайт',
+            icon: 'success',
+            timer: 1500,
+            showConfirmButton: false
+        });
+}
+
+// функция вывода сообщения об ошибке
+function modalError2() {
+    Swal.fire({
+        title: 'Ошибка!',
+        text: 'Пароль введен не верно',
+        icon: 'error',
+        showCloseButton: true,
+        showCancelButton: true,
+        cancelButtonText: 'Попробовать еще раз',
+        confirmButtonColor: 'gray',
+        confirmButtonText: '<a class = "unline-b" onclick="changeEmail()">Сменить пароль</a> ',
+
+        // отмена стандартных стилей кнопки
+        buttonsStyling: false,
+        customClass: {
+            confirmButton: 'akcent',
+            cancelButton: 'my-custom-button-class'
+        },
+        reverseButtons: true
+    })
+        .then((result) => {
+            if (result.isConfirmed) {
+                changeEmail(); // Вызов функции при нажатии на кнопку "ОК"
+            }
+        });
+
+}
+// окно с почтой для восстаноления пароля
+async function changeEmail() {
+    const { value: email } = await Swal.fire({
+        title: "Введите email, который вы указывали при регистрации",
+        input: "email",
+        inputLabel: "На почту вам придет письмо со ссылкой для смены пароля",
+        inputPlaceholder: "email",
+        showCloseButton: true,
+        validationMessage: 'email введен не правильно. Пример: ivanov@yandex.ru',
+        buttonsStyling: false,
+        showCancelButton: true,
+        customClass: {
+            confirmButton: 'akcent',
+            cancelButton: 'my-custom-button-class'
+        }
+    });
+    if (email) {
+        Swal.fire(`Вы ввели: ${email}`);
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // Password reset email sent!
+                console.log('письмо было отправлено на ', email);
+                // ..
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // ..
+            });
+    }
+}
+

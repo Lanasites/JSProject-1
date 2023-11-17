@@ -7,6 +7,7 @@ const btnLogin = document.getElementById('btnLogin');
 import { loginEmailPassword } from './authentication.js';
 
 import { monitorAuthState } from './authentication.js'
+// монитогин идентификации
 monitorAuthState();
 
 btnLogin.addEventListener('click', loginEmailPassword);
