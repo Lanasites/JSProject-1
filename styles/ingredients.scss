@@ -35,23 +35,35 @@ h1 {
 
     &__ingredient {
       font-weight: bold;
-      font-size: 1.7vw;
+      font-size: 1.25rem;
 
     }
 
-    &__coctails {
-      padding: 0 0.2vw;
-      text-align: center;
-      max-width: 19vw;
-      font-size: 1.2vw;
+    &__btn {
+      background-color: #fff;
+      width: 8vw;
+      height: 3vh;
+      font-size: 0.5vw;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      @media (max-width: 767px) {
+        width: 22vw;
+        height: 6vh;
+        font-size: 2vw;
+        margin: 1vw;
+      }
+
+      @media (max-width: 380px) {
+        width: 42vw;
+        height: 7vh;
+        font-size: 3.5vw;
+        margin: 1vw;
+      }
     }
   }
 }
 
-span {
-  font-weight: 550;
-  font-size: 1.5vw;
-}
 
 //-----------adaptive tablet----------//
 
@@ -121,4 +133,68 @@ span {
     font-size: 3vw;
     text-align: center;
   }
+}
+
+//-----------modal----------//
+
+#modal {
+  max-width: 50vw;
+  border: 3px inset purple;
+  display: none;
+  //position: absolute;
+}
+
+.btn {
+  padding: 1vw 1vw 0 0;
+  display: flex;
+  justify-content: end;
+
+  &_close {
+    width: 3.3vw;
+    font-size: 0.6vw;
+  }
+}
+
+.modal_item {
+  padding-top: 0.5vw;
+  max-width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  border-bottom: 1px inset purple;
+}
+
+.modal_item-1 {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    height: 7vw;
+  }
+}
+
+.modal_item-2 {
+  &__name {
+    font-weight: bold;
+    font-size: 1vw;
+  }
+
+  &__description {
+    padding: 0 0.2vw;
+    font-size: 0.9vw;
+  }
+
+  &__cooking {
+    padding: 0 0.2vw;
+    font-size: 0.9vw;
+  }
+
+  &__id {
+    text-align: start;
+    font-size: 0.9vw;
+  }
+}
+
+span {
+  font-weight: 550;
+  font-size: 0.9vw;
 }
