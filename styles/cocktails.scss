@@ -13,10 +13,12 @@ $accent1: #000000;
 $accent2: #79e0b3;
 
 .header {
-    height: 10vh;
+    height: 5vh;
 }
 
 .header-block {
+    max-width: 100vw;
+
     display: flex;
     justify-content: space-around;
     margin-top: 6vh;
@@ -37,7 +39,7 @@ $accent2: #79e0b3;
 }
 
 .footer-block {
-    width: 100vw;
+    max-width: 100vw;
     .footer-block__footer {
         justify-content: center;
         margin: 0 auto;
@@ -55,7 +57,7 @@ $accent2: #79e0b3;
 .footer {
     height: 10vh;
     width: 100vw;
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 890px) {
         height: 20vh;
     }
 }

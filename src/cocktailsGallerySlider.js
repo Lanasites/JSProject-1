@@ -3,7 +3,7 @@ export const gallerySlider = new Splide('#gallerySlider', {
     wheel: true,
     // type: 'loop',
     pagination: false,
-    height: '46vh',
+    height: '48vh',
     width: '100vw',
     grid: {
         rows: 2,
@@ -21,15 +21,16 @@ export const gallerySlider = new Splide('#gallerySlider', {
             }
         },
         992: {
-            height: '40vh',
+            height: '45vh',
             grid: {
                 rows: 2,
                 cols: 2
             }
         },
         576: {
+            height: '34vh',
             grid: {
-                rows: 2,
+                rows: 1,
                 cols: 1
             }
         }
