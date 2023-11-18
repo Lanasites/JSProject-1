@@ -89,42 +89,27 @@
             align-items: center;
             margin-left: 0;
 
-            // .button {
-            //     display: none;
-            //     /* Скрываем настоящий чекбокс */
-            // }
+            .button {
+                display: none;
+            }
 
-            // .label {
-            //     position    : relative;
-            //     padding-left: 30px;
-            //     /* Размер звездочки + отступ */
-            //     cursor      : pointer;
-            // }
+            .favourite-star {
+                width: 1rem;
+            }
 
-            // .label::before {
-            //     content  : '☆';
-            //     /* Пустая звездочка */
-            //     position : absolute;
-            //     left     : 0;
-            //     font-size: 24px;
-            // }
+            .label {
+                color: $black;
 
-            // .button:checked+.label::before {
-            //     content: '★';
-            //     /* Заполненная звездочка при выборе чекбокса */
-            // }
+                font-family: $font1;
+                font-size  : 0.75rem;
+                font-style : normal;
+                font-weight: 400;
+                line-height: 0.75rem;
+                /* 100% */
+            }
         }
 
-        .label {
-            color: $black;
 
-            font-family: $font1;
-            font-size  : 0.75rem;
-            font-style : normal;
-            font-weight: 400;
-            line-height: 0.75rem;
-            /* 100% */
-        }
     }
 }
 
@@ -219,7 +204,13 @@
                 align-items: center;
                 margin     : 0 auto;
 
-                // .button {}
+                .button {
+                    display: none;
+                }
+
+                .favourite-star {
+                    width: 1rem;
+                }
 
                 .label {
                     color: $black;
@@ -327,7 +318,13 @@
                 align-items: center;
                 margin     : 0 auto;
 
-                // .button {}
+                .button {
+                    display: none;
+                }
+
+                .favourite-star {
+                    width: 1rem;
+                }
 
                 .label {
                     color: $black;

@@ -62,7 +62,7 @@ function showCocktail() {
     //}
     // else {
     //     // если id коктейля не найден, то переадресация на страницу с ошибкой
-    //     window.location.href = 'index.html';
+    //     window.location.href = 'index.html'; // тут пока основная
     // }
 };
 
@@ -70,42 +70,27 @@ showCocktail();
 
 
 
-// // рандомный коктейль
-// function getRandomCocktail() {
-//     const randomIndex = Math.floor(Math.random() * cocktail.length);
-//     return cocktail[randomIndex];
-// }
+// добавить в избранное
 
-// function showRandomCocktail() {
-//     const cocktailImage = document.querySelector('.container-wrapper__pic-img');
-//     const cocktailName = document.getElementById('name');
-//     const cocktailDescription = document.getElementById('description');
-//     const cocktailIngredients = document.getElementById('ingredients');
-//     const cocktailCooking = document.getElementById('cooking');
+const favouriteCocktails = []; // массив с избранным
 
-//     const randomCocktail = getRandomCocktail();
+document.querySelectorAll('.container-wrapper__recipe-favourite').forEach(container => {
+    container.addEventListener('click', function () {
+        const cocktailId = this.getAttribute('data-cocktail-id');
 
-//     cocktailImage.src = randomCocktail.image;
-//     cocktailImage.alt = randomCocktail.idcocktail;
+        // проверяю, есть ли уже этот коктейль в избранном
+        const index = favouriteCocktails.indexOf(cocktailId);
 
-//     const itemName = document.createElement('p');
-//     itemName.textContent = randomCocktail.name;
+        if (index === -1) {
+            // если нет, то добавляю
+            favouriteCocktails.push(cocktailId);
+            this.querySelector('.favourite-star').src = "./assets/img/favourite_filled.svg";
+        } else {
+            // если есть, то удаляю
+            favouriteCocktails.splice(index, 1);
+            this.querySelector('.favourite-star').src = "./assets/img/icon_favourites-01.svg";
+        }
 
-//     const itemDescription = document.createElement('p');
-//     itemDescription.textContent = randomCocktail.description;
-
-//     const itemIngredients = document.createElement('ul');
-//     randomCocktail.ingredients.forEach(ingredient => {
-//         const listItem = document.createElement('li');
-//         listItem.textContent = `${ingredient.name}: ${ingredient.quantity}`;
-//         itemIngredients.appendChild(listItem);
-//     });
-
-//     const itemCooking = document.createElement('p');
-//     itemCooking.textContent = randomCocktail.cooking;
-
-//     cocktailName.appendChild(itemName);
-//     cocktailDescription.appendChild(itemDescription);
-//     cocktailIngredients.appendChild(itemIngredients);
-//     cocktailCooking.appendChild(itemCooking);
-// }
+        // тут 
+    });
+});
