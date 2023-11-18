@@ -1,11 +1,15 @@
 
 const form = document.forms.formRegistration
 const allInputs = document.querySelectorAll('input')
+const btnLogin = document.getElementById('btnLogin');
 
 const inputPassword = form.elements.password
 const inputPassword2 = form.elements.passwordRepeat
 
 let errors = [];
+
+// функция регистрации пользователя в БД
+import { registrationEmailPassword } from './authentication.js';
 
 
 form.addEventListener('submit', function (event) {
@@ -13,6 +17,7 @@ form.addEventListener('submit', function (event) {
     errors = [];
     formValidate();
 });
+btnLogin.addEventListener('click', registrationEmailPassword);
 
 
 function formValidate() {

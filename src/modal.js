@@ -3,9 +3,10 @@ import Swal from 'sweetalert2';
 import 'sweetalert2/src/sweetalert2.scss';
 // --------------------------------Модальное окно успеха, закрывающееся по таймеру 1---------------------------
 // выбиаем кнопку
-const btnSuccess1 = document.getElementById('btn-success1')
+const btnSuccess1 = document.getElementById('btn-success1');
 // вешаем на нее слушатель
 btnSuccess1.addEventListener('click', modalSuccess1)
+
 function modalSuccess1() {
     Swal.fire(
         {
@@ -15,11 +16,13 @@ function modalSuccess1() {
             showConfirmButton: false
         });
 }
+export { modalSuccess1 }
+
 // --------------------------------Модальное окно успеха, закрывающееся по таймеру 2---------------------------
 // выбиаем кнопку
-const btnSuccess2 = document.getElementById('btn-success2')
+const btnSuccess2 = document.getElementById('btn-success2');
 // вешаем на нее слушатель
-btnSuccess2.addEventListener('click', modalSuccess2)
+btnSuccess2.addEventListener('click', modalSuccess2);
 function modalSuccess2() {
     Swal.fire(
         {
@@ -32,9 +35,9 @@ function modalSuccess2() {
 }
 // --------------------------------Модальное окно успеха с кнопкой-ссылкой на другую страницу--------------------------
 // выбиаем кнопку
-const btnSuccess3 = document.getElementById('btn-success-btn2')
+const btnSuccess3 = document.getElementById('btn-success-btn2');
 // вешаем на нее слушатель
-btnSuccess3.addEventListener('click', modalSuccess3)
+btnSuccess3.addEventListener('click', modalSuccess3);
 function modalSuccess3() {
     Swal.fire(
         {
@@ -52,9 +55,9 @@ function modalSuccess3() {
 }
 // --------------------------------Модальное окно ошибки 1--------------------------
 // выбиаем кнопку
-const btnEr1 = document.getElementById('btn-error1')
+const btnEr1 = document.getElementById('btn-error1');
 // вешаем на нее слушатель
-btnEr1.addEventListener('click', modalError1)
+btnEr1.addEventListener('click', modalError1);
 // функция вывода сообщения об ошибке
 function modalError1() {
     Swal.fire({
@@ -71,9 +74,9 @@ function modalError1() {
 }
 // --------------------------------Модальное окно ошибки 2--------------------------
 // выбиаем кнопку
-const btnEr2 = document.getElementById('btn-error2')
+const btnEr2 = document.getElementById('btn-error2');
 // вешаем на нее слушатель
-btnEr2.addEventListener('click', modalError2)
+btnEr2.addEventListener('click', modalError2);
 // функция вывода сообщения об ошибке
 function modalError2() {
     Swal.fire({
@@ -125,9 +128,9 @@ async function changeEmail() {
 
 // --------------------------------Модальное окно инфоррмационное--------------------------
 // выбиаем кнопку
-const btnInf = document.getElementById('btn-inf')
+const btnInf = document.getElementById('btn-inf');
 // вешаем на нее слушатель
-btnInf.addEventListener('click', modalInf)
+btnInf.addEventListener('click', modalInf);
 function modalInf() {
     Swal.fire(
         {
@@ -143,3 +146,25 @@ function modalInf() {
             confirmButtonText: `Ок`
         });
 }
+export { modalInf }
+
+// -----------------универсальное модальное окно------------
+// модальные окна
+function modal1(title, text, type, textButton) {
+    console.log('вызов функции modal1', title, text, type);
+    Swal.fire(
+        {
+            title: title,
+            text: text,
+            icon: type,
+            showCloseButton: true,
+            // отмена стандартных стилей кнопки
+            buttonsStyling: false,
+            customClass: {
+                confirmButton: 'my-custom-button-class'
+            },
+            confirmButtonText: textButton
+        });
+}
+
+export { modal1 }
