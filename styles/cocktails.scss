@@ -1,9 +1,9 @@
-@import url(./_header.scss);
-@import url(./_footer.scss);
+@import './header.scss';
+@import './footer.scss';
 
 * {
     margin: 0;
-    padding: 0;
+    // padding: 0;
     box-sizing: border-box;
 }
 
@@ -12,24 +12,49 @@ $text: #000000;
 $accent1: #000000;
 $accent2: #79e0b3;
 
-// $bg: #000000;
-// $text: #ffffff;
-// $accent1: #ffffff;
-// $accent2: #79e0b3;
-
 .header {
-    height: 18vh;
-    background-color: $bg;
-    color: $text;
-    @media screen and (max-width: 576px) {
-        height: 15vh;
+    height: 10vh;
+}
+
+.header-block {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 6vh;
+    margin-bottom: 9vh;
+    padding: 0 4vw;
+    @media (max-width: 1020px) {
+        margin-bottom: 2vh;
+    }
+}
+
+.header-block .header-block__headline .headline__nav-list .headline__nav-link {
+    @media (max-width: 1400px) {
+        font-size: 1rem;
+    }
+    @media (max-width: 900px) {
+        font-size: 0.8rem;
+    }
+}
+
+.footer-block {
+    width: 100vw;
+    .footer-block__footer {
+        justify-content: center;
+        margin: 0 auto;
+        width: 100vw;
+    }
+    .footer-block__authority {
+        margin: 0 auto;
+        width: 100vw;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        justify-content: center;
     }
 }
 
 .footer {
-    height: 16vh;
-    background-color: $bg;
-    color: $text;
+    height: 10vh;
+    width: 100vw;
     @media screen and (max-width: 576px) {
         height: 20vh;
     }
@@ -65,7 +90,7 @@ $accent2: #79e0b3;
     height: 10vh;
     margin: 0.5vh auto;
     color: rgba($text, 0.4);
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 960px) {
         justify-content: space-evenly;
         height: 15vh;
     }

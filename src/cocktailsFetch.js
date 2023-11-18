@@ -10,7 +10,7 @@ const splideList = document.getElementById('splideList');
 
 export const fetchCocktails = async (type, letter) => {
     try {
-        console.log(`i started fetchCocktails func with ${letter} and ${type}`);
+        // console.log(`i started fetchCocktails func with ${letter} and ${type}`);
         printWaitPreview();
         splideList.innerHTML = '';
         let data;

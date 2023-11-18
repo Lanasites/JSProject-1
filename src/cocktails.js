@@ -1,9 +1,29 @@
-'use strict';
+// 'use strict';
 
 import { gallerySlider } from './cocktailsGallerySlider.js';
 import { fetchCocktails } from './cocktailsFetch.js';
 import { fetchAllFirstLetters } from './cocktailsLetters';
-// import { fetchAlkoFirstLetters } from './cocktailsLetters';
+import { burgerMenu } from './header.js';
+burgerMenu();
+
+//Переходы с кнопок
+//--переход на страницу личного кабинета--//
+document.getElementById('profile').addEventListener('click', goToPersonalAccount);
+function goToPersonalAccount() {
+    window.location.href = 'profile-and-favourites.html';
+}
+
+//--переход на страницу избранного--//
+document.getElementById('star').addEventListener('click', goToFavoutitesPage);
+function goToFavoutitesPage() {
+    window.location.href = 'favourites.html';
+}
+
+//--переход на главную страницу по клику на лого--//
+const logotype = document.getElementById('logotype');
+logotype.addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
 
 const alcoholic = document.getElementById('alcoholic');
 const nonalcoholic = document.getElementById('nonalcoholic');
