@@ -58,6 +58,31 @@
       </header>
     
     <main>
+
+      <form class="settings">
+        <div class="settings__checkbox-login">
+          <label>Изменить логин
+            <input class="checkbox-login__check" type="checkbox" name="change-login"  id="set-new-log">
+          </label>
+        </div>
+        <div class="settings__checkbox-passw">
+          <label>Изменить пароль
+            <input  class="checkbox-passw__check"  type="checkbox" name="change-password" id="set-new-passw">
+          </label>
+        </div>
+        <div class="settings__change-password">
+                    <input type="password" id="change-password" name="password" placeholder="Пароль" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$">
+          <span class="error-message" id="password-error"></span>
+        </div>
+        <div class="settings__confirm-password">
+                    <input type="password" id="change-password-confirm" name="password-confirm"  placeholder="Повтоите пароль">
+          <span class="error-message"  id="confirm-error"></span>
+        </div>
+        <div class="settings__submit">
+          <input type="submit" name="button" value="Сохранить изменения" class="form__submit b-1"/>
+        </div>
+      </form>
+
       <div class="favourites">
         <h3>ИЗБРАННОЕ</h3>
         <!-- <div id="alphabet"></div> -->
