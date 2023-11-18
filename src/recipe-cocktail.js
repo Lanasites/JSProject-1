@@ -64,6 +64,7 @@ function showCocktail() {
     //     // если id коктейля не найден, то переадресация на страницу с ошибкой
     //     window.location.href = 'index.html'; // тут пока основная
     // }
+    //return cocktailId;
 };
 
 showCocktail();
@@ -76,7 +77,8 @@ const favouriteCocktails = []; // массив с избранным
 
 document.querySelectorAll('.container-wrapper__recipe-favourite').forEach(container => {
     container.addEventListener('click', function () {
-        const cocktailId = this.getAttribute('data-cocktail-id');
+        // этой строчки не будет, будет сразу следующая
+        const cocktailId = this.getAttribute('id');
 
         // проверяю, есть ли уже этот коктейль в избранном
         const index = favouriteCocktails.indexOf(cocktailId);
