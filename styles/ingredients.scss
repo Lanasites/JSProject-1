@@ -1,3 +1,5 @@
+@import'./vars';
+
 * {
   box-sizing: border-box;
 }
@@ -9,129 +11,157 @@ body {
 }
 
 h1 {
+  font-family: $font1;
+  font-weight: bold;
+  font-size: 2vw;
   text-align: center;
 }
 
-#container {
+#container_ingredients {
   margin: 3vw 3vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  row-gap: 2vw;
+  row-gap: 3vw;
+
+  @media(max-width: 1023px) {
+    column-gap: 2vw;
+    row-gap: 2vw;
+  }
+
+  @media (max-width:766px) {
+    column-gap: 3vw;
+    row-gap: 3vw;
+  }
+
+  @media (max-width:380px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3vw;
+  }
 
   .container_item {
-    max-width: 20vw;
-    max-height: 25vw;
+    width: 20vw;
+    height: 15vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     row-gap: 1vw;
+    border: 0.1vw solid black;
+
+    @media(max-width: 1023px) {
+      width: 20vw;
+      height: 19vw;
+    }
+
+    @media (max-width:766px) {
+      width: 35vw;
+      height: 47vw;
+      row-gap: 1.5vw;
+    }
+
+    @media (max-width:380px) {
+      width: 40vw;
+      height: 50vw;
+      row-gap: 3vw;
+    }
 
     &__image {
       height: 7vw;
       max-width: 8vw;
-    }
 
-    &__ingredient {
-      font-weight: bold;
-      font-size: 1.25rem;
-
-    }
-
-    &__btn {
-      background-color: #fff;
-      width: 8vw;
-      height: 3vh;
-      font-size: 0.5vw;
-      text-transform: uppercase;
-      cursor: pointer;
-
-      @media (max-width: 767px) {
-        width: 22vw;
-        height: 6vh;
-        font-size: 2vw;
-        margin: 1vw;
-      }
-
-      @media (max-width: 380px) {
-        width: 42vw;
-        height: 7vh;
-        font-size: 3.5vw;
-        margin: 1vw;
-      }
-    }
-  }
-}
-
-
-//-----------adaptive tablet----------//
-
-@media(min-width:767px) and (max-width:1023px) {
-  #container {
-    column-gap: 2vw;
-    row-gap: 2vw;
-
-    .container_item {
-      max-width: 25vw;
-      max-height: 38vw;
-
-      &__image {
-        height: 13vw;
+      @media(max-width: 1023px) {
+        height: 8vw;
         max-width: 15vw;
       }
 
-      &__ingredient {
-        font-size: 3vw;
-        text-align: center;
-      }
-
-      &__coctails {
-        font-size: 2vw;
-      }
-    }
-  }
-
-  span {
-    font-size: 2.2vw;
-    text-align: center;
-  }
-}
-
-
-//-----------adaptive mobile---------//
-
-@media screen and (max-width:766px) {
-  #container {
-    column-gap: 3vw;
-    row-gap: 3vw;
-
-    .container_item {
-      max-width: 28vw;
-      max-height: 60vw;
-      row-gap: 1.5vw;
-
-      &__image {
+      @media (max-width:766px) {
         height: 23vw;
         max-width: 26vw;
       }
 
+      @media (max-width:380px) {
+        height: 23vw;
+        max-width: 26vw;
+      }
+    }
 
-      &__ingredient {
+    &__ingredient {
+      font-family: $font1;
+      font-weight: bold;
+      font-size: 1.3vw;
+      text-transform: lowercase;
+
+      @media(max-width: 1023px) {
+        font-size: 1.8vw;
+        text-align: center;
+      }
+
+      @media (max-width:766px) {
         font-size: 4vw;
         text-align: center;
       }
 
-      &__coctails {
-        font-size: 2.7vw;
-        max-width: 28vw;
+      @media (max-width:380px) {
+        font-size: 4vw;
+        text-align: center;
+      }
+    }
+
+    &__coctails {
+      display: none;
+    }
+
+    &__btn {
+      background-color: #fff;
+      width: 12vw;
+      height: 6vh;
+      border: 0.1vw solid black;
+      cursor: pointer;
+      font-family: $font1;
+      font-size: 0.1vw;
+
+      @media(max-width: 1023px) {
+        width: 12vw;
+        height: 3vw;
+      }
+
+      @media (max-width:766px) {
+        width: 15vw;
+        height: 4vw;
+      }
+
+      @media (max-width:380px) {
+        width: 20vw;
+        height: 7vw;
       }
     }
   }
 
   span {
-    font-size: 3vw;
-    text-align: center;
+    font-family: $font1;
+    font-size: 0.7vw;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media(max-width: 1023px) {
+      font-size: 1vw;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    @media (max-width:766px) {
+      font-size: 1.5vw;
+      text-align: center;
+    }
+
+    @media (max-width:380px) {
+      font-size: 2vw;
+    }
   }
 }
 
@@ -139,62 +169,80 @@ h1 {
 
 #modal {
   max-width: 50vw;
-  border: 3px inset purple;
+  border: 3px inset rgb(10, 10, 10);
   display: none;
-  //position: absolute;
-}
-
-.btn {
-  padding: 1vw 1vw 0 0;
-  display: flex;
-  justify-content: end;
-
-  &_close {
-    width: 3.3vw;
-    font-size: 0.6vw;
-  }
-}
-
-.modal_item {
-  padding-top: 0.5vw;
-  max-width: 100vw;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  border-bottom: 1px inset purple;
-}
+  //position: absolute;
 
-.modal_item-1 {
-  display: flex;
-  align-items: center;
+  .btn {
+    padding: 0.5vw 0.5vw;
+    display: flex;
 
-  &__img {
-    height: 7vw;
-  }
-}
-
-.modal_item-2 {
-  &__name {
-    font-weight: bold;
-    font-size: 1vw;
+    &_close {
+      width: 1.5vw;
+      height: 1.5vw;
+      font-size: 0.6vw;
+      font-weight: bolder;
+      border: 2px solid black;
+    }
   }
 
-  &__description {
-    padding: 0 0.2vw;
-    font-size: 0.9vw;
+  &_info {
+    font-family: $font1;
   }
 
-  &__cooking {
-    padding: 0 0.2vw;
-    font-size: 0.9vw;
-  }
+  .modal_item {
+    padding: 1vw;
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 1vw;
+    border-bottom: 1px inset purple;
 
-  &__id {
-    text-align: start;
-    font-size: 0.9vw;
-  }
-}
+    &-1 {
+      margin: 0 auto;
+      width: 13vw;
 
-span {
-  font-weight: 550;
-  font-size: 0.9vw;
+      &__img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-2 {
+      column-gap: 5vw;
+
+      &__name {
+        font-weight: bold;
+        font-size: 1vw;
+        font-family: $font1;
+        column-gap: 2vw;
+      }
+
+      &__description {
+        font-family: $font1;
+        padding: 0 0.2vw;
+        font-size: 0.9vw;
+      }
+
+      &__cooking {
+        font-family: $font1;
+        padding: 0 0.2vw;
+        font-size: 0.9vw;
+      }
+
+      &__id {
+        text-align: start;
+        font-size: 0.9vw;
+      }
+    }
+
+    span {
+      font-family: $font1;
+      font-weight: 550;
+      font-size: 0.9vw;
+    }
+  }
 }
