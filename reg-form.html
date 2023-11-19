@@ -8,6 +8,7 @@
     <title>Registration</title>
     <link rel="stylesheet" href="./styles/form-style.scss">
     <link rel="stylesheet" href="./styles/style.scss">
+    <link rel="stylesheet" href="./styles/modal.scss">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
                 </div>
             </div>
             <div class="header-block__logo" id="logotype">
-                <img class="logo__image" src="./assets/png/logo-01 1.png" alt="Logo">
+                <img class="logo__image" src="#" alt="Logo">
                 <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
             </div>
             <nav class="header-block__headline">
@@ -76,11 +77,11 @@
                     <a href="./reg-form.html" class="default-link link-active">РЕГИСТРАЦИЯ</a>
                 </h2>
 
-                <div class="form__item">
+                <!-- <div class="form__item">
                     <input type="text" id="login" name="login" class="form__input _req" required minlength="2"
                         maxlength="20" placeholder="Логин" />
                     <span id="login-error" class="error-text"></span>
-                </div>
+                </div> -->
 
                 <div class="form__item">
                     <input type="email" id="email" name="email" class="form__input _req" required
@@ -111,7 +112,7 @@
                     <br>
                 </div>
 
-                <input name="submit-btn" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" />
+                <input name="submit-btn" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" id='btnLogin' />
             </form>
         </div>
     </main>
@@ -120,7 +121,7 @@
     <footer class="footer-block">
         <div class="footer-block__footer">
             <div class="footer__logo" id="footer-logotype">
-                <img class="logo__image" src="./assets/png/logo-01 1.png" alt="Logo">
+                <img class="logo__image" src="#" alt="Logo">
                 <p class="logo__name">ALCOSHAKE</p>
             </div>
             <nav class="footer__nav">
@@ -133,7 +134,7 @@
                 </ul>
             </nav>
             <div class="footer__team-logo" id="team-logotype">
-                <img class="team-logo__image" src="./assets/png/icon_github-01 1.png" alt="Logo">
+                <img class="team-logo__image" src="#" alt="Logo">
                 <p class="team-logo__name">Название команды</p>
             </div>
         </div>
@@ -142,7 +143,8 @@
         </div>
     </footer>
 
-    <script src="./src/reg-form.js"></script>
+    <script type='module' src="./src/reg-form.js"></script>
+
 </body>
 
 </html>

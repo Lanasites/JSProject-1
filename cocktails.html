@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Alcoshake - cocktails</title>
+        <link rel="icon" href="./assets/svg/logo-01 1.svg" />
+        <link rel="stylesheet" href="./node_modules/@splidejs/splide/dist/css/splide.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./styles/cocktails.scss" />
+
+        <!-- Подключение БД -->
+        <!-- <script type="module" src="./src/firebase.js"> 
+  // // Import the functions you need from the SDKs you need
+  // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  // // TODO: Add SDKs for Firebase products that you want to use
+  // // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // // Your web app's Firebase configuration
+  // const firebaseConfig = {
+  // apiKey: "AIzaSyC9NxHk9mUmNACk8EFBrFi1_kuCyyWKCEU",
+  // authDomain: "js-project-1-49be0.firebaseapp.com",
+  // databaseURL: "https://js-project-1-49be0-default-rtdb.firebaseio.com",
+  // projectId: "js-project-1-49be0",
+  // storageBucket: "js-project-1-49be0.appspot.com",
+  // messagingSenderId: "580525730958",
+  // appId: "1:580525730958:web:47489777447b08c50b2ddf"
+  // };
+  // // // Initialize Firebase
+  // const app = initializeApp(firebaseConfig);
+
+</script> -->
+    </head>
+
+    <body>
+        <!-- Структура Header главной страницы -->
+        <header class="header">
+            <div class="header-block  container-header">
+              <div class="header-block__burger-menu">
+                <div class="burger-menu__btn">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+              <div class="header-block__logo" id="logotype">
+                <img class="logo__image" src="./assets/svg/logo-01 1.svg" alt="Logo">
+                <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
+              </div>
+              <nav class="header-block__headline">
+                <ul class="headline__nav-list">
+                  <li class="headline__nav-item"><a href="index.html" class="headline__nav-link" id="main-page">Главная</a></li>
+                  <li class="headline__nav-item"><a href="ingredients.html" class="headline__nav-link"
+                      id="ingredients-page">Ингредиенты</a></li>
+                  <li class="headline__nav-item"><a href="cocktails.html" class="headline__nav-link"
+                      id="recipes-page">Рецепты</a></li>
+                  <li class="headline__nav-item"><a href="random-coctail.html" class="headline__nav-link"
+                      id="random-cocktail-page">Рандомный коктейль</a></li>
+                </ul>
+              </nav>
+              <div class="header-block__search">
+                <input type="text" placeholder="Введите название коктейля" class="search__input" id="search-value">
+                <button type="submit" class="search__btn" id="search"></button>
+              </div>
+              <div class="header-block__user-profile">
+                <button type="button" class="user-profile__btn" id="profile"></button>
+              </div>
+              <div class="header-block__favourite">
+                <button type="button" class="favourite__star" id="star"></button>
+              </div>
+            </div>
+        
+              <div class="header-block__bm-list"> 
+                <ul class="bm-list__list">
+                  <li><a href="index.html" class="list__item">Главная</a></li>
+                  <li><a href="ingredients.html" class="list__item">Ингредиенты</a></li>
+                  <li><a href="cocktails.html" class="list__item">Рецепты</a></li>
+                  <li><a href="random-coctail.html" class="list__item">Рандомный коктейль</a></li>
+                </ul>
+              </div>
+        
+            </div>
+          </header>
+        <main class="main">
+            <div class="filter-type">
+                <div class="filter-title" id="alcoholic">алкогольные</div>
+                <div class="filter-title" id="nonalcoholic">безалкогольные</div>
+                <div class="filter-title" id="anyType">все</div>
+            </div>
+            <div class="filter-letter" id="filterLetter">
+                <div class="letter">А</div>
+                <div class="letter">Б</div>
+                <div class="letter">В</div>
+                <div class="letter">Г</div>
+                <div class="letter">Д</div>
+                <div class="letter">Е</div>
+                <div class="letter">Ж</div>
+                <div class="letter">З</div>
+                <div class="letter">И</div>
+                <div class="letter">К</div>
+                <div class="letter">Л</div>
+                <div class="letter">М</div>
+                <div class="letter">Н</div>
+                <div class="letter">О</div>
+                <div class="letter">П</div>
+                <div class="letter">Р</div>
+                <div class="letter">С</div>
+                <div class="letter">Т</div>
+                <div class="letter">У</div>
+                <div class="letter">Ф</div>
+                <div class="letter">Х</div>
+                <div class="letter">Ц</div>
+                <div class="letter">Ч</div>
+                <div class="letter">Ш</div>
+                <div class="letter">Щ</div>
+                <div class="letter">Э</div>
+                <div class="letter">Ю</div>
+                <div class="letter">Я</div>
+                <div class="letter" id="anyLetter">любая</div>
+            </div>
+            <div class="catalogue" id="catalogue">
+                <section class="splide" id="gallerySlider" aria-label="Splide Basic HTML Example">
+                    <div class="splide__arrows">
+                        <button class="splide__arrow splide__arrow--prev">
+                            <svg width="19" height="32" viewBox="0 0 19 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.4143 15.9795C14.6108 14.3575 12.8633 12.7716 11.1047 11.1856C7.53134 7.96572 3.96921 4.74579 0.395873 1.52586C-0.0297907 1.14139 -0.0970013 0.672821 0.205444 0.288352C0.507889 -0.0961173 0.944754 -0.0961173 1.38162 0.288352C6.90405 5.26242 12.4265 10.2485 17.9489 15.2346C18.509 15.7392 18.509 16.2438 17.9601 16.7484C12.4153 21.7465 6.87044 26.7446 1.32561 31.7427C0.933553 32.1032 0.474284 32.0791 0.183041 31.7067C-0.119404 31.3222 -0.0409929 30.8416 0.373469 30.4692C5.61585 25.7354 10.8582 21.0136 16.1118 16.2799C16.2014 16.1837 16.291 16.0996 16.4143 15.9795Z"
+                                    fill="currentColor"
+                                    fill-opacity="0.7" />
+                            </svg>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next">
+                            <svg width="19" height="32" viewBox="0 0 19 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.4143 15.9795C14.6108 14.3575 12.8633 12.7716 11.1047 11.1856C7.53134 7.96572 3.96921 4.74579 0.395873 1.52586C-0.0297907 1.14139 -0.0970013 0.672821 0.205444 0.288352C0.507889 -0.0961173 0.944754 -0.0961173 1.38162 0.288352C6.90405 5.26242 12.4265 10.2485 17.9489 15.2346C18.509 15.7392 18.509 16.2438 17.9601 16.7484C12.4153 21.7465 6.87044 26.7446 1.32561 31.7427C0.933553 32.1032 0.474284 32.0791 0.183041 31.7067C-0.119404 31.3222 -0.0409929 30.8416 0.373469 30.4692C5.61585 25.7354 10.8582 21.0136 16.1118 16.2799C16.2014 16.1837 16.291 16.0996 16.4143 15.9795Z"
+                                    fill="currentColor"
+                                    fill-opacity="0.7" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="splide__track">
+                        <ul class="splide__list" id="splideList"> </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- Структура Footer главной страницы -->
+        <footer class="footer-block footer">
+            <div class="footer-block__footer">
+                <div class="footer__logo" id="footer-logotype">
+                    <img class="logo__image" src="./assets/svg/logo-01 1.svg" alt="Logo" />
+                    <p class="logo__name">ALCOSHAKE</p>
+                </div>
+                <nav class="footer__nav">
+                    <ul class="nav__nav-list">
+                        <li class="nav__nav-item"><a href="#" class="nav__nav-link" id="footer-main-page">Главная</a></li>
+                        <li class="nav__nav-item"><a href="ingredients.html" class="nav__nav-link" id="footer-ingredients-page">Ингредиенты</a></li>
+                        <li class="nav__nav-item"><a href="cocktails.html" class="nav__nav-link" id="footer-recipes-page">Рецепты</a> </li>
+                    </ul>
+                </nav>
+                <div class="footer__team-logo" id="team-logotype">
+                    <img class="team-logo__image" src="./assets/svg/icon_github-01 1.svg" alt="Logo" />
+                    <p class="team-logo__name">Название команды</p>
+                </div>
+            </div>
+
+            <div class="footer-block__authority">
+                <p>© ALCOSHAKE 2023</p>
+            </div>
+        </footer>
+
+        <script type="module" src="./src/cocktails.js"></script>
+        <script type="module" src="./src/header.js"></script>
+    </body>
+</html>

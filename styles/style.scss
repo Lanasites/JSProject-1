@@ -2,13 +2,14 @@
 @import'./header.scss';
 @import'./footer.scss';
 
-*{
+* {
     box-sizing: border-box;
     margin: 0 auto;
 }
 
 //Проверка возраста
 #age-confirmation-popup {
+    display: none;
     position: absolute;
     z-index: 100;
     top: 0;
@@ -29,31 +30,37 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;    
+        text-align: center;
         font-family: Helvetica, sans-serif;
         margin: 1vw;
+
         @media (max-width: $s) {
             max-width: 40vw;
         }
+
         @media (max-width: $xs) {
             max-width: 60vw;
         }
 
-        p{
+        p {
             font-size: 1.7vw;
+
             @media (max-width: $s) {
                 font-size: 3vw;
             }
+
             @media (max-width: $xs) {
                 font-size: 4vw;
             }
         }
 
-        h2{
+        h2 {
             margin: 1vw;
+
             @media (max-width: $s) {
                 font-size: 3vw;
             }
+
             @media (max-width: $xs) {
                 font-size: 5vw;
             }
@@ -81,15 +88,41 @@
         font-family: Helvetica, sans-serif;
         margin: 1vw;
 
-        @media (max-width: $s) {
-            width: 20vw;
+        #age-input {
+            width: 15vw;
+            padding: 1vw;
+            margin-bottom: 0.5vw;
+            font-family: Helvetica, sans-serif;
+            margin: 1vw;
+
+            @media (max-width: $s) {
+                width: 30vw;
+            }
+
+            @media (max-width: $xs) {
+                width: 50vw;
+            }
         }
-        @media (max-width: $xs) {
-            width: 30vw;
+
+        #confirm-btn {
+            background-color: #fff;
+            padding: 0.5vw 1vw;
+            border: 0.1vw solid black;
+            cursor: pointer;
+            font-family: Helvetica, sans-serif;
+            margin: 1vw;
+
+            @media (max-width: $s) {
+                width: 20vw;
+            }
+
+            @media (max-width: $xs) {
+                width: 30vw;
+            }
         }
-    }
     }
 }
+
 //Splider
 .splide__slide {
     box-sizing: border-box;
@@ -98,6 +131,7 @@
     justify-content: space-around;
     align-items: center;
     height: 80vh;
+
     @media (max-width: $s) {
         flex-direction: column;
         height: 120vh;
@@ -114,24 +148,29 @@
         align-items: flex-start;
         width: 60vw;
         margin: 0.5vw;
+
         @media (max-width: $s) {
             width: 98vw;
             height: 70vh;
         }
+
         @media (max-width: $xs) {
             width: 95vw;
             height: 30vh;
             margin-bottom: -30vw;
         }
+
         img {
             width: 60vw;
             height: 80vh;
             object-fit: cover;
+
             @media (max-width: $s) {
                 width: 98vw;
                 height: 70vh;
                 object-fit: cover;
             }
+
             @media (max-width: $xs) {
                 width: 95vw;
                 height: 30vh;
@@ -148,10 +187,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
     @media (max-width: $s) {
         width: 100vw;
         height: 40vh;
     }
+
     @media (max-width: $xs) {
         width: 100vw;
     }
@@ -160,9 +201,11 @@
         font-size: 1.5vw;
         font-weight: 700;
         text-transform: uppercase;
+
         @media (max-width: $s) {
             font-size: 2.5vw;
         }
+
         @media (max-width: $xs) {
             font-size: 4.5vw;
         }
@@ -173,11 +216,13 @@
         font-size: 1.5vw;
         text-align: justify;
         margin-bottom: 1vw;
+
         @media (max-width: $s) {
             width: 90vw;
         font-size: 2.5vw;
         margin-top: -10vw;
         }
+
         @media (max-width: $xs) {
             width: 100vw;
             font-size: 4vw;
@@ -185,7 +230,7 @@
         }
     }
 
-    .splide_recipe{
+    .splide_recipe {
         button {
             background-color: #fff;
             width: 12vw;
@@ -193,12 +238,14 @@
             font-size: 1vw;
             text-transform: uppercase;
             cursor: pointer;
+
             @media (max-width: $s) {
                 width: 22vw;
                 height: 6vh;
                 font-size: 2vw;
                 margin: 1vw;
             }
+
             @media (max-width: $xs) {
                 width: 42vw;
                 height: 7vh;
@@ -216,6 +263,7 @@
 .splide__arrows {
     background: none;
     margin: 0 3vw;
+
     @media screen and (max-width: $s) {
         margin: 0 1vw;
     }
@@ -233,4 +281,5 @@
 
 .splide__arrow--next {
     right: 0;
+}
 }

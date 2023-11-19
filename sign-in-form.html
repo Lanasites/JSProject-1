@@ -8,6 +8,7 @@
     <title>Registration</title>
     <link rel="stylesheet" href="./styles/form-style.scss">
     <link rel="stylesheet" href="./styles/style.scss">
+    <link rel="stylesheet" href="./styles/modal.scss">
 </head>
 
 <body>
@@ -70,7 +71,7 @@
     <!-- Форма входа -->
     <main class="container">
         <div class="form-wrapper">
-            <form name="formSignIn" class="form" novalidate>
+            <button name="formSignIn" class="form" novalidate>
                 <h2 class="form__title">
                     <a href="./sign-in-form.html" class="default-link link-active">ВОЙТИ</a>
                     <span> / </span>
@@ -89,9 +90,8 @@
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
                     <span id="password-error" class="error-text"></span>
                 </div>
-
-                <input name="submit-btn" type="submit" value="ВОЙТИ" class="form__submit" />
-            </form>
+                <input name="submit-btn" type="submit" value="ВОЙТИ" class="form__submit" id='btnLogin' />
+                </form>
         </div>
     </main>
 
@@ -121,6 +121,9 @@
             <p>© ALCOSHAKE 2023</p>
         </div>
     </footer>
+
+
+    <script type='module' src="./src/sign-in-form.js"></script>
 </body>
 
 </html>

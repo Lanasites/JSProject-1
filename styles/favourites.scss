@@ -1,0 +1,16 @@
+@import'./vars';
+@import'./style.scss';
+
+.favourite-title{
+    max-width: 83.9rem;;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: $font1;
+    font-size: 2rem;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+}
