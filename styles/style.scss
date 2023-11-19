@@ -138,7 +138,11 @@
         height: 120vh;
         width: 60vw;
     }
-    @media (max-width: $xs) {
+    @media (max-width:$s-xs){
+        height: 110vh;
+        width: 50vw;
+    }
+    @media (max-width: $xs){
         width: 30vw;
         height: 100vh;
         margin-top: -10vh;
@@ -155,10 +159,15 @@
             height: 70vh;
         }
 
+        @media (max-width:$s-xs){
+            height: 50vh;
+            width: 95vw;
+        }
+
         @media (max-width: $xs) {
             width: 95vw;
-            height: 30vh;
-            margin-bottom: -30vw;
+            height: 35vh;
+            margin-bottom: -20vh;
         }
 
         img {
@@ -172,9 +181,14 @@
                 object-fit: cover;
             }
 
+            @media (max-width:$s-xs){
+                height: 50vh;
+                width: 95vw;
+            }
+
             @media (max-width: $xs) {
                 width: 95vw;
-                height: 30vh;
+                height: 35vh;
                 object-fit: cover;
             }
         }
@@ -191,7 +205,12 @@
 
     @media (max-width: $s) {
         width: 100vw;
+        height: 50vh;
+    }
+
+    @media (max-width:$s-xs){
         height: 40vh;
+        width: 100vw;
     }
 
     @media (max-width: $xs) {
@@ -199,16 +218,27 @@
     }
 
     .splide__name {
-        font-size: 1.5vw;
+        font-size: 2vw;
         font-weight: 700;
         text-transform: uppercase;
 
-        @media (max-width: $s) {
+        @media (max-width: $s){
             font-size: 2.5vw;
+            padding: 0.5vw;
+            margin-top: 5vh;
+            margin-bottom: -5vh;
+        }
+
+        @media (max-width:$s-xs){
+            font-size: 3.5vw;
+            margin-top: -2.5vh;
+            margin-bottom: 2vh;
         }
 
         @media (max-width: $xs) {
             font-size: 4.5vw;
+            margin-top: 3vh;
+            margin-bottom: -3vh;
         }
     }
 
@@ -216,18 +246,29 @@
         width: 20vw;
         font-size: 1.5vw;
         text-align: justify;
-        margin-bottom: 1vw;
+        margin: 2vw;
 
         @media (max-width: $s) {
             width: 90vw;
-        font-size: 2.5vw;
-        margin-top: -10vw;
+        font-size: 3vw;
+        text-align: center;
+        padding: 2.5vw;
+        }
+
+        @media (max-width:$s-xs){
+            height: 50vh;
+            width: 100vw;
+            font-size: 3.5vw;
+            text-align: justify;
+            padding: 4.5vw;
         }
 
         @media (max-width: $xs) {
             width: 100vw;
-            font-size: 4vw;
+            font-size: 4.5vw;
+            text-align: justify;
         padding: 3.5vw;
+        margin-top: 4vh;
         }
     }
 
@@ -235,23 +276,29 @@
         button {
             background-color: #fff;
             width: 12vw;
-            height: 4vh;
+            height: 5vh;
             font-size: 1vw;
             text-transform: uppercase;
             cursor: pointer;
 
             @media (max-width: $s) {
-                width: 22vw;
+                width: 32vw;
                 height: 6vh;
                 font-size: 2vw;
-                margin: 1vw;
+                margin-top: -15vh;
+            }
+
+            @media (max-width:$s-xs){
+                font-size: 3.5vw;
+                width: 39vw;
+                height: 6.5vh;
             }
 
             @media (max-width: $xs) {
                 width: 42vw;
                 height: 7vh;
                 font-size: 3.5vw;
-                margin: 1vw;
+                margin-bottom: 5vh;
             }
         }
         button:hover {

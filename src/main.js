@@ -82,6 +82,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+import Splide from '@splidejs/splide';
+const mySlider = new Splide('.splide');
+new Splide( '.splide', {
+  type   : 'loop',
+  wheel : true,
+  speed : 0,
+} );
+
 //Добавление коктейля на страницу
 function addCoctailMain() {
   // получение промиса
@@ -91,14 +100,12 @@ function addCoctailMain() {
     // .then(response => response.json())
     .then(data => {
       // работаем с полученными данными - объект с объектами
-      console.log(data);
       for (let key in data) {
         // obj - ингредиент со всеми свойствами
-        console.log(key);
         let obj = data[key];
-        console.log(obj);
         print(obj.name, obj.imageUrl, obj.description);
       }
+      mySlider.mount();
     })
     .catch(error => {
       // обрабатываем ошибку, если она возникла
@@ -125,12 +132,4 @@ function print(name, imageUrl, description) {
   splideList.append(splideItem);
 }
 
-import Splide from '@splidejs/splide';
-const mySlider = new Splide('.splide');
-mySlider.mount();
-new Splide( '.splide', {
-  type   : 'loop',
-  wheel : true,
-  speed : 0,
-} );
 addCoctailMain();
