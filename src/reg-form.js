@@ -10,17 +10,17 @@ function getInputName(input) {
     return input.getAttribute('name');
 }
 
-//добавление текста ошибки для каждого поля
-function addErrorText(input) {
-    let inputName = getInputName(input);
-    document.getElementById(`${inputName}-error`).innerHTML = input.validationMessage;
-}
+// //добавление текста ошибки для каждого поля
+// function addErrorText(input) {
+//     let inputName = getInputName(input);
+//     document.getElementById(`${inputName}-error`).innerHTML = input.validationMessage;
+// }
 
-//удаление текста ошибки для каждого поля
-function removeErrorText(input) {
-    let inputName = getInputName(input);
-    document.getElementById(`${inputName}-error`).innerHTML = '';
-}
+// //удаление текста ошибки для каждого поля
+// function removeErrorText(input) {
+//     let inputName = getInputName(input);
+//     document.getElementById(`${inputName}-error`).innerHTML = '';
+// }
 
 //добавление класса ошибки для поля
 function formAddError(input) {
@@ -53,6 +53,7 @@ inputLogin.oninput = function () {
         formRemoveError(inputLogin);
     } else {
         errorLogin.classList.remove('invisible');
+        formAddError(inputLogin)
     }
 }
 
@@ -75,7 +76,7 @@ inputEmail.oninput = function () {
 
 //пароль первое поле
 //проверка надежности пароля
-const error_pwd1 = document.querySelector('#dinamic-pwd-error');
+const error_pwd1 = document.querySelector('#password-error');
 const pwdPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$/;
 inputPassword.oninput = function () {
     let pwdValue = inputPassword.value;
@@ -83,6 +84,7 @@ inputPassword.oninput = function () {
         error_pwd1.classList.add('invisible');
     } else {
         error_pwd1.classList.remove('invisible');
+        formAddError(inputPassword)
     }
 }
 
@@ -96,6 +98,7 @@ inputPassword2.oninput = function () {
         error_pwd2.classList.add('invisible');
     } else {
         error_pwd2.classList.remove('invisible');
+        formAddError(inputPassword2)
     }
 }
 
