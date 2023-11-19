@@ -74,24 +74,47 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Добавление коктейля на страницу
-import cocktail from '../database-cocktail.json';
-cocktail.forEach((item) => {
+function addCoctailMain() {
+  // получение промиса
+  const promise = takeAllObjects('cocktails');
+  //console.log(promise);
+  promise
+    // .then(response => response.json())
+    .then(data => {
+      // работаем с полученными данными - объект с объектами
+      console.log(data);
+      for (let key in data) {
+        // obj - ингредиент со всеми свойствами
+        console.log(key);
+        let obj = data[key];
+        console.log(obj);
+        print(obj.name, obj.imageUrl, obj.description);
+      }
+    })
+    .catch(error => {
+      // обрабатываем ошибку, если она возникла
+      console.error(error);
+    });
+
+}
+
+function print(name, imageUrl, description) {
   const splideList = document.querySelector('.splide__list');
   const splideItem = document.createElement('li');
   splideItem.classList.add('splide__slide')
   const template = `
   <div class = 'splide__image'>
-  <img src = ${item.image} alt = "${item.name}">
+  <img src = ${imageUrl} alt = "${name}">
   </div>
   <div class = "splide__info">
-  <p class = "splide__name">${item.name}</p>
-  <p class = "splide__text">${item.description}</p>
+  <p class = "splide__name">${name}</p>
+  <p class = "splide__text">${description}</p>
   <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
   </div>
   `
   splideItem.innerHTML = template;
   splideList.append(splideItem);
-})
+}
 
 import Splide from '@splidejs/splide';
 const mySlider = new Splide('.splide');
@@ -101,3 +124,4 @@ new Splide( '.splide', {
   wheel : true,
   speed : 0,
 } );
+addCoctailMain();
