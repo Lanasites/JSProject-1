@@ -15,8 +15,8 @@ export { burgerMenu };
 let profileButton = document.getElementById("profile"); // Проверка URL и применение соответствующих обработчиков событий
 if (window.location.href.indexOf('profile-and-favourites.html') === -1) {
     profileButton.addEventListener('click', function(event) { // Обработчик для всех страниц, кроме «profile-and-favourites»
-        window.location.href = "profile-and-favourites.html"; // Перенаправление на страницу личного кабинета
-        //window.location.href = "sign-in-form.html";
+        window.location.href = "sign-in-form.html"; // Перенаправление на страницу личного кабинета на формы входа/регистрации
+        //window.location.href = "sign-in-form.html"/"profile-and-favourites.html"
     });
 } else {
     profileButton.addEventListener('click', function(event) {  // Обработчик только для страницы «profile-and-favourites»
