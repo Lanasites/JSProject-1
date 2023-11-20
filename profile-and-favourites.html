@@ -59,32 +59,24 @@
     
     <main>
 
-      <form class="settings">
-        <div class="settings__checkbox-login">
-          <label>Изменить логин
-            <input class="checkbox-login__check" type="checkbox" name="change-login"  id="set-new-log">
-          </label>
+      <form class="settings" id="settings-form">
+        <p class="settings__title">НАСТРОЙКИ</p>
+        <div class="settings__field">
+          <input class="settings__input" placeholder="Email" type="email" id="profile-email" value="" >
         </div>
-        <div class="settings__checkbox-passw">
-          <label>Изменить пароль
-            <input  class="checkbox-passw__check"  type="checkbox" name="change-password" id="set-new-passw">
-          </label>
+        <div class="settings__field">
+          <input class="settings__input" placeholder="ФИО" type="text" id="fullName">
         </div>
-        <div class="settings__change-password">
-                    <input type="password" id="change-password" name="password" placeholder="Пароль" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$">
-          <span class="error-message" id="password-error"></span>
+        <div class="settings__field">
+          <input class="settings__input" placeholder="Телефон"  type="tel" id="phone">
         </div>
-        <div class="settings__confirm-password">
-                    <input type="password" id="change-password-confirm" name="password-confirm"  placeholder="Повтоите пароль">
-          <span class="error-message"  id="confirm-error"></span>
-        </div>
-        <div class="settings__submit">
-          <input type="submit" name="button" value="Сохранить изменения" class="form__submit b-1"/>
-        </div>
+        <button class="settings__button" id="changePasswordButton">Сменить пароль</button>
+        <button class="settings__button" id="saveButton">Сохранить</button>
       </form>
 
+
       <div class="favourites">
-        <h3>ИЗБРАННОЕ</h3>
+        <p>ИЗБРАННОЕ</p>
         <!-- <div id="alphabet"></div> -->
       </div>
     </main>
