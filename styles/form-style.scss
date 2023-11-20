@@ -21,6 +21,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
 
 .default-link {
     text-decoration: none;
+    font-weight: 300;
     color: $black;
 }
 
@@ -45,6 +46,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
     background-color: $background-color;
     padding: 3.13rem 2.88rem;
     border: 0.0625rem solid $black;
+    background-color: white;
 
     display: flex;
     flex-direction: column;

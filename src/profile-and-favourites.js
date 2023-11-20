@@ -15,29 +15,63 @@ burgerMenu();
 // };
 // addLetters();
 
-//-- Форма Настройки --//
-const changeLoginCheckbox = document.querySelector('#set-new-log');
-const changePasswordCheckbox = document.querySelector('#set-new-passw');
-const passwordInput = document.getElementById('change-password');
-const passwordConfirmInput = document.getElementById('change-password-confirm');
+//-- Форма Настройки старая--//
+// const changeLoginCheckbox = document.querySelector('#set-new-log');
+// const changePasswordCheckbox = document.querySelector('#set-new-passw');
+// const passwordInput = document.getElementById('change-password');
+// const passwordConfirmInput = document.getElementById('change-password-confirm');
 
-// Обработчик события изменения состояния первого чекбокса
-changeLoginCheckbox.addEventListener('change', function() {
-if (changeLoginCheckbox.checked) { 
-    passwordInput.placeholder = 'Логин';
-    passwordConfirmInput.placeholder = 'Повторите логин';
-    changePasswordCheckbox.disabled = true;
-} else {
-    passwordInput.placeholder = 'Пароль';
-    passwordConfirmInput.placeholder = 'Повторите пароль';
-    changePasswordCheckbox.disabled = false;
+// // Обработчик события изменения состояния первого чекбокса
+// changeLoginCheckbox.addEventListener('change', function() {
+// if (changeLoginCheckbox.checked) { 
+//     passwordInput.placeholder = 'Логин';
+//     passwordConfirmInput.placeholder = 'Повторите логин';
+//     changePasswordCheckbox.disabled = true;
+// } else {
+//     passwordInput.placeholder = 'Пароль';
+//     passwordConfirmInput.placeholder = 'Повторите пароль';
+//     changePasswordCheckbox.disabled = false;
+// }
+// });
+// // Обработчик события изменения состояния второго чекбокса
+// changePasswordCheckbox.addEventListener('change', function() {
+// if (changePasswordCheckbox.checked) {
+//     changeLoginCheckbox.disabled = true;
+// } else {
+//     changeLoginCheckbox.disabled = false;
+// }
+// });
+
+
+
+
+// Обработчик события нажатия на кнопку "Сменить пароль"
+let changePasswordButton = document.getElementById("changePasswordButton");
+if (changePasswordButton) {
+  changePasswordButton.addEventListener("click", function() {
+    let email = profileEmailInput.value;
+
+    // Отправка данных для смены пароля
+
+
+    // Вместо alert можно использовать модальное окно??
+    alert("Информация о смене пароля отправлена на email: " + email);
+  });
 }
-});
-// Обработчик события изменения состояния второго чекбокса
-changePasswordCheckbox.addEventListener('change', function() {
-if (changePasswordCheckbox.checked) {
-    changeLoginCheckbox.disabled = true;
-} else {
-    changeLoginCheckbox.disabled = false;
+
+// Обработчик события нажатия на кнопку "Сохранить"
+let saveButton = document.getElementById("saveButton");
+if (saveButton) {
+  saveButton.addEventListener("click", function() {
+    let fullNameInput = document.getElementById("fullName");
+    let phoneInput = document.getElementById("phone");
+
+    // Получение данных из полей ввода
+    let fullName = fullNameInput.value;
+    let phone = phoneInput.value;
+
+    // Сохранение данных в cookies/local storage 
+    // Вместо alert можно использовать модальное??
+    alert("Изменения сохранены успешно:\n" + "ФИО: " + fullName + "\nТелефон: " + phone);
+  });
 }
-});

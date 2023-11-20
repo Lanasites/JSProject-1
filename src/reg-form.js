@@ -7,9 +7,9 @@ const inputPassword2 = form.elements.passwordRepeat
 
 
 // // функция регистрации пользователя в БД
-// import { registrationEmailPassword } from './authentication.js';
+import { registrationEmailPassword } from './authentication.js';
 
-// btnLogin.addEventListener('click', registrationEmailPassword);
+btnLogin.addEventListener('click', registrationEmailPassword);
 
 
 //добавление класса ошибки для поля
