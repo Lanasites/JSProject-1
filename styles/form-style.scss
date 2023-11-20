@@ -16,8 +16,6 @@
     letter-spacing: 0em;
 }
 
-$black: #000;
-
 $mobile: "screen and (max-width: 599px)";
 $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
 
@@ -44,6 +42,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
 .form {
     max-width: 33.25rem;
     width: 100%;
+    background-color: $background-color;
     padding: 3.13rem 2.88rem;
     border: 0.0625rem solid $black;
 
@@ -89,6 +88,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
         outline: none;
         text-align: center;
         @extend %text-input;
+        background-color: $background-color;
         color: $black;
 
         @media #{$mobile} {
@@ -97,7 +97,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
     }
 
     &__input._error {
-        border-color: red;
+        border-color: $mistake;
     }
 
     &__submit {
@@ -106,8 +106,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
         cursor: pointer;
         margin-top: 0.375rem;
         border: 0.0625rem solid $black;
-        background: rgba(217, 217, 217, 0.00);
-
+        background-color: $background-color;
         color: $black;
         font-family: $font1;
         font-size: 1.125rem;
@@ -118,7 +117,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
 
     &__submit:hover {
         background-color: $black;
-        color: white;
+        color: $white;
     }
 }
 
@@ -151,7 +150,7 @@ $tablet: "screen and (min-width: 600px) and (max-width: 1023px)";
 }
 
 .error-text {
-    color: red;
+    color: $mistake;
     margin-top: 5px;
 }
 
