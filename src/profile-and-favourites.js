@@ -43,6 +43,8 @@ burgerMenu();
 // });
 
 
+
+
 // Обработчик события нажатия на кнопку "Сменить пароль"
 let changePasswordButton = document.getElementById("changePasswordButton");
 if (changePasswordButton) {
