@@ -45,6 +45,11 @@ function print(id, name, cocktails, img) {
   elem.addEventListener('click', function () {
     showModal(cocktails);
   });
+
+  // elem.addEventListener('click', function () {  //модальное окно
+  //   modalInf(cocktails);
+  // });
+
 }
 
 const modalInfo = document.getElementById('modal_info');
@@ -83,33 +88,6 @@ function showModal(coctails) {
         const newElement = document.createElement('div');
         newElement.innerHTML = template;
         modalInfo.appendChild(newElement);
-
-        //{
-        // // так как ингредиенты в массиве хранятся, то их отдельно считываем, чтобы сделать список
-        //let ingrArr = data.ingredients;
-        //console.log(ingrArr); // объект со всеми ингредиентами
-
-        //printSostav(ingrArr)
-
-        // const templateIng = `
-        //       <ul class="modal_item-2__id" id = ${data.id}><span>Рецепт:</span></ul>
-        //       <li >`${ingrArr.name}: ${ingrArr.quantity}`</li>`
-        // const newElement2 = document.createElement('div');
-        // newElement2.innerHTML = templateIng;
-        // modalElement.appendChild(newElement2);
-        // const ingrList = printSostav(ingrArr);
-        // const ingr = document.getElementById(id);
-
-        // if (ingr !== null) {
-        //   ingr.innerHTML = ingrList;
-        //   // console.log(ingr);
-        //   const newElement = document.createElement('div');
-        //   newElement.innerHTML = template;
-        //   modalElement.appendChild(newElement);
-
-        // }
-        //}
-
       })
       .catch(error => {
         // обрабатываем ошибку, если она возникла
@@ -126,18 +104,39 @@ document.querySelector('.btn_close').addEventListener('click', function () {
 })
 
 
-// function printSostav(ingrArr) {
-//   // console.log(ingrArr);
-//   // захотим в массив из ингредиентов для коктеля, чтобы взять свойства
-//   let item = '';
-//   for (let i = 0; i < ingrArr.length; i++) {
-//     // console.log(ingrArr[i]);
-//     let kolvo = ingrArr[i].quantity;
-//     let name = ingrArr[i].name;
+// Функция модального окна
 
-//     item += `< li > ${name}: ${kolvo}</ > `;
-
-//   }
-//   // console.log('item', item);
-//   return item;
+// function modalInf(cocktails) {
+//   cocktails.forEach(element => {
+//     console.log(element); //название коктейля
+//     let promis = takeOneCocktail(element);
+//     console.log(promis); //промис этого коктейля
+//     promis
+//       .then(data => {
+//         Swal.fire(
+//           {
+//             title: "<strong>Коктейли</u></strong>",
+//             html: `
+//             <div class="modal_item">
+//             <div class="modal_item-1">
+//             <img class="modal_item-1__img" src="${data.imageUrl}" alt="" style="width: 13vw; height: 10vw;">
+//           </div>
+//           <div class="modal_item-2">
+//             <div class="modal_item-2__name">Название: ${data.name}</div>
+//             <div class="modal_item-2__description"><span>Описание:</span> ${data.description}</div>
+//             <div class="modal_item-2__cooking"><span>Рецепт:</span> ${data.cooking}</div>
+//               <ul class="modal_item-2__id" id = ${data.id}></ul>
+//             </div>
+//           </div>
+//               `,
+//             showCloseButton: true,
+//             showCancelButton: true,
+//             focusConfirm: false,
+//           });
+//       })
+//       .catch(error => {
+//         // обрабатываем ошибку, если она возникла
+//         console.error(error);
+//       });
+//   });
 // }
