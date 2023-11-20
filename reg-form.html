@@ -13,8 +13,8 @@
 
 <body>
     <!-- Структура Header главной страницы -->
-    <header class="header-block">
-        <div class="header-block  container">
+    <header>
+        <div class="header-block  container-header">
             <div class="header-block__burger-menu">
                 <div class="burger-menu__btn">
                     <span></span>
@@ -23,29 +23,23 @@
                 </div>
             </div>
             <div class="header-block__logo" id="logotype">
-                <img class="logo__image" src="#" alt="Logo">
+                <img class="logo__image" src="./assets/svg/logo-01 1.svg" alt="Logo">
                 <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
             </div>
             <nav class="header-block__headline">
                 <ul class="headline__nav-list">
-                    <li class="headline__nav-item"><a href="#" class="headline__nav-link" id="main-page">Главная</a>
-                    </li>
-                    <li class="headline__nav-item"><a href="#" class="headline__nav-link"
-                            id="ingredients-page">Ингредиенты</a>
-                    </li>
-                    <li class="headline__nav-item"><a href="#" class="headline__nav-link" id="recipes-page">Рецепты</a>
-                        <!-- <ul class="dropdown-menu" id="dropdown-recipes">
-                <li><a href="#" class="dropdown-menu__item" id="alcohol-page">Алкогольные</a></li>
-                <li><a href="#" class="dropdown-menu__item" id="nonalcohol-page">Безалкогольные</a></li>
-                </ul>   -->
-                    </li>
-                    <li class="headline__nav-item"><a href="#" class="headline__nav-link"
-                            id="random-cocktail-page">Рандомный
-                            коктейль</a></li>
+                    <li class="headline__nav-item"><a href="index.html" class="headline__nav-link"
+                            id="main-page">Главная</a></li>
+                    <li class="headline__nav-item"><a href="ingredients.html" class="headline__nav-link"
+                            id="ingredients-page">Ингредиенты</a></li>
+                    <li class="headline__nav-item"><a href="cocktails.html" class="headline__nav-link"
+                            id="recipes-page">Рецепты</a></li>
+                    <li class="headline__nav-item"><a href="random-coctail.html" class="headline__nav-link"
+                            id="random-cocktail-page">Рандомный коктейль</a></li>
                 </ul>
             </nav>
             <div class="header-block__search">
-                <input type="text" placeholder="" class="search__input" id="search-value">
+                <input type="text" placeholder="Введите название коктейля" class="search__input" id="search-value">
                 <button type="submit" class="search__btn" id="search"></button>
             </div>
             <div class="header-block__user-profile">
@@ -55,19 +49,20 @@
                 <button type="button" class="favourite__star" id="star"></button>
             </div>
         </div>
-        <!-- <div class="menu"> -->
+
         <div class="header-block__bm-list">
             <ul class="bm-list__list">
-                <li><a href="#" class="list__item">Главная</a></li>
-                <li><a href="#" class="list__item">Ингредиенты</a></li>
-                <li><a href="#" class="list__item">Рецепты</a></li>
-                <li><a href="#" class="list__item">Рандомный коктейль</a></li>
+                <li><a href="index.html" class="list__item">Главная</a></li>
+                <li><a href="ingredients.html" class="list__item">Ингредиенты</a></li>
+                <li><a href="cocktails.html" class="list__item">Рецепты</a></li>
+                <li><a href="random-coctail.html" class="list__item">Рандомный коктейль</a></li>
             </ul>
         </div>
+
         </div>
     </header>
 
-    <main class="container">
+    <main class="main-container">
         <!-- Форма регистрации -->
         <div class="form-wrapper">
             <form name="formRegistration" class="form" novalidate>
@@ -76,24 +71,37 @@
                     <span> / </span>
                     <a href="./reg-form.html" class="default-link link-active">РЕГИСТРАЦИЯ</a>
                 </h2>
-
-                <!-- <div class="form__item">
+<!-- 
+                <div class="form__item">
                     <input type="text" id="login" name="login" class="form__input _req" required minlength="2"
                         maxlength="20" placeholder="Логин" />
-                    <span id="login-error" class="error-text"></span>
+                    <span id="login-error" class="error-text invisible">
+                        Логин может содержать только буквы и пробелы. Длина от 2 до
+                        20 символов.
+                    </span>
                 </div> -->
 
                 <div class="form__item">
                     <input type="email" id="email" name="email" class="form__input _req" required
                         placeholder="Электронный адрес" />
-                    <span id="email-error" class="error-text"></span>
+                    <span id="email-error" class="error-text invisible">
+                        Адрес электронной почты введен не верно. <br>Пример:
+                        name@mail.ru.
+                    </span>
                 </div>
 
                 <div class="form__item">
                     <input type="text" id="password" name="password" class="form__input _req" required minlength="8"
                         placeholder="Пароль"
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
-                    <span id="password-error" class="error-text"></span>
+                    <span id="password-error" class="error-text invisible">
+                        Пароль должен быть не менее 8 символов и
+                        содержать: <br>
+                        - строчные буквы a-z <br>
+                        - хотя бы одну заглавную букву A-Z<br>
+                        - хотя бы одну цифру 1-9<br>
+                        - хотя бы один символ !@#$%^&*()
+                    </span>
                 </div>
 
 
@@ -101,7 +109,7 @@
                     <input type="text" id="passwordRepeat" name="passwordRepeat" class="form__input _req" required
                         minlength="8" placeholder="Повторите пароль"
                         pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
-                    <span id="passwordRepeat-error" class="error-text"></span>
+                    <span id="passwordRepeat-error" class="error-text invisible">Пароли не совпадают.</span>
                 </div>
 
 
@@ -113,6 +121,7 @@
                 </div>
 
                 <input name="submit-btn" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" id='btnLogin' />
+                <span id="error-empty" class="error-text invisible">Заполните обязательные поля.</span>
             </form>
         </div>
     </main>
@@ -121,23 +130,41 @@
     <footer class="footer-block">
         <div class="footer-block__footer">
             <div class="footer__logo" id="footer-logotype">
-                <img class="logo__image" src="#" alt="Logo">
+                <img class="logo__image" src="./assets/svg/logo-01 1.svg" alt="Logo">
                 <p class="logo__name">ALCOSHAKE</p>
             </div>
             <nav class="footer__nav">
                 <ul class="nav__nav-list">
                     <li class="nav__nav-item"><a href="#" class="nav__nav-link" id="footer-main-page">Главная</a></li>
-                    <li class="nav__nav-item"><a href="#" class="nav__nav-link"
+                    <li class="nav__nav-item"><a href="ingredients.html" class="nav__nav-link"
                             id="footer-ingredients-page">Ингредиенты</a></li>
-                    <li class="nav__nav-item"><a href="#" class="nav__nav-link" id="footer-recipes-page">Рецепты</a>
+                    <li class="nav__nav-item"><a href="cocktails.html" class="nav__nav-link"
+                            id="footer-recipes-page">Рецепты</a>
                     </li>
                 </ul>
             </nav>
             <div class="footer__team-logo" id="team-logotype">
-                <img class="team-logo__image" src="#" alt="Logo">
+                <img class="team-logo__image" src="./assets/svg/icon_github-01 1.svg" alt="Logo">
                 <p class="team-logo__name">Название команды</p>
             </div>
         </div>
+
+        <nav class="footer__nav">
+            <ul class="nav__nav-list">
+                <li class="nav__nav-item"><a href="index.html" class="nav__nav-link" id="footer-main-page">Главная</a>
+                </li>
+                <li class="nav__nav-item"><a href="ingredients.html" class="nav__nav-link"
+                        id="footer-ingredients-page">Ингредиенты</a></li>
+                <li class="nav__nav-item"><a href="cocktails.html" class="nav__nav-link"
+                        id="footer-recipes-page">Рецепты</a></li>
+            </ul>
+        </nav>
+        <div class="footer__team-logo" id="team-logotype">
+            <img class="team-logo__image" src="./assets/svg/icon_github-01 1.svg" alt="Logo">
+            <p class="team-logo__name">Название команды</p>
+        </div>
+        </div>
+
         <div class="footer-block__authority">
             <p>© ALCOSHAKE 2023</p>
         </div>
