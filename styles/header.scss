@@ -370,6 +370,10 @@
     border: 1px solid black;
     width: 150px;
     top: 5.56rem;
+    z-index: 99;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: -60px;
 
     @media (max-width: $xm) {
         top: 3.4rem;
@@ -384,13 +388,13 @@
             list-style: none;
             padding-top: 5px;
             padding-bottom: 5px;
-
+            font-size: 1rem;
 
             a {
                 text-decoration: none;
                 color: $black;
-                font-size: 1rem;
-                &:hover{
+
+                &:hover {
                     font-weight: 600;
                 }
             }

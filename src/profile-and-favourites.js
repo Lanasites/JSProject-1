@@ -1,6 +1,6 @@
-import { burgerMenu } from './header.js';
+import { burgerMenu, getMenuForPerson } from './header.js';
 
-import { changeEmail, getMenuForPerson } from './authentication.js';
+import { changeEmail } from './authentication.js';
 
 burgerMenu();
 // ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
@@ -55,7 +55,7 @@ clickProfileMenu();
 
 // Обработчик события нажатия на кнопку "Сменить пароль"
 let changePasswordButton = document.getElementById("changePasswordButton");
-if (changePasswordButton) {
+// if (changePasswordButton) {
   changePasswordButton.addEventListener("click", function () {
     changeEmail();
     // let email = profileEmailInput.value;
@@ -66,7 +66,7 @@ if (changePasswordButton) {
     // Вместо alert можно использовать модальное окно??
     // alert("Информация о смене пароля отправлена на email: " + email);
   });
-}
+// }
 
 // Обработчик события нажатия на кнопку "Сохранить"
 let saveButton = document.getElementById("saveButton");

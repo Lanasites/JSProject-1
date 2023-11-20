@@ -59,7 +59,7 @@ logotype.addEventListener('click', function () {
 // Функция, подгружающая нужное меню второго уровня 
 // в случае авторизованного пользователя выводит меню при нажатии на человечка "email, настройки, выход"
 // в случае авторизованного пользователя выводит меню при нажатии на человечка "вход, регистрация"
-import { getCookie } from './authentication.js'
+import { getCookie, exitProfile } from './authentication.js'
 function getMenuForPerson() {
     const useremail = getCookie("userEmail"); // Получение значения cookie с именем "userEmail"
     const pointOfMenu = document.querySelector('.user-profile__btn');
@@ -67,8 +67,8 @@ function getMenuForPerson() {
         const temptateMenu = `
         <ul>
             <li> Вы вошли как: <span class='accent'>${useremail}</span></li>
-            <li> <a href="/profile-and-favourites.html">Настройки</a> </li>
-            <li> <a href="#">Выход</a> </li>
+            <li> <a href="profile-and-favourites.html">Настройки</a> </li>
+            <li id = 'exit'> Выход </li>
         </ul>
         `;
         const profileMenu = document.createElement('div')
@@ -79,8 +79,8 @@ function getMenuForPerson() {
         console.log("Нет зарегистрированных пользователей");
         const temptateMenu = `
         <ul>
-            <li><a href="/sign-in-form.html">Вход</a></li>
-            <li><a href="/reg-form.html">Регистрация</a></li>
+            <li><a href="sign-in-form.html">Вход</a></li>
+            <li><a href="reg-form.html">Регистрация</a></li>
         </ul>
         `;
         const profileMenu = document.createElement('div')
@@ -88,5 +88,10 @@ function getMenuForPerson() {
         profileMenu.innerHTML = temptateMenu;
         pointOfMenu.append(profileMenu);
     }
+    //--переход на главную страницу по клику на лого--//
+    const exit = document.getElementById('exit');
+    console.log(exit);
+    exit.addEventListener('click', exitProfile);
 }
 export { getMenuForPerson };
+

@@ -90,7 +90,18 @@ async function loginEmailPassword() {
 }
 // btnLogin.addEventListener('click', loginEmailPassword);
 export { loginEmailPassword };
-
+// // ----------------------------dыход--------------------------
+const exitProfile = async () => {
+    signOut(auth).then(() => {
+        console.log('Пользователь вышел из профиля');
+        window.location.href = 'index.html';
+        deleteCookie('userEmail');
+        deleteCookie('userUid');
+    }).catch((error) => {
+        // An error happened.
+    });
+}
+export { exitProfile };
 // ----------------------------Установите наблюдателя состояния аутентификации и получите пользовательские данные--------------------------
 
 const monitorAuthState = async () => {
@@ -195,6 +206,7 @@ async function changeEmail() {
             });
     }
 }
+export { changeEmail }
 
 //  Функция для установки cookie на определенное количество дней
 function setCookie(name, value, days) {
@@ -206,7 +218,7 @@ function setCookie(name, value, days) {
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
-export {setCookie}
+export { setCookie }
 // Функция для получения значения cookie
 function getCookie(name) {
     var nameEQ = name + "=";
@@ -221,5 +233,11 @@ function getCookie(name) {
         }
     }
     return null;
-}export {getCookie}
+}
+export { getCookie }
 
+// Функция для удаления cookie
+function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+export { deleteCookie }
