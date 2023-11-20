@@ -30,12 +30,61 @@
         }
     }
 }
-.favourites{
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding-top: 20px;
+
+.settings{
+    width: 25rem;
+    height: 22rem;
+    border: 1px solid black;
+    background-color:white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: $font1;
+    .settings__title{
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+    input{
+        padding: 0.625rem;
+        width: 22rem;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 0.0625rem solid #000;        
+        outline: none;
+        text-align: center;
+        color: #000;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 300;
+        @media screen and (max-width: 599px) {
+            .form__input {
+                max-width: 17.8125rem;
+            }
+        }
+    }    
+    .settings__button{
+        font-size: 1.125rem;
+        font-weight: 300;
+        width: 10rem;
+        height: 2.3rem;
+        background-color: #ffffff;
+    }
 }
+.favourites{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    font-family: $font1;
+    p{
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+}
+
+//-- Стили для букв-ссылок --//
 // .letterStyle {
 //     max-width: 75.5rem;
 //     width: 100%;
@@ -63,59 +112,6 @@ padding-top: 20px;
 // }
 // }
 // }
-.settings{
-    width: 25rem;
-height: 22rem;
-    border: 1px solid black;
-    background-color:white;
-    
-    padding: 20px;
-input{
-    padding: 0.625rem;
-    width: 25rem;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 0.0625rem solid #000;
-    display: block;
-    outline: none;
-    text-align: center;
-    color: #000;
-    @media screen and (max-width: 599px) {
-        .form__input {
-          max-width: 17.8125rem;
-        }
-}
 
-
-
-    .form__submit{
-        width: 15.3125rem;
-        height: 2.8125rem;
-        background-color: white;
-        
-        cursor: pointer;
-font-size: 1rem;
-    }
-    
-    
-    .error-message {
-        width: 180px;
-        color: red;
-    }
-}
-
-
-.form__input, select, #password, #confirmPassword{
-    width: 390px;
-    height: 30px;
-    outline: none;
-
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-
-}
 
 
