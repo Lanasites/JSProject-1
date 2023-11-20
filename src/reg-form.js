@@ -1,26 +1,19 @@
 
 const form = document.forms.formRegistration
 const allInputs = document.querySelectorAll('input')
+const btnLogin = document.getElementById('btnLogin');
 
 const inputPassword = form.elements.password
 const inputPassword2 = form.elements.passwordRepeat
 
+// функция регистрации пользователя в БД
+import { registrationEmailPassword } from './authentication.js';
+
+btnLogin.addEventListener('click', registrationEmailPassword);
 
 function getInputName(input) {
     return input.getAttribute('name');
 }
-
-// //добавление текста ошибки для каждого поля
-// function addErrorText(input) {
-//     let inputName = getInputName(input);
-//     document.getElementById(`${inputName}-error`).innerHTML = input.validationMessage;
-// }
-
-// //удаление текста ошибки для каждого поля
-// function removeErrorText(input) {
-//     let inputName = getInputName(input);
-//     document.getElementById(`${inputName}-error`).innerHTML = '';
-// }
 
 //добавление класса ошибки для поля
 function formAddError(input) {

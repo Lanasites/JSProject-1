@@ -1,0 +1,121 @@
+@import'./vars';
+@import'./style.scss';
+
+#profile-menu {
+    display: none;
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid black;
+    width: 150px;
+    top: 5.56rem;
+    right: 20;
+    @media (max-width: $xm) {
+        top: 3.4rem;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        padding:0;
+        li{
+            list-style: none;
+            padding-top: 5px;
+                padding-bottom: 5px;
+                
+            a{
+                text-decoration: none;
+                color: $black; 
+                font-size: 1rem;
+                
+            }
+        }
+    }
+}
+.favourites{
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding-top: 20px;
+}
+// .letterStyle {
+//     max-width: 75.5rem;
+//     width: 100%;
+// padding-top: 20px;
+// display: flex;
+// justify-content: space-between;
+// gap: 1.5rem;
+// font-family: $font1;
+// font-size: 1.125rem;
+
+// @media (max-width: $xm) {
+//     max-width: $container-xm;
+//    display: grid;
+//    grid-template-columns: repeat(14, 1fr);
+//    column-gap: 0.7rem;
+// } 
+// @media (max-width: $xs) {
+//     max-width: $container-xs;
+//    display:flex;
+//   flex-wrap: wrap;
+// } 
+// a{
+//     text-decoration: none; 
+//     color: $black;
+// }
+// }
+// }
+.settings{
+    width: 25rem;
+height: 22rem;
+    border: 1px solid black;
+    background-color:white;
+    
+    padding: 20px;
+input{
+    padding: 0.625rem;
+    width: 25rem;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 0.0625rem solid #000;
+    display: block;
+    outline: none;
+    text-align: center;
+    color: #000;
+    @media screen and (max-width: 599px) {
+        .form__input {
+          max-width: 17.8125rem;
+        }
+}
+
+
+
+    .form__submit{
+        width: 15.3125rem;
+        height: 2.8125rem;
+        background-color: white;
+        
+        cursor: pointer;
+font-size: 1rem;
+    }
+    
+    
+    .error-message {
+        width: 180px;
+        color: red;
+    }
+}
+
+
+.form__input, select, #password, #confirmPassword{
+    width: 390px;
+    height: 30px;
+    outline: none;
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+}
+
+

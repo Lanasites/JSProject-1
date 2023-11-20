@@ -1,0 +1,122 @@
+//FOOTER
+@import'./vars';
+.footer-block{
+    max-width: 83.9rem;
+    padding-top: 3rem;
+    margin-bottom: 1rem;
+    @media (max-width: $l) {
+        max-width: $container-l;
+    } 
+    @media (max-width: $xl) {
+        max-width: $container-xl;
+    } 
+    @media (max-width: $xxl) {
+        max-width: $container-xxl;
+    }    
+    @media (max-width: $lm) {
+        max-width: $container-lm;
+        padding-top: 1.94rem;
+    }
+    @media (max-width: $m) {
+        max-width: $container-m;
+    }
+    @media (max-width: $xm) {
+        max-width: $container-xs;
+    }
+
+    .footer-block__footer{
+        max-width: 55.875rem;
+        display: flex;
+        margin-bottom: 1.38rem;
+        @media (max-width: $xm) {
+            margin-bottom: 0.31rem;
+            display: block;
+        }
+        .footer__logo{
+            display: flex;
+            align-items: center;
+            margin: 0;
+            font-family: $font-logo;
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 1.25rem;
+            @media (max-width: $xm) {
+                justify-content: center;
+                margin-bottom: 0.38rem;
+            }
+            .logo__image{
+                width: 1.5625rem;
+                height: 1.5625rem;
+                @media (max-width: $xm) {
+                    margin: 0;
+                }
+            }
+            .logo__name{
+                @media (max-width: $xm) {
+                    margin: 0;
+                }
+            }
+        }
+        .footer__nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-family: $font1;
+            font-size: 1.125rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 1.125rem;
+            .nav__nav-list{
+                display: flex;
+                padding-left: 3.5rem;
+                list-style: none;
+                gap: 2.69rem;
+                @media (max-width: $xm) {
+                    padding: 0;
+                    display: block;
+                    text-align: center;
+                }
+                .nav__nav-item{
+                    @media (max-width: $xm) {
+                        margin-top: 0.31rem;
+                    }
+                }
+                .nav__nav-link{
+                    text-decoration: none;
+                    color: $black;
+                }
+            }
+        }
+        .footer__team-logo{
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding-left: 6.36rem;
+            @media (max-width: $xm) {
+                margin-top: 0.31rem;
+                padding: 0;
+                display: block;
+                text-align: center;
+            }
+            .team-logo__name{
+                flex-wrap: nowrap;
+                padding-left: 0.3rem;
+                font-family: $font1;
+                font-size: 1.125rem;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 1.125rem;
+            }
+        }
+    }
+    .footer-block__authority{
+        display: flex;
+        padding-top: 1.24rem;
+        border-top: 1px solid black;
+        @media (max-width: $xm) {
+            padding-top: 0.31rem;
+        }
+    }
+}
