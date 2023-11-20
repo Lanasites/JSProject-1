@@ -1,6 +1,14 @@
-import { burgerMenu } from './header.js'; 
-burgerMenu();
+import { burgerMenu } from './header.js';
 
+import { changeEmail, getMenuForPerson } from './authentication.js';
+
+burgerMenu();
+// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
+// на все страницы с меню надо добавить
+document.addEventListener("DOMContentLoaded", getMenuForPerson);
+import { clickProfileMenu } from './header.js';
+clickProfileMenu();
+// ------------------------------------------------------------------------------------------------------------------------
 // //Вывод алфавита (букв-ссылок) на страницу
 // function addLetters () {
 // const alphabet = 'абвгдежзиклмнопрстуфхцчшщэюя';
@@ -46,21 +54,22 @@ burgerMenu();
 // Обработчик события нажатия на кнопку "Сменить пароль"
 var changePasswordButton = document.getElementById("changePasswordButton");
 if (changePasswordButton) {
-  changePasswordButton.addEventListener("click", function() {
-    let email = profileEmailInput.value;
+  changePasswordButton.addEventListener("click", function () {
+    changeEmail();
+    // let email = profileEmailInput.value;
 
     // Отправка данных для смены пароля
 
 
     // Вместо alert можно использовать модальное окно??
-    alert("Информация о смене пароля отправлена на email: " + email);
+    // alert("Информация о смене пароля отправлена на email: " + email);
   });
 }
 
 // Обработчик события нажатия на кнопку "Сохранить"
 let saveButton = document.getElementById("saveButton");
 if (saveButton) {
-  saveButton.addEventListener("click", function() {
+  saveButton.addEventListener("click", function () {
     let fullNameInput = document.getElementById("fullName");
     let phoneInput = document.getElementById("phone");
 
