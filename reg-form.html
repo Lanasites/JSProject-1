@@ -73,15 +73,6 @@
                 </h2>
 
                 <div class="form__item">
-                    <input type="text" id="login" name="login" class="form__input _req" required minlength="2"
-                        maxlength="20" placeholder="Логин" />
-                    <span id="login-error" class="error-text invisible">
-                        Логин может содержать только буквы и пробелы. Длина от 2 до
-                        20 символов.
-                    </span>
-                </div>
-
-                <div class="form__item">
                     <input type="email" id="email" name="email" class="form__input _req" required
                         placeholder="Электронный адрес" />
                     <span id="email-error" class="error-text invisible">
@@ -112,13 +103,6 @@
                     <span id="passwordRepeat-error" class="error-text invisible">Пароли не совпадают.</span>
                 </div>
 
-
-                <div class="form__item checkbox-wrap">
-                    <input type="checkbox" id="checkbox" name="checkbox" class="form__checkbox checkbox" required
-                        checked />
-                    <label for="checkbox" class="checkbox__label">Запомнить меня</label>
-                    <br>
-                </div>
 
                 <input name="submit-btn" type="submit" value="СОЗДАТЬ АККАУНТ" class="form__submit" id='btnLogin' />
                 <span id="error-empty" class="error-text invisible">Заполните обязательные поля.</span>
