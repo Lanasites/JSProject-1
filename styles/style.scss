@@ -244,7 +244,7 @@
 
     .splide__text {
         width: 20vw;
-        font-size: 1.5vw;
+        font-size: 1.25vw;
         text-align: justify;
         margin: 2vw;
 
@@ -308,18 +308,13 @@
     }
 }
 
-.splide__arrows {
+.splide__arrow {
     background: none;
-    margin: 0 3vw;
-
-    @media screen and (max-width: $s) {
-        margin: 0 1vw;
-    }
 
     svg {
-        background-color: #fff;
         color: black;
         font-size: 2rem;
+        opacity: 1;
     }
 }
 
