@@ -34,6 +34,9 @@ async function registrationEmailPassword() {
         const user = userCredential.user;
         console.log('Создался пользователь', user);
         modal1('Поздравляем!', 'Вы успешно зарегистрировались на сайте', 'success', 'Ок');
+        setTimeout(function () {
+            window.location.href = 'profile-and-favourites.html';
+        }, 2 * 1000);
     }
     catch (error) {
         const errorCode = error.code;
@@ -63,6 +66,10 @@ async function loginEmailPassword() {
         const user = userCredential.user;
         console.log('Пользователь авторизовался на сайте', user);
         modalSuccess1();
+        setTimeout(function () {
+            window.location.href = 'profile-and-favourites.html';
+        }, 2 * 1000);
+
     }
     catch (error) {
         const errorCode = error.code;
