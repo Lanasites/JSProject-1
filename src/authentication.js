@@ -34,6 +34,9 @@ async function registrationEmailPassword() {
         const user = userCredential.user;
         console.log('Создался пользователь', user);
         modal1('Поздравляем!', 'Вы успешно зарегистрировались на сайте', 'success', 'Ок');
+        setCookie('userEmail', user.email, 7);
+        setCookie('userUid', user.uid, 7);
+        setCookie("username", username, 7);
         setTimeout(function () {
             window.location.href = 'profile-and-favourites.html';
         }, 2 * 1000);
@@ -65,6 +68,8 @@ async function loginEmailPassword() {
         console.log(userCredential);
         const user = userCredential.user;
         console.log('Пользователь авторизовался на сайте', user);
+        setCookie('userEmail', user.email, 7);
+        setCookie('userUid', user.uid, 7);
         modalSuccess1();
         setTimeout(function () {
             window.location.href = 'profile-and-favourites.html';
@@ -189,5 +194,16 @@ async function changeEmail() {
                 // ..
             });
     }
+}
+
+//  Функция для установки cookie на определенное количество дней
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
