@@ -11,15 +11,19 @@
     @media (max-width: $l) {
         max-width: $container-l;
     }
+
     @media (max-width: $xl) {
         max-width: $container-xl;
     }
+
     @media (max-width: $xxl) {
         max-width: $container-xxl;
     }
+
     @media (max-width: $lm) {
         max-width: $container-lm;
     }
+
     @media (max-width: $m) {
         max-width: $container-m;
     }
@@ -128,6 +132,7 @@
             @media (max-width: $xxl) {
                 font-size: 1.7rem;
             }
+
             @media (max-width: $m) {
                 font-size: 1.2rem;
             }
@@ -245,6 +250,7 @@
         display: flex;
         align-items: center;
 
+
         @media (max-width: $m) {
             padding-left: 2rem;
         }
@@ -267,6 +273,10 @@
             border: none;
             background-color: white;
             cursor: pointer;
+
+            &:hover {
+                background-image: url(../assets/svg/icon_user_active.svg);
+            }
 
             @media (max-width: $xm) {
                 width: 1.5rem;
@@ -375,11 +385,14 @@
             padding-top: 5px;
             padding-bottom: 5px;
 
+
             a {
                 text-decoration: none;
                 color: $black;
                 font-size: 1rem;
-
+                &:hover{
+                    font-weight: 600;
+                }
             }
 
             .accent {

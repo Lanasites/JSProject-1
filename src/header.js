@@ -67,8 +67,8 @@ function getMenuForPerson() {
         const temptateMenu = `
         <ul>
             <li> Вы вошли как: <span class='accent'>${useremail}</span></li>
-            <li><a href="/profile-and-favourites.html">Настройки</a></li>
-            <li><a href="#">Выход</a></li>
+            <li> <a href="/profile-and-favourites.html">Настройки</a> </li>
+            <li> <a href="#">Выход</a> </li>
         </ul>
         `;
         const profileMenu = document.createElement('div')
