@@ -68,13 +68,17 @@ import { takeAlkoCocktail } from './firebase.js'
 import { monitorAuthState } from './authentication.js'
 monitorAuthState();
 // -----------------------------------------------------
+const agePopup = document.getElementById("age-confirmation-popup");
+if (document.cookie = 'adult=true') {
+  agePopup.style.display = "none";
+}
 document.addEventListener("DOMContentLoaded", function () {
-  const agePopup = document.getElementById("age-confirmation-popup");
   const ageInput = document.getElementById("age-input");
   const confirmBtn = document.getElementById("confirm-btn");
   confirmBtn.addEventListener("click", function () {
     const age = parseInt(ageInput.value);
     if (age >= 18) {
+      document.cookie = 'adult=true';
       agePopup.style.display = "none";
     } else {
       alert("Вы должны быть старше 18 лет!");

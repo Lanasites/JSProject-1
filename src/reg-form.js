@@ -37,22 +37,6 @@ const error = document.querySelector('#error-empty');
 //Динамическая валидация полей при вводе
 
 
-//логин
-// const inputLogin = document.getElementById('login');
-// const errorLogin = document.querySelector('#login-error');
-// const namePattern = /^[a-zA-Zа-яА-я ]{2,20}$/;
-// inputLogin.oninput = function () {
-//     let loginValue = inputLogin.value;
-//     if (loginValue.match(namePattern) || loginValue == "") {
-//         errorLogin.classList.add('invisible');
-//         formRemoveError(inputLogin);
-//     } else {
-//         errorLogin.classList.remove('invisible');
-//         formAddError(inputLogin)
-//     }
-// }
-
-
 //email
 const inputEmail = document.getElementById('email');
 const errorEmail = document.querySelector('#email-error');
@@ -105,9 +89,6 @@ function validation(event) {
     //очищение формы от ошибок
     formRemoveEmptyError();
 
-    //валидация логина
-    validationLogin(inputLogin);
-
     //валидация email
     validationEmail(inputEmail);
 
@@ -122,27 +103,6 @@ function validation(event) {
 
 function formRemoveEmptyError() {
     error.classList.add('invisible');//убираем сообщение об ошибке, если оно было
-}
-
-
-function validationLogin(input) {
-    let validity = input.validity;
-    let errorPattern = errorLogin.classList.contains('invisible');//false, если есть ошибка формата ввода
-
-    if (validity.valueMissing) //значение не введено
-    {
-        formAddError(input); //подсветить поле красным
-        error.classList.remove('invisible'); // показать ошибку, что не все поля заполнены
-        return false;
-    } else if (errorPattern) //если ошибок ввода нет
-    {
-        error.classList.add('invisible'); //скрыть ошибку формата ввода
-        formRemoveError(input);  //убрать красную подсветку поля
-        return true;
-    } else {//подсветить поле с ошибкой
-        formAddError(input);
-        return false;
-    }
 }
 
 

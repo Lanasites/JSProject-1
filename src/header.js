@@ -12,10 +12,12 @@ export { burgerMenu };
 
 //Переходы с кнопок
 // --переход на формы входа/регистрации перед входом в личный кабинет--//
+
 function clickProfileMenu() {
     const profileButton = document.getElementById("profile"); // Проверка URL и применение соответствующих обработчиков событий
     profileButton.addEventListener('click', function (event) {
         const profileMenu = document.getElementById("profile-menu");
+
         event.preventDefault(); // Отменить поведение по умолчанию для клика
         if (profileMenu.style.display === "block") {
             profileMenu.style.display = "none";

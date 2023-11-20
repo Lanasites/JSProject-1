@@ -51,8 +51,10 @@ clickProfileMenu();
 // });
 
 
+
+
 // Обработчик события нажатия на кнопку "Сменить пароль"
-var changePasswordButton = document.getElementById("changePasswordButton");
+let changePasswordButton = document.getElementById("changePasswordButton");
 if (changePasswordButton) {
   changePasswordButton.addEventListener("click", function () {
     changeEmail();

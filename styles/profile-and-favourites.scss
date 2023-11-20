@@ -31,7 +31,8 @@
     }
 }
 
-.settings{
+#settings-form{
+    display: none;
     width: 25rem;
     height: 22rem;
     border: 1px solid black;
@@ -72,6 +73,7 @@
         background-color: #ffffff;
     }
 }
+
 .favourites{
     display: flex;
     flex-direction: column;
