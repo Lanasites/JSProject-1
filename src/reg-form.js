@@ -1,19 +1,16 @@
 
 const form = document.forms.formRegistration
-const allInputs = document.querySelectorAll('input')
 const btnLogin = document.getElementById('btnLogin');
 
 const inputPassword = form.elements.password
 const inputPassword2 = form.elements.passwordRepeat
 
-// функция регистрации пользователя в БД
-import { registrationEmailPassword } from './authentication.js';
 
-btnLogin.addEventListener('click', registrationEmailPassword);
+// // функция регистрации пользователя в БД
+// import { registrationEmailPassword } from './authentication.js';
 
-function getInputName(input) {
-    return input.getAttribute('name');
-}
+// btnLogin.addEventListener('click', registrationEmailPassword);
+
 
 //добавление класса ошибки для поля
 function formAddError(input) {
