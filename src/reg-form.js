@@ -7,9 +7,9 @@ const inputPassword2 = form.elements.passwordRepeat
 
 
 // // функция регистрации пользователя в БД
-// import { registrationEmailPassword } from './authentication.js';
+import { registrationEmailPassword } from './authentication.js';
 
-// btnLogin.addEventListener('click', registrationEmailPassword);
+btnLogin.addEventListener('click', registrationEmailPassword);
 
 
 //добавление класса ошибки для поля
@@ -33,19 +33,19 @@ const error = document.querySelector('#error-empty');
 
 
 //логин
-const inputLogin = document.getElementById('login');
-const errorLogin = document.querySelector('#login-error');
-const namePattern = /^[a-zA-Zа-яА-я ]{2,20}$/;
-inputLogin.oninput = function () {
-    let loginValue = inputLogin.value;
-    if (loginValue.match(namePattern) || loginValue == "") {
-        errorLogin.classList.add('invisible');
-        formRemoveError(inputLogin);
-    } else {
-        errorLogin.classList.remove('invisible');
-        formAddError(inputLogin)
-    }
-}
+// const inputLogin = document.getElementById('login');
+// const errorLogin = document.querySelector('#login-error');
+// const namePattern = /^[a-zA-Zа-яА-я ]{2,20}$/;
+// inputLogin.oninput = function () {
+//     let loginValue = inputLogin.value;
+//     if (loginValue.match(namePattern) || loginValue == "") {
+//         errorLogin.classList.add('invisible');
+//         formRemoveError(inputLogin);
+//     } else {
+//         errorLogin.classList.remove('invisible');
+//         formAddError(inputLogin)
+//     }
+// }
 
 
 //email
