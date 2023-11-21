@@ -6,22 +6,38 @@ $font-logo: 'Montserrat Alternates';
 
 // цвета:
 $mistake: #BC2525;
+<<<<<<< HEAD
 $black  : #000000;
+=======
+$black: #000000;
+$background-color: rgba(217, 217, 217, 0.00);
+$white: #fff;
+>>>>>>> 8bdeeb25e082cabda5fd9cd99486a6ecd120c030
 
 // брейкпоинты:
 $l  : 1441px;
 $xl : 1376px;
 $xxl: 1300px;
+<<<<<<< HEAD
 $lm : 1200px;
 $m  : 1023px;
 $xm : 890px;
 $s  : 767px;
 $xs : 380px;
+=======
+$lm: 1200px;
+$m: 1023px;
+$xm: 890px;
+$s: 767px;
+$s-xs: 528px;
+$xs: 380px;
+>>>>>>> 8bdeeb25e082cabda5fd9cd99486a6ecd120c030
 
 // размеры контейнеров header:
 $container-l  : 1340px;
 $container-xl : 1300px;
 $container-xxl: 1200px;
+<<<<<<< HEAD
 $container-lm : 1120px;
 $container-m  : 960px;
 $container-xm : 860px;
@@ -55,3 +71,10 @@ $container-xs : 348px;
 // .container {
 //    @include container(100%);
 // }
+=======
+$container-lm: 1120px;
+$container-m: 960px;
+$container-xm: 860px;
+$container-s: 720px;
+$container-xs: 348px;
+>>>>>>> 8bdeeb25e082cabda5fd9cd99486a6ecd120c030

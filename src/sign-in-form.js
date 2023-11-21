@@ -2,12 +2,19 @@
 // const email = document.querySelector('#email')
 // const inputPassword = form.elements.password
 
+const btnLogin = document.getElementById('btnLogin');
+// функция входа пользователя
+import { loginEmailPassword } from './authentication.js';
 
-// let errors = [];
+import { monitorAuthState } from './authentication.js'
+// монитогин идентификации
+monitorAuthState();
 
+btnLogin.addEventListener('click', loginEmailPassword);
 
-// form.addEventListener('submit', function (event) {
-//     event.preventDefault();
-//     errors = [];
-//     formValidate();
-// });
+// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
+// на все страницы с меню надо добавить
+import { clickProfileMenu, getMenuForPerson } from './header.js';
+document.addEventListener("DOMContentLoaded", getMenuForPerson);
+clickProfileMenu();
+// ------------------------------------------------------------------------------------------------------------------------

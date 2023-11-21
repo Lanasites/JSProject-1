@@ -1,20 +1,24 @@
 {
-  "name": "jsproject-1",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "saas": "^1.0.0",
-    "sass": "^1.69.5",
-    "vite": "^4.4.5"
-  },
-  "dependencies": {
-    "@splidejs/splide": "^4.1.4",
-    "firebase": "^10.5.2"
-  }
+    "name": "jsproject-1",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "esbuild": "^0.19.6",
+        "saas": "^1.0.0",
+        "sass": "^1.69.5",
+        "vite": "^4.4.5"
+    },
+    "dependencies": {
+        "@splidejs/splide": "^4.1.4",
+        "@splidejs/splide-extension-grid": "^0.4.1",
+        "firebase": "^10.6.0",
+        "sweetalert2": "^11.10.0",
+        "uuid": "^7.0.0"
+    }
 }

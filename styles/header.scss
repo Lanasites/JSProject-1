@@ -1,0 +1,405 @@
+//HEADER 
+@import'./vars';
+
+.header-block {
+    max-width: 83.9rem;
+    width: 100vw;
+    margin-top: 3.12rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+
+    @media (max-width: $l) {
+        max-width: $container-l;
+    }
+
+    @media (max-width: $xl) {
+        max-width: $container-xl;
+    }
+
+    @media (max-width: $xxl) {
+        max-width: $container-xxl;
+    }
+
+    @media (max-width: $lm) {
+        max-width: $container-lm;
+    }
+
+    @media (max-width: $m) {
+        max-width: $container-m;
+    }
+
+    @media (max-width: $xm) {
+        max-width: $container-xm;
+        margin-top: 1.25rem;
+    }
+
+    @media (max-width: $s) {
+        max-width: $container-s;
+    }
+
+    @media (max-width: $xs) {
+        max-width: $container-xs;
+    }
+
+    /* Бургер-меню, инонка, трансформация иконки при открытии */
+    .header-block__burger-menu {
+        justify-content: flex-start;
+        display: none;
+
+        @media (max-width: $s) {
+            display: block;
+            margin: 0;
+            margin-right: 2.55rem;
+        }
+
+        .burger-menu__btn {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .burger-menu__btn span {
+            width: 30px;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #222222;
+            transition: all 0.5s;
+            text-decoration: none;
+        }
+
+        .burger-menu__btn span:nth-of-type(2) {
+            top: calc(50% - 5px);
+        }
+
+        .burger-menu__btn span:nth-of-type(3) {
+            top: calc(50% + 5px);
+        }
+
+        .burger-menu__btn.active span:nth-of-type(1) {
+            display: none;
+        }
+
+        .burger-menu__btn.active span:nth-of-type(2) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(45deg);
+        }
+
+        .burger-menu__btn.active span:nth-of-type(3) {
+            top: 50%;
+            transform: translate(-50%, 0%) rotate(-45deg);
+        }
+    }
+
+    /* Бургер-меню (завершение стилей) */
+    /* Лого*/
+    .header-block__logo {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        font-family: $font-logo;
+        font-size: 2em;
+        font-style: normal;
+        font-weight: 600;
+
+        @media (max-width: $xs) {
+            margin-top: 32px;
+        }
+
+        .logo__image {
+            width: 2rem;
+            height: 2rem;
+
+            @media (max-width: $xxl) {
+                width: 1.7rem;
+                height: 1.7rem;
+            }
+
+            @media (max-width: $m) {
+                width: 1.4rem;
+                height: 1.4rem;
+            }
+
+        }
+
+        .logo__name {
+            margin-left: 1.12rem;
+
+            @media (max-width: $xxl) {
+                font-size: 1.7rem;
+            }
+
+            @media (max-width: $m) {
+                font-size: 1.2rem;
+            }
+
+            @media (max-width: $xm) {
+
+                margin-left: 0;
+            }
+        }
+    }
+
+    /* Навигация*/
+    .header-block__headline {
+        overflow: hidden;
+        display: flex;
+        padding-top: 0.62rem;
+        margin: 0;
+        font-family: $font1;
+        font-weight: 400;
+        font-size: 1.25rem;
+        font-style: normal;
+
+        @media (max-width: $xm) {
+            padding-top: 0.32rem;
+        }
+
+        @media (max-width: $s) {
+            display: none;
+        }
+
+        .headline__nav-list {
+            display: flex;
+            list-style: none;
+            gap: 1.56rem;
+
+            .headline__nav-link {
+                text-decoration: none;
+                color: $black;
+
+                @media (max-width: $m) {
+                    font-size: 1.2rem;
+                }
+
+                @media (max-width: $xm) {
+                    font-size: 1rem;
+                    gap: 15px;
+                }
+            }
+        }
+    }
+
+    /* Поиск*/
+    .header-block__search {
+        max-width: 17.625rem;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $lm) {
+            width: 2rem;
+        }
+
+        @media (max-width: $m) {
+            margin-right: 1rem;
+        }
+
+        @media (max-width: $xm) {
+            margin-right: 0;
+        }
+
+        @media (max-width: $xs) {
+            align-items: start;
+        }
+
+        input[type=text] {
+            width: 18rem;
+            font-size: 1rem;
+            border: none;
+            outline: none;
+
+            @media (max-width: $lm) {
+                display: none;
+            }
+        }
+    }
+
+    .search__btn {
+        width: 2.1rem;
+        height: 1.93706rem;
+        padding: 0;
+        background-image: url(../assets/svg/icon_find.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        float: right;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+
+        @media (max-width: $xm) {
+            width: 1.8rem;
+            height: 1.6rem;
+        }
+    }
+
+    .header-block__search:hover {
+        border-bottom: 1px solid $black;
+
+        @media (max-width: $lm) {
+            border-bottom: none;
+        }
+    }
+
+    /* Кнопка Личный кабинет*/
+    .header-block__user-profile {
+        margin: 0;
+        display: flex;
+        align-items: center;
+
+
+        @media (max-width: $m) {
+            padding-left: 2rem;
+        }
+
+        @media (max-width: $xm) {
+            padding-left: 1rem;
+        }
+
+        @media (max-width: $xs) {
+            align-items: flex-start;
+        }
+
+        .user-profile__btn {
+            width: 1.9rem;
+            height: 2.1rem;
+            padding: 0;
+            background-image: url(../assets/svg/icon_user.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+
+            &:hover {
+                background-image: url(../assets/svg/icon_user_active.svg);
+            }
+
+            @media (max-width: $xm) {
+                width: 1.5rem;
+                height: 1.65rem;
+            }
+        }
+    }
+
+    /* Кнопка Избранное*/
+    .header-block__favourite {
+        display: flex;
+        align-items: center;
+        padding: 0;
+
+        @media (max-width: $m) {
+            margin: 0;
+            padding-left: 2rem;
+        }
+
+        @media (max-width: $xm) {
+            padding-left: 1rem;
+        }
+
+        @media (max-width: $xs) {
+            align-items: flex-start;
+        }
+
+        .favourite__star {
+            width: 2.1rem;
+            height: 1.95rem;
+            padding: 0;
+            background-image: url(../assets/svg/icon_favourites.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            background-color: white;
+            cursor: pointer;
+
+            @media (max-width: $xm) {
+                width: 1.8rem;
+                height: 1.7rem;
+            }
+        }
+    }
+}
+
+//}
+/* Навигация, открываемая кнопкой Бургер-меню*/
+.header-block__bm-list {
+    display: none;
+    top: 0;
+    left: 0;
+    font-size: 0.875rem;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+.header-block__bm-list.active {
+    max-width: 83.9rem;
+    transform: translateX(0);
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+
+    .bm-list__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        gap: 25px;
+    }
+
+    .bm-list__list li:not(:last-child) {
+        padding-right: 10px;
+        border-right: 1px solid black;
+    }
+
+    .list__item {
+        text-decoration: none;
+        color: black;
+        font-size: 0.6rem;
+    }
+}
+
+#profile-menu {
+    display: none;
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid black;
+    width: 150px;
+    top: 5.56rem;
+    z-index: 99;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: -60px;
+
+    @media (max-width: $xm) {
+        top: 3.4rem;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+
+        li {
+            list-style: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 1rem;
+
+            &:hover {
+                font-weight: 600;
+            }
+
+            .accent {
+                color: green;
+            }
+        }
+        .bold{
+            font-weight: 600;
+        }
+    }
+}

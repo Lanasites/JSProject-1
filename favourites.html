@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Личный кабинет</title>
-    <link rel="stylesheet" href="./styles/profile-and-favourites.scss">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap" rel="stylesheet">
-  </head>
+    <title>Избранное</title>
+    <link rel="stylesheet" href="./styles/favourites.scss">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap" rel="stylesheet">
+</head>
 <body>
-    </header> 
-    <div class="header-block  container-header">
+    <header >
+        <div class="header-block  container-header">
           <div class="header-block__burger-menu">
             <div class="burger-menu__btn">
                 <span></span>
@@ -35,12 +35,6 @@
         </div>
         <div class="header-block__user-profile">
           <button type="button" class="user-profile__btn" id="profile"></button>
-          <!-- <div id="profile-menu">
-            <ul>
-              <li><a href="">Настройки</a></li>
-              <li><a href="">Выход</a></li>
-            </ul>
-          </div> -->
         </div>
         <div class="header-block__favourite">
             <button type="button" class="favourite__star" id="star"></button>
@@ -56,31 +50,16 @@
           </div>
         </div>
       </header>
-    
-    <main>
 
-      <form class="settings" id="settings-form">
-        <p class="settings__title">НАСТРОЙКИ</p>
-        <div class="settings__field">
-          <input class="settings__input" placeholder="Email" type="email" id="profile-email" value="" >
-        </div>
-        <div class="settings__field">
-          <input class="settings__input" placeholder="ФИО" type="text" id="fullName">
-        </div>
-        <div class="settings__field">
-          <input class="settings__input" placeholder="Телефон"  type="tel" id="phone">
-        </div>
-        <button class="settings__button" id="changePasswordButton">Сменить пароль</button>
-        <button class="settings__button" id="saveButton">Сохранить</button>
-      </form>
-
-
-      <div class="favourites">
-        <p>ИЗБРАННОЕ</p>
-        <!-- <div id="alphabet"></div> -->
-      </div>
-    </main>
+      <main>
+        <div class="favourite-title" id="title-for-favourite"></div>
   
+        <div id="favoritesContainer">
+          <!-- Здесь будут отображаться избранные коктейли -->
+        </div>
+
+      </main>
+
       <footer class="footer-block">
         <div class="footer-block__footer">
         <div class="footer__logo" id="footer-logotype">
@@ -103,6 +82,6 @@
           <p>© ALCOSHAKE 2023</p>
         </div>
       </footer>
-    <script type="module" src="./src/profile-and-favourites.js"></script>
+    <script type="module" src="./src/favourites.js"></script>
   </body>
 </html>
