@@ -45,10 +45,24 @@ export { clickProfileMenu };
 //   };
 
 //--переход на страницу избранного--//
-document.getElementById('star').addEventListener("click", goToFavoutitesPage);
-function goToFavoutitesPage() {
-    window.location.href = "favourites.html";
-}
+// document.getElementById('star').addEventListener("click", goToFavoutitesPage);
+// function goToFavoutitesPage() {
+//     window.location.href = "favourites.html";
+// }
+// import { monitorAuthState } from './authentication.js';
+// import { getCookie, exitProfile } from './authentication.js';
+// document.getElementById('star').addEventListener("click", goToFavouritesPage);
+// function goToFavouritesPage() {
+//   firebase.auth().onAuthStateChanged(user => {
+//     if (user) {
+//       // Если пользователь авторизован, производим перенаправление на страницу избранных
+//       window.location.href = "favourites.html";
+//     } else {
+//         modal1('Внимание!', 'Только для авторизованных пользователей. Перейдите на вкладку ВОЙТИ или нажмите на кнопку ниже', 'warning', `<a class = 'unline-w' href="sign-in-form.html">Войти</a> `);
+//       // Если пользователь не авторизован, ничего не делаем
+//     }
+//   });
+// }
 
 //--переход на главную страницу по клику на лого--//
 const logotype = document.getElementById('logotype');
@@ -59,7 +73,7 @@ logotype.addEventListener('click', function () {
 // Функция, подгружающая нужное меню второго уровня 
 // в случае авторизованного пользователя выводит меню при нажатии на человечка "email, настройки, выход"
 // в случае авторизованного пользователя выводит меню при нажатии на человечка "вход, регистрация"
-import { getCookie, exitProfile } from './authentication.js'
+import { getCookie, exitProfile, monitorAuthState } from './authentication.js'
 function getMenuForPerson() {
     const useremail = getCookie("userEmail"); // Получение значения cookie с именем "userEmail"
     const pointOfMenu = document.querySelector('.user-profile__btn');
@@ -113,3 +127,20 @@ function getMenuForPerson() {
 }
 
 export { getMenuForPerson };
+
+document.getElementById('star').addEventListener("click", goToFavouritesPage);
+
+function goToFavouritesPage() {
+  const userEmail = getCookie("userEmail");
+  if (userEmail) {
+    // Если пользователь авторизован, производим перенаправление на страницу избранных
+    window.location.href = "favourites.html";
+  } else {// Если пользователь не авторизован
+    alert ('Авторизуйтесь!');
+  }
+}
+
+// Вызов мониторинга состояния авторизации при загрузке страницы
+window.addEventListener("load", () => {
+  monitorAuthState();
+});
