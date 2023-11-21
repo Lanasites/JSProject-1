@@ -171,6 +171,13 @@
             .headline__nav-link {
                 text-decoration: none;
                 color: $black;
+            
+                  
+                  &:hover {
+                    border: 1px solid black;
+                  }
+                  
+                 
 
                 @media (max-width: $m) {
                     font-size: 1.2rem;
@@ -314,12 +321,15 @@
             border: none;
             background-color: white;
             cursor: pointer;
-
-            @media (max-width: $xm) {
+            &:hover {
+                background-image: url(../assets/svg/icon_favourites_active.svg);
+            }
+        @media (max-width: $xm) {
                 width: 1.8rem;
                 height: 1.7rem;
             }
         }
+       
     }
 }
 

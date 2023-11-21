@@ -1,7 +1,8 @@
 import { burgerMenu } from './header.js';
 burgerMenu();
 
-// import { monitorAuthState } from './authentication.js';
+
+
 
 let favorites = []; // Массив для хранения избранных коктейлей
 
