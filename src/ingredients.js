@@ -99,3 +99,9 @@ window.onclick = function (event) {
     modalContent.textContent = '';
   }
 }
+// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
+// на все страницы с меню надо добавить
+import { clickProfileMenu, getMenuForPerson } from './header.js';
+document.addEventListener("DOMContentLoaded", getMenuForPerson);
+clickProfileMenu();
+// ------------------------------------------------------------------------------------------------------------------------

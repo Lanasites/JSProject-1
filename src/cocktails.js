@@ -8,10 +8,10 @@ burgerMenu();
 
 //Переходы с кнопок
 //--переход на страницу личного кабинета--//
-document.getElementById('profile').addEventListener('click', goToPersonalAccount);
-function goToPersonalAccount() {
-    window.location.href = 'profile-and-favourites.html';
-}
+// document.getElementById('profile').addEventListener('click', goToPersonalAccount);
+// function goToPersonalAccount() {
+//     window.location.href = 'profile-and-favourites.html';
+// }
 
 //--переход на страницу избранного--//
 document.getElementById('star').addEventListener('click', goToFavoutitesPage);
@@ -21,7 +21,7 @@ function goToFavoutitesPage() {
 
 //--переход на главную страницу по клику на лого--//
 const logotype = document.getElementById('logotype');
-logotype.addEventListener('click', function() {
+logotype.addEventListener('click', function () {
     window.location.href = 'index.html';
 });
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', event => {
 });
 
 allLetterDivs.forEach(div => {
-    div.addEventListener('click', function(event) {
+    div.addEventListener('click', function (event) {
         clearSelectedOnAllLetters();
 
         event.currentTarget.classList.add('selected');
@@ -69,7 +69,7 @@ let activeDivId = 'anyType';
 let clickedLetter = 'anyLetter';
 
 filterTitles.forEach(div => {
-    div.addEventListener('click', function(event) {
+    div.addEventListener('click', function (event) {
         clearSelectedOnAllTitles();
         event.currentTarget.classList.add('selected');
         activeDivId = event.currentTarget.id;
@@ -107,3 +107,10 @@ const clearSelectedOnAllTitles = () => {
         title.classList.remove('selected');
     });
 };
+
+// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
+// на все страницы с меню надо добавить
+import { clickProfileMenu, getMenuForPerson } from './header.js';
+document.addEventListener("DOMContentLoaded", getMenuForPerson);
+clickProfileMenu();
+// ------------------------------------------------------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 
-import { burgerMenu } from './header.js'; 
+import { burgerMenu } from './header.js';
 burgerMenu();
 
 // --------------------------ФУНКЦИИ ДЛЯ РАБОТЫ С БД----------------------------
@@ -85,15 +85,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
+// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
+// на все страницы с меню надо добавить
+import { clickProfileMenu, getMenuForPerson } from './header.js';
+document.addEventListener("DOMContentLoaded", getMenuForPerson);
+clickProfileMenu();
+// ------------------------------------------------------------------------------------------------------------------------
 
 import Splide from '@splidejs/splide';
 const mySlider = new Splide('.splide');
-new Splide( '.splide', {
-  type   : 'loop',
-  wheel : true,
-  speed : 0,
-} );
+new Splide('.splide', {
+  type: 'loop',
+  wheel: true,
+  speed: 0,
+});
 
 //Добавление коктейля на страницу
 function addCoctailMain() {

@@ -1,15 +1,20 @@
+// // ------------------------------функция регистрации пользователя в БД--------------------------------------------------
+import { registrationEmailPassword } from './authentication.js';
+
+// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
+// на все страницы с меню надо добавить
+import { clickProfileMenu, getMenuForPerson } from './header.js';
+document.addEventListener("DOMContentLoaded", getMenuForPerson);
+clickProfileMenu();
+// ------------------------------------------------------------------------------------------------------------------------
 
 const form = document.forms.formRegistration
 const btnLogin = document.getElementById('btnLogin');
+// регистрация нового клиента в firebase
+btnLogin.addEventListener('click', registrationEmailPassword);
 
 const inputPassword = form.elements.password
 const inputPassword2 = form.elements.passwordRepeat
-
-
-// // функция регистрации пользователя в БД
-import { registrationEmailPassword } from './authentication.js';
-
-btnLogin.addEventListener('click', registrationEmailPassword);
 
 
 //добавление класса ошибки для поля
