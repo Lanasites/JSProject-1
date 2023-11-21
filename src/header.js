@@ -66,7 +66,7 @@ function getMenuForPerson() {
     if (useremail) {
         const temptateMenu = `
         <ul>
-            <li> Вы вошли как: <span class='accent'>${useremail}</span></li>
+            <li class = 'bold'> Вы вошли как: <span class='accent'>${useremail}</span></li>
             <li id = 'settings'> Настройки </li>
             <li id = 'exit'> Выход </li>
         </ul>
