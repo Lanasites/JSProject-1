@@ -3,8 +3,9 @@
 import { gallerySlider } from './cocktailsGallerySlider.js';
 import { fetchCocktails } from './cocktailsFetch.js';
 import { fetchAllFirstLetters } from './cocktailsLetters';
-import { burgerMenu } from './header.js';
+import { burgerMenu, goToPageAndChangeLinkStyle } from './header.js';
 burgerMenu();
+goToPageAndChangeLinkStyle();
 
 //Переходы с кнопок
 //--переход на страницу личного кабинета--//

@@ -27,48 +27,33 @@ function clickProfileMenu() {
     });
 }
 export { clickProfileMenu };
-// if (window.location.href.indexOf('profile-and-favourites.html') === -1) {
-//     profileButton.addEventListener('click', function(event) { // Обработчик для всех страниц, кроме «profile-and-favourites»
-//         window.location.href = "sign-in-form.html"; // Перенаправление на страницу личного кабинета на формы входа/регистрации
-//         //window.location.href = "sign-in-form.html"/"profile-and-favourites.html"
-//     });
-// } else {
-//     profileButton.addEventListener('click', function(event) {  // Обработчик только для страницы «profile-and-favourites»
-//         let profileMenu = document.getElementById("profile-menu");
-//         event.preventDefault(); // Отменить поведение по умолчанию для клика
-//         if (profileMenu.style.display === "block") {
-//             profileMenu.style.display = "none";
-//         } else {
-//             profileMenu.style.display = "block";
-//         }
-//     });
-//   };
-
-//--переход на страницу избранного--//
-// document.getElementById('star').addEventListener("click", goToFavoutitesPage);
-// function goToFavoutitesPage() {
-//     window.location.href = "favourites.html";
-// }
-// import { monitorAuthState } from './authentication.js';
-// import { getCookie, exitProfile } from './authentication.js';
-// document.getElementById('star').addEventListener("click", goToFavouritesPage);
-// function goToFavouritesPage() {
-//   firebase.auth().onAuthStateChanged(user => {
-//     if (user) {
-//       // Если пользователь авторизован, производим перенаправление на страницу избранных
-//       window.location.href = "favourites.html";
-//     } else {
-//         modal1('Внимание!', 'Только для авторизованных пользователей. Перейдите на вкладку ВОЙТИ или нажмите на кнопку ниже', 'warning', `<a class = 'unline-w' href="sign-in-form.html">Войти</a> `);
-//       // Если пользователь не авторизован, ничего не делаем
-//     }
-//   });
-// }
 
 //--переход на главную страницу по клику на лого--//
 const logotype = document.getElementById('logotype');
 logotype.addEventListener('click', function () {
     window.location.href = 'index.html';
 });
+
+//-- Применение стиля активного пункта меню в зависимости от страницы --//
+
+function goToPageAndChangeLinkStyle() {
+// Получаем текущий путь страницы
+let path = window.location.pathname;
+// Извлекаем имя файла из пути
+let page = path.split("/").pop();
+// Получаем список всех пунктов меню
+let menuItems = document.querySelectorAll(".headline__nav-item");
+// Проходим по каждому пункту меню и проверяем, является ли ссылка активной
+menuItems.forEach(function(item) {
+  let link = item.querySelector("a");
+    // Если ссылка на страницу соответствует текущей странице, устанавливаем класс "active"
+  if (link.getAttribute("href") === page) {
+    item.classList.add("active");
+   
+  }
+});
+}
+export { goToPageAndChangeLinkStyle };
 
 // Функция, подгружающая нужное меню второго уровня 
 // в случае авторизованного пользователя выводит меню при нажатии на человечка "email, настройки, выход"
@@ -127,6 +112,10 @@ function getMenuForPerson() {
 }
 
 export { getMenuForPerson };
+
+
+//--Пререход на страницу избранного с проверкой авторизации --//
+//Алерт лучше заменить на модальное окно
 
 document.getElementById('star').addEventListener("click", goToFavouritesPage);
 

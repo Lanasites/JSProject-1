@@ -1,8 +1,9 @@
-import { burgerMenu, getMenuForPerson } from './header.js';
+import { burgerMenu, getMenuForPerson, goToPageAndChangeLinkStyle } from './header.js';
 
 import { changeEmail } from './authentication.js';
 
 burgerMenu();
+goToPageAndChangeLinkStyle();
 // ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
 // на все страницы с меню надо добавить
 document.addEventListener("DOMContentLoaded", getMenuForPerson);

@@ -1,7 +1,7 @@
 
-import { burgerMenu } from './header.js';
+import { burgerMenu, goToPageAndChangeLinkStyle } from './header.js';
 burgerMenu();
-
+goToPageAndChangeLinkStyle();
 // --------------------------ФУНКЦИИ ДЛЯ РАБОТЫ С БД----------------------------
 //
 //Для подключения БД
