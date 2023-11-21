@@ -4,35 +4,35 @@
 
 * {
     box-sizing: border-box;
-    margin: 0 auto;
+    margin    : 0 auto;
 }
 
 //Проверка возраста
 #age-confirmation-popup {
-    display: none;
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 150vh;
+    display         : none;
+    position        : absolute;
+    z-index         : 100;
+    top             : 0;
+    left            : 0;
+    bottom          : 0;
+    width           : 100%;
+    height          : 150vh;
     background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    display         : flex;
+    align-items     : flex-start;
+    justify-content : center;
 
     .content {
         background-color: #fff;
-        padding: 2vw;
-        border-radius: 0.5vw;
-        max-width: 30vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        font-family: Helvetica, sans-serif;
-        margin: 1vw;
+        padding         : 2vw;
+        border-radius   : 0.5vw;
+        max-width       : 30vw;
+        display         : flex;
+        flex-direction  : column;
+        align-items     : center;
+        text-align      : center;
+        font-family     : Helvetica, sans-serif;
+        margin          : 1vw;
 
         @media (max-width: $s) {
             max-width: 40vw;
@@ -65,35 +65,13 @@
                 font-size: 5vw;
             }
         }
-    #age-input {
-        width: 15vw;
-        padding: 1vw;
-        margin-bottom: 0.5vw;
-        font-family: Helvetica, sans-serif;
-        margin: 1vw;
-        @media (max-width: $s) {
-            width: 30vw;
-        }
-        @media (max-width: $xs) {
-            width: 50vw;
-        }
-    }
-    
-    #confirm-btn {
-        background-color: #fff;
-        padding: 0.5vw 1vw;
-        border: 0.1vw solid black;
-        cursor: pointer;
-        font-size: 1.5vw;
-        font-family: Helvetica, sans-serif;
-        margin: 1vw;
 
         #age-input {
-            width: 15vw;
-            padding: 1vw;
+            width        : 15vw;
+            padding      : 1vw;
             margin-bottom: 0.5vw;
-            font-family: Helvetica, sans-serif;
-            margin: 1vw;
+            font-family  : Helvetica, sans-serif;
+            margin       : 1vw;
 
             @media (max-width: $s) {
                 width: 30vw;
@@ -106,89 +84,117 @@
 
         #confirm-btn {
             background-color: #fff;
-            padding: 0.5vw 1vw;
-            border: 0.1vw solid black;
-            cursor: pointer;
-            font-family: Helvetica, sans-serif;
-            margin: 1vw;
+            padding         : 0.5vw 1vw;
+            border          : 0.1vw solid black;
+            cursor          : pointer;
+            font-size       : 1.5vw;
+            font-family     : Helvetica, sans-serif;
+            margin          : 1vw;
 
-            @media (max-width: $s) {
-                width: 20vw;
+            #age-input {
+                width        : 15vw;
+                padding      : 1vw;
+                margin-bottom: 0.5vw;
+                font-family  : Helvetica, sans-serif;
+                margin       : 1vw;
+
+                @media (max-width: $s) {
+                    width: 30vw;
+                }
+
+                @media (max-width: $xs) {
+                    width: 50vw;
+                }
             }
 
-            @media (max-width: $xs) {
-                width: 30vw;
+            #confirm-btn {
+                background-color: #fff;
+                padding         : 0.5vw 1vw;
+                border          : 0.1vw solid black;
+                cursor          : pointer;
+                font-family     : Helvetica, sans-serif;
+                margin          : 1vw;
+
+                @media (max-width: $s) {
+                    width: 20vw;
+                }
+
+                @media (max-width: $xs) {
+                    width: 30vw;
+                }
             }
         }
     }
-}
 }
 
 //Splider
 .splide__slide {
-    box-sizing: border-box;
-    margin: 0 auto;
-    display: flex;
+    box-sizing     : border-box;
+    margin         : 0 auto;
+    display        : flex;
     justify-content: space-around;
-    align-items: center;
-    height: 80vh;
+    align-items    : center;
+    height         : 80vh;
 
     @media (max-width: $s) {
         flex-direction: column;
-        height: 120vh;
-        width: 60vw;
+        height        : 120vh;
+        width         : 60vw;
     }
-    @media (max-width:$s-xs){
+
+    @media (max-width:$s-xs) {
         height: 110vh;
-        width: 50vw;
+        width : 50vw;
     }
-    @media (max-width: $xs){
-        width: 30vw;
-        height: 100vh;
+
+    @media (max-width: $xs) {
+        width     : 30vw;
+        height    : 100vh;
         margin-top: -10vh;
     }
+
     .splide__image {
-        display: flex;
+        display        : flex;
         justify-content: center;
-        align-items: flex-start;
-        width: 60vw;
-        margin: 0.5vw;
+        align-items    : flex-start;
+        width          : 60vw;
+        margin         : 0.5vw;
 
         @media (max-width: $s) {
-            width: 98vw;
+            width : 98vw;
             height: 70vh;
         }
 
-        @media (max-width:$s-xs){
+        @media (max-width:$s-xs) {
             height: 50vh;
-            width: 95vw;
+            width : 95vw;
         }
 
         @media (max-width: $xs) {
-            width: 95vw;
-            height: 35vh;
+            width        : 95vw;
+            height       : 35vh;
             margin-bottom: -20vh;
         }
 
         img {
-            width: 60vw;
-            height: 80vh;
+            width     : 60vw;
+            height    : 80vh;
             object-fit: cover;
 
             @media (max-width: $s) {
-                width: 98vw;
-                height: 70vh;
+                width     : 98vw;
+                height    : 70vh;
                 object-fit: cover;
             }
 
-            @media (max-width:$s-xs){
+            @media (max-width:$s-xs) {
                 height: 50vh;
-                width: 95vw;
+                width : 95vw;
             }
 
             @media (max-width: $xs) {
-                width: 95vw;
-                height: 35vh;
+                width     : 95vw;
+                height    : 35vh;
                 object-fit: cover;
             }
         }
@@ -196,21 +202,21 @@
 }
 
 .splide__info {
-    width: 20vw;
-    font-family: Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width          : 20vw;
+    font-family    : Helvetica, sans-serif;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
     justify-content: space-between;
 
     @media (max-width: $s) {
-        width: 100vw;
+        width : 100vw;
         height: 50vh;
     }
 
-    @media (max-width:$s-xs){
+    @media (max-width:$s-xs) {
         height: 40vh;
-        width: 100vw;
+        width : 100vw;
     }
 
     @media (max-width: $xs) {
@@ -218,93 +224,96 @@
     }
 
     .splide__name {
-        font-size: 2vw;
-        font-weight: 700;
+        font-size     : 2vw;
+        font-weight   : 700;
         text-transform: uppercase;
+        text-align    : center;
 
-        @media (max-width: $s){
-            font-size: 2.5vw;
-            padding: 0.5vw;
-            margin-top: 5vh;
+        @media (max-width: $s) {
+            font-size    : 2.5vw;
+            padding      : 0.5vw;
+            margin-top   : 5vh;
             margin-bottom: -5vh;
         }
 
-        @media (max-width:$s-xs){
-            font-size: 3.5vw;
-            margin-top: -2.5vh;
+        @media (max-width:$s-xs) {
+            font-size    : 3.5vw;
+            margin-top   : -2.5vh;
             margin-bottom: 2vh;
         }
 
         @media (max-width: $xs) {
-            font-size: 4.5vw;
-            margin-top: 3vh;
+            font-size    : 4.5vw;
+            margin-top   : 3vh;
             margin-bottom: -3vh;
         }
     }
 
     .splide__text {
-        width: 20vw;
-        font-size: 1.25vw;
+        width     : 20vw;
+        font-size : 1.25vw;
         text-align: justify;
-        margin: 2vw;
+        margin    : 2vw;
 
         @media (max-width: $s) {
-            width: 90vw;
-        font-size: 3vw;
-        text-align: center;
-        padding: 2.5vw;
+            width     : 90vw;
+            font-size : 3vw;
+            text-align: center;
+            padding   : 2.5vw;
         }
 
-        @media (max-width:$s-xs){
-            height: 50vh;
-            width: 100vw;
-            font-size: 3.5vw;
+        @media (max-width:$s-xs) {
+            height    : 50vh;
+            width     : 100vw;
+            font-size : 3.5vw;
             text-align: justify;
-            padding: 4.5vw;
+            padding   : 4.5vw;
         }
 
         @media (max-width: $xs) {
-            width: 100vw;
-            font-size: 4.5vw;
+            width     : 100vw;
+            font-size : 4.5vw;
             text-align: justify;
-        padding: 3.5vw;
-        margin-top: 4vh;
+            padding   : 3.5vw;
+            margin-top: 4vh;
         }
     }
 
     .splide_recipe {
         button {
             background-color: #fff;
-            width: 12vw;
-            height: 5vh;
-            font-size: 1vw;
-            text-transform: uppercase;
-            cursor: pointer;
+            width           : 12vw;
+            height          : 5vh;
+            font-size       : 1vw;
+            text-transform  : uppercase;
+            cursor          : pointer;
 
             @media (max-width: $s) {
-                width: 32vw;
-                height: 6vh;
-                font-size: 2vw;
+                width     : 32vw;
+                height    : 6vh;
+                font-size : 2vw;
                 margin-top: -15vh;
             }
 
-            @media (max-width:$s-xs){
+            @media (max-width:$s-xs) {
                 font-size: 3.5vw;
-                width: 39vw;
-                height: 6.5vh;
+                width    : 39vw;
+                height   : 6.5vh;
             }
 
             @media (max-width: $xs) {
-                width: 42vw;
-                height: 7vh;
-                font-size: 3.5vw;
+                width        : 42vw;
+                height       : 7vh;
+                font-size    : 3.5vw;
                 margin-bottom: 5vh;
             }
         }
+
         button:hover {
-            background-color:black;
-            color: #fff;
-            transition: 0.5s;}
+            background-color: black;
+            color           : #fff;
+            transition      : 0.5s;
+        }
     }
 }
 
@@ -312,9 +321,9 @@
     background: none;
 
     svg {
-        color: black;
+        color    : black;
         font-size: 2rem;
-        opacity: 1;
+        opacity  : 1;
     }
 }
 
