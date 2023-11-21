@@ -3,10 +3,6 @@ import { burgerMenu, getMenuForPerson } from './header.js';
 import { changeEmail } from './authentication.js';
 
 burgerMenu();
-
-import { monitorAuthState } from './authentication.js';
-monitorAuthState();
-
 // ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
 // на все страницы с меню надо добавить
 document.addEventListener("DOMContentLoaded", getMenuForPerson);
@@ -27,35 +23,33 @@ clickProfileMenu();
 // };
 // addLetters();
 
+//-- Форма Настройки старая--//
+// const changeLoginCheckbox = document.querySelector('#set-new-log');
+// const changePasswordCheckbox = document.querySelector('#set-new-passw');
+// const passwordInput = document.getElementById('change-password');
+// const passwordConfirmInput = document.getElementById('change-password-confirm');
 
-let form = document.getElementById("settings-form");
-document.getElementById("set-form").addEventListener("click", function(event) {
-  event.preventDefault(); // Отменить стандартное поведение ссылки
-        if (form.style.display === "flex") {
-          form.style.display = "none";
-        } else {
-          form.style.display = "flex";
-        }
-  
-  
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  // Получаем значение email из URL
-  let email = getParameterByName('email');
-  
-  // Устанавливаем значение email в поле в форме настройки
-  document.getElementById('profile-email').value = email;
-});
-
-// // Функция для получения значения параметра из URL
-// function getParameterByName(name) {
-//   name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-//   let regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-//   let results = regex.exec(location.search);
-//   return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+// // Обработчик события изменения состояния первого чекбокса
+// changeLoginCheckbox.addEventListener('change', function() {
+// if (changeLoginCheckbox.checked) { 
+//     passwordInput.placeholder = 'Логин';
+//     passwordConfirmInput.placeholder = 'Повторите логин';
+//     changePasswordCheckbox.disabled = true;
+// } else {
+//     passwordInput.placeholder = 'Пароль';
+//     passwordConfirmInput.placeholder = 'Повторите пароль';
+//     changePasswordCheckbox.disabled = false;
 // }
+// });
+// // Обработчик события изменения состояния второго чекбокса
+// changePasswordCheckbox.addEventListener('change', function() {
+// if (changePasswordCheckbox.checked) {
+//     changeLoginCheckbox.disabled = true;
+// } else {
+//     changeLoginCheckbox.disabled = false;
+// }
+// });
+
 
 
 
