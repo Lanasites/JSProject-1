@@ -167,15 +167,14 @@
             display: flex;
             list-style: none;
             gap: 1.56rem;
-           
+
+            .headline__nav-item:hover {
+                border: 1px solid black;
+            }
+
             .headline__nav-link {
                 text-decoration: none;
                 color: $black;
-            
-                  
-                  &:hover {
-                    border: 1px solid black;
-                  }
 
                 @media (max-width: $m) {
                     font-size: 1.2rem;
@@ -411,4 +410,7 @@
             font-weight: 600;
         }
     }
+}
+.active{
+    border: 1px solid $black;
 }
