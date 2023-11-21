@@ -67,7 +67,7 @@ function getMenuForPerson() {
         const temptateMenu = `
         <ul>
             <li> Вы вошли как: <span class='accent'>${useremail}</span></li>
-            <li> <a href="profile-and-favourites.html">Настройки</a> </li>
+            <li id = 'settings'> Настройки </li>
             <li id = 'exit'> Выход </li>
         </ul>
         `;
@@ -79,8 +79,8 @@ function getMenuForPerson() {
         console.log("Нет зарегистрированных пользователей");
         const temptateMenu = `
         <ul>
-            <li><a href="sign-in-form.html">Вход</a></li>
-            <li><a href="reg-form.html">Регистрация</a></li>
+            <li id  = 'login' >Вход</li>
+            <li id  = 'registration'>Регистрация</li>
         </ul>
         `;
         const profileMenu = document.createElement('div')
@@ -88,10 +88,29 @@ function getMenuForPerson() {
         profileMenu.innerHTML = temptateMenu;
         pointOfMenu.append(profileMenu);
     }
-    //--переход на главную страницу по клику на лого--//
+    //--выход при нажатии на "выход"--//
     const exit = document.getElementById('exit');
-    console.log(exit);
-    exit.addEventListener('click', exitProfile);
+    if (exit)
+        exit.addEventListener('click', exitProfile);
+    //-- открытие формы на вход при нажатии на "вход"--//
+    const login = document.getElementById('login');
+    if (login)
+        login.addEventListener('click', function () {
+            window.location.href = 'sign-in-form.html';
+        });
+    //--открытие формы регистрации при нажатии на "регистрация"--//
+    const registration = document.getElementById('registration');
+    if (registration)
+        registration.addEventListener('click', function () {
+            window.location.href = 'reg-form.html';
+        });
+    //--открытие страницы ЛК при нажатии на "Настройки"--//
+    const settings = document.getElementById('settings');
+    if (settings)
+        settings.addEventListener('click', function () {
+            window.location.href = 'profile-and-favourites.html';
+        });
 }
+
 export { getMenuForPerson };
 
