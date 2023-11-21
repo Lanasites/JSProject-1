@@ -1,41 +1,36 @@
-import cocktail from '../js-project-cocktails.json';
+//import cocktail from '../js-project-cocktails.json';
+import cocktail from '../database-cocktail.json';
 
-// 
-// document.querySelectorAll('.класс контейнера с коктейлем').forEach(cocktail => {
-//     cocktail.addEventListener('click', function() {
-//         const cocktailId = this.getAttribute('id(тут атрибут, где хранится id коктейля)');
-//         document.cookie = `selectedCocktail=${cocktailId}`;
-//         window.location.href = 'recipe-cocktail.html'; // перенаправление на страницу с рецептом
-//     });
-// });
+
 
 // получаю id коктейля из куки
 
-// const getCocktailId = () => {
-//     const cookies = document.cookie.split('; ');
-//     for (let i = 0; i < cookies.length; i++) {
-//         const cookie = cookies[i].split('=');
-//         if (cookie[0] === 'selectedCocktail') {
-//             return cookie[1];
-//         }
-//     }
-//     return null;
-// };
+const getCocktailId = (name) => {
+    const cookies = document.cookie.split('; ');
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].split('=');
+        if (cookie[0] === name) {
+            const value = cookie[1] || '';
+            return value;
+        }
+    }
+    return null;
+};
 
 // добавление инфы о коктейле на страницу самого коктейля
 
 function showCocktail() {
-    //const cocktailId = getCocktailId();
-    //if (cocktailId) {
+    const cocktailId = getCocktailId();
+
     const cocktailImage = document.querySelector('.container-wrapper__pic-img');
     const cocktailName = document.getElementById('name');
     const cocktailDescription = document.getElementById('description');
     const cocktailIngredients = document.getElementById('ingredients');
     const cocktailCooking = document.getElementById('cooking');
 
-    //const specificCocktail = cocktail['cocktailId'];
-    const specificCocktail = cocktail['Bumblebee'];
-    cocktailImage.src = specificCocktail.imageUrl;
+    const specificCocktail = cocktail[cocktailId];
+    //const specificCocktail = cocktail['Bumblebee'];
+    cocktailImage.src = specificCocktail.image;
     cocktailImage.alt = specificCocktail.idcocktail;
 
     const itemName = document.createElement('p');
@@ -59,15 +54,12 @@ function showCocktail() {
     cocktailDescription.appendChild(itemDescription);
     cocktailIngredients.appendChild(itemIngredients);
     cocktailCooking.appendChild(itemCooking);
-    //}
-    // else {
-    //     // если id коктейля не найден, то переадресация на страницу с ошибкой
-    //     window.location.href = 'index.html'; // тут пока основная
-    // }
-    //return cocktailId;
+
 };
 
-showCocktail();
+document.addEventListener('DOMContentLoaded', function () {
+    showCocktail();
+});
 
 
 

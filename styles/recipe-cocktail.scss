@@ -1,7 +1,11 @@
 @import'./vars';
 
-.container {
-    @include container(95%);
+.container-cocktail {
+    width: 95%;
+
+    display       : flex;
+    flex-direction: column;
+    margin        : 0 auto;
 
     .container-wrapper {
         width : 77.5rem;
@@ -111,13 +115,12 @@
 
 
 @media(min-width:767px) and (max-width:1023px) {
-    .container {
-        @include container(100%);
-        // width: 100%;
+    .container-cocktail {
+        width: 100%;
 
-        // display       : flex;
-        // flex-direction: column;
-        // margin        : 0 auto;
+        display       : flex;
+        flex-direction: column;
+        margin        : 0 auto;
 
         .container-wrapper {
             width : 100%;
@@ -225,7 +228,7 @@
 }
 
 @media screen and (max-width:766px) {
-    .container {
+    .container-cocktail {
         width: 100%;
 
         display       : flex;

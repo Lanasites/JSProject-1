@@ -1,23 +1,6 @@
 
-<<<<<<< HEAD
-//Добавление навигации бургер-меню
-let menuBtn = document.querySelector('.burger-menu__btn');
-let menu = document.querySelector('.header-block__bm-list');
-menuBtn.addEventListener('click', function () {
-    menuBtn.classList.toggle('active');
-    menu.classList.toggle('active');
-});
-//Переходы между страницами
-document.getElementById('profile').addEventListener("click", goToPersonalAccount);
-function goToPersonalAccount() {
-    window.location.href = "profile-and-favourites.html";
-}
-
-=======
 import { burgerMenu } from './header.js';
 burgerMenu();
->>>>>>> 8bdeeb25e082cabda5fd9cd99486a6ecd120c030
-
 
 // --------------------------ФУНКЦИИ ДЛЯ РАБОТЫ С БД----------------------------
 //
@@ -90,19 +73,6 @@ if (document.cookie = 'adult=true') {
   agePopup.style.display = "none";
 }
 document.addEventListener("DOMContentLoaded", function () {
-<<<<<<< HEAD
-    const agePopup = document.getElementById("age-confirmation-popup");
-    const ageInput = document.getElementById("age-input");
-    const confirmBtn = document.getElementById("confirm-btn");
-    confirmBtn.addEventListener("click", function () {
-        const age = parseInt(ageInput.value);
-        if (age >= 18) {
-            agePopup.style.display = "none";
-        } else {
-            alert("Вы должны быть старше 18 лет!");
-        }
-    });
-=======
   const ageInput = document.getElementById("age-input");
   const confirmBtn = document.getElementById("confirm-btn");
   confirmBtn.addEventListener("click", function () {
@@ -114,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Вы должны быть старше 18 лет!");
     }
   });
->>>>>>> 8bdeeb25e082cabda5fd9cd99486a6ecd120c030
 });
 // ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
 // на все страницы с меню надо добавить
@@ -132,52 +101,6 @@ new Splide('.splide', {
 });
 
 //Добавление коктейля на страницу
-<<<<<<< HEAD
-import cocktail from '../database-cocktail.json';
-cocktail.forEach((item) => {
-    const splideList = document.querySelector('.splide__list');
-    const splideItem = document.createElement('li');
-    splideItem.classList.add('splide__slide')
-    const template = `
-    <div class = 'splide__image'>
-    <img src = ${item.image} alt = "${item.name}">
-    </div>
-    <div class = "splide__info">
-    <p class = "splide__name">${item.name}</p>
-    <p class = "splide__text">${item.description}</p>
-    <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
-    </div>
-    `
-    splideItem.innerHTML = template;
-    splideList.append(splideItem);
-})
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const agePopup = document.getElementById("age-confirmation-popup");
-    const ageInput = document.getElementById("age-input");
-    const confirmBtn = document.getElementById("confirm-btn");
-    confirmBtn.addEventListener("click", function () {
-        const age = parseInt(ageInput.value);
-        if (age >= 18) {
-            agePopup.style.display = "none";
-        } else {
-            alert("Вы должны быть старше 18 лет!");
-        }
-    });
-});
-
-import Splide from '@splidejs/splide';
-const mySlider = new Splide('.splide');
-mySlider.mount();
-new Splide('.splide', {
-    type: 'loop',
-    wheel: true,
-    speed: 0,
-});
-
-
-=======
 function addCoctailMain() {
   // получение промиса
   const promise = takeAllObjects('cocktails');
@@ -219,4 +142,3 @@ function print(name, imageUrl, description) {
 }
 
 addCoctailMain();
->>>>>>> 8bdeeb25e082cabda5fd9cd99486a6ecd120c030
