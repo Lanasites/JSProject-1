@@ -1,66 +1,73 @@
-//import cocktail from '../js-project-cocktails.json';
-import cocktail from '../database-cocktail.json';
+import cocktail from '../js-project-cocktails.json';
+import { takeOneCocktail } from './firebase';
 
+import { getDatabase, ref, get } from "firebase/database";
 
+const dbRef = ref(getDatabase());
 
-// получаю id коктейля из куки
-
-const getCocktailId = (name) => {
-    const cookies = document.cookie.split('; ');
-    for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].split('=');
-        if (cookie[0] === name) {
-            const value = cookie[1] || '';
-            return value;
+// Функция для получения значения cookie
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) == 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
         }
     }
     return null;
-};
+}
+
 
 // добавление инфы о коктейле на страницу самого коктейля
+const cocktailId = getCookie('cocktailId');
+async function showCocktail() {
+    //console.log(cocktailId);
+    if (cocktailId) {
+        try {
+            const specificCocktail = await takeOneCocktail(cocktailId);
+            console.log('specificCocktail');
+            const cocktailImage = document.querySelector('.container-wrapper__pic-img');
+            const cocktailName = document.getElementById('name');
+            const cocktailDescription = document.getElementById('description');
+            const cocktailIngredients = document.getElementById('ingredients');
+            const cocktailCooking = document.getElementById('cooking');
 
-function showCocktail() {
-    const cocktailId = getCocktailId();
+            cocktailImage.src = specificCocktail.imageUrl;
+            console.log(specificCocktail.imageUrl);
+            cocktailImage.alt = specificCocktail.idcocktail;
 
-    const cocktailImage = document.querySelector('.container-wrapper__pic-img');
-    const cocktailName = document.getElementById('name');
-    const cocktailDescription = document.getElementById('description');
-    const cocktailIngredients = document.getElementById('ingredients');
-    const cocktailCooking = document.getElementById('cooking');
+            const itemName = document.createElement('p');
+            itemName.textContent = specificCocktail.name;
 
-    const specificCocktail = cocktail[cocktailId];
-    //const specificCocktail = cocktail['Bumblebee'];
-    cocktailImage.src = specificCocktail.image;
-    cocktailImage.alt = specificCocktail.idcocktail;
+            const itemDescription = document.createElement('p');
+            itemDescription.textContent = specificCocktail.description;
 
-    const itemName = document.createElement('p');
-    itemName.textContent = specificCocktail.name;
+            const itemIngredients = document.createElement('ul');
+            specificCocktail.ingredients.forEach(ingredient => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${ingredient.name}: ${ingredient.quantity}`;
+                itemIngredients.appendChild(listItem);
+            });
 
-    const itemDescription = document.createElement('p');
-    itemDescription.textContent = specificCocktail.description;
+            const itemCooking = document.createElement('p');
+            itemCooking.textContent = specificCocktail.cooking;
 
-    const itemIngredients = document.createElement('ul');
-    specificCocktail.ingredients.forEach(ingredient => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${ingredient.name}: ${ingredient.quantity}`;
-        itemIngredients.appendChild(listItem);
-    });
+            cocktailName.appendChild(itemName);
+            cocktailDescription.appendChild(itemDescription);
+            cocktailIngredients.appendChild(itemIngredients);
+            cocktailCooking.appendChild(itemCooking);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+}
 
-    const itemCooking = document.createElement('p');
-    itemCooking.textContent = specificCocktail.cooking;
-
-
-    cocktailName.appendChild(itemName);
-    cocktailDescription.appendChild(itemDescription);
-    cocktailIngredients.appendChild(itemIngredients);
-    cocktailCooking.appendChild(itemCooking);
-
-};
-
-document.addEventListener('DOMContentLoaded', function () {
-    showCocktail();
-});
-
+document.addEventListener('DOMContentLoaded', showCocktail);
+export { showCocktail };
 
 
 // добавить в избранное
