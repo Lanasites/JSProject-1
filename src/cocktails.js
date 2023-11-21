@@ -14,10 +14,10 @@ burgerMenu();
 // }
 
 //--переход на страницу избранного--//
-document.getElementById('star').addEventListener('click', goToFavoutitesPage);
-function goToFavoutitesPage() {
-    window.location.href = 'favourites.html';
-}
+// document.getElementById('star').addEventListener('click', goToFavoutitesPage);
+// function goToFavoutitesPage() {
+//     window.location.href = 'favourites.html';
+// }
 
 //--переход на главную страницу по клику на лого--//
 const logotype = document.getElementById('logotype');
