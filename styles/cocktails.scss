@@ -2,15 +2,16 @@
 @import './footer.scss';
 
 * {
-    margin: 0;
+    margin    : 0;
     // padding: 0;
     box-sizing: border-box;
 }
 
-$bg: #ffffff;
-$text: #000000;
-$accent1: #000000;
-$accent2: #79e0b3;
+$bg        : #ffffff;
+$text      : #000000;
+$accent1   : #000000;
+$accent2   : #a6a6a6b4;
+// $accent2: #79e0b3;
 
 .header {
     height: 5vh;
@@ -19,11 +20,12 @@ $accent2: #79e0b3;
 .header-block {
     max-width: 100vw;
 
-    display: flex;
+    display        : flex;
     justify-content: space-around;
-    margin-top: 6vh;
-    margin-bottom: 9vh;
-    padding: 0 4vw;
+    margin-top     : 6vh;
+    margin-bottom  : 9vh;
+    padding        : 0 4vw;
+
     @media (max-width: 1020px) {
         margin-bottom: 2vh;
     }
@@ -33,6 +35,7 @@ $accent2: #79e0b3;
     @media (max-width: 1400px) {
         font-size: 1rem;
     }
+
     @media (max-width: 900px) {
         font-size: 0.8rem;
     }
@@ -40,48 +43,52 @@ $accent2: #79e0b3;
 
 .footer-block {
     max-width: 100vw;
+
     .footer-block__footer {
         justify-content: center;
-        margin: 0 auto;
-        width: 100vw;
+        margin         : 0 auto;
+        width          : 100vw;
     }
+
     .footer-block__authority {
-        margin: 0 auto;
-        width: 100vw;
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
+        margin         : 0 auto;
+        width          : 100vw;
+        font-family    : Arial, Helvetica, sans-serif;
+        display        : flex;
         justify-content: center;
     }
 }
 
 .footer {
     height: 10vh;
-    width: 100vw;
+    width : 100vw;
+
     @media screen and (max-width: 890px) {
         height: 20vh;
     }
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
     background-color: $bg;
-    color: $text;
-    font-family: Helvetica, sans-serif;
-    margin-top: 2vh;
+    color           : $text;
+    font-family     : Helvetica, sans-serif;
+    margin-top      : 2vh;
 }
 
 .filter-type,
 .filter-letter {
-    display: flex;
-    width: 100%;
-    padding: 0 8vw;
-    margin: 0.5vh auto;
-    flex-wrap: wrap;
-    font-size: 1.25rem;
-    align-items: center;
+    display       : flex;
+    width         : 100%;
+    padding       : 0 8vw;
+    margin        : 0.5vh auto;
+    flex-wrap     : wrap;
+    font-size     : 1.25rem;
+    align-items   : center;
     text-transform: uppercase;
+
     @media screen and (max-width: 576px) {
         font-size: 1rem;
     }
@@ -89,20 +96,22 @@ $accent2: #79e0b3;
 
 .filter-letter {
     justify-content: space-between;
-    height: 10vh;
-    margin: 0.5vh auto;
-    color: rgba($text, 0.4);
+    height         : 10vh;
+    margin         : 0.5vh auto;
+    color          : rgba($text, 0.4);
+
     @media screen and (max-width: 960px) {
         justify-content: space-evenly;
-        height: 15vh;
+        height         : 15vh;
     }
 }
 
 .filter-type {
     justify-content: center;
-    height: 5vh;
+    height         : 5vh;
+
     @media screen and (max-width: 576px) {
-        height: 14vh;
+        height        : 14vh;
         flex-direction: column;
     }
 }
@@ -110,12 +119,13 @@ $accent2: #79e0b3;
 .filter-title,
 .letter {
     text-transform: uppercase;
-    border-radius: 1.25rem;
-    cursor: pointer;
-    padding: 0.5vh 2vw;
+    border-radius : 1.25rem;
+    cursor        : pointer;
+    padding       : 0.5vh 2vw;
+
     &:hover {
         background-color: $accent1;
-        color: $bg;
+        color           : $bg;
     }
 
     &:focus,
@@ -130,9 +140,10 @@ $accent2: #79e0b3;
 
 #anyLetter {
     color: $text;
+
     &:hover {
         background-color: $accent1;
-        color: $bg;
+        color           : $bg;
     }
 }
 
@@ -145,13 +156,13 @@ $accent2: #79e0b3;
 }
 
 .message {
-    width: 60vw;
-    height: 45vh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    width          : 60vw;
+    height         : 45vh;
+    margin         : 0 auto;
+    display        : flex;
+    flex-direction : column;
     justify-content: center;
-    text-align: center;
+    text-align     : center;
 }
 
 .catalogue {
@@ -162,9 +173,9 @@ $accent2: #79e0b3;
     background: none;
 
     svg {
-        color: $accent1;
+        color    : $accent1;
         font-size: 1.25rem;
-        opacity: 1;
+        opacity  : 1;
     }
 }
 
@@ -182,6 +193,7 @@ $accent2: #79e0b3;
 
 .splide__list {
     width: 95vw;
+
     @media screen and (max-width: 768px) {
         width: 90vw;
     }
@@ -190,48 +202,50 @@ $accent2: #79e0b3;
 [role='group'] {
     padding: 0 8vw;
 }
+
 .preview {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    display        : flex;
+    flex-direction : column;
+    text-align     : center;
     justify-content: center;
-    border: 1px solid $accent1;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 500ms ease;
+    border         : 1px solid $accent1;
+    width          : 100%;
+    height         : 100%;
+    position       : relative;
+    cursor         : pointer;
+    overflow       : hidden;
+    transition     : all 500ms ease;
 
     &:hover {
         border: none;
+
         .preview-title {
             display: flex;
-            height: 100%;
+            height : 100%;
         }
     }
 }
 
 .preview-title {
-    display: none;
-    height: 0%;
-    overflow: hidden;
-    width: 100%;
-    text-transform: uppercase;
-    text-wrap: balance;
-    margin: auto 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display         : none;
+    height          : 0%;
+    overflow        : hidden;
+    width           : 100%;
+    text-transform  : uppercase;
+    text-wrap       : balance;
+    margin          : auto 0;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
     background-color: rgba($accent2, 0.4);
-    color: $text;
-    font-weight: bold;
-    z-index: 1;
-    position: absolute;
-    transition: height 500ms ease;
+    color           : $text;
+    font-weight     : bold;
+    z-index         : 1;
+    position        : absolute;
+    transition      : height 500ms ease;
 }
 
 .preview-img {
-    height: 100%;
+    height    : 100%;
     object-fit: cover;
 }
