@@ -32,12 +32,12 @@ export const fetchAllFirstLetters = async type => {
 };
 
 const highlightLetter = (div, array) => {
-    div.classList.remove('active');
+    div.classList.remove('activeLetter');
     // Get the text content of the current div
     const letter = div.textContent.trim();
     // Check if the letter is present in the 'letters array'
     if (array.includes(letter)) {
-        // If the letter is in the array, add the 'active' class to the div
-        div.classList.add('active');
+        // If the letter is in the array, add the 'activeLetter' class to the div
+        div.classList.add('activeLetter');
     }
 };
