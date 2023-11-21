@@ -34,6 +34,9 @@ async function registrationEmailPassword() {
         const user = userCredential.user;
         console.log('Создался пользователь', user);
         modal1('Поздравляем!', 'Вы успешно зарегистрировались на сайте', 'success', 'Ок');
+        setCookie('userEmail', user.email, 7);
+        setCookie('userUid', user.uid, 7);
+        setCookie("username", username, 7);
         setTimeout(function () {
             window.location.href = 'profile-and-favourites.html';
         }, 2 * 1000);
@@ -65,6 +68,8 @@ async function loginEmailPassword() {
         console.log(userCredential);
         const user = userCredential.user;
         console.log('Пользователь авторизовался на сайте', user);
+        setCookie('userEmail', user.email, 7);
+        setCookie('userUid', user.uid, 7);
         modalSuccess1();
         setTimeout(function () {
             window.location.href = 'profile-and-favourites.html';
@@ -85,7 +90,18 @@ async function loginEmailPassword() {
 }
 // btnLogin.addEventListener('click', loginEmailPassword);
 export { loginEmailPassword };
-
+// // ----------------------------dыход--------------------------
+const exitProfile = async () => {
+    signOut(auth).then(() => {
+        console.log('Пользователь вышел из профиля');
+        window.location.href = 'index.html';
+        deleteCookie('userEmail');
+        deleteCookie('userUid');
+    }).catch((error) => {
+        // An error happened.
+    });
+}
+export { exitProfile };
 // ----------------------------Установите наблюдателя состояния аутентификации и получите пользовательские данные--------------------------
 
 const monitorAuthState = async () => {
@@ -190,4 +206,38 @@ async function changeEmail() {
             });
     }
 }
+export { changeEmail }
 
+//  Функция для установки cookie на определенное количество дней
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+export { setCookie }
+// Функция для получения значения cookie
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) == 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    return null;
+}
+export { getCookie }
+
+// Функция для удаления cookie
+function deleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+export { deleteCookie }
