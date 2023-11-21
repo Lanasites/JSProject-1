@@ -24,41 +24,43 @@ import cocktail from '../js-project-cocktails.json';
 
 // добавление инфы о коктейле на страницу самого коктейля
 
-function showCocktail() {
-    //const cocktailId = getCocktailId();
-    //if (cocktailId) {
-    const cocktailImage = document.querySelector('.container-wrapper__pic-img');
-    const cocktailName = document.getElementById('name');
-    const cocktailDescription = document.getElementById('description');
-    const cocktailIngredients = document.getElementById('ingredients');
-    const cocktailCooking = document.getElementById('cooking');
-
-    //const specificCocktail = cocktail['cocktailId'];
-    const specificCocktail = cocktail['Bumblebee'];
-    cocktailImage.src = specificCocktail.imageUrl;
-    cocktailImage.alt = specificCocktail.idcocktail;
-
-    const itemName = document.createElement('p');
-    itemName.textContent = specificCocktail.name;
-
-    const itemDescription = document.createElement('p');
-    itemDescription.textContent = specificCocktail.description;
-
-    const itemIngredients = document.createElement('ul');
-    specificCocktail.ingredients.forEach(ingredient => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${ingredient.name}: ${ingredient.quantity}`;
-        itemIngredients.appendChild(listItem);
-    });
-
-    const itemCooking = document.createElement('p');
-    itemCooking.textContent = specificCocktail.cooking;
 
 
-    cocktailName.appendChild(itemName);
-    cocktailDescription.appendChild(itemDescription);
-    cocktailIngredients.appendChild(itemIngredients);
-    cocktailCooking.appendChild(itemCooking);
+//function showCocktail() {
+//const cocktailId = getCocktailId();
+//if (cocktailId) {
+const cocktailImage = document.querySelector('.container-wrapper__pic-img');
+const cocktailName = document.getElementById('name');
+const cocktailDescription = document.getElementById('description');
+const cocktailIngredients = document.getElementById('ingredients');
+const cocktailCooking = document.getElementById('cooking');
+
+//const specificCocktail = cocktail['cocktailId'];
+const specificCocktail = cocktail['Bumblebee'];
+cocktailImage.src = specificCocktail.imageUrl;
+cocktailImage.alt = specificCocktail.idcocktail;
+
+const itemName = document.createElement('p');
+itemName.textContent = specificCocktail.name;
+
+const itemDescription = document.createElement('p');
+itemDescription.textContent = specificCocktail.description;
+
+const itemIngredients = document.createElement('ul');
+specificCocktail.ingredients.forEach(ingredient => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${ingredient.name}: ${ingredient.quantity}`;
+    itemIngredients.appendChild(listItem);
+});
+
+const itemCooking = document.createElement('p');
+itemCooking.textContent = specificCocktail.cooking;
+
+
+cocktailName.appendChild(itemName);
+cocktailDescription.appendChild(itemDescription);
+cocktailIngredients.appendChild(itemIngredients);
+cocktailCooking.appendChild(itemCooking);
     //}
     // else {
     //     // если id коктейля не найден, то переадресация на страницу с ошибкой

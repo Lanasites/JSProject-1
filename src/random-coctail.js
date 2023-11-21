@@ -1,4 +1,9 @@
-import cocktail from '../js-project-cocktails.json';
+
+
+
+
+import { takeAllObjects } from './firebase.js'
+
 
 //рандомный индекс для коктейля
 function getRandomCocktail() {
