@@ -37,21 +37,21 @@ logotype.addEventListener('click', function () {
 //-- Применение стиля активного пункта меню в зависимости от страницы --//
 
 function goToPageAndChangeLinkStyle() {
-// Получаем текущий путь страницы
-let path = window.location.pathname;
-// Извлекаем имя файла из пути
-let page = path.split("/").pop();
-// Получаем список всех пунктов меню
-let menuItems = document.querySelectorAll(".headline__nav-item");
-// Проходим по каждому пункту меню и проверяем, является ли ссылка активной
-menuItems.forEach(function(item) {
-  let link = item.querySelector("a");
-    // Если ссылка на страницу соответствует текущей странице, устанавливаем класс "active"
-  if (link.getAttribute("href") === page) {
-    item.classList.add("active");
-   
-  }
-});
+    // Получаем текущий путь страницы
+    let path = window.location.pathname;
+    // Извлекаем имя файла из пути
+    let page = path.split("/").pop();
+    // Получаем список всех пунктов меню
+    let menuItems = document.querySelectorAll(".headline__nav-item");
+    // Проходим по каждому пункту меню и проверяем, является ли ссылка активной
+    menuItems.forEach(function (item) {
+        let link = item.querySelector("a");
+        // Если ссылка на страницу соответствует текущей странице, устанавливаем класс "active"
+        if (link.getAttribute("href") === page) {
+            item.classList.add("active");
+
+        }
+    });
 }
 export { goToPageAndChangeLinkStyle };
 
@@ -120,16 +120,16 @@ export { getMenuForPerson };
 document.getElementById('star').addEventListener("click", goToFavouritesPage);
 
 function goToFavouritesPage() {
-  const userEmail = getCookie("userEmail");
-  if (userEmail) {
-    // Если пользователь авторизован, производим перенаправление на страницу избранных
-    window.location.href = "favourites.html";
-  } else {// Если пользователь не авторизован
-    alert ('Авторизуйтесь!');
-  }
+    const userEmail = getCookie("userEmail");
+    if (userEmail) {
+        // Если пользователь авторизован, производим перенаправление на страницу избранных
+        window.location.href = "favourites.html";
+    } else {// Если пользователь не авторизован
+        alert('Авторизуйтесь!');
+    }
 }
 
 // Вызов мониторинга состояния авторизации при загрузке страницы
 window.addEventListener("load", () => {
-  monitorAuthState();
+    monitorAuthState();
 });
