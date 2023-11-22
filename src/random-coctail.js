@@ -1,8 +1,8 @@
 
 
 // const randomIndex = Math.floor(Math.random() * cocktailsAll.length);
-
-import { takeAllObjects } from './firebase.js'
+import { takeOneCocktail } from './firebase.js';
+import { takeAllObjects } from './firebase.js';
 
 
 //рандомный индекс для коктейля
