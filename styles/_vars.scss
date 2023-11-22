@@ -1,30 +1,32 @@
 // шрифты:
-$font1: 'Helvetica', Arial, sans-serif;
+$font1: 'Helvetica',
+Arial,
+sans-serif;
 $font-logo: 'Montserrat Alternates';
 
 // цвета:
-$mistake: #BC2525;
-$black: #000000;
+$mistake         : #BC2525;
+$black           : #000000;
 $background-color: rgba(217, 217, 217, 0.00);
-$white: #fff;
+$white           : #fff;
 
 // брейкпоинты:
-$l: 1441px;
-$xl: 1376px;
-$xxl: 1300px;
-$lm: 1200px;
-$m: 1023px;
-$xm: 890px;
-$s: 767px;
+$l   : 1441px;
+$xl  : 1376px;
+$xxl : 1300px;
+$lm  : 1200px;
+$m   : 1023px;
+$xm  : 890px;
+$s   : 767px;
 $s-xs: 528px;
-$xs: 380px;
+$xs  : 380px;
 
 // размеры контейнеров header:
-$container-l: 1340px;
-$container-xl: 1300px;
+$container-l  : 1340px;
+$container-xl : 1300px;
 $container-xxl: 1200px;
-$container-lm: 1120px;
-$container-m: 960px;
-$container-xm: 860px;
-$container-s: 720px;
-$container-xs: 348px;
+$container-lm : 1120px;
+$container-m  : 960px;
+$container-xm : 860px;
+$container-s  : 720px;
+$container-xs : 348px;
