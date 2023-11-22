@@ -1,7 +1,8 @@
-import { burgerMenu, getMenuForPerson, goToPageAndChangeLinkStyle } from './header.js';
+import { burgerMenu, getMenuForPerson, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
 import { changeEmail } from './authentication.js';
-
-
+burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
 
 burgerMenu();
 goToPageAndChangeLinkStyle();

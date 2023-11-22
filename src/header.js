@@ -134,8 +134,10 @@ function searchCocktailByName() {
     function showResults(results) {
         const searchResultsElement = document.createElement('div'); 
         searchResultsElement.id = 'searchResults';
+        searchResultsElement.className = 'fade-in'; // Добавить класс плавности появления
         searchResultsElement.style.display='flex';
-        searchResultsElement.style.border='1px solid black';
+        searchResultsElement.style.flexWrap = 'wrap';
+        searchResultsElement.style.border='1px groove black';
         searchResultsElement.style.marginBottom='20px';
         for (let key in results) {
             let obj = results[key]; 
@@ -149,9 +151,9 @@ function searchCocktailByName() {
     function displayCocktail(searchResultsElement, key, name, imageUrl) { 
         // Создаем элемент для отображения информации о коктейле
         const cocktailElement = document.createElement('div'); 
-        cocktailElement.style.maxWidth = '350px';
+        cocktailElement.style.width = '350px';
         cocktailElement.style.display = 'flex';
-        cocktailElement.style.flexWrap = 'wrap';
+        cocktailElement.style.justifyContent='center';
         cocktailElement.style.paddingTop = '20px';
         cocktailElement.style.paddingBottom = '20px';
         cocktailElement.classList.add('cocktail'); 
@@ -176,9 +178,15 @@ function searchCocktailByName() {
         noResultsElement.style.justifyContent='center';
         noResultsElement.style.paddingBottom='20px';
         noResultsElement.style.fontSize='2rem';
+        noResultsElement.style.transform='scale(1)';
+        noResultsElement.style.transition='transform 1s ease-in';
         noResultsElement.style.color='#BC2525';
         noResultsElement.textContent = 'Ничего не смогли найти. Повторите пожалуйста, поиск';
         document.querySelector('header').appendChild(noResultsElement);
+        setTimeout(showNoResultText, 1000);
+        function showNoResultText(){
+            noResultsElement.style.transform='scale(0)';
+        }
         setTimeout(function() {
             noResultsElement.remove();
         }, 2000);
@@ -222,6 +230,17 @@ function searchCocktailByName() {
             alert('Введите название коктейля'); 
         } 
     }); 
+    // Обработчик события клика на окне
+    window.addEventListener('click', function() {
+        const searchResultsElement = document.getElementById('searchResults');
+        const noResultsElement = document.getElementById('noResults');
+        if (searchResultsElement) {
+            searchResultsElement.remove();
+        }
+        if (noResultsElement) {
+            noResultsElement.remove();
+        }
+    });
 } 
 export { searchCocktailByName };
 
