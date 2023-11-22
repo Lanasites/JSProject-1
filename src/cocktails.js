@@ -3,22 +3,10 @@
 import { gallerySlider } from './cocktailsGallerySlider.js';
 import { fetchCocktails } from './cocktailsFetch.js';
 import { fetchAllFirstLetters } from './cocktailsLetters';
-import { burgerMenu, goToPageAndChangeLinkStyle } from './header.js';
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
 burgerMenu();
 goToPageAndChangeLinkStyle();
-
-//Переходы с кнопок
-//--переход на страницу личного кабинета--//
-// document.getElementById('profile').addEventListener('click', goToPersonalAccount);
-// function goToPersonalAccount() {
-//     window.location.href = 'profile-and-favourites.html';
-// }
-
-//--переход на страницу избранного--//
-// document.getElementById('star').addEventListener('click', goToFavoutitesPage);
-// function goToFavoutitesPage() {
-//     window.location.href = 'favourites.html';
-// }
+searchCocktailByName();
 
 //--переход на главную страницу по клику на лого--//
 const logotype = document.getElementById('logotype');
