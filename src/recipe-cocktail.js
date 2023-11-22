@@ -82,26 +82,23 @@ export { showCocktail };
 
 // добавить в избранное
 
-const favouriteCocktails = []; // массив с избранным
-
 document.querySelectorAll('.container-wrapper__recipe-favourite').forEach(container => {
     container.addEventListener('click', function () {
-        // этой строчки не будет, будет сразу следующая
-        const cocktailId = this.getAttribute('id');
 
         // проверяю, есть ли уже этот коктейль в избранном
-        const index = favouriteCocktails.indexOf(cocktailId);
+        const favouriteCocktail = window.localStorage.getItem(cocktailId);
 
-        if (index === -1) {
+        if (!favouriteCocktail) {
             // если нет, то добавляю
-            favouriteCocktails.push(cocktailId);
+            window.localStorage.setItem(cocktailId, 'favourite');
             this.querySelector('.favourite-star').src = "./assets/img/favourite_filled.svg";
+            document.querySelector('.label').textContent = 'УДАЛИТЬ ИЗ ИЗБРАННОГО';
         } else {
             // если есть, то удаляю
-            favouriteCocktails.splice(index, 1);
+            window.localStorage.removeItem(cocktailId);
             this.querySelector('.favourite-star').src = "./assets/img/icon_favourites-01.svg";
+            document.querySelector('.label').textContent = 'ДОБАВИТЬ В ИЗБРАННОЕ';
         }
-
-        // тут 
     });
 });
+
