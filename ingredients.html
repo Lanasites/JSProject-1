@@ -4,16 +4,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Ingredients</title>
   <link rel="stylesheet" href="./styles/ingredients.scss">
+  <link rel="stylesheet" href="./styles/style.scss">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap" rel="stylesheet">
+  <!--
+  <link rel="stylesheet" href="./styles/header.scss">
+  <link rel="stylesheet" href="./styles/footer.scss">
+  -->
 </head>
 
 <body>
-  <h1>Ингредиенты</h1>
-  <section id="container"></section>
+  <header>
+    <div class="header-block  container-header">
+      <div class="header-block__burger-menu">
+        <div class="burger-menu__btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="header-block__logo" id="logotype">
+        <img src="./assets/svg/logo-01-1.svg" alt="Logo" class="logo__image">
+        <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
+      </div>
+      <nav class="header-block__headline">
+        <ul class="headline__nav-list">
+          <li class="headline__nav-item"><a href="index.html" class="headline__nav-link" id="main-page">Главная</a></li>
+          <li class="headline__nav-item"><a href="ingredients.html" class="headline__nav-link"
+              id="ingredients-page">Ингредиенты</a></li>
+          <li class="headline__nav-item"><a href="cocktails.html" class="headline__nav-link"
+              id="recipes-page">Рецепты</a></li>
+          <li class="headline__nav-item"><a href="random-coctail.html" class="headline__nav-link"
+              id="random-cocktail-page">Рандомный коктейль</a></li>
+        </ul>
+      </nav>
+      <div class="header-block__search">
+        <input type="text" placeholder="Введите название коктейля" class="search__input" id="search-value">
+        <button type="submit" class="search__btn" id="search"></button>
+      </div>
+      <div class="header-block__user-profile">
+        <button type="button" class="user-profile__btn" id="profile"></button>
+      </div>
+      <div class="header-block__favourite">
+        <button type="button" class="favourite__star" id="star"></button>
+      </div>
+    </div>
+      <div class="header-block__bm-list"> 
+        <ul class="bm-list__list">
+          <li><a href="index.html" class="list__item">Главная</a></li>
+          <li><a href="ingredients.html" class="list__item">Ингредиенты</a></li>
+          <li><a href="cocktails.html" class="list__item">Рецепты</a></li>
+          <li><a href="random-coctail.html" class="list__item">Рандомный коктейль</a></li>
+        </ul>
+      </div>
+  </header>
 
+  <main class="container">
+    <!-- Ингредиенты -->
+    <h1>Ингредиенты</h1>
+    <section id="container_ingredients">
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">×</span>
+          <h2>Коктейли:</h2>
+          <p id="modal-content"></p>
+        </div>
+      </div>
+    </section>
 
-  <script type="module" src="./src/ingredients.js"></script>
+    <footer class="footer-block">
+      <div class="footer-block__footer">
+        <div class="footer__logo" id="footer-logotype">
+          <img class="logo__image" src="./assets/svg/logo-01-1.svg" alt="Logo">
+          <p class="logo__name">ALCOSHAKE</p>
+        </div>
+        <nav class="footer__nav">
+          <ul class="nav__nav-list">
+            <li class="nav__nav-item"><a href="index.html" class="nav__nav-link" id="footer-main-page">Главная</a></li>
+            <li class="nav__nav-item"><a href="ingredients.html" class="nav__nav-link"
+                id="footer-ingredients-page">Ингредиенты</a></li>
+            <li class="nav__nav-item"><a href="cocktails.html" class="nav__nav-link" id="footer-recipes-page">Рецепты</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__team-logo" id="team-logotype">
+          <img class="team-logo__image" src="./assets/svg/icon_github-01-1.svg" alt="Logo">
+          <p class="team-logo__name">Название команды</p>
+        </div>
+      </div>
+      <div class="footer-block__authority">
+        <p>© ALCOSHAKE 2023</p>
+      </div>
+    </footer>
+
+    <script type="module" src="./src/ingredients.js"></script>
 </body>
 
 </html>
