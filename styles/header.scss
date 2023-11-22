@@ -211,6 +211,12 @@
             align-items: start;
         }
 
+        // @media (max-width: $s) {
+        //     align-items: center;
+        //    // display: block;
+        //     //margin-left: 30px;
+        // }
+
         input[type=text] {
             width: 18rem;
             font-size: 1rem;
@@ -413,4 +419,10 @@
 }
 .active{
     border: 1px solid $black;
+}
+
+.cocktail {
+    @media (max-width: $xm) {
+        flex-direction: row;
+    }
 }
