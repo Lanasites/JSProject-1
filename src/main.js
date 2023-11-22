@@ -1,4 +1,3 @@
-
 import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
 burgerMenu();
 goToPageAndChangeLinkStyle();
@@ -63,84 +62,98 @@ import { takeOneIngredient } from './firebase.js';
 //         // Обрабатываем ошибку, если она возникла
 //         console.error(error);
 //     });
-import { takeAlkoCocktail } from './firebase.js'
-
+import { takeAlkoCocktail } from './firebase.js';
 
 // проверка идентификации пользователя, на все страницы надо добавить
-import { monitorAuthState } from './authentication.js'
+import { monitorAuthState } from './authentication.js';
 monitorAuthState();
 // -----------------------------------------------------
-const agePopup = document.getElementById("age-confirmation-popup");
-if (document.cookie = 'adult=true') {
-  agePopup.style.display = "none";
+const agePopup = document.getElementById('age-confirmation-popup');
+if ((document.cookie = 'adult=true')) {
+    agePopup.style.display = 'none';
 }
-document.addEventListener("DOMContentLoaded", function () {
-  const ageInput = document.getElementById("age-input");
-  const confirmBtn = document.getElementById("confirm-btn");
-  confirmBtn.addEventListener("click", function () {
-    const age = parseInt(ageInput.value);
-    if (age >= 18) {
-      document.cookie = 'adult=true';
-      agePopup.style.display = "none";
-    } else {
-      alert("Вы должны быть старше 18 лет!");
-    }
-  });
+document.addEventListener('DOMContentLoaded', function() {
+    const ageInput = document.getElementById('age-input');
+    const confirmBtn = document.getElementById('confirm-btn');
+    confirmBtn.addEventListener('click', function() {
+        const age = parseInt(ageInput.value);
+        if (age >= 18) {
+            document.cookie = 'adult=true';
+            agePopup.style.display = 'none';
+        } else {
+            alert('Вы должны быть старше 18 лет!');
+        }
+    });
 });
 // ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
 // на все страницы с меню надо добавить
 import { clickProfileMenu, getMenuForPerson } from './header.js';
-document.addEventListener("DOMContentLoaded", getMenuForPerson);
+document.addEventListener('DOMContentLoaded', getMenuForPerson);
 clickProfileMenu();
 // ------------------------------------------------------------------------------------------------------------------------
 
 import Splide from '@splidejs/splide';
 const mySlider = new Splide('.splide');
 new Splide('.splide', {
-  type: 'loop',
-  wheel: true,
-  speed: 0,
+    type: 'loop',
+    wheel: true,
+    speed: 0
 });
 
 //Добавление коктейля на страницу
 function addCoctailMain() {
-  // получение промиса
-  const promise = takeAllObjects('cocktails');
-  //console.log(promise);
-  promise
-    // .then(response => response.json())
-    .then(data => {
-      // работаем с полученными данными - объект с объектами
-      for (let key in data) {
-        // obj - ингредиент со всеми свойствами
-        let obj = data[key];
-        print(obj.name, obj.imageUrl, obj.description);
-      }
-      mySlider.mount();
-    })
-    .catch(error => {
-      // обрабатываем ошибку, если она возникла
-      console.error(error);
-    });
-
+    // получение промиса
+    const promise = takeAllObjects('cocktails');
+    //console.log(promise);
+    promise
+        // .then(response => response.json())
+        .then(data => {
+            // работаем с полученными данными - объект с объектами
+            for (let key in data) {
+                // obj - ингредиент со всеми свойствами
+                let obj = data[key];
+                print(obj.name, obj.imageUrl, obj.description, obj.id);
+            }
+            mySlider.mount();
+        })
+        .catch(error => {
+            // обрабатываем ошибку, если она возникла
+            console.error(error);
+        });
 }
 
-function print(name, imageUrl, description) {
-  const splideList = document.querySelector('.splide__list');
-  const splideItem = document.createElement('li');
-  splideItem.classList.add('splide__slide')
-  const template = `
+function print(name, imageUrl, description, id) {
+    const splideList = document.querySelector('.splide__list');
+    const splideItem = document.createElement('li');
+    splideItem.classList.add('splide__slide');
+    const template = `
   <div class = 'splide__image'>
   <img src = ${imageUrl} alt = "${name}">
   </div>
   <div class = "splide__info">
   <p class = "splide__name">${name}</p>
   <p class = "splide__text">${description}</p>
-  <a class = "splide_recipe"><button>Смотреть рецепт</button></a>
   </div>
-  `
-  splideItem.innerHTML = template;
-  splideList.append(splideItem);
+  `;
+    splideItem.innerHTML = template;
+
+    // Create the <a> element separately
+    const recipeLink = document.createElement('a');
+    recipeLink.classList.add('splide_recipe');
+    recipeLink.setAttribute('href', 'recipe-cocktail.html');
+    const button = document.createElement('button');
+    button.textContent = 'Смотреть рецепт';
+    recipeLink.appendChild(button);
+
+    // Append the <a> element to the <div> containing the template
+    splideItem.querySelector('.splide__info').appendChild(recipeLink);
+    recipeLink.addEventListener('click', function() {
+        document.cookie = `cocktailId=${id}; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        document.cookie = `cocktailId = ${id}`;
+        console.log(item.id);
+    });
+
+    splideList.append(splideItem);
 }
 
 addCoctailMain();
