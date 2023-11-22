@@ -3,6 +3,11 @@ import { takeOneCocktail } from './firebase';
 
 import { getDatabase, ref, get } from "firebase/database";
 
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
+burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
+
 const dbRef = ref(getDatabase());
 
 // Функция для получения значения cookie

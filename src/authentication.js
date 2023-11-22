@@ -2,6 +2,11 @@ import { initializeApp } from "firebase/app";
 import Swal from 'sweetalert2';
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, createUserWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
+burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyC9NxHk9mUmNACk8EFBrFi1_kuCyyWKCEU",

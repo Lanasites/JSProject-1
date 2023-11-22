@@ -3,6 +3,7 @@
 import { gallerySlider } from './cocktailsGallerySlider.js';
 import { fetchCocktails } from './cocktailsFetch.js';
 import { fetchAllFirstLetters } from './cocktailsLetters';
+
 import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
 burgerMenu();
 goToPageAndChangeLinkStyle();
@@ -10,7 +11,7 @@ searchCocktailByName();
 
 //--переход на главную страницу по клику на лого--//
 const logotype = document.getElementById('logotype');
-logotype.addEventListener('click', function () {
+logotype.addEventListener('click', function() {
     window.location.href = 'index.html';
 });
 
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', event => {
 });
 
 allLetterDivs.forEach(div => {
-    div.addEventListener('click', function (event) {
+    div.addEventListener('click', function(event) {
         clearSelectedOnAllLetters();
 
         event.currentTarget.classList.add('selected');
@@ -58,7 +59,7 @@ let activeDivId = 'anyType';
 let clickedLetter = 'anyLetter';
 
 filterTitles.forEach(div => {
-    div.addEventListener('click', function (event) {
+    div.addEventListener('click', function(event) {
         clearSelectedOnAllTitles();
         event.currentTarget.classList.add('selected');
         activeDivId = event.currentTarget.id;
@@ -100,6 +101,6 @@ const clearSelectedOnAllTitles = () => {
 // ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
 // на все страницы с меню надо добавить
 import { clickProfileMenu, getMenuForPerson } from './header.js';
-document.addEventListener("DOMContentLoaded", getMenuForPerson);
+document.addEventListener('DOMContentLoaded', getMenuForPerson);
 clickProfileMenu();
 // ------------------------------------------------------------------------------------------------------------------------
