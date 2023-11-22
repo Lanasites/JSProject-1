@@ -26,7 +26,7 @@ function updateFavorites() {
 }
 
 // При загрузке страницы проверяем, есть ли сохраненные избранные коктейли в localStorage
-const savedFavorites = localStorage.getItem("favorites");
+const savedFavorites = localStorage.getItem("favorite");
 if (savedFavorites) {
   favorites = JSON.parse(savedFavorites);
 }

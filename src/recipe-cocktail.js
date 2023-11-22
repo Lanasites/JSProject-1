@@ -1,3 +1,15 @@
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
+burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
+
+// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
+// на все страницы с меню надо добавить
+document.addEventListener("DOMContentLoaded", getMenuForPerson);
+import { clickProfileMenu } from './header.js';
+clickProfileMenu();
+// ------------------------------------------------------------------------------------------------------------------------
+
 import cocktail from '../js-project-cocktails.json';
 import { takeOneCocktail } from './firebase';
 
