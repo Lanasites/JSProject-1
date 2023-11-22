@@ -38,7 +38,7 @@ async function registrationEmailPassword() {
         const userCredential = await createUserWithEmailAndPassword(auth, txtEmail, txtPassword);
         const user = userCredential.user;
         console.log('Создался пользователь', user);
-        modal1('Поздравляем!', 'Вы успешно зарегистрировались на сайте', 'success', 'Ок');
+        modal1('Поздравляем!', 'Вы успешно зарегистрировались на сайте', 'success', 'ОК');
         setCookie('userEmail', user.email, 7);
         setCookie('userUid', user.uid, 7);
         setCookie("username", username, 7);
@@ -70,7 +70,7 @@ async function loginEmailPassword() {
     console.log(txtEmail, txtPassword);
     try {
         const userCredential = await signInWithEmailAndPassword(auth, txtEmail, txtPassword);
-        console.log(userCredential);
+        // console.log(userCredential);
         const user = userCredential.user;
         console.log('Пользователь авторизовался на сайте', user);
         setCookie('userEmail', user.email, 7);
@@ -141,6 +141,11 @@ function modal1(title, text, type, textButton) {
                 confirmButton: 'my-custom-button-class'
             },
             confirmButtonText: textButton
+        })
+        .then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'profile-and-favourites.html'; // Вызов функции при нажатии на кнопку "ОК"
+            }
         });
 }
 function modalSuccess1() {
@@ -152,12 +157,21 @@ function modalSuccess1() {
             showConfirmButton: false
         });
 }
+function modalSuccess2() {
+    Swal.fire(
+        {
+            title: 'Вы успешно загеристрировались на сайте',
+            icon: 'success',
+            timer: 1500,
+            showConfirmButton: false
+        });
+}
 
 // функция вывода сообщения об ошибке
 function modalError2() {
     Swal.fire({
         title: 'Ошибка!',
-        text: 'Пароль введен не верно',
+        text: 'Пароль или email введены не верно',
         icon: 'error',
         showCloseButton: true,
         showCancelButton: true,
