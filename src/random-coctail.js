@@ -1,15 +1,17 @@
-
-
 // const randomIndex = Math.floor(Math.random() * cocktailsAll.length);
 import { takeOneCocktail } from './firebase.js';
 import { takeAllObjects } from './firebase.js';
 
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
+burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
 
 //рандомный индекс для коктейля
 async function getRandomCocktail() {
-    const cocktailsAll = await takeAllObjects("cocktails");
+    const cocktailsAll = await takeAllObjects('cocktails');
     console.log(cocktailsAll);
-    let cocktailsArr = []
+    let cocktailsArr = [];
     for (let key in cocktailsAll) {
         //console.log(key);
         cocktailsArr.push(key);
@@ -19,21 +21,18 @@ async function getRandomCocktail() {
     return cocktailsArr[randomIndex];
 }
 
-
-
 // добавление инфы о коктейле на страницу самого коктейля
 const cocktailId = getRandomCocktail();
 console.log(cocktailId);
 
 cocktailId
-    .then((data) => {
+    .then(data => {
         console.log(data);
         let randomCocktailId = data;
         console.log(randomCocktailId);
         showCocktail(data);
     })
-    .catch((err) => console.error('Ошибка:', err));
-
+    .catch(err => console.error('Ошибка:', err));
 
 // let randomCocktailId;
 // async function getCocktailFromPromise() {
@@ -96,35 +95,30 @@ async function showCocktail(cocktailId) {
 document.addEventListener('DOMContentLoaded', showCocktail);
 export { showCocktail };
 
-
 // добавить в избранное
 
 document.querySelectorAll('.container-wrapper__recipe-favourite').forEach(container => {
-    container.addEventListener('click', function () {
-
+    container.addEventListener('click', function() {
         // проверяю, есть ли уже этот коктейль в избранном
         const favouriteCocktail = window.localStorage.getItem(cocktailId);
 
         if (!favouriteCocktail) {
             // если нет, то добавляю
             window.localStorage.setItem(cocktailId, 'favourite');
-            this.querySelector('.favourite-star').src = "./assets/img/favourite_filled.svg";
+            this.querySelector('.favourite-star').src = './assets/img/favourite_filled.svg';
             document.querySelector('.label').textContent = 'УДАЛИТЬ ИЗ ИЗБРАННОГО';
         } else {
             // если есть, то удаляю
             window.localStorage.removeItem(cocktailId);
-            this.querySelector('.favourite-star').src = "./assets/img/icon_favourites-01.svg";
+            this.querySelector('.favourite-star').src = './assets/img/icon_favourites-01.svg';
             document.querySelector('.label').textContent = 'ДОБАВИТЬ В ИЗБРАННОЕ';
         }
     });
 });
 
-
 // ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
 // на все страницы с меню надо добавить
 import { clickProfileMenu, getMenuForPerson } from './header.js';
-document.addEventListener("DOMContentLoaded", getMenuForPerson);
+document.addEventListener('DOMContentLoaded', getMenuForPerson);
 clickProfileMenu();
 // ------------------------------------------------------------------------------------------------------------------------
-
-
