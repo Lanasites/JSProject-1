@@ -1,59 +1,129 @@
 
 
-
+// const randomIndex = Math.floor(Math.random() * cocktailsAll.length);
 
 import { takeAllObjects } from './firebase.js'
 
 
 //рандомный индекс для коктейля
-function getRandomCocktail() {
-    const randomIndex = Math.floor(Math.random() * cocktail.length);
-    return cocktail[randomIndex];
+async function getRandomCocktail() {
+    const cocktailsAll = await takeAllObjects("cocktails");
+    console.log(cocktailsAll);
+    let cocktailsArr = []
+    for (let key in cocktailsAll) {
+        //console.log(key);
+        cocktailsArr.push(key);
+    }
+    console.log(cocktailsArr);
+    const randomIndex = Math.floor(Math.random() * cocktailsArr.length);
+    return cocktailsArr[randomIndex];
 }
 
+
+
 // добавление инфы о коктейле на страницу самого коктейля
+const cocktailId = getRandomCocktail();
+console.log(cocktailId);
 
-function showRandomCocktail() {
-    const randomCocktail = getRandomCocktail();
+cocktailId
+    .then((data) => {
+        console.log(data);
+        let randomCocktailId = data;
+        console.log(randomCocktailId);
+        showCocktail(data);
+    })
+    .catch((err) => console.error('Ошибка:', err));
 
-    const cocktailImage = document.querySelector('.container-wrapper__pic-img');
-    const cocktailName = document.getElementById('name');
-    const cocktailDescription = document.getElementById('description');
-    const cocktailIngredients = document.getElementById('ingredients');
-    const cocktailCooking = document.getElementById('cooking');
 
-    //const specificCocktail = cocktail['Bumblebee'];
-    cocktailImage.src = randomCocktail.imageUrl;
-    cocktailImage.alt = randomCocktail.idcocktail;
+// let randomCocktailId;
+// async function getCocktailFromPromise() {
+//     try {
+//         // ожидание разрешения промиса
+//         randomCocktailId = await cocktailId;
+//         console.log(randomCocktailId);
+//         showCocktail()
+//     } catch (err) {
+//         console.error('Ошибка:', err);
+//     }
+// }
 
-    //cocktailImage.src = specificCocktail.imageUrl;
-    //cocktailImage.alt = specificCocktail.idcocktail;
+// // Вызываем нашу асинхронную функцию
+// getCocktailFromPromise();
+// console.log(randomCocktailId);
 
-    const itemName = document.createElement('p');
-    itemName.textContent = randomCocktail.name;
-    //itemName.textContent = specificCocktail.name;
+async function showCocktail(cocktailId) {
+    //console.log(cocktailId);
+    if (cocktailId) {
+        try {
+            const specificCocktail = await takeOneCocktail(cocktailId);
+            console.log('specificCocktail');
+            const cocktailImage = document.querySelector('.container-wrapper__pic-img');
+            const cocktailName = document.getElementById('name');
+            const cocktailDescription = document.getElementById('description');
+            const cocktailIngredients = document.getElementById('ingredients');
+            const cocktailCooking = document.getElementById('cooking');
 
-    const itemDescription = document.createElement('p');
-    itemDescription.textContent = randomCocktail.description;
-    //itemDescription.textContent = specificCocktail.description;
+            cocktailImage.src = specificCocktail.imageUrl;
+            console.log(specificCocktail.imageUrl);
+            cocktailImage.alt = specificCocktail.idcocktail;
 
-    const itemIngredients = document.createElement('ul');
-    randomCocktail.ingredients.forEach(ingredient => {
-        //specificCocktail.ingredients.forEach(ingredient => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${ingredient.name}: ${ingredient.quantity}`;
-        itemIngredients.appendChild(listItem);
+            const itemName = document.createElement('p');
+            itemName.textContent = specificCocktail.name;
+
+            const itemDescription = document.createElement('p');
+            itemDescription.textContent = specificCocktail.description;
+
+            const itemIngredients = document.createElement('ul');
+            specificCocktail.ingredients.forEach(ingredient => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${ingredient.name}: ${ingredient.quantity}`;
+                itemIngredients.appendChild(listItem);
+            });
+
+            const itemCooking = document.createElement('p');
+            itemCooking.textContent = specificCocktail.cooking;
+
+            cocktailName.appendChild(itemName);
+            cocktailDescription.appendChild(itemDescription);
+            cocktailIngredients.appendChild(itemIngredients);
+            cocktailCooking.appendChild(itemCooking);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', showCocktail);
+export { showCocktail };
+
+
+// добавить в избранное
+
+const favouriteCocktails = []; // массив с избранным
+
+document.querySelectorAll('.container-wrapper__recipe-favourite').forEach(container => {
+    container.addEventListener('click', function () {
+        // этой строчки не будет, будет сразу следующая
+        const cocktailId = this.getAttribute('id');
+
+        // проверяю, есть ли уже этот коктейль в избранном
+        const index = favouriteCocktails.indexOf(cocktailId);
+
+        if (index === -1) {
+            // если нет, то добавляю
+            favouriteCocktails.push(cocktailId);
+            this.querySelector('.favourite-star').src = "./assets/img/favourite_filled.svg";
+        } else {
+            // если есть, то удаляю
+            favouriteCocktails.splice(index, 1);
+            this.querySelector('.favourite-star').src = "./assets/img/icon_favourites-01.svg";
+        }
+
+        // тут 
     });
-
-    const itemCooking = document.createElement('p');
-    itemCooking.textContent = randomCocktail.cooking;
-    //itemCooking.textContent = specificCocktail.cooking;
+});
 
 
-    cocktailName.appendChild(itemName);
-    cocktailDescription.appendChild(itemDescription);
-    cocktailIngredients.appendChild(itemIngredients);
-    cocktailCooking.appendChild(itemCooking);
-};
 
-showRandomCocktail();
+
+
