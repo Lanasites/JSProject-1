@@ -1,6 +1,8 @@
 
-import { burgerMenu } from './header.js';
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
 burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
 
 // --------------------------ФУНКЦИИ ДЛЯ РАБОТЫ С БД----------------------------
 //

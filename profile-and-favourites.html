@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap" rel="stylesheet">
   </head>
 <body>
-    </header> 
+    <header> 
     <div class="header-block  container-header">
           <div class="header-block__burger-menu">
             <div class="burger-menu__btn">
@@ -18,7 +18,7 @@
             </div>
           </div>
         <div class="header-block__logo" id="logotype">
-          <img class="logo__image" src="./assets/svg/logo-01 1.svg" alt="Logo">
+          <img class="logo__image" src="./assets/svg/logo-01-1.svg" alt="Logo">
           <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
         </div>
         <nav  class="header-block__headline">
@@ -35,12 +35,6 @@
         </div>
         <div class="header-block__user-profile">
           <button type="button" class="user-profile__btn" id="profile"></button>
-          <!-- <div id="profile-menu">
-            <ul>
-              <li><a href="">Настройки</a></li>
-              <li><a href="">Выход</a></li>
-            </ul>
-          </div> -->
         </div>
         <div class="header-block__favourite">
             <button type="button" class="favourite__star" id="star"></button>
@@ -54,15 +48,12 @@
               <li><a href="random-coctail.html" class="list__item">Рандомный коктейль</a></li>
             </ul>
           </div>
-        </div>
       </header>
-    
     <main>
-
       <form class="settings" id="settings-form">
         <p class="settings__title">НАСТРОЙКИ</p>
         <div class="settings__field">
-          <input class="settings__input" placeholder="Email" type="email" id="profile-email" value="" >
+          <input class="settings__input" placeholder="Email" type="email" id="profile-email"  readonly>
         </div>
         <div class="settings__field">
           <input class="settings__input" placeholder="ФИО" type="text" id="fullName">
@@ -70,39 +61,37 @@
         <div class="settings__field">
           <input class="settings__input" placeholder="Телефон"  type="tel" id="phone">
         </div>
-        <button class="settings__button" id="changePasswordButton">Сменить пароль</button>
+        <button type = 'button' class="settings__button" id="changePasswordButton">Сменить пароль</button>
         <button class="settings__button" id="saveButton">Сохранить</button>
       </form>
-
-
       <div class="favourites">
         <p>ИЗБРАННОЕ</p>
-        <!-- <div id="alphabet"></div> -->
       </div>
     </main>
-  
       <footer class="footer-block">
         <div class="footer-block__footer">
         <div class="footer__logo" id="footer-logotype">
-          <img class="logo__image" src="./assets/svg/logo-01 1.svg" alt="Logo">
+          <img class="logo__image" src="./assets/svg/logo-01-1.svg" alt="Logo">
           <p class="logo__name">ALCOSHAKE</p>
         </div>
-        <nav  class="footer__nav">
-          <ul  class="nav__nav-list">
+        <nav class="footer__nav">
+          <ul class="nav__nav-list">
             <li class="nav__nav-item"><a href="index.html" class="nav__nav-link" id="footer-main-page">Главная</a></li>
-            <li class="nav__nav-item"><a href="ingredients.html" class="nav__nav-link" id="footer-ingredients-page">Ингредиенты</a></li>
-            <li class="nav__nav-item"><a href="cocktails.html" class="nav__nav-link" id="footer-recipes-page">Рецепты</a></li>
+            <li class="nav__nav-item"><a href="ingredients.html" class="nav__nav-link"
+                id="footer-ingredients-page">Ингредиенты</a></li>
+            <li class="nav__nav-item"><a href="cocktails.html" class="nav__nav-link" id="footer-recipes-page">Рецепты</a>
+            </li>
           </ul>
         </nav>
         <div class="footer__team-logo" id="team-logotype">
-          <img class="team-logo__image" src="./assets/svg/icon_github-01 1.svg" alt="Logo">
+          <img class="team-logo__image" src="./assets/svg/icon_github-01-1.svg" alt="Logo">
           <p class="team-logo__name">Название команды</p>
         </div>
       </div>
-        <div class="footer-block__authority">
-          <p>© ALCOSHAKE 2023</p>
-        </div>
-      </footer>
+      <div class="footer-block__authority">
+        <p>© ALCOSHAKE 2023</p>
+      </div>
+    </footer>
     <script type="module" src="./src/profile-and-favourites.js"></script>
   </body>
 </html>

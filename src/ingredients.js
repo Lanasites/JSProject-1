@@ -1,5 +1,10 @@
 import { takeAllObjects, takeOneCocktail } from './firebase.js'
 
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
+burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
+
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modal-content");
 const closeButton = document.getElementsByClassName("close")[0];

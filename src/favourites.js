@@ -1,7 +1,7 @@
-import { burgerMenu } from './header.js';
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
 burgerMenu();
-
-// import { monitorAuthState } from './authentication.js';
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
 
 let favorites = []; // Массив для хранения избранных коктейлей
 
