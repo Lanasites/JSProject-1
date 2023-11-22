@@ -160,7 +160,8 @@
         }
 
         .container-wrapper__recipe {
-            width: 95%;
+            width : 95%;
+            height: 100vh;
 
             display       : flex;
             flex-direction: column;
