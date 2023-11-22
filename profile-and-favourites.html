@@ -8,53 +8,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sunshiney&display=swap" rel="stylesheet">
   </head>
 <body>
-  <header>
+    <header> 
     <div class="header-block  container-header">
-      <div class="header-block__burger-menu">
-        <div class="burger-menu__btn">
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="header-block__burger-menu">
+            <div class="burger-menu__btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+          </div>
+        <div class="header-block__logo" id="logotype">
+          <img class="logo__image" src="./assets/svg/logo-01-1.svg" alt="Logo">
+          <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
         </div>
-      </div>
-      <div class="header-block__logo" id="logotype">
-        <img src="./assets/svg/logo-01-1.svg" alt="Logo" class="logo__image">
-        <p class="logo__name" id="alcoshake">ALCOSHAKE</p>
-      </div>
-      <nav class="header-block__headline">
-        <ul class="headline__nav-list">
-          <li class="headline__nav-item"><a href="index.html" class="headline__nav-link" id="main-page">Главная</a></li>
-          <li class="headline__nav-item"><a href="ingredients.html" class="headline__nav-link"
-              id="ingredients-page">Ингредиенты</a></li>
-          <li class="headline__nav-item"><a href="cocktails.html" class="headline__nav-link"
-              id="recipes-page">Рецепты</a></li>
-          <li class="headline__nav-item"><a href="random-coctail.html" class="headline__nav-link"
-              id="random-cocktail-page">Рандомный коктейль</a></li>
-        </ul>
-      </nav>
-      <div class="header-block__search">
-        <input type="text" placeholder="Введите название коктейля" class="search__input" id="search-value">
-        <button type="submit" class="search__btn" id="search"></button>
-      </div>
-      <div class="header-block__user-profile">
-        <button type="button" class="user-profile__btn" id="profile"></button>
-      </div>
-      <div class="header-block__favourite">
-        <button type="button" class="favourite__star" id="star"></button>
-      </div>
-    </div>
-      <div class="header-block__bm-list"> 
-        <ul class="bm-list__list">
-          <li><a href="index.html" class="list__item">Главная</a></li>
-          <li><a href="ingredients.html" class="list__item">Ингредиенты</a></li>
-          <li><a href="cocktails.html" class="list__item">Рецепты</a></li>
-          <li><a href="random-coctail.html" class="list__item">Рандомный коктейль</a></li>
-        </ul>
-      </div>
-  </header>
-    
+        <nav  class="header-block__headline">
+          <ul  class="headline__nav-list">
+            <li class="headline__nav-item"><a href="index.html" class="headline__nav-link" id="main-page">Главная</a></li>
+            <li class="headline__nav-item"><a href="ingredients.html" class="headline__nav-link" id="ingredients-page">Ингредиенты</a></li>
+            <li class="headline__nav-item"><a  href="cocktails.html" class="headline__nav-link" id="recipes-page">Рецепты</a></li>
+            <li class="headline__nav-item"><a href="random-coctail.html" class="headline__nav-link" id="random-cocktail-page">Рандомный коктейль</a></li>
+          </ul>
+        </nav>
+        <div class="header-block__search">
+          <input type="text" placeholder="Введите название коктейля" class="search__input" id="search-value">
+          <button type="submit" class="search__btn" id="search"></button>
+        </div>
+        <div class="header-block__user-profile">
+          <button type="button" class="user-profile__btn" id="profile"></button>
+        </div>
+        <div class="header-block__favourite">
+            <button type="button" class="favourite__star" id="star"></button>
+          </div>
+        </div>
+          <div class="header-block__bm-list"> 
+            <ul class="bm-list__list">
+              <li><a href="index.html" class="list__item">Главная</a></li>
+              <li><a href="ingredients.html" class="list__item">Ингредиенты</a></li>
+              <li><a href="cocktails.html" class="list__item">Рецепты</a></li>
+              <li><a href="random-coctail.html" class="list__item">Рандомный коктейль</a></li>
+            </ul>
+          </div>
+      </header>
     <main>
-
       <form class="settings" id="settings-form">
         <p class="settings__title">НАСТРОЙКИ</p>
         <div class="settings__field">
@@ -69,16 +64,12 @@
         <button type = 'button' class="settings__button" id="changePasswordButton">Сменить пароль</button>
         <button class="settings__button" id="saveButton">Сохранить</button>
       </form>
-
-
       <div class="favourites">
         <p>ИЗБРАННОЕ</p>
-        <!-- <div id="alphabet"></div> -->
       </div>
     </main>
-  
-    <footer class="footer-block">
-      <div class="footer-block__footer">
+      <footer class="footer-block">
+        <div class="footer-block__footer">
         <div class="footer__logo" id="footer-logotype">
           <img class="logo__image" src="./assets/svg/logo-01-1.svg" alt="Logo">
           <p class="logo__name">ALCOSHAKE</p>

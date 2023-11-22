@@ -1,9 +1,6 @@
 import { burgerMenu } from './header.js';
 burgerMenu();
 
-
-
-
 let favorites = []; // Массив для хранения избранных коктейлей
 
 function updateFavorites() {
