@@ -1,3 +1,6 @@
+
+import copy from "rollup-plugin-copy";
+
 export default {
     build: {
         rollupOptions: {
@@ -11,7 +14,17 @@ export default {
                 "recipe-cocktail": './recipe-cocktail.html',
                 404: './404.html',
                 favourites: './favourites.html',
+                'random-coctail': './random-coctail.html',
             },
         },
     },
+    plugins: [
+        copy({
+            targets: [
+                { src: "assets/img", dest: "dist/assets/img" },
+            ],
+            verbose: true,
+        }),
+    ],
+
 };

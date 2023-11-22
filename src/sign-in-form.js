@@ -2,6 +2,11 @@
 // const email = document.querySelector('#email')
 // const inputPassword = form.elements.password
 
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
+burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
+
 const btnLogin = document.getElementById('btnLogin');
 // функция входа пользователя
 import { loginEmailPassword } from './authentication.js';

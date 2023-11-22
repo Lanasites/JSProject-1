@@ -15,6 +15,11 @@ import { takeOneCocktail } from './firebase';
 
 import { getDatabase, ref, get } from "firebase/database";
 
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
+burgerMenu();
+goToPageAndChangeLinkStyle();
+searchCocktailByName();
+
 const dbRef = ref(getDatabase());
 
 // Функция для получения значения cookie
@@ -102,3 +107,9 @@ document.querySelectorAll('.container-wrapper__recipe-favourite').forEach(contai
     });
 });
 
+// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
+// на все страницы с меню надо добавить
+import { clickProfileMenu, getMenuForPerson } from './header.js';
+document.addEventListener("DOMContentLoaded", getMenuForPerson);
+clickProfileMenu();
+// ------------------------------------------------------------------------------------------------------------------------
