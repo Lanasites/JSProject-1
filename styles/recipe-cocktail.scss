@@ -67,8 +67,15 @@
 
                 list-style-position: inside;
 
+                ul {
+                    margin-block-start  : 0em;
+                    padding-inline-start: 0rem;
+                }
+
                 .text-p-li {
-                    padding-left: 0.5rem;
+                    // margin    : 0;
+                    // padding   : 0;
+                    // text-align: left;
                 }
             }
 

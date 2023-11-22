@@ -21,11 +21,9 @@ function getCookie(name) {
     return null;
 }
 
-
 // добавление инфы о коктейле на страницу самого коктейля
 const cocktailId = getCookie('cocktailId');
 async function showCocktail() {
-    //console.log(cocktailId);
     if (cocktailId) {
         try {
             const specificCocktail = await takeOneCocktail(cocktailId);
