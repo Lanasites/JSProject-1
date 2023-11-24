@@ -1,8 +1,8 @@
 // 'use strict';
 
 import { gallerySlider } from './cocktailsGallerySlider.js';
-import { fetchCocktails } from './cocktailsFetch.js';
-import { fetchAllFirstLetters } from './cocktailsLetters';
+import { filterCocktails } from './cocktailsFilter.js';
+import { filterAllFirstLetters } from './cocktailsLetters';
 
 import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
 burgerMenu();
@@ -15,8 +15,6 @@ logotype.addEventListener('click', function() {
     window.location.href = 'index.html';
 });
 
-const alcoholic = document.getElementById('alcoholic');
-const nonalcoholic = document.getElementById('nonalcoholic');
 const any = document.getElementById('anyType');
 
 export const filterTitles = document.querySelectorAll('.filter-title');
@@ -27,8 +25,8 @@ document.addEventListener('DOMContentLoaded', event => {
 
     clearSelectedOnAllLetters();
 
-    fetchAllFirstLetters('anyType');
-    fetchCocktails('anyType', 'anyLetter');
+    filterAllFirstLetters('anyType');
+    filterCocktails('anyType', 'anyLetter');
 });
 
 allLetterDivs.forEach(div => {
@@ -51,7 +49,7 @@ allLetterDivs.forEach(div => {
             }
         });
         gallerySlider.destroy(); // Destroy the existing slider
-        fetchCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter
+        filterCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter
     });
 });
 
@@ -64,7 +62,7 @@ filterTitles.forEach(div => {
         event.currentTarget.classList.add('selected');
         activeDivId = event.currentTarget.id;
 
-        fetchAllFirstLetters(activeDivId); // need to change
+        filterAllFirstLetters(activeDivId); // need to change
 
         let selectedLetter = false;
         let clickedLetter;
@@ -82,7 +80,7 @@ filterTitles.forEach(div => {
             clickedLetter = 'anyLetter';
         }
         gallerySlider.destroy(); // Destroy the existing slider
-        fetchCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter
+        filterCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter
     });
 });
 

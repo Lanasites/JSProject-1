@@ -8,7 +8,7 @@ import { printWaitPreview } from './cocktailsCocktailAndErrorPrint.js';
 
 const splideList = document.getElementById('splideList');
 
-export const fetchCocktails = async (type, letter) => {
+export const filterCocktails = async (type, letter) => {
     try {
         // console.log(`i started fetchCocktails func with ${letter} and ${type}`);
         printWaitPreview();

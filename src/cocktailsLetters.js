@@ -3,7 +3,7 @@ import { takeAlkoCocktail } from './firebase.js';
 
 const allLetterDivs = document.querySelectorAll('.letter');
 
-export const fetchAllFirstLetters = async type => {
+export const filterAllFirstLetters = async type => {
     // console.log(`i started fetch all first letters ${type}`);
     try {
         let data;
