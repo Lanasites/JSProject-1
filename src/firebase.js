@@ -175,3 +175,16 @@ function takeAlkoCocktail(alcohol) {
     });
 }
 export { takeAlkoCocktail };
+
+export const getCocktailData = async type => {
+    switch (type) {
+        case 'anyType':
+            return await takeAllObjects('cocktails');
+        case 'alcoholic':
+            return await takeAlkoCocktail(true);
+        case 'nonalcoholic':
+            return await takeAlkoCocktail(false);
+        default:
+            throw new Error('Invalid cocktail type');
+    }
+};

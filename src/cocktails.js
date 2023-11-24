@@ -1,106 +1,92 @@
-// 'use strict';
+'use strict';
 
 import { gallerySlider } from './cocktailsGallerySlider.js';
-import { fetchCocktails } from './cocktailsFetch.js';
-import { fetchAllFirstLetters } from './cocktailsLetters';
+import { filterCocktails } from './cocktailsFilter.js';
+import { filterAllFirstLetters } from './cocktailsFilterLetters.js';
+import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName, clickProfileMenu, getMenuForPerson } from './header.js';
 
-import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
-burgerMenu();
-goToPageAndChangeLinkStyle();
-searchCocktailByName();
-
-//--переход на главную страницу по клику на лого--//
 const logotype = document.getElementById('logotype');
 logotype.addEventListener('click', function() {
     window.location.href = 'index.html';
 });
 
-const alcoholic = document.getElementById('alcoholic');
-const nonalcoholic = document.getElementById('nonalcoholic');
-const any = document.getElementById('anyType');
-
 export const filterTitles = document.querySelectorAll('.filter-title');
 export const allLetterDivs = document.querySelectorAll('.letter');
+const any = document.getElementById('anyType');
 
 document.addEventListener('DOMContentLoaded', event => {
+    initializeHeader();
+    initializeFilters();
+});
+
+const initializeHeader = () => {
+    burgerMenu();
+    goToPageAndChangeLinkStyle();
+    searchCocktailByName();
+    clickProfileMenu();
+    getMenuForPerson();
+}
+
+const initializeFilters = () => {
     any.classList.add('selected');
+    clearSelected(allLetterDivs);
+    filterAllFirstLetters('anyType');
+    filterCocktails('anyType', 'anyLetter');
+}
 
-    clearSelectedOnAllLetters();
-
-    fetchAllFirstLetters('anyType');
-    fetchCocktails('anyType', 'anyLetter');
-});
-
-allLetterDivs.forEach(div => {
-    div.addEventListener('click', function(event) {
-        clearSelectedOnAllLetters();
-
-        event.currentTarget.classList.add('selected');
-        let clickedLetter;
-        if (event.currentTarget.id === 'anyLetter') {
-            clickedLetter = 'anyLetter';
-        } else {
-            clickedLetter = event.currentTarget.textContent; // Get text content of clicked div
-        }
-
-        //finding which filter title is selected
-        filterTitles.forEach(div => {
-            if (div.classList.contains('selected')) {
-                activeDivId = div.id;
-                // console.log(activeDivId);
-            }
-        });
-        gallerySlider.destroy(); // Destroy the existing slider
-        fetchCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter
+const clearSelected = (elements) => {
+    elements.forEach(element => {
+        element.classList.remove('selected');
     });
-});
+}
 
-let activeDivId = 'anyType';
-let clickedLetter = 'anyLetter';
-
-filterTitles.forEach(div => {
-    div.addEventListener('click', function(event) {
-        clearSelectedOnAllTitles();
-        event.currentTarget.classList.add('selected');
-        activeDivId = event.currentTarget.id;
-
-        fetchAllFirstLetters(activeDivId); // need to change
-
-        let selectedLetter = false;
-        let clickedLetter;
-        allLetterDivs.forEach(div => {
-            if (div.classList.contains('selected')) {
-                if (div.id === 'anyLetter') {
-                    clickedLetter = 'anyLetter';
-                } else {
-                    clickedLetter = div.textContent; // Get text content of clicked div
-                }
-                selectedLetter = true;
-            }
-        });
-        if (!selectedLetter) {
-            clickedLetter = 'anyLetter';
-        }
-        gallerySlider.destroy(); // Destroy the existing slider
-        fetchCocktails(activeDivId, clickedLetter); // Call the function with the clicked letter
-    });
-});
-
-const clearSelectedOnAllLetters = () => {
-    allLetterDivs.forEach(title => {
-        title.classList.remove('selected');
-    });
-};
-
-const clearSelectedOnAllTitles = () => {
+const getActiveDivId = () => {
+    let activeId = 'anyType';
     filterTitles.forEach(title => {
-        title.classList.remove('selected');
+        if (title.classList.contains('selected')) {
+            activeId = title.id;
+        }
     });
-};
+    return activeId;
+}
 
-// ----------Событие при загрузке страницы для коррекции меню при нажатии на человечка-------------------------------------
-// на все страницы с меню надо добавить
-import { clickProfileMenu, getMenuForPerson } from './header.js';
-document.addEventListener('DOMContentLoaded', getMenuForPerson);
-clickProfileMenu();
-// ------------------------------------------------------------------------------------------------------------------------
+const getSelectedLetter = () => {
+    let selectedLetter = 'anyLetter';
+    allLetterDivs.forEach(letterDiv => {
+        if (letterDiv.classList.contains('selected') && letterDiv.id !== 'anyLetter') {
+            selectedLetter = letterDiv.textContent;
+        }
+    });
+    return selectedLetter;
+}
+
+allLetterDivs.forEach(letterDiv => {
+    letterDiv.addEventListener('click', function(event) {
+        handleLetterClick(event.currentTarget);
+    });
+});
+
+const handleLetterClick = (clickedLetterDiv) => {
+    clearSelected(allLetterDivs);
+    clickedLetterDiv.classList.add('selected');
+    let clickedLetter = clickedLetterDiv.id === 'anyLetter' ? 'anyLetter' : clickedLetterDiv.textContent;
+    const activeDivId = getActiveDivId();
+    gallerySlider.destroy();
+    filterCocktails(activeDivId, clickedLetter);
+}
+
+filterTitles.forEach(titleDiv => {
+    titleDiv.addEventListener('click', function(event) {
+        handleTitleClick(event.currentTarget);
+    });
+});
+
+const handleTitleClick = (clickedTitleDiv) => {
+    clearSelected(filterTitles);
+    clickedTitleDiv.classList.add('selected');
+    const activeDivId = clickedTitleDiv.id;
+    filterAllFirstLetters(activeDivId);
+    const clickedLetter = getSelectedLetter();
+    gallerySlider.destroy();
+    filterCocktails(activeDivId, clickedLetter);
+}

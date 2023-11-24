@@ -1,4 +1,5 @@
 import { burgerMenu, goToPageAndChangeLinkStyle, searchCocktailByName } from './header.js';
+import { setCocktailCookie } from './cocktailsPrint.js';
 burgerMenu();
 goToPageAndChangeLinkStyle();
 searchCocktailByName();
@@ -127,17 +128,16 @@ function print(name, imageUrl, description, id) {
     const splideItem = document.createElement('li');
     splideItem.classList.add('splide__slide');
     const template = `
-  <div class = 'splide__image'>
-  <img src = ${imageUrl} alt = "${name}">
-  </div>
-  <div class = "splide__info">
-  <p class = "splide__name">${name}</p>
-  <p class = "splide__text">${description}</p>
-  </div>
-  `;
+    <div class = 'splide__image'>
+    <img src = ${imageUrl} alt = "${name}">
+    </div>
+    <div class = "splide__info">
+    <p class = "splide__name">${name}</p>
+    <p class = "splide__text">${description}</p>
+    </div>
+    `;
     splideItem.innerHTML = template;
 
-    // Create the <a> element separately
     const recipeLink = document.createElement('a');
     recipeLink.classList.add('splide_recipe');
     recipeLink.setAttribute('href', 'recipe-cocktail.html');
@@ -145,13 +145,8 @@ function print(name, imageUrl, description, id) {
     button.textContent = 'Смотреть рецепт';
     recipeLink.appendChild(button);
 
-    // Append the <a> element to the <div> containing the template
     splideItem.querySelector('.splide__info').appendChild(recipeLink);
-    recipeLink.addEventListener('click', function() {
-        document.cookie = `cocktailId=${id}; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-        document.cookie = `cocktailId = ${id}`;
-        console.log(item.id);
-    });
+    recipeLink.addEventListener('click', () => setCocktailCookie(id));
 
     splideList.append(splideItem);
 }
