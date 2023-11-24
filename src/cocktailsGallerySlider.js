@@ -1,7 +1,7 @@
 import Splide from '@splidejs/splide';
 export const gallerySlider = new Splide('#gallerySlider', {
     wheel: true,
-    // type: 'loop',
+    type: 'loop',
     pagination: false,
     height: '48vh',
     width: '100vw',
@@ -36,5 +36,3 @@ export const gallerySlider = new Splide('#gallerySlider', {
         }
     }
 });
-
-// there is a trouble with landscape on mobile, bc splide doesn't allow to diversify between landscape and portrait.
