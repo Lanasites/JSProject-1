@@ -12,6 +12,10 @@ $accent1: #000000;
 $accent2: #a6a6a6b4;
 // $accent2: #79e0b3;
 
+.header-block {
+    width: auto;
+}
+
 .main {
     display: flex;
     flex-direction: column;

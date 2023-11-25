@@ -10,8 +10,10 @@ logotype.addEventListener('click', function() {
     window.location.href = 'index.html';
 });
 
-export const filterTitles = document.querySelectorAll('.filter-title');
-export const allLetterDivs = document.querySelectorAll('.letter');
+const filterType = document.getElementById('filterType');
+const filterLetter = document.getElementById('filterLetter');
+const filterTitles = document.querySelectorAll('.filter-title');
+const allLetterDivs = document.querySelectorAll('.letter');
 const any = document.getElementById('anyType');
 
 document.addEventListener('DOMContentLoaded', event => {
@@ -25,20 +27,20 @@ const initializeHeader = () => {
     searchCocktailByName();
     clickProfileMenu();
     getMenuForPerson();
-}
+};
 
 const initializeFilters = () => {
     any.classList.add('selected');
     clearSelected(allLetterDivs);
     filterAllFirstLetters('anyType');
     filterCocktails('anyType', 'anyLetter');
-}
+};
 
-const clearSelected = (elements) => {
+const clearSelected = elements => {
     elements.forEach(element => {
         element.classList.remove('selected');
     });
-}
+};
 
 const getActiveDivId = () => {
     let activeId = 'anyType';
@@ -48,7 +50,7 @@ const getActiveDivId = () => {
         }
     });
     return activeId;
-}
+};
 
 const getSelectedLetter = () => {
     let selectedLetter = 'anyLetter';
@@ -58,30 +60,18 @@ const getSelectedLetter = () => {
         }
     });
     return selectedLetter;
-}
+};
 
-allLetterDivs.forEach(letterDiv => {
-    letterDiv.addEventListener('click', function(event) {
-        handleLetterClick(event.currentTarget);
-    });
-});
-
-const handleLetterClick = (clickedLetterDiv) => {
+const handleLetterClick = clickedLetterDiv => {
     clearSelected(allLetterDivs);
     clickedLetterDiv.classList.add('selected');
     let clickedLetter = clickedLetterDiv.id === 'anyLetter' ? 'anyLetter' : clickedLetterDiv.textContent;
     const activeDivId = getActiveDivId();
     gallerySlider.destroy();
     filterCocktails(activeDivId, clickedLetter);
-}
+};
 
-filterTitles.forEach(titleDiv => {
-    titleDiv.addEventListener('click', function(event) {
-        handleTitleClick(event.currentTarget);
-    });
-});
-
-const handleTitleClick = (clickedTitleDiv) => {
+const handleTitleClick = clickedTitleDiv => {
     clearSelected(filterTitles);
     clickedTitleDiv.classList.add('selected');
     const activeDivId = clickedTitleDiv.id;
@@ -89,4 +79,18 @@ const handleTitleClick = (clickedTitleDiv) => {
     const clickedLetter = getSelectedLetter();
     gallerySlider.destroy();
     filterCocktails(activeDivId, clickedLetter);
-}
+};
+
+filterType.addEventListener('click', function(event) {
+    const target = event.target;
+    if (target.classList.contains('filter-title')) {
+        handleTitleClick(target);
+    }
+});
+
+filterLetter.addEventListener('click', function(event) {
+    const target = event.target;
+    if (target.classList.contains('letter')) {
+        handleLetterClick(target);
+    }
+});
